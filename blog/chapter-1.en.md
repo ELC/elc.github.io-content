@@ -16,7 +16,7 @@ How I re-discover probability and statistics even after taking a course at unive
 
 # The background
 
-I'm an engineer student and most people may think that I love math, actually that's true, I love it but when it comes to probabily theory and statistics there was always something it feelt unnatural. Some probability here and there and you get a number that answer your questions, in the middle you use lots of formulas which can be very intimidating and at the end you get a number you don't know the meaning of.
+I'm an engineer student and most people may think that I love math, and actually that's true, I love it but when it comes to probabily theory and statistics there was always something it feelt unnatural. Some probability here and there and you get a number that answer your questions, in the middle you use lots of formulas which can be very intimidating and at the end you get a number you don't know the meaning of.
 
 That was my vision of probability and statistics until weeks ago. I was looking for something interesting to learn [in a python conference] and it turned out that probability was a common topic (specially in 2015-2017) and I wonder why it was like that. I know that the basics of Machine Learning in general relies heavily in statistics but even when there were lots ML courses out there probability ones doesn't seem too popular or at least as popular as ML.
 
