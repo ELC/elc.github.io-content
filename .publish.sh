@@ -5,7 +5,7 @@ TOKEN=${1?Error: no name given}
 body='{
 "request": {
     "message": "Update Content",
-    "branch":"master"
+    "branch":"source"
 }}'
 
 curl -s -X POST \
@@ -14,4 +14,4 @@ curl -s -X POST \
    -H "Travis-API-Version: 3" \
    -H "Authorization: token $TOKEN" \
    -d "$body" \
-   https://api.travis-ci.org/repo/ELC%2Felc.github.io-source/requests
+   https://api.travis-ci.com/repo/ELC%2Felc.github.io/requests
