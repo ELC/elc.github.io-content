@@ -1,0 +1,6 @@
+prose:
+  ignore: 
+    - 'README.md'
+    - '.publish.sh'
+    - '.travis.yml'
+    - '_prose.yml'
