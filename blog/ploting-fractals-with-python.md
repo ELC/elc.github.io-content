@@ -6,6 +6,7 @@ Slug: plotting-fractals-step-by-step-with-python
 Authors: Ezequiel Castaño
 Lang: en
 level: Beginner
+headerimage: https://elc.github.io/blog/images/fractals/factals_headerimage.png
 
 Fractals are awesome, they are built with very complex pattern and they allow you to zoom in forever! In this post we will see how easily it is to plot several kinds of fractals using a tool called L-Systems and the Python Turtle module for the step to step plotting.
 
