@@ -19,7 +19,7 @@ First lets give a "non-strict" definition of what a fractal is, it is basically 
 
 It isn't quite correct but for those who wanted to know the exact definition here it is:
 
-> A fractal is an object or quantity that displays self-similarity, in a somewhat technical sense, on all scales. The object need not exhibit exactly the same structure at all scales, but the same "type" of structures must appear on all scales. A plot of the quantity on a log-log graph versus scale then gives a straight line, whose slope is said to be the fractal dimension. - [Math World](http://mathworld.wolfram.com/Fractal.html)
+> A fractal is an object or quantity that displays self-similarity, in a somewhat technical sense, on all scales. The object need not exhibit exactly the same structure at all scales, but the same "type" of structures must appear on all scales. A plot of the quantity on a log-log graph versus scale then gives a straight line, whose slope is said to be the fractal dimension. - [Math World](http://mathworld.wolfram.com/Fractal.html){: target="_blank"}
 
 ## How can we draw Fractals with Python?
 
@@ -31,7 +31,7 @@ Certainly there are lots of plotting libraries in Python, being Matplotlib the m
 
 ### Turtle Module
 
-According to [Python docs](https://docs.python.org/3.6/library/turtle.html): "Turtle graphics is a popular way for introducing programming to kids. It was part of the original Logo programming language developed by Wally Feurzig and Seymour Papert in 1966."
+According to [Python docs](https://docs.python.org/3.6/library/turtle.html){: target="_blank"}: "Turtle graphics is a popular way for introducing programming to kids. It was part of the original Logo programming language developed by Wally Feurzig and Seymour Papert in 1966."
 
 The key here is that turtle recognizes basically 3 commands:
 
@@ -52,7 +52,7 @@ This characteristics seems too simple for plotting such complex graphics as frac
 
 An L-System is a way of representing recursive structures (such as fractals) as a string of characters, this is done by rewriting the string over and over. Again, the formal definition is the following:
 
-> A Lindenmayer system, also known as an L-system, is a string rewriting system that can be used to generate fractals with dimension between 1 and 2. - [Math World](http://mathworld.wolfram.com/LindenmayerSystem.html)
+> A Lindenmayer system, also known as an L-system, is a string rewriting system that can be used to generate fractals with dimension between 1 and 2. - [Math World](http://mathworld.wolfram.com/LindenmayerSystem.html){: target="_blank"}
 
 Once we understand what an L-System is we can produce recursive structures, but before we are able to do that we need to understand what are the pieces we need. Every L-System has:
 
@@ -80,7 +80,7 @@ Now let's move to some examples!
 
 The following examples were compiled from several places publicly available on internet. I decided to port them to Python with the help of the Turtle module, center them, adding colors and provide a way to export them in vectorial format.
 
-Because the browser execute Python via [Skulpt](http://www.skulpt.org/) and Colorsys isn't supported yet, the animations will be Black & White but images with colors and the corresponding code to generate them will be provided. Each animation has a code associated which you can open and fork in [Repl.it](https://repl.it/)
+Because the browser execute Python via [Skulpt](http://www.skulpt.org/){: target="_blank"} and Colorsys isn't supported yet, the animations will be Black & White but images with colors and the corresponding code to generate them will be provided. Each animation has a code associated which you can open and fork in [Repl.it](https://repl.it/){: target="_blank"}
 
 **WARNING: The animations you are about to see are quite large in size, it is recommended to see them only with a good connection. The Repl snippet may not work since it uses your resources so mobile users might not be able to see it properly.**
 
@@ -675,4 +675,4 @@ There are lots of resources in internet about fractals both from the programming
 
 ## Sources and References
 
-This post was inspired by a [Math World post](http://mathworld.wolfram.com/LindenmayerSystem.html), the [Paul Broke Blog](http://paulbourke.net/fractals/lsys/) and an university assignment for Genetic Algorithms.
+This post was inspired by a [Math World post](http://mathworld.wolfram.com/LindenmayerSystem.html){: target="_blank"}, the [Paul Broke Blog](http://paulbourke.net/fractals/lsys/){: target="_blank"} and an university assignment for Genetic Algorithms.

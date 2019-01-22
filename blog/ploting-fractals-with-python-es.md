@@ -20,7 +20,7 @@ Primero veamos una definición "no estricta" de lo que es un fractal: es basicam
 
 No es del todo correcto pero para aquellos que quieran conocer la definición exacta, aquí se las dejo:
 
-> Un fractal es un objecto o cantidad que muestra auto-similaridad, en un sentido téctico, en todas sus escalas. El objeto no necesita exhibir exactamente la misma estructura en todas sus escala sino el mismo "tipo" de estructuras debe aparecer en todas las escalas. Un gráfico o cantidad en al graficarlo en función de su escala en un eje logarítmico da una línea recta, cuya pendiente es su "dimensión fractal" - [Math World Traducido](http://mathworld.wolfram.com/Fractal.html)
+> Un fractal es un objecto o cantidad que muestra auto-similaridad, en un sentido téctico, en todas sus escalas. El objeto no necesita exhibir exactamente la misma estructura en todas sus escala sino el mismo "tipo" de estructuras debe aparecer en todas las escalas. Un gráfico o cantidad en al graficarlo en función de su escala en un eje logarítmico da una línea recta, cuya pendiente es su "dimensión fractal" - [Math World Traducido](http://mathworld.wolfram.com/Fractal.html){: target="_blank"}
 
 ## ¿Cómo podemos Graficar Fractales con Python?
 
@@ -32,7 +32,7 @@ En el ecosistema de Python existen muchas bibliotecas para realizar gráficos, l
 
 ### El módulo Turtle
 
-Según [la documentación de Python](https://docs.python.org/3.6/library/turtle.html): "Los gráficos Turtle son una manera popular de introducir la programación a los niños. Era parte del lenguaje de programación Logo, desarrollado por Wally Feurzig y Seymour Papert en 1996"
+Según [la documentación de Python](https://docs.python.org/3.6/library/turtle.html){: target="_blank"}: "Los gráficos Turtle son una manera popular de introducir la programación a los niños. Era parte del lenguaje de programación Logo, desarrollado por Wally Feurzig y Seymour Papert en 1996"
 
 La clave en este tipo de gráficos es que tenemos 3 comandos básicos:
 
@@ -54,7 +54,7 @@ Adicionalmente tenemos la opción de:
 
 Un Sistema L es una manera de representar estructuras recursivas (como los fractales) como cadenas de caracteres, esto es hace re-escribiendo la cadena una y otra vez. Para aquellos interesados en la definición formal:
 
-> Un Sistema de Lindenmayer, también conocido como Sistema L, es un sistema de re-escritura de cadenas que puede ser usado para generar fractales de dimención entre 1 y 2. - [Math World Traducido](http://mathworld.wolfram.com/LindenmayerSystem.html)
+> Un Sistema de Lindenmayer, también conocido como Sistema L, es un sistema de re-escritura de cadenas que puede ser usado para generar fractales de dimención entre 1 y 2. - [Math World Traducido](http://mathworld.wolfram.com/LindenmayerSystem.html){: target="_blank"}
 
 Una vez que hayamos entendido lo que es un Sistema L podemos producir estructuras recursivas pero antes que podamos hacerlo necesitamos entender las partes que que lo forman. Todo Sistema L tiene:
 
@@ -82,7 +82,7 @@ Ahora veamos los ejemplos!
 
 Los siguientes ejemplos fueron compilados de diversos sitios públicamente disponibles en internet. Decidí migrarlos a Python con la ayuda del módulo Turtle, centrarlos, añadirles color y proporcionar una manera de exportarlos en formato vectorial.
 
-Debido a que el navegador ejecuta Python mediante [Skulpt](http://www.skulpt.org/) y el módulo Colorsys aún no está soportado, las animaciones serán en blanco y negro pero las imágenes y el código para generarlas estarán al final. Cada animación tiene un código asociado que puede abrirse de manera onlina y copiarse por medio de [Repl.it](https://repl.it/)
+Debido a que el navegador ejecuta Python mediante [Skulpt](http://www.skulpt.org/){: target="_blank"} y el módulo Colorsys aún no está soportado, las animaciones serán en blanco y negro pero las imágenes y el código para generarlas estarán al final. Cada animación tiene un código asociado que puede abrirse de manera onlina y copiarse por medio de [Repl.it](https://repl.it/){: target="_blank"}
 
 **Advertencia: Las animaciones que estás por ver son bastante pesadas, es recomendable verlas sólo con una buena conección. Los fragmentos de Repl pueden no funcionar en los usuarios que utilicen dispositivos móviles.**
 
@@ -677,4 +677,4 @@ Hay muchos recursos en internet sobre fractales, tanto desde el área de la prog
 
 ## Fuente y Referencias
 
-Este post fue inspirado por [un post de Math World](http://mathworld.wolfram.com/LindenmayerSystem.html), por el [blog de Paul Broke](http://paulbourke.net/fractals/lsys/) y por un trabajo práctico para la materia de Algoritmos Genéticos.
+Este post fue inspirado por [un post de Math World](http://mathworld.wolfram.com/LindenmayerSystem.html){: target="_blank"}, por el [blog de Paul Broke](http://paulbourke.net/fractals/lsys/){: target="_blank"} y por un trabajo práctico para la materia de Algoritmos Genéticos.

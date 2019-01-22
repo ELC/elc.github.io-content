@@ -61,7 +61,7 @@ If you attempt to port a web app to a desktop one without changing the framework
 
 But what are the differences between creating a web browser and using the systems default? Well, first of all, you assume there will be one, and that that one would be able to render all the HTML, CSS and JS you are using, that could not be the case. More often than not we found ourselves developing software for old operating systems (aka Windows XP o older).
 
-Sounds easy and actually it can be done, I was contributing to a script to achieve this very goal [PyFladesk](https://github.com/smoqadam/PyFladesk). There are some concerns about which version of Qt is the appropiate and the convenience of one over the other.
+Sounds easy and actually it can be done, I was contributing to a script to achieve this very goal [PyFladesk](https://elc.github.io/link/pyfladesk_repo){: target="_blank"}. There are some concerns about which version of Qt is the appropiate and the convenience of one over the other.
 
 ## The problem
 
@@ -71,28 +71,28 @@ What kind of problem could occur? Each item in the list is an example:
 
 ### Stack Overflow
 
-- [Flask application built using pyinstaller not rendering index.html - jinja2.exceptions.TemplateNotFound](https://stackoverflow.com/questions/32149892/flask-application-built-using-pyinstaller-not-rendering-index-html)
-- [Pyinstaller on Flask app, import error](https://stackoverflow.com/questions/47832309/pyinstaller-on-flask-app-import-error)
-- [Using Pyinstaller on Python Flask Application to create Executable](https://stackoverflow.com/questions/47018930/using-pyinstaller-on-python-flask-application-to-create-executable)
-- [Python 2.7.12, trying to build an executable file using pyinstaller. I keep getting the below error](https://stackoverflow.com/questions/40191441/python-2-7-12-trying-to-build-an-executable-file-using-pyinstaller-i-keep-gett)
+- [Flask application built using pyinstaller not rendering index.html - jinja2.exceptions.TemplateNotFound](https://stackoverflow.com/questions/32149892/flask-application-built-using-pyinstaller-not-rendering-index-html){: target="_blank"}
+- [Pyinstaller on Flask app, import error](https://stackoverflow.com/questions/47832309/pyinstaller-on-flask-app-import-error){: target="_blank"}
+- [Using Pyinstaller on Python Flask Application to create Executable](https://stackoverflow.com/questions/47018930/using-pyinstaller-on-python-flask-application-to-create-executable){: target="_blank"}
+- [Python 2.7.12, trying to build an executable file using pyinstaller. I keep getting the below error](https://stackoverflow.com/questions/40191441/python-2-7-12-trying-to-build-an-executable-file-using-pyinstaller-i-keep-gett){: target="_blank"}
 
 ### Quora
 
-- [Can I convert a Flask application into an executable file that runs on Windows like an .exe file?](https://www.quora.com/Can-I-convert-a-Flask-application-into-an-executable-file-that-runs-on-Windows-like-an-exe-file)
+- [Can I convert a Flask application into an executable file that runs on Windows like an .exe file?](https://www.quora.com/Can-I-convert-a-Flask-application-into-an-executable-file-that-runs-on-Windows-like-an-exe-file){: target="_blank"}
 
 ### Reddit
 
-- [Is it possible to deploy/distribute Flask as an executable for desktop use?](https://www.reddit.com/r/Python/comments/21evjn/is_it_possible_to_deploydistribute_flask_as_an/)
+- [Is it possible to deploy/distribute Flask as an executable for desktop use?](https://www.reddit.com/r/Python/comments/21evjn/is_it_possible_to_deploydistribute_flask_as_an/){: target="_blank"}
 
 ### Blogs
 
-- [Flask and pyinstaller notice](http://mapopa.blogspot.com.ar/2013/10/flask-and-pyinstaller-notice.html)
+- [Flask and pyinstaller notice](http://mapopa.blogspot.com.ar/2013/10/flask-and-pyinstaller-notice.html){: target="_blank"}
 
 ## Solution
 
-Note: If all you use is flask for served static or pseudo static content you could tried [Frozen Flask](http://pythonhosted.org/Frozen-Flask/).
+Note: If all you use is flask for served static or pseudo static content you could tried [Frozen Flask](http://pythonhosted.org/Frozen-Flask/){: target="_blank"}.
 
-After reading all the previous posts and some of the [PyInstaller docs](https://pythonhosted.org/PyInstaller/). I found that some people actually solved it! But, the solution they propose was editing the spec file, which is generated after a first run of PyInstaller. I thought that solution was a hack and not the proper way to achieve what I wanted.
+After reading all the previous posts and some of the [PyInstaller docs](https://pythonhosted.org/PyInstaller/){: target="_blank"}. I found that some people actually solved it! But, the solution they propose was editing the spec file, which is generated after a first run of PyInstaller. I thought that solution was a hack and not the proper way to achieve what I wanted.
 
 So I tried to understand what the changes in the spec file did and it turned out that that changes was to copy the folders Flask uses into the file directory/file (Actually one of the proposed solutions was build and then copy paste the folders, but besides being unpractical it wouldn't work with one file builds). so I search in the docs for a command line argument to achieve the same, there is none, well, actually there is, but it isn't in the docs page.
 
@@ -108,7 +108,7 @@ Linux (NOT TESTED):
 
 This will create a folder `dist` with our executable ready to be shipped. The executable will open the main window of our app.
 
-When a first used this was for a contribution for the [PyFladesk](https://github.com/smoqadam/PyFladesk) project and I realize that since Qt is quite big, our executables were big too. The example app of that repository is 70 MB (much of which was the Qt Component for displaying HTML (WebEngine)). This is reasonable taking into account that we were shipping a self contain web browser.
+When a first used this was for a contribution for the [PyFladesk](https://elc.github.io/link/pyfladesk_repo){: target="_blank"} project and I realize that since Qt is quite big, our executables were big too. The example app of that repository is 70 MB (much of which was the Qt Component for displaying HTML (WebEngine)). This is reasonable taking into account that we were shipping a self contain web browser.
 
 ## Tutorial
 
@@ -124,7 +124,7 @@ Some parameters to consider:
 
 Since Flask relies on a directory structure you should pass it to the folder, in the example case we only have two folders: `templates` and `static`, in case you use a database or some other directory structure you may adapt this.
 
-Note: For more complex scenarios check the [PyInstaller Docs](https://pythonhosted.org/PyInstaller/usage.html)
+Note: For more complex scenarios check the [PyInstaller Docs](https://pythonhosted.org/PyInstaller/usage.html){: target="_blank"}
 
 ## The other problem: The size
 
@@ -134,7 +134,7 @@ Is the project using as few dependencies as possible? If yes, continue reading, 
 - Check if all your dependences are really necessary, try to use the standard library when possible
 - Check if your biggest dependencies could be replaced with lightweight alternatives
 - Use one-dir option and then see what are the biggest dlls and if you can exclude them
-- Use the [ArchiveViewer.py script](http://pyinstaller.readthedocs.io/en/stable/advanced-topics.html#using-pyi-archive-viewer) that's part of PyInstaller and exclude everything you don't need
+- Use the [ArchiveViewer.py script](http://pyinstaller.readthedocs.io/en/stable/advanced-topics.html#using-pyi-archive-viewer){: target="_blank"} that's part of PyInstaller and exclude everything you don't need
 
 ## Conclusion
 

@@ -20,7 +20,7 @@ First of all I'm going to introduce some definitions and concepts just for those
 
 More often than not I find people who are confused about the relationship of the terms "Artificial Inteligence", "Machine Learning" and "Deep Learning". Let's try to explain it a bit (no rigorous math!). Artificial Inteligence is the broad term, lots of areas fall into this category for example, neural networks, computer vision, natural language, chatbots, sentiment analisis, etc. When people used Machine Learning they refer to more "statistical" methods such as Support Vector Machines (SVMs), Classification Trees, K-Means, Mean-Shift, etc. Another are is Deep Learning which is the narrower of all since it focuses just in one topic artificial neural networks, there are several type of neural networks and when they have several "hidden layers" we are talking about "Deep" Learning.
 
-If you want to know more about which are the fields of Computer Science, I suggest you to watch [Map of Computer Science by Domain of Science](https://www.youtube.com/watch?v=SzJ46YA_RaA)
+If you want to know more about which are the fields of Computer Science, I suggest you to watch [Map of Computer Science by Domain of Science](https://www.youtube.com/watch?v=SzJ46YA_RaA){: target="_blank"}
 
 One of the most common libraries to solve Machine Learning Problems is Scikit-Learn and they provide a beautiful roadmap to understand which algorithms are inside this field and their categorizations (there may be much more but it's enough for an introduction):
 
