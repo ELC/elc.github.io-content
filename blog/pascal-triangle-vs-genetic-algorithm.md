@@ -5,6 +5,7 @@ Tags: Data Visualization, Programming, Math
 Slug: pascal-triangle-vs-genetic-algorithm
 Authors: Ezequiel Castaño
 Lang: en
+headerimage: https://elc.github.io/blog/images/pascal_triangle/pascal_triangle_headerimage.gif
 
 Inspired by a Wikipedia article, I replicate a way to visualize the Pascal Triangle and used the same approach in Genetic Algorithms
 
@@ -14,7 +15,7 @@ Once I came accross this [wikipedia article about Pascal Triangle](https://en.wi
 
 ![pascal_triangle_animation](https://upload.wikimedia.org/wikipedia/commons/6/66/Pascal%27s_Triangle_animated_binary_rows.gif){: .narrow }
 
-I found it interesting to replicate this very animation in Python, just as a challenge and maybe later I would find a useful application for it. At [the end](#notebook) I will add a link to the jupyter notebook so you can experiment your own variants. If you want, you can jump directly to the [genetic algorithm application](#application-in-genetic-algorithms).
+I found it interesting to replicate this very animation in Python, just as a challenge and maybe later I would find a useful application for it. At [**the end**](#notebook) I will add a link to the jupyter notebook so you can experiment your own variants. If you want, you can jump directly to the [**genetic algorithm application**](#application-in-genetic-algorithms).
 
 First, there are some tools we need to install:
 
@@ -25,7 +26,7 @@ First, there are some tools we need to install:
 
 Once everything is installed, we need to understand what is necessary, I decided to split the code in 5 parts, although it can be a single file script. The final result is the following:
 
-<video class="b-lazy" autoplay loop>
+<video class="b-lazy" autoplay loop width=900>
     <source data-src="/blog/images/pascal_triangle/pascal_triangle.mp4" type="video/mp4">
 </video>
 
@@ -145,20 +146,20 @@ As a bonus, if the animation is needed as a separate file, ffmpeg can be used th
 
 As seen at the beginning the previous code resulted in the following animation:
 
-<video class="b-lazy" autoplay loop>
+<video class="b-lazy" autoplay loop width=900>
     <source data-src="/blog/images/pascal_triangle/pascal_triangle.mp4" type="video/mp4">
 </video>
 
 ## Notebook
 
-Everything showed above can be executed without installing anything just by using Binder, [open the gist online](https://elc.github.io/link/pascal_triangle_binder){: target="_blank"} and experiment yourself.
+Everything showed above can be executed without installing anything just by using Binder, [**open the gist online**](https://elc.github.io/link/pascal_triangle_binder){: target="_blank"} and experiment yourself.
 
 ## Application in Genetic Algorithms
 
 When I started this visualization challenge, I had no application in mind but then I realized the same approach could be used for visualizing the genotype of a population of chromosomes in a traditional genetic algorithm. Each colum would represent a chromosome instead of a number each row a particular gene for each chromosome, being black if the gene is 1 and white if it is 0. This approach asumes a binary genotype configuration. Then another possible improvement is to sort them by fitness, the ones with the highest fitness on the left and the ones with the lowest on the right. Sorting them could help understanding patterns in the genotype that might not be obvious in the phenotype.
 
-This is the result of finding the maximum of a function with elitism and high mutation. Each frame represents a population the next frame represents the childs of the previous one. The source code that generates this animation can be found in my [personal github repository](https://elc.github.io/link/genetic_algorithm_repo){: target="_blank"}
+This is the result of finding the maximum of a function with elitism and high mutation. Each frame represents a population the next frame represents the childs of the previous one. The source code that generates this animation can be found in my [**personal github repository**](https://elc.github.io/link/genetic_algorithm_repo){: target="_blank"}
 
-<video class="b-lazy" autoplay loop>
+<video class="b-lazy" autoplay loop width=900>
     <source data-src="/blog/images/pascal_triangle/genetic_algorithm.mp4" type="video/mp4">
 </video>
