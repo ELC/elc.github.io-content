@@ -5,7 +5,6 @@ Tags: Data Visualization, Programming, Math
 Slug: times-tables
 Authors: Ezequiel Castaño
 Lang: en
-Status: draft
 headerimage: https://elc.github.io/blog/images/times_tables/times-tables-headerimage.png
 
 After looking to a Mathologer Video, I decided to use it as a challenge and write a script to do the same with Python.
