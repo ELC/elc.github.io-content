@@ -29,6 +29,9 @@ Now I will examine the code used to produced the previous image and also how to 
 - Animate Construction Point by Point: Where the factor and the lines are fixed but each frame increases the number of points
 - Animate Construction Factor by Factor: Where the lines and the number of points are fixed but the factor increases (The one shown at the end of the video), first monochrome and then with the rainbow effect seen in the video.
 
+    **Note**: After each of the scenarios there will be both an **interactive** (Jupyter Widget) and a **static** (image or animation) representation of the code, the interactive is built through a backend so **please be patient** to see the results since each time you move the slider, the full animation is re-calculated. The **static** representation is useful for low-speed connections and for a faster **result** but it can't be changed or experimented with.
+
+
 Requirements:
 
 - Jupyter: Notebook Interface
@@ -164,6 +167,10 @@ One approach is to manually change the `factor` and `points` variables and then 
             Factor=FloatSlider(min=0, max=100, step=0.1, value=2, layout=Layout(width='99%')),
             Points=IntSlider(min=0, max=300, step=25, value=100, layout=Layout(width='99%')));
 
+<div class="iframe-container" style="padding-top: 101%">
+    <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-parametric-iframe.html"></iframe>
+</div>
+
 ## Animate Construction Line by Line
 
 Now we move to animations and in this first animation both the factor and the number of points are fixed, which changes is the lines, this animations mimics the process of drawing some of theses times tables by hand and could also give some insight about the order in which the lines are plotted instead of just seen them all at once.
@@ -192,6 +199,10 @@ Animations in Matplotlib are built through an `animate` function, which basicall
             Factor=FloatSlider(min=0, max=100, step=0.1, value=2, layout=Layout(width='99%')), 
             Points=IntSlider(min=1, max=200, step=1, value=100, layout=Layout(width='99%')),
             Interval=IntSlider(min=5, max=500, step=5, value=75, layout=Layout(width='99%')));
+
+<div class="iframe-container" style="padding-top: 101%">
+    <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-line-by-line-iframe.html"></iframe>
+</div>
 
 <video class="b-lazy" autoplay loop width=900>
     <source data-src="/blog/images/times_tables/line_by_line.mp4" type="video/mp4">
@@ -225,6 +236,10 @@ Taking another perspective, maybe what's interesting isn't how the lines are plo
             Factor=FloatSlider(min=0, max=100, step=0.1, value=2, layout=Layout(width='99%')),
             Max_Points=IntSlider(min=1, max=200, step=1, value=75, layout=Layout(width='99%')),
             Interval=IntSlider(min=100, max=500, step=1, value=200, layout=Layout(width='99%')));
+
+<div class="iframe-container" style="padding-top: 101%">
+    <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-point-by-point-iframe.html"></iframe>
+</div>
 
 <video class="b-lazy" autoplay loop width=900>
     <source data-src="/blog/images/times_tables/point_by_point.mp4" type="video/mp4">
@@ -260,6 +275,10 @@ Now the animation showed in the video, which the number of points fixed and all 
             Max_Points=IntSlider(min=1, max=200, step=1, value=100, layout=Layout(width='99%')),
             Interval=IntSlider(min=50, max=500, step=25, value=100, layout=Layout(width='99%')));
 
+<div class="iframe-container" style="padding-top: 101%">
+    <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-factor-by-factor-iframe.html"></iframe>
+</div>
+
 <video class="b-lazy" autoplay loop width=900>
     <source data-src="/blog/images/times_tables/factor_by_factor.mp4" type="video/mp4">
 </video>
@@ -293,6 +312,10 @@ Just as the previous one but with color added, in this case an additional `frame
             Factor=FloatSlider(min=0, max=100, step=0.1, value=5, layout=Layout(width='99%')),
             Max_Points=IntSlider(min=1, max=200, step=1, value=100, layout=Layout(width='99%')),
             Interval=IntSlider(min=50, max=500, step=25, value=100, layout=Layout(width='99%')));
+
+<div class="iframe-container" style="padding-top: 101%">
+    <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-factor-by-factor-colored-iframe.html"></iframe>
+</div>
 
 <video class="b-lazy" autoplay loop width=900>
     <source data-src="/blog/images/times_tables/factor_by_factor_colored.mp4" type="video/mp4">
