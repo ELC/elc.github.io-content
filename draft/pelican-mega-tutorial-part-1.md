@@ -1,9 +1,8 @@
-Title: Complete Pelican Tutorial: Part 1
-Date: 2017-11-10
-Modified: 2010-12-05 19:30
-Category: Python
-Tags: pelican, publishing
-Slug: my-super-post23
+Title: Pelican Mega Tutorial: Part 1
+Date: 2019-01-30
+Category: Programming
+Tags: pelican, tutorial, programming
+Slug: pelican-mega-tutorial-part-1
 Authors: Ezequiel Castaño
 Lang: en
 Status: draft
