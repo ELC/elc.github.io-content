@@ -17,11 +17,11 @@ Of course in one year one solves a lot of differential equations but there were 
 
 The teacher showed us several situations one can model with ODE and each has its particularities:
 
-- The Economy of a Home: Piecewise Defined Derivatives
-- The sales of Houses and Air Conditionings: Systems of ODEs
-- The control of a Stock: Systems with oscillation (Underdamped, critically damped, overdamped and undamped)
-- The model of useful life in medicine: Start from a previous result
-- The model of Foxes and rabbits: Non-linear relationships between variables
+- [Economy of a Home](#economy-of-a-home): Piecewise Defined Derivatives
+- [Sales of Houses and Air Conditionings](#sales-of-houses-and-air-conditionings): Systems of ODEs
+- [Stock Control](#stock-control): Systems with oscillation (Underdamped, critically damped, overdamped and undamped)
+- [Useful life in medicine](#useful-life): Start from a previous result
+- [Predator and Prey Model](#foxes-and-rabbits): Non-linear relationships between variables
 
 Some of them are quite well-known but the aim of this post isn't introducing these models but rather how you can solve them with Python, I will also attach the interactive widgets so you can experiment with the models and see how they behave when you change the parameters. Also, I prepared a [jupyter notebook](https://elc.github.io/link/ode_python_binder) where all these models are together, you can open it online and experiment directly. Additionally if you find any of the widgets useful you can embed them in your own website, at the end of each widget the code for doing so will be provided.
 
@@ -401,7 +401,7 @@ Notation for the equation:
 With the previously defined notation, the ordinary differential equation is as follows:
 
 $$
-\left\{\begin{matrix} \frac{\mathrm{d} x}{\mathrm{d} t} =&   & \frac{1}{p} & y &- &d& &\\\\ \frac{\mathrm{d} y}{\mathrm{d} t} =& - & \frac{1}{p} & y &+ &d& + &k ( s - x ) \end{matrix}\right.
+\left\{\begin{matrix} \frac{\mathrm{d} x}{\mathrm{d} t} =&   \frac{1}{p} y - d \\\\ \frac{\mathrm{d} y}{\mathrm{d} t} =& - \frac{1}{p} y + d + k ( s - x ) \end{matrix}\right.
 $$
 
 ### Widget
