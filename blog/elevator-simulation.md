@@ -42,7 +42,7 @@ I study at the "Universidad Tecnológica Nacional (UTN)" also translated as (Nat
 
 To better represent the distribution, the blueprints were used (with permission):
 
-[![Elevator Header Image]({attach}images/elevator-simulation/floor-distribution-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/floor-distribution.png }]./blog/images/elevator-simulation/floor-distribution.png){: .gallery }
+[![Elevator Header Image]({attach}images/elevator-simulation/floor-distribution-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/floor-distribution.png }](./blog/images/elevator-simulation/floor-distribution.png){: .gallery }
 
 ## Problem
 
