@@ -41,7 +41,7 @@ The header of each file is like the following:
     Category: Programming
     Tags: Haskell, Python, Tuple Unpacking
     Slug: haskell-pattern-matching-in-python
-    Authors: Ezequiel Castaño
+    Authors: Ezequiel Leonardo Castaño
     Lang: en
     level: Begginer
 
@@ -52,7 +52,7 @@ This text is crucial to Pelican, the static site generator behind this website, 
     Category: Programming <- DO NOT CHANGE ->
     Tags: Haskell, Python, Tuple Unpacking <- DO NOT CHANGE ->
     Slug: haskell-pattern-matching-in-python <- DO NOT CHANGE ->
-    Authors: Ezequiel Castaño <- DO NOT CHANGE ->
+    Authors: Ezequiel Leonardo Castaño <- DO NOT CHANGE ->
     Lang: <- Two letter code of your lang (es, de, fr) ->
     Translator: <- Your Name Here ->
     Translation: True <- You have to add this line->

@@ -3,7 +3,7 @@ Date: 2018-09-28
 Category: Programming
 Tags: Python, fastai, deep-learning
 Slug: fastai-colab-deep-learning
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: en
 level: Begginer
 headerimage: https://elc.github.io/blog/images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage.png

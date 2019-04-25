@@ -3,7 +3,7 @@ Date: 2019-01-30
 Category: Simulation
 Tags: Simulation, Programming, Math
 Slug: multi-floor-elevator-simulation-anylogic
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: en
 Headerimage: https://elc.github.io/blog/images/elevator-simulation/elevator-simulation-headerimage.png
 <!-- Status: draft -->

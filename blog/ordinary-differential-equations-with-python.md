@@ -3,7 +3,7 @@ Date: 2019-01-29
 Category: Simulation
 Tags: Simulation, Programming, Math
 Slug: ordinary-differential-equations-with-python
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: en
 headerimage: https://elc.github.io/blog/images/ode-python/ordinary-differential-equations-with-python-headerimage.png
 

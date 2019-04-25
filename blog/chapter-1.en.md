@@ -3,7 +3,7 @@ Date: 2018-01-05
 Category: Programming
 Tags: probability
 Slug: probability-world
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: en
 HeaderImage:
 level:

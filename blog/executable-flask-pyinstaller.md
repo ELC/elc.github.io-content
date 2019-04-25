@@ -3,7 +3,7 @@ Date: 2018-02-24
 Category: Programming
 Tags: Python, Flask, PyInstaller
 Slug: executable-flask-pyinstaller
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: en
 headerimage: https://elc.github.io/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png
 level: Begginer

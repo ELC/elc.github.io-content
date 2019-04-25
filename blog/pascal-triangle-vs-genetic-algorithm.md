@@ -3,7 +3,7 @@ Date: 2019-01-21
 Category: Data Visualization
 Tags: Data Visualization, Programming, Math
 Slug: pascal-triangle-vs-genetic-algorithm
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: en
 headerimage: https://elc.github.io/blog/images/pascal_triangle/pascal_triangle_headerimage.gif
 

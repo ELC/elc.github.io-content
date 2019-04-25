@@ -3,7 +3,7 @@ Date: 2018-10-14
 Category: Programming
 Tags: Python, Fractals, Turtle
 Slug: plotting-fractals-step-by-step-with-python
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: es
 Translation: True
 level: Beginner

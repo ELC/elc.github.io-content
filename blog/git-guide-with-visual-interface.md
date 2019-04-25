@@ -3,9 +3,9 @@ Date: 2019-01-30
 Category: Software Engineer
 Tags: Git, GUI, GitKraken
 Slug: git-guide-with-visual-interface
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: es
-Headerimage:https://elc.github.io/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png
+Headerimage: https://elc.github.io/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png
 
 [![Git Tutorial Header Image]({attach}images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage-thumbnail.png){: width=2000 .b-lazy width=2000 data-src=/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png }](/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png ){.gallery}
 

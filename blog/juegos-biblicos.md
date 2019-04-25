@@ -3,7 +3,7 @@ Date: 2018-12-28
 Category: Christianity
 Tags: Games, Bible
 Slug: juegos-biblicos
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: es
 
 <!-- PELICAN_BEGIN_SUMMARY -->

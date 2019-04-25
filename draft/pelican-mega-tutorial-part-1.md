@@ -3,7 +3,7 @@ Date: 2019-01-30
 Category: Programming
 Tags: pelican, tutorial, programming
 Slug: pelican-mega-tutorial-part-1
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: en
 Status: draft
 HeaderImage: https://blog.travis-ci.com/images/riley.gif

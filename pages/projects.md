@@ -7,7 +7,7 @@ As an engineering students I've worked in several projects, alone, in a team and
 
 ## Software Development
 
-**Ezequiel Castaño Personal Blog - Pelican & Python - 2018-Present - [Git Repo <i class="fa fa-github"></i>](https://github.com/ELC/elc.github.io-source)**
+**Ezequiel Leonardo Castaño Personal Blog - Pelican & Python - 2018-Present - [Git Repo <i class="fa fa-github"></i>](https://github.com/ELC/elc.github.io-source)**
 
 This website is my personal blog, I develop it using Pelican, and some plugins (some of which I write myself). The main objective of this development is to have a completely static, lightweight and modern website using only freely available technologies. Some of the features of the website are:
 

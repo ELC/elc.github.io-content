@@ -3,7 +3,7 @@ Date: 2018-02-18
 Category: Programming
 Tags: Haskell, Python, Tuple Unpacking
 Slug: haskell-pattern-matching-in-python
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: en
 level: Begginer
 headerimage: https://elc.github.io/blog/images/haskell_python/haskell_python_headerimage.png

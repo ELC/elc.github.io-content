@@ -3,7 +3,7 @@ Date: 2019-01-22
 Category: Data Visualization
 Tags: Data Visualization, Programming, Math
 Slug: times-tables
-Authors: Ezequiel Castaño
+Authors: Ezequiel Leonardo Castaño
 Lang: en
 headerimage: https://elc.github.io/blog/images/times_tables/times-tables-headerimage.png
 
