@@ -9,6 +9,10 @@ level: Begginer
 headerimage: https://elc.github.io/blog/images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage.png
 jupyternotebook: https://gist.github.com/ELC/756040fe84a8bb3d14c59b0e997c84e9
 
+[![FastAi Header Image]({attach}images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage.png }](/blog/images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage.png){: .gallery }
+
+<!-- PELICAN_BEGIN_SUMMARY -->
+
 Nowadays there are lots of tutorials and material to learn Artificial Inteligence, Machine Learning and Deep Learning but whenever you want to do something interesting you notice you need a Nvidia GPU. In this tutorial we are going to solve this issue with a free cloud solution.
 
 <!-- PELICAN_END_SUMMARY -->

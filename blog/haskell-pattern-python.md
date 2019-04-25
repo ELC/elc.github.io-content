@@ -8,6 +8,10 @@ Lang: en
 level: Begginer
 headerimage: https://elc.github.io/blog/images/haskell_python/haskell_python_headerimage.png
 
+[![Haskell Header Image]({attach}images/haskell_python/haskell_python_headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/haskell_python/haskell_python_headerimage.png }](/blog/images/haskell_python/haskell_python_headerimage.png){: .gallery }
+
+<!-- PELICAN_BEGIN_SUMMARY -->
+
 I started to learn a bit of Haskell and one of its features amazed me: Pattern Matching. Then, unexpectably, I notice Python 3 have them too but with a different name: Extended Tuple Unpacking. Okay, it's not exactly the same but you can get quite similar functionalities if you master it. This post is inspired by this [question](https://stackoverflow.com/questions/6967632/unpacking-extended-unpacking-and-nested-extended-unpacking){: target="_blank"}
 
 <!-- PELICAN_END_SUMMARY -->

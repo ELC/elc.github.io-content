@@ -7,6 +7,8 @@ Authors: Ezequiel Castaño
 Lang: en
 headerimage: https://elc.github.io/blog/images/pascal_triangle/pascal_triangle_headerimage.gif
 
+<!-- PELICAN_BEGIN_SUMMARY -->
+
 Inspired by a Wikipedia article, I replicate a way to visualize the Pascal Triangle and used the same approach in Genetic Algorithms
 
 <!-- PELICAN_END_SUMMARY -->

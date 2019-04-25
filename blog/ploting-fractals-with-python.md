@@ -8,6 +8,10 @@ Lang: en
 level: Beginner
 headerimage: https://elc.github.io/blog/images/fractals/factals_headerimage.png
 
+[![Fractals Header Image]({attach}images/fractals/factals_headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/fractals/factals_headerimage.png }](/blog/images/fractals/factals_headerimage.png){: .gallery }
+
+<!-- PELICAN_BEGIN_SUMMARY -->
+
 Fractals are awesome, they are built with very complex pattern and they allow you to zoom in forever! In this post we will see how easily it is to plot several kinds of fractals using a tool called L-Systems and the Python Turtle module for the step to step plotting.
 
 <!-- PELICAN_END_SUMMARY -->

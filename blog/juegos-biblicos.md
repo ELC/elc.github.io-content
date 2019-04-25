@@ -6,6 +6,8 @@ Slug: juegos-biblicos
 Authors: Ezequiel Castaño
 Lang: es
 
+<!-- PELICAN_BEGIN_SUMMARY -->
+
 Compilado de juegos bíblicos listos para imprimir. Pensados y adaptados para jóvenes y adolescentes que buscan conocer más a Dios.
 
 <!-- PELICAN_END_SUMMARY -->

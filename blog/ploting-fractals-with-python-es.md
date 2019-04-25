@@ -9,6 +9,10 @@ Translation: True
 level: Beginner
 headerimage: https://elc.github.io/blog/images/fractals/factals_headerimage.png
 
+[![Fractals Header Image]({static}images/fractals/factals_headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/fractals/factals_headerimage.png }](/blog/images/fractals/factals_headerimage.png){: .gallery }
+
+<!-- PELICAN_BEGIN_SUMMARY -->
+
 Los fractales son increibles, se construyen con patrones muy complejos y permiten acercarse de manera indefinida. En este post voy a mostrarles cuan facilmente pueden graficarse diversos tipos de fractales utilizando una herramienta llamada Sistemas L y el módulo Turtle de Python para hacer el gráfico paso a paso.
 
 <!-- PELICAN_END_SUMMARY -->

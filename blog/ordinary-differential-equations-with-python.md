@@ -7,6 +7,8 @@ Authors: Ezequiel Castaño
 Lang: en
 headerimage: https://elc.github.io/blog/images/ode-python/ordinary-differential-equations-with-python-headerimage.png
 
+[![ODE Header Image]({attach}images/ode-python/ordinary-differential-equations-with-python-headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/ode-python/ordinary-differential-equations-with-python-headerimage.png }](/blog/images/ode-python/ordinary-differential-equations-with-python-headerimage.png){: .gallery }
+
 <!-- PELICAN_BEGIN_SUMMARY -->
 
 When I was at my 3rd year of University I have a complete subject about Ordinary Differential Equations and other similar topics. For that course we used Wolfram Mathematica throughout the year and I asked the teacher whether I can do it with Python, here you can see the results.

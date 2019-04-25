@@ -8,11 +8,13 @@ Lang: en
 headerimage: https://elc.github.io/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png
 level: Begginer
 
-After trying lots of solutions from stack overflow, quora and several blogs without success I decided to post how I managed to make one single file executable with Flask and PyInstaller
+[![Flask_pyinstaller_logo]({attach}images/flask_pyinstaller/flask-pyinstaller_headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png }](/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png){: .gallery }
+
+<!-- PELICAN_BEGIN_SUMMARY -->
+
+After trying lots of solutions from stack overflow, quora and several blogs without success I decided to post how I managed to make one single executable file of a Flask application with PyInstaller
 
 <!-- PELICAN_END_SUMMARY -->
-
-![Flask_pyinstaller_logo]({attach}images/flask_pyinstaller/flask-pyinstaller_headerimage-thumbnail.png){: .narrow .b-lazy width=900 data-src=/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png }
 
 If you just want to read the solution, scroll down to the [solution section](#solution)
 
