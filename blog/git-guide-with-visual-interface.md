@@ -334,9 +334,7 @@ El proceso para quitar cambios del Staging Area y pasarlos al Working Area es id
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_32-thumbnail.png){: .narrow width=131 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_32.png }](/blog/images/git-guide-with-visual-interface/image_32.png ){: .gallery}
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_33-thumbnail.png){: .narrow width=424 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_33.png }](/blog/images/git-guide-with-visual-interface/image_33.png ){: .gallery}
 
-Una vez movidos l](ith-visual-interface/image_33.png }
-
-Una vez movidos)os cambios deseados al Staging Area, se puede crear el commit deseado, para ello hace falta asignarle un título, también se puede detallar una descripción opcional:
+Una vez movidos los cambios deseados al Staging Area, se puede crear el commit deseado, para ello hace falta asignarle un título, también se puede detallar una descripción opcional:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_34-thumbnail.png){: .narrow width=328 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_34.png }](/blog/images/git-guide-with-visual-interface/image_34.png ){: .gallery}
 
