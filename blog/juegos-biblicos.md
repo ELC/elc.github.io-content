@@ -31,7 +31,7 @@ Adicionalmente, toda crítica, sugerencia y comentario es bien recibido, pueden 
 
 [Volver al Índice](#indice)
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/tabu_biblico_01-thumbnail.jpg){: .narrow .b-lazy width=601 data-src=/blog/images/juegos-biblicos/tabu_biblico_01.jpg  }](/blog/images/juegos-biblicos/tabu_biblico_01.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/tabu_biblico_01-thumbnail.jpg){: .narrow .b-lazy width=665 data-src=/blog/images/juegos-biblicos/tabu_biblico_01.jpg  }](/blog/images/juegos-biblicos/tabu_biblico_01.jpg){: .gallery }
 
 Se arman equipos y se juega por turnos, en el turno de un equipo, se designa una persona, a esta persona se le entregan una serie de tarjetas, las tarjetas van a tener una palabra principal y una serie de palabras secundarias. El objetivo es que la persona designada pueda hacer que su equipo adivine cual es la palabra principal sin utilizar las palabras secundarias, ni sus familias de palabras, tampoco puede usar mímica ni decir cuántas letras tiene la palabra principal o usar referencias fonéticas.
 
@@ -47,11 +47,11 @@ Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/them
 
 [Volver al Índice](#indice)
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_01-thumbnail.jpg){: .narrow .b-lazy width=601 data-src=/blog/images/juegos-biblicos/espadeo_01.jpg  }](/blog/images/juegos-biblicos/espadeo_01.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_01-thumbnail.jpg){: .narrow .b-lazy width=669 data-src=/blog/images/juegos-biblicos/espadeo_01.jpg  }](/blog/images/juegos-biblicos/espadeo_01.jpg){: .gallery }
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_02-thumbnail.jpg){: .narrow .b-lazy width=601 data-src=/blog/images/juegos-biblicos/espadeo_02.jpg  }](/blog/images/juegos-biblicos/espadeo_02.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_02-thumbnail.jpg){: .narrow .b-lazy width=748 data-src=/blog/images/juegos-biblicos/espadeo_02.jpg  }](/blog/images/juegos-biblicos/espadeo_02.jpg){: .gallery }
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_03-thumbnail.jpg){: .narrow .b-lazy width=601 data-src=/blog/images/juegos-biblicos/espadeo_03.jpg  }](/blog/images/juegos-biblicos/espadeo_03.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_03-thumbnail.jpg){: .narrow .b-lazy width=739 data-src=/blog/images/juegos-biblicos/espadeo_03.jpg  }](/blog/images/juegos-biblicos/espadeo_03.jpg){: .gallery }
 
 Este es un juego con 3 modalidales, el organizador puede alternar entre ellas o escoger la que más se adapte a sus necesidades.
 
@@ -67,7 +67,7 @@ Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/them
 
 [Volver al Índice](#indice)
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/trivia_adolescentes_01-thumbnail.jpg){: .narrow .b-lazy width=601 data-src=/blog/images/juegos-biblicos/trivia_adolescentes_01.jpg  }](/blog/images/juegos-biblicos/trivia_adolescentes_01.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/trivia_adolescentes_01-thumbnail.jpg){: .narrow .b-lazy width=657 data-src=/blog/images/juegos-biblicos/trivia_adolescentes_01.jpg  }](/blog/images/juegos-biblicos/trivia_adolescentes_01.jpg){: .gallery }
 
 El juego consiste en responder preguntas - para ganar - se deben responder al menos una pregunta correctamente de cada categoría. Dentro de cada categoría hay preguntas de distintas dificultades.
 
@@ -88,7 +88,7 @@ Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/them
 
 [Volver al Índice](#indice)
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/arma_la_historia_01-thumbnail.jpg){: .narrow .b-lazy width=601 data-src=/blog/images/juegos-biblicos/arma_la_historia_01.jpg  }](/blog/images/juegos-biblicos/arma_la_historia_01.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/arma_la_historia_01-thumbnail.jpg){: .narrow .b-lazy width=1090 data-src=/blog/images/juegos-biblicos/arma_la_historia_01.jpg  }](/blog/images/juegos-biblicos/arma_la_historia_01.jpg){: .gallery }
 
 A cada equipo se le da una serie de tarjetas, algunas contienen pasajes y otras contienen eventos o historias. Cada equipo deberá asociar cada tarjeta de evento con una de un pasaje y luego ordenarlas para formar la historia bíblica.
 
@@ -102,9 +102,9 @@ Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/them
 
 [Volver al Índice](#indice)
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/memo_paralelo_01-thumbnail.jpg){: .narrow .b-lazy width=601 data-src=/blog/images/juegos-biblicos/memo_paralelo_01.jpg  }](/blog/images/juegos-biblicos/memo_paralelo_01.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/memo_paralelo_01-thumbnail.jpg){: .narrow .b-lazy width=1092 data-src=/blog/images/juegos-biblicos/memo_paralelo_01.jpg  }](/blog/images/juegos-biblicos/memo_paralelo_01.jpg){: .gallery }
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/memo_paralelo_02-thumbnail.jpg){: .narrow .b-lazy width=601 data-src=/blog/images/juegos-biblicos/memo_paralelo_02.jpg  }](/blog/images/juegos-biblicos/memo_paralelo_02.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/memo_paralelo_02-thumbnail.jpg){: .narrow .b-lazy width=1077 data-src=/blog/images/juegos-biblicos/memo_paralelo_02.jpg  }](/blog/images/juegos-biblicos/memo_paralelo_02.jpg){: .gallery }
 
 Se arman equipos y a cada equipo se le da una serie de tarjetas, cada equipo coloca sus tarjetas boca abajo. Una persona de cada equipo será la encargada de dar vuelta las tarjetas, cada tarjeta contiene una cita a un pasaje bíblico o un pasaje escrito. El objetivo del juego es agrupar las tarjetas de a pares según el tema que traten. 
 
@@ -120,7 +120,7 @@ Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/them
 
 [Volver al Índice](#indice)
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/conoce_la_historia_01-thumbnail.jpg){: .narrow .b-lazy width=601 data-src=/blog/images/juegos-biblicos/conoce_la_historia_01.jpg  }](/blog/images/juegos-biblicos/conoce_la_historia_01.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/conoce_la_historia_01-thumbnail.jpg){: .narrow .b-lazy width=1344 data-src=/blog/images/juegos-biblicos/conoce_la_historia_01.jpg  }](/blog/images/juegos-biblicos/conoce_la_historia_01.jpg){: .gallery }
 
 A cada jugador se le coloca una tarjeta en la espalda, cada tarjeta contiene una serie de oraciones que están vinculadas a un personaje bíblico, pueden ser eventos, lugares, pasajes o cualquier otro dato relacionado.
 

@@ -8,7 +8,7 @@ Lang: en
 Headerimage: https://elc.github.io/blog/images/elevator-simulation/elevator-simulation-headerimage.png
 <!-- Status: draft -->
 
-[![Elevator Header Image]({attach}images/elevator-simulation/elevator-simulation-headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/elevator-simulation-headerimage.png }](/blog/images/elevator-simulation/elevator-simulation-headerimage.png){: .gallery }
+[![Elevator Header Image]({attach}images/elevator-simulation/elevator-simulation-headerimage-thumbnail.png){: .b-lazy width=1920 data-src=/blog/images/elevator-simulation/elevator-simulation-headerimage.png }](/blog/images/elevator-simulation/elevator-simulation-headerimage.png){: .gallery }
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
@@ -42,7 +42,7 @@ I study at the "Universidad Tecnológica Nacional (UTN)" also translated as (Nat
 
 To better represent the distribution, the blueprints were used (with permission):
 
-[![Elevator Header Image]({attach}images/elevator-simulation/floor-distribution-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/floor-distribution.png }](./blog/images/elevator-simulation/floor-distribution.png){: .gallery }
+[![Elevator Header Image]({attach}images/elevator-simulation/floor-distribution-thumbnail.png){: .b-lazy width=1202 data-src=/blog/images/elevator-simulation/floor-distribution.png }](./blog/images/elevator-simulation/floor-distribution.png){: .gallery }
 
 ## Problem
 
@@ -93,7 +93,7 @@ It is also necessary to mention that since the tolerance is too low, an auxiliar
 
 The behavior of the students is represented in the following diagram:
 
-[![Student Behavior]({attach}images/elevator-simulation/student-behavior-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/student-behavior.jpg }](/blog/images/elevator-simulation/student-behavior.jpg){: .gallery }
+[![Student Behavior]({attach}images/elevator-simulation/student-behavior-thumbnail.jpg){: .b-lazy width=1752 data-src=/blog/images/elevator-simulation/student-behavior.jpg }](/blog/images/elevator-simulation/student-behavior.jpg){: .gallery }
 
 ## Model
 
@@ -130,7 +130,7 @@ On the other hand, the elevator also has its own variables, these variables can 
 
 The state machine of this agent is the following:
 
-[![Elevator State Machine]({attach}images/elevator-simulation/elevator-state-machine-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/elevator-state-machine.jpg }](/blog/images/elevator-simulation/elevator-state-machine.jpg){: .gallery }
+[![Elevator State Machine]({attach}images/elevator-simulation/elevator-state-machine-thumbnail.jpg){: .b-lazy width=1374 data-src=/blog/images/elevator-simulation/elevator-state-machine.jpg }](/blog/images/elevator-simulation/elevator-state-machine.jpg){: .gallery }
 
 Where there are two main states:
 
@@ -153,7 +153,7 @@ The variables of this agent are:
 
 The state machine of the students is the following:
 
-[![Student State Machine]({attach}images/elevator-simulation/pedestrian-state-machine-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/pedestrian-state-machine.jpg }](/blog/images/elevator-simulation/pedestrian-state-machine.jpg){: .gallery }
+[![Student State Machine]({attach}images/elevator-simulation/pedestrian-state-machine-thumbnail.jpg){: .b-lazy width=1346 data-src=/blog/images/elevator-simulation/pedestrian-state-machine.jpg }](/blog/images/elevator-simulation/pedestrian-state-machine.jpg){: .gallery }
 
 Each student has 3 possible states:
 
@@ -167,17 +167,17 @@ Once everything is set up in the software, a set of experiments are run and then
 
 Among the five alternatives, it was necessary to identify which were the worsts, so both the average length and the average waiting time were calculated, each with its confidence interval. Resulting in the following:
 
-[![Length of Queue]({attach}images/elevator-simulation/stats-01-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/stats-01.png }](/blog/images/elevator-simulation/stats-01.png){: .gallery }
+[![Length of Queue]({attach}images/elevator-simulation/stats-01-thumbnail.png){: .b-lazy width=1054 data-src=/blog/images/elevator-simulation/stats-01.png }](/blog/images/elevator-simulation/stats-01.png){: .gallery }
 
-[![Waiting Time]({attach}images/elevator-simulation/stats-02-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/stats-02.png }](/blog/images/elevator-simulation/stats-02.png){: .gallery }
+[![Waiting Time]({attach}images/elevator-simulation/stats-02-thumbnail.png){: .b-lazy width=1039 data-src=/blog/images/elevator-simulation/stats-02.png }](/blog/images/elevator-simulation/stats-02.png){: .gallery }
 
 Looking at the confidence interval of the waiting time, it is evident that FIFO and ALT2 were the worst and the other 3 options are quite similar. That's why Ranking and Selection was used to discern which was the best, increasing the sample size and the final result was the following (now the % of people leaving the queue is added):
 
-[![Length of Queue]({attach}images/elevator-simulation/stats-03-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/stats-03.png }](/blog/images/elevator-simulation/stats-03.png){: .gallery }
+[![Length of Queue]({attach}images/elevator-simulation/stats-03-thumbnail.png){: .b-lazy width=928 data-src=/blog/images/elevator-simulation/stats-03.png }](/blog/images/elevator-simulation/stats-03.png){: .gallery }
 
-[![Waiting Time]({attach}images/elevator-simulation/stats-04-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/stats-04.png }](/blog/images/elevator-simulation/stats-04.png){: .gallery }
+[![Waiting Time]({attach}images/elevator-simulation/stats-04-thumbnail.png){: .b-lazy width=928 data-src=/blog/images/elevator-simulation/stats-04.png }](/blog/images/elevator-simulation/stats-04.png){: .gallery }
 
-[![Leaving the Queue]({attach}images/elevator-simulation/stats-05-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/stats-05.png }](/blog/images/elevator-simulation/stats-05.png){: .gallery }
+[![Leaving the Queue]({attach}images/elevator-simulation/stats-05-thumbnail.png){: .b-lazy width=928 data-src=/blog/images/elevator-simulation/stats-05.png }](/blog/images/elevator-simulation/stats-05.png){: .gallery }
 
 ## Demo
 
@@ -214,28 +214,28 @@ The following are some screenshots of the running model
 
 ### Main Screen
 
-[![Main Screen]({attach}images/elevator-simulation/simulation-part1-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/simulation-part1.jpg }](/blog/images/elevator-simulation/simulation-part1.jpg){: .gallery }
+[![Main Screen]({attach}images/elevator-simulation/simulation-part1-thumbnail.jpg){: .b-lazy width=1439 data-src=/blog/images/elevator-simulation/simulation-part1.jpg }](/blog/images/elevator-simulation/simulation-part1.jpg){: .gallery }
 
 ### Elevator Control Panel
 
-[![Elevator Panel]({attach}images/elevator-simulation/simulation-part2-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/simulation-part2.jpg }](/blog/images/elevator-simulation/simulation-part2.jpg){: .gallery }
+[![Elevator Panel]({attach}images/elevator-simulation/simulation-part2-thumbnail.jpg){: .b-lazy width=1440 data-src=/blog/images/elevator-simulation/simulation-part2.jpg }](/blog/images/elevator-simulation/simulation-part2.jpg){: .gallery }
 
 ### Student Behavior
 
-[![Student Behavior]({attach}images/elevator-simulation/simulation-part3-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/simulation-part3.jpg }](/blog/images/elevator-simulation/simulation-part3.jpg){: .gallery }
+[![Student Behavior]({attach}images/elevator-simulation/simulation-part3-thumbnail.jpg){: .b-lazy width=1440 data-src=/blog/images/elevator-simulation/simulation-part3.jpg }](/blog/images/elevator-simulation/simulation-part3.jpg){: .gallery }
 
 ### 2D View
 
-[![2D View]({attach}images/elevator-simulation/simulation-part4-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/simulation-part4.jpg }](/blog/images/elevator-simulation/simulation-part4.jpg){: .gallery }
+[![2D View]({attach}images/elevator-simulation/simulation-part4-thumbnail.jpg){: .b-lazy width=1441 data-src=/blog/images/elevator-simulation/simulation-part4.jpg }](/blog/images/elevator-simulation/simulation-part4.jpg){: .gallery }
 
 ### 2D View with Flow Density
 
-[![2D View with Flow Density]({attach}images/elevator-simulation/simulation-part5-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/simulation-part5.jpg }](/blog/images/elevator-simulation/simulation-part5.jpg){: .gallery }
+[![2D View with Flow Density]({attach}images/elevator-simulation/simulation-part5-thumbnail.jpg){: .b-lazy width=1439 data-src=/blog/images/elevator-simulation/simulation-part5.jpg }](/blog/images/elevator-simulation/simulation-part5.jpg){: .gallery }
 
 ### Waiting Time Histogram
 
-[![Waiting Time Histogram]({attach}images/elevator-simulation/simulation-part6-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/simulation-part6.jpg }](/blog/images/elevator-simulation/simulation-part6.jpg){: .gallery }
+[![Waiting Time Histogram]({attach}images/elevator-simulation/simulation-part6-thumbnail.jpg){: .b-lazy width=1440 data-src=/blog/images/elevator-simulation/simulation-part6.jpg }](/blog/images/elevator-simulation/simulation-part6.jpg){: .gallery }
 
 ### Number of people vs Time (Multiple graphs)
 
-[![Number of people multi-graph]({attach}images/elevator-simulation/simulation-part7-thumbnail.jpg){: .b-lazy width=2000 data-src=/blog/images/elevator-simulation/simulation-part7.jpg }]./blog/images/elevator-simulation/simulation-part7.jpg){: .gallery }
+[![Number of people multi-graph]({attach}images/elevator-simulation/simulation-part7-thumbnail.jpg){: .b-lazy width=1439 data-src=/blog/images/elevator-simulation/simulation-part7.jpg }](./blog/images/elevator-simulation/simulation-part7.jpg){: .gallery }

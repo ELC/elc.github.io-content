@@ -8,7 +8,7 @@ Lang: en
 headerimage: https://elc.github.io/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png
 level: Begginer
 
-[![Flask_pyinstaller_logo]({attach}images/flask_pyinstaller/flask-pyinstaller_headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png }](/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png){: .gallery }
+[![Flask_pyinstaller_logo]({attach}images/flask_pyinstaller/flask-pyinstaller_headerimage-thumbnail.png){: .b-lazy width=1401 data-src=/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png }](/blog/images/flask_pyinstaller/flask-pyinstaller_headerimage.png){: .gallery }
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 

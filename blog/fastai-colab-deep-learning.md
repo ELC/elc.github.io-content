@@ -9,7 +9,7 @@ level: Begginer
 headerimage: https://elc.github.io/blog/images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage.png
 jupyternotebook: https://gist.github.com/ELC/756040fe84a8bb3d14c59b0e997c84e9
 
-[![FastAi Header Image]({attach}images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage.png }](/blog/images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage.png){: .gallery }
+[![FastAi Header Image]({attach}images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage-thumbnail.png){: .b-lazy width=1246 data-src=/blog/images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage.png }](/blog/images/fast-colab-deep-learning/fast-colab-deep-learning_headerimage.png){: .gallery }
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 

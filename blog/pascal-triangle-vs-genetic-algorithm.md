@@ -15,7 +15,7 @@ Inspired by a Wikipedia article, I replicate a way to visualize the Pascal Trian
 
 Once I came accross this [wikipedia article about Pascal Triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle){: target="_blank"}, there you can find the following animation:
 
-![pascal_triangle_animation](https://upload.wikimedia.org/wikipedia/commons/6/66/Pascal%27s_Triangle_animated_binary_rows.gif){: .narrow }
+![pascal_triangle_animation](https://upload.wikimedia.org/wikipedia/commons/6/66/Pascal%27s_Triangle_animated_binary_rows.gif){: .narrow width=576}
 
 I found it interesting to replicate this very animation in Python, just as a challenge and maybe later I would find a useful application for it. At [**the end**](#notebook) I will add a link to the jupyter notebook so you can experiment your own variants. If you want, you can jump directly to the [**genetic algorithm application**](#application-in-genetic-algorithms).
 

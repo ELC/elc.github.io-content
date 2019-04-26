@@ -7,7 +7,7 @@ Authors: Ezequiel Leonardo Castaño
 Lang: en
 headerimage: https://elc.github.io/blog/images/times_tables/times-tables-headerimage.png
 
-[![Times Table Header Image]({attach}images/times_tables/times-tables-headerimage-thumbnail.png){: .b-lazy width=2000 data-src=/blog/images/times_tables/times-tables-headerimage.png }](/blog/images/times_tables/times-tables-headerimage.png){: .gallery }
+[![Times Table Header Image]({attach}images/times_tables/times-tables-headerimage-thumbnail.png){: .b-lazy width=1120 data-src=/blog/images/times_tables/times-tables-headerimage.png }](/blog/images/times_tables/times-tables-headerimage.png){: .gallery }
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
@@ -23,7 +23,7 @@ These animations were made using Wolfram Mathematica, but in Python, there are e
 
 This is the results built with Python:
 
-![times-table-2-100]({attach}images/times_tables/times-tables-2-100-thumbnail.png){: .narrow .b-lazy width=900px data-src=/blog/images/times_tables/times-tables-2-100.png }
+![times-table-2-100]({attach}images/times_tables/times-tables-2-100-thumbnail.png){: .narrow .b-lazy width=613 data-src=/blog/images/times_tables/times-tables-2-100.png }
 
 Now I will examine the code used to produced the previous image and also how to create animations, there will be a [**link to a online notebook**](#notebook) in case you want to experiment yourself. In this post I will show you several scenarios:
 
