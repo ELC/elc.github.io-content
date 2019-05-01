@@ -1,5 +1,5 @@
 Title: Guía introductoria de Git con Interfaz Visual
-Date: 2019-01-30
+Date: 2019-04-24
 Category: Software Engineer
 Tags: Git, GUI, GitKraken
 Slug: git-guide-with-visual-interface

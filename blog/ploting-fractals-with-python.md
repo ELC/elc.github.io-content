@@ -1,5 +1,5 @@
 Title: Plotting Fractals Step by Step with Python
-Date: 2018-10-14
+Date: 2018-11-04
 Category: Programming
 Tags: Python, Fractals, Turtle
 Slug: plotting-fractals-step-by-step-with-python
