@@ -1,529 +1,532 @@
-Title: Guía introductoria de Git con Interfaz Visual
+Title: Introductory Guide to Git with Visual Interface
 Date: 2019-04-24
 Category: Software Engineer
 Tags: Git, GUI, GitKraken
 Slug: git-guide-with-visual-interface
 Authors: Ezequiel Leonardo Castaño
-Lang: es
+Lang: en
 Headerimage: https://elc.github.io/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png
 
 [![Git Tutorial Header Image]({attach}images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage-thumbnail.png){: width=1365 .b-lazy width=2000 data-src=/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png }](/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png ){: .gallery}
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
-Siendo estudiante de ingeniería en sistemas, en sucesivas oportunidades me encontré con sistemas de control de versiones, algunas veces desde materias relacionadas con la programación y otras en materias relacionadas con la ingeniería de software.
+As a Systems Engineering student, on successive occasions, I came across version control systems (VCS for short), sometimes from subjects related to programming and other in subjects related to software engineering.
 
-Recordando que cuando yo tuve que aprender todos estos conceptos (especialmente como funciona Git), pasé por varias dificultades, decidí hacer una guía introductoria con conceptos básicos de Git y cómo utilizarlo mediante un software con interfaz visual.
+Remembering that when I had to learn all these concepts (especially how Git works), I went through several difficulties, I decided to make an introductory guide with basic concepts of Git and how to use it through software with a visual interface.
 
 <!-- PELICAN_END_SUMMARY -->
 
-Personalmente, pienso que para empezar, utilizar una interfaz visual puede ser útil y didáctico, sin embargo, comparto la idea de que entender como funciona la herramienta desde la consola es fundamental para una comprensión profunda de los conceptos.
+Personally, I think that to begin with, using a visual interface can be useful and didactic, however, I share the idea that understanding how the tool works from the console is fundamental for a deeper understanding of the concepts.
 
-En este tutorial se verán de manera resumida las características principales de un software particular que personalmente pienso que es el mejor, llamado GitKraken. Esta guía no pretende en ninguna medida ser exhaustiva ni detallada en todas las funciones de GitKraken, sino dar al usuario el conocimiento básico para que pueda usar la herramienta y poco a poco pueda ir explorando las demás características por su cuenta.
+This tutorial will summarize the main features of a particular software called GitKraken, that I personally think is the best. This guide isn't intended in any way to be exhaustive or detailed in all the functions of GitKraken, it will rather give the user the basic knowledge so that they can use the tool and gradually explore the other features on their own.
 
-[Al final del documento](#caracteristicas-adicionales) se detallan algunas de las funcionalidades avanzadas para que el usuario pueda conocer que otras características tiene Git.
+[At the end of the document](#additional-features) some of the advanced features of Git are detailed so that the user can know what those are and what is their purpose.
 
-A continuación dejo el índice de contenidos en caso de que se desee saltear a alguna sección determinada
+This guide have independent sections so I leave the table of contents below in case you want to skip to a particular section
 
-- [Introducción a Git](#introduccion-a-git)
-    - [Areas en Git](#areas-en-git)
+- [Introduction to Git](#introduction-to-git)
+    - [Areas in Git](#areas-in-git)
     - [Stage vs Commit](#stage-vs-commit)
-    - [Repositorios remotos](#repositorios-remotos)
+    - [Remote Repositories](#remote-repositories)
     - [Branches](#branches)
-    - [Software adicional](#software-adicional)
-- [Fork de un repositorio](#fork-de-un-repositorio)
-    - [1. Encontrar el repositorio original](#1-encontrar-el-repositorio-original)
-    - [2. Realizar el Fork](#2-realizar-el-fork)
-- [Clonar un repositorio](#clonar-un-repositorio)
-    - [1. Crear un repositorio](#1-crear-un-repositorio)
-    - [1 (Alternativa). Crear un repositorio](#1-alternativa-crear-un-repositorio)
-    - [2. Completar la información necesaria](#2-completar-la-informacion-necesaria)
-    - [3. Obtener URL del Repositorio](#3-obtener-url-del-repositorio)
-    - [4. Abrimos la ventana de Clone dentro del GitKraken](#4-abrimos-la-ventana-de-clone-dentro-del-gitkraken)
-    - [4 (Alternativa 1). Abrimos la ventana de Clone dentro del GitKraken](#4-alternativa-1-abrimos-la-ventana-de-clone-dentro-del-gitkraken)
-    - [4 (Alternativa 2). Abrimos la ventana de Clone dentro del GitKraken](#4-alternativa-2-abrimos-la-ventana-de-clone-dentro-del-gitkraken)
-    - [5. Pegamos la URL](#5-pegamos-la-url)
-    - [5. Notificación de Éxito](#5-notificacion-de-exito)
-- [Abrir un repositorio](#abrir-un-repositorio)
-    - [1. Ventana de Open](#1-ventana-de-open)
-    - [1 (Alternativa 1). Ventana de Open](#1-alternativa-1-ventana-de-open)
-    - [1 (Alternativa 2). Ventana de Open](#1-alternativa-2-ventana-de-open)
-    - [2. Seleccionar el repositorio](#2-seleccionar-el-repositorio)
-    - [3. Seleccionar la carpeta](#3-seleccionar-la-carpeta)
-- [Elementos de la interfaz](#elementos-de-la-interfaz)
-    - [Interfaz básica](#interfaz-basica)
-    - [Arbol de Commits y Branches](#arbol-de-commits-y-branches)
-- [Añadir Cambios](#anadir-cambios)
-- [Sincronización con repositorios remotos](#sincronizacion-con-repositorios-remotos)
-    - [Descargar los cambios del repositorio remoto](#descargar-los-cambios-del-repositorio-remoto)
-    - [Subir los cambios al repositorio remoto](#subir-los-cambios-al-repositorio-remoto)
-    - [Ejemplo de Fetch y Pull](#ejemplo-de-fetch-y-pull)
-- [Trabajo en múltiples branches](#trabajo-en-multiples-branches)
-    - [Crear Branch](#crear-branch)
-    - [Unir Branches (Merge)](#unir-branches-merge)
-    - [Borrar Branch](#borrar-branch)
+    - [Additional Software](#additional-software)
+- [Fork of a repository](#fork-of-a-repository)
+    - [1. Find the original repository](#1-find-the-original-repository)
+    - [2. Perform Fork](#2-perform-fork)
+- [Clone a repository](#clone-a-repository)
+    - [1. Create a repository](#1-create-a-repository)
+    - [1 (Alternative). Create a repository](#1-alternative-create-a-repository)
+    - [2. Complete the necessary information](#2-complete-the-necessary-information)
+    - [3. Get Repository URL](#3-get-repository-url)
+    - [4. We open the window of Clone inside the GitKraken](#4-we-open-the-window-of-clone-inside-the-gitkraken)
+    - [4 (Alternative 1). We open the Clone window inside the GitKraken](#4-alternative-1-we-open-the-clone-window-inside-the-gitkraken)
+    - [4 (Alternative 2). We open the Clone window inside the GitKraken](#4-alternative-2-we-open-the-clone-window-inside-the-gitkraken)
+    - [5. Paste the URL](#5-paste-the-url)
+    - [5. Notification of Success](#5-notification-of-success)
+- [Open a repository](#open-a-repository)
+    - [1. Open Window](#1-open-window)
+    - [1 (Alternative 1). Open Window](#1-alternative-1-open-window)
+    - [1 (Alternative 2). Open Window](#1-alternative-2-open-window)
+    - [2. Select the repository](#2-select-the-repository)
+    - [3. Select the folder](#3-select-the-folder)
+- [Interface Elements](#interface-elements)
+    - [Basic interface](#basic-interface)
+    - [Commits and Branches Tree](#commits-and-branches-tree)
+- [Add Changes](#add-changes)
+- [Synchronization with remote repositories](#synchronization-with-remote-repositories)
+    - [Download changes from the remote repository](#download-changes-from-the-remote-repository)
+    - [Upload changes to the remote repository](#upload-changes-to-the-remote-repository)
+    - [Example of Fetch and Pull](#example-of-fetch-and-pull)
+- [Working in multiple branches](#working-in-multiple-branches)
+    - [Create Branch](#create-branch)
+    - [Join Branches (Merge)](#join-branches-merge)
+    - [Erase Branch](#erase-branch)
 - [Pull Requests](#pull-requests)
-- [Características Adicionales](#caracteristicas-adicionales)
+- [Additional Features](#additional-features)
 
-## Introducción a Git
+## Introduction to Git
 
-Git es una tecnología de sistema de control de versiones (VCS), surge como alternativa a SVN, Hg y TFS y su propósito original fue controlar las versiones del kernel de Linux.
+Git is a version control system (VCS) technology, it arises as an alternative to SVN, Hg, and TFS and its original purpose was to control the Linux kernel versions.
 
-Antes de comenzar con el vocabulario específico es necesario explicar por qué se debe usar git u otro VCS.
+Before starting with the specific vocabulary it is necessary to explain why you **should** (many people would say *must*) use VCS (git or other).
 
-Problema: Al estar trabajando en un proyecto, los archivos sufren múltiples transformaciones, esto es especialmente notorio en proyectos de diseño gráfico y de desarrollo de software. Con el avance del tiempo, es normal que se detecten errores y se desee volver a una instancia anterior, muchas veces lo que hace en este caso es hacer copias de respaldo, sin embargo, este enfoque es poco práctico en entornos con cambios constantes y al aumentar la cantidad de archivos y crece de manera sustancial cuando se trabaja en equipos grandes.
+**Problem**: When working on a project, files undergo multiple transformations, this is especially noticeable in graphic design and software development projects. As time goes by, it's normal to detect errors and then returning to a previous stage, what is often done to accomplish this is to create periodic backups, however, this approach is impractical in environments with constant changes and increasing number of files, this problem also grows substantially when working in large teams.
 
-Solución de los VCS: Cada sistema propone una solución distinta, en el caso de Git siempre se hablan de cambios a nivel de línea, es decir, un archivo cambia cuando una de sus líneas cambias y si se realizan varios cambios en una misma línea, cuenta como un único cambio. Asimismo, si se realiza un cambio en varias líneas en un mismo archivo, cuentan como varios cambios, tantos como líneas se hayan modificado. Siempre que se hable de cambios se hará con este sentido, cambios en líneas. Esto hace que Git sea sumamente útil para archivos de texto con múltiples líneas (como los archivos fuente de un lenguaje de programación) y poco aplicable a archivos que no siguen este formato (como por ejemplo, los ejecutables, imágenes, etc.)
+**Solution**: Each VCS proposes a different solution, in the case of Git, when talking about changes, it is meant to be a change at line level, ie. a file changes when one of its lines changes and if several changes are made on the same line, counts as a single change. Likewise, if several lines are changed in the same file, it is considered as many changes as lines were modified. Whenever we talk about changes, we will refer to this definition of change, at a line level. This makes Git extremely useful for text files with multiple lines (such as the source files of a programming language) and little applicable to files that don't follow this format (such as executable files, images, etc.).
 
-### Areas en Git
+### Areas in Git
 
-Git trabaja principalmente separando los cambios en 3 áreas:
+Git works mainly separating the changes into 3 areas:
 
-1. Working Area: Son los archivos con los que uno está actualmente trabajando.
-1. Staging Area: Son los próximos cambios que serán guardados en el repositorio.
-1. Repository: Son los archivos guardados, generalmente local y en internet.
+1. Working Area: These are the files you are currently working with.
+1. Staging Area: These are the next changes that will be saved in the repository.
+1. Repository: These are the saved files, usually local and on the internet.
 
-Así mismo, para pasar de un área a otro, existen distintas transiciones. Para pasar del Working Area al Staging Area se realiza un "Stage" y para pasar del Staging Area al repository se realiza un “Commit”
+Also, to move from one area to another, there are different transitions. To pass from the Working Area to the Staging Area a **`Stage`** is made and to pass from the Staging Area to the repository a **`Commit`** is made.
 
 ### Stage vs Commit
 
-En un proceso, un usuario trabaja con sus archivos en el Working Area, una vez que haya terminado los cambios deseados, puede seleccionar exactamente que cambios desea agregar al repositorio, estos cambios son elegidos y se "mueven" a la Staging Area (el término mover en este caso es engañoso ya que en el sistema local los archivos no sufren ninguna modificación). Una vez que todos los cambios hayan sido movidos al Staging Area se puede realizar un “Commit”, el commit consiste básicamente en “empaquetar todo lo que esté en el Staging Area, asociarle un título y una descripción y subirlo al repositorio”.
+The typical process is as follows: the user works with their files in the Working Area, once he has finished the desired changes, he can select exactly which changes he wants to add to the repository, these changes are chosen and *"moved"* to the Staging Area (the term move in this case is misleading because in the local system the files do not undergo any modification). Once all the changes have been moved to the Staging Area you can make a **`commit`**, the commit basically consists of *"packing everything that is in the Staging Area, associating a title and a description and uploading it to the repository"*.
 
-Al principio esta forma de trabajo podría dar la impresión de que la Staging Area no cumple ninguna función, sin embargo cobra relevancia especialmente cuando uno quiere realizar un commit con un subconjunto de todos los cambios hechos, por ejemplo, se realizaron cambios en la interfaz gráfica y en la base de datos y uno quiere que cada "paquete de cambios" esté en un commit distinto, para eso, primero movería al Staging Area los cambios de la base de datos, haría el commit y luego repetiría el proceso con los cambios de la interfaz gráfica.
+At first this way of working could give the impression that the Staging Area does not fulfill any function, however it is especially relevant when one wants to make a commit with a subset of all the changes made, for example, if changes were made in the graphical interface and in the database but one wants each "package of changes" to be in a different commit, for that, first, the user would move to the Staging Area the changes related to the database, then they would make the commit and finally they would repeat the process with the changes related to graphical interface.
 
-El usuario no está obligado a realizar un commit con todos los cambios. OJO: Uno podría mover al Staging Area sólo un subconjunto de las líneas modificadas en un archivo, es por eso que es importante recordar que el término "cambio" hace referencia a líneas y no a archivos.
+**NOTE:** The user is not required to commit all the changes.
 
-Una vez realizado el commit, los cambios quedan definitivamente guardados en el repositorio, el repositorio siempre existe en un nivel local en la máquina del usuario y adicionalmente suele utilizarse una copia de manera remota en algún proveedor que lo permita, los más comunes son GitHub, Gitlab y Bitbucket.
+**WARNING**: One could move to the Staging Area only a subset of the modified lines in a file, that's why it's important to remember that the term "change" refers to lines and not to files.
 
-### Repositorios remotos
+Once the commit is made, the changes are definitively saved in the repository, the repository always exists at a local level on the user's machine and additionally, a copy is usually used remotely in some online provider, the most common are GitHub, Gitlab and Bitbucket.
 
-Cuando uno trabaja con un repositorio remoto, surgen dos términos importantes: Pull (Tirar), Push (Empujar), Clone. Como sugieren los nombres, Pull trae los cambios del repositorio remoto y los aplica en el repositorio local, Push sube los cambios del repositorio local al repositorio remoto. Clone, por otro lado, copia el repositorio remoto y crea uno local, esta operación sólo se realiza una vez (No confundir con Fork).
+### Remote Repositories
 
-**Fork vs Clone:**  Un Fork es una copia independiente de un repositorio. Cuando uno realiza un Clone, se tiene la intención de trabajar en ese repositorio, cuando uno realiza un Fork se tiene la intención de realizar una variante e independizarse (hasta cierto punto) del repositorio original. Hacer un Fork reemplaza el proceso de creación del repositorio y para hacerlo uno debe ir al repositorio original
+When you work with a remote repository, three important terms arise: Pull, Push, Clone. As the names suggest, Pull brings the changes from the remote repository and applies them to the local repository, Push uploads the changes from the local repository to the remote repository and Clone, on the other hand, copies the remote repository and creates a local one, this operation is only done once (not to be confused with Fork).
 
-NOTA: Siempre y cuando los cambios no se solapen (es decir que dos usuarios no hayan modificado la misma línea), el mismo sistema Git se encarga de combinarlos. Cuando dos o más usuarios modifican la misma línea del mismo archivo es necesaria una "Resolución de conflictos". Es un tema avanzado sin embargo puede requerirse a diario en entornos con múltiples programadores, aquellos que utilicen git como únicos usuarios no deberían preocuparse por este aspecto.
+**Fork vs Clone:** A Fork is an independent copy of a repository. When one makes a Clone, one intends to work in their local computer and then upload the changes to the original repository, when one makes a Fork one intends to make a custom variant and become independent (to a certain extent) from the original repository. Making a Fork replaces the process of creating the repository and to do so one must go to the original repository.
+
+**NOTE:** As long as the changes do not overlap (i.e. two users have not modified the same line), the same Git system takes care of combining them. When two or more users modify the same line of the same file, a "Conflict Resolution" is necessary. It is an advanced topic however it can be required daily in environments with multiple programmers, those who use git as the only users should not worry about this aspect.
 
 ### Branches
 
-El último concepto importante son las "branches", esta es la clave de la utilidad de Git, dentro de un repositorio uno puede tener múltiples branches (ramas en español), cada branch permite tener una Working Area independiente, esto se hace para mantener los cambios aislados, si bien el proceso de Stage-Commit es el mismo que el mencionado anteriormente, uno puede desear experimentar una nueva característica pero sin riesgos que se pierda o mezcle con el código que ya funciona correctamente, para eso se hace un nuevo branch y en el caso de éxito, se puede unir (merge en inglés) a la branch principal. Existen múltiples criterios para la creación de branches, algunas organizaciones utilizan una branch por características, otras una branch por desarrollador, etc. A la forma de utilizar las branches se la suele llamar “Git Strategy” o “Git Workflow”, siendo considerada una buena práctica tener un esquema simplificado con las siguientes branches:
+The last important concept is the **`branches`**, this is the key concept of Git, within a repository one can have multiple branches, each branch allows to have an independent Working Area, this is done to keep the changes isolated, although the Stage-Commit process is the same as the one mentioned above, one may want to experiment with a new feature but without risking the rest of the codebase that already works correctly. In the case the experimentation is successful, it can be joined (merge) to the main branch. There are multiple criteria for the creation of branches, some organizations use a branch by features, others a branch by developers, etc. The way to use the branches is usually called "Git Strategy" or "Git Workflow", is considered good practice to have a simplified scheme with the following branches:
 
-- Master: Donde se tiene el código de la última versión estable
-- Release: Donde se concentran todos los cambios que estarán en la próxima versión y se realizan las pruebas finales
-- Develop: Donde se tiene el código experimental y que aún está siendo probado
-- Hot Fix: Donde se reparan errores detectados a posteriori (fuera de las pruebas)
-- Features: Una rama independiente por cada característica que se le quiera agregar al software.
+- Master: Where you have the code of the latest stable version
+- Release: Where all the changes that will be in the next version are concentrated and the final tests are carried out.
+- Develop: Where you have experimental code that is still being tested
+- Hot Fix: Where errors detected a posteriori are repaired (outside the tests)
+- Features: An independent branch for each feature you want to add to the software.
 
-Lo anterior puede visualizarse mucho mejor en una imagen. Cada flecha indica una operación de unión (merge)
+This can be visualized much better in an image. Each arrow indicates a *merge* operation.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_0-thumbnail.png){: .narrow width=658 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_0.png }](/blog/images/git-guide-with-visual-interface/image_0.png ){: .gallery}
 
-### Software adicional
+### Additional Software
 
-Git es una aplicación de consola, sin embargo, existen múltiples softwares con interfaz gráfica construidos sobre la aplicación de consola base. En este caso vamos a detallar el uso típico de uno de los más populares: GitKraken
+Git is a command line application (CLI), however, there are multiple softwares with a graphical interface built on top of this console application. In this case, we are going to talk about how to use one of the most popular: GitKraken.
 
-Por cuestiones de simplicidad, se asume que el usuario tiene correctamente instalado el software Gitkraken y que está listo para usarse, por lo tanto no se detallan pasos de instalación y configuración inicial.
+For the sake of simplicity, it is assumed that the user has correctly installed the Gitkraken software and that it is ready to use, therefore no initial installation and configuration steps are detailed.
 
-## Fork de un repositorio
+## Fork of a repository
 
-Como se mencionó, un fork es una copia independiente de un repositorio. El repositorio ya tiene su propio creador e historial de branches y commits pero uno desea hacer una copia independiente. Este procedimiento puede variar de un proveedor de repositorios remoto a otro, a continuación se muestra el procedimiento para hacer esto en Github
+As mentioned, a fork is a stand-alone copy of a repository. The repository already has its own creator and history of branches and commits but one makes a separated copy. This procedure can vary from one remote repository provider to another, here is the procedure for doing this in Github
 
-### 1. Encontrar el repositorio original
+### 1. Find the original repository
 
-Primero buscamos en Github el repositorio del cual queremos hacer un Fork, en este caso se utilizará el repositorio de Manim, el motor de animaciones creado  por 3Blue1Brown
+First, we look in Github the repository from which the Fork is wanted, in this case, the Manim repository will be used, the animation engine created by 3Blue1Brown.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_1-thumbnail.png){: width=1280 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_1.png }](/blog/images/git-guide-with-visual-interface/image_1.png ){: .gallery}
 
-Como se puede ver en la imagen, el creador del repositorio es 3b1b y el usuario logeado actualmente es ELC por lo que el repositorio no es propio.
+As you can see in the image, the repository creator is 3b1b and the currently logged user is ELC so the owner and the creator are different users.
 
-### 2. Realizar el Fork
+### 2. Perform Fork
 
-Para hacer un fork, basta con hacer clic en el botón Fork en la parte superior
+To make a fork, simply click on the Fork button at the top.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_2-thumbnail.png){: .narrow width=922 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_2.png }](/blog/images/git-guide-with-visual-interface/image_2.png ){: .gallery}
 
-Inmediatamente después, GitHub nos redireccionará a una pantalla que nos indica que se está creando el Fork
+Immediately afterward, GitHub will redirect us to a screen that tells us that the Fork is being created.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_3-thumbnail.png){: width=1268 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_3.png }](/blog/images/git-guide-with-visual-interface/image_3.png ){: .gallery}
 
-Una vez finalizado el proceso, se creará un repositorio homónimo en la cuenta logeada
+Once the process is finished, a repository of the same name will be created in the logged user account.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_4-thumbnail.png){: .narrow width=924 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_4.png }](/blog/images/git-guide-with-visual-interface/image_4.png ){: .gallery}
 
-Como se puede ver en la imagen anterior, ahora el repositorio pertenece a ELC, con una pequeña leyenda debajo que indica que el repositorio es un Fork. Una muestra de que este repositorio es independiente y pertenece a la cuenta logeada es que aparece una nueva sección "Settings" que de otra forma no aparecería 
+As you can see in the image above, the repository now belongs to **`ELC`**, with a small label below that indicates that the repository is a Fork. A sign that this repository is independent and belongs to the logged user is that there is a new section **"Settings"** that otherwise would not appear.
 
-**NOTA:**  Esta sección podría aparecer si uno fuera colaborador del repositorio, sin embargo esa característica puede variar de proveedor en proveedor y no se detallará en esta guía.
+**NOTE:** This section may appear if you are a contributor to the repository, however that feature may vary from provider to provider and will not be detailed in this guide.
 
-Una última confirmación podría ser el conteo de Forks que es un número común para todos los Forks.
+One last confirmation could be the Forks count which is a common number for all Forks.
 
-A partir de ahora el avance de este nuevo repositorio puede ser completamente independiente del original.
+From now on the evolution of this new repository can be completely independent of the original.
 
-**IMPORTANTE:** ¿Cúal es la diferencia entre hacer un fork y crear un repositorio idéntico con los mismos archivos? Al realizar un Fork uno tiene una historia de commits compartida con el repositorio original, de forma tal que es posible combinar cambios nuevos del original a cualquiera de los Forks (merge) y de los Forks de nuevo al original (Pull Request).
+**IMPORTANT:**What is the difference between making a fork and creating an identical repository with the same files? When doing a Fork you have a common commit history with the original repository, so it is possible to combine new changes from the original to any of the Forks (merge) and from the Forks back to the original (Pull Request).
 
-El procedimiento alternativo de crear un repositorio desde cero así como clonarno desde GitKraken se detalla en la siguiente sección
+The alternative procedure of creating a repository from scratch as well as cloning from GitKraken is detailed in the following section
 
-## Clonar un repositorio
+## Clone a repository
 
-El enfoque más tradicional es crear primeramente el repositorio en el servidor remoto (Github o similar) y luego clonarlo. En este caso vamos a crear un repositorio llamado "gitkraken-tutorial" en Github.
+The most traditional approach is to first create the repository on the remote server (Github or similar) and then clone it. In this case, we are going to create a repository called "gitkraken-tutorial" in Github.
 
-### 1. Crear un repositorio
+### 1. Create a repository
 
-Esto puede hacerse desde la página principal de Github
+This can be done from the Github homepage.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_5-thumbnail.png){: width=1279 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_5.png }](/blog/images/git-guide-with-visual-interface/image_5.png ){: .gallery}
 
-### 1 (Alternativa). Crear un repositorio
+### 1 (Alternative). Create a repository
 
-O desde la sección de repositorios
+Or from the repository section.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_6-thumbnail.png){: width=1279 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_6.png }](/blog/images/git-guide-with-visual-interface/image_6.png ){: .gallery}
 
-### 2. Completar la información necesaria
+### 2. Complete the necessary information
 
-**IMPORTANTE:** Para poder clonar nuestro repositorio debe estar "Inicializado" por lo tanto, es indispensable tildar la opción “Initialize this repository with a README”. Las opciones de gitignore permiten a git ignorar ciertos archivos (archivos temporales, caches, etc.) y la licencia permite elegir una licencia estándar entre un listado.
+**IMPORTANT:** In order to clone, our repository must be "Initialized" therefore, it is essential to check the option *"Initialize this repository with a README"*. The gitignore options allow git to ignore certain files (temporary files, caches, etc.) and the license allows you to choose a standard license from a list.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_7-thumbnail.png){: .narrow width=678 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_7.png }](/blog/images/git-guide-with-visual-interface/image_7.png ){: .gallery}
 
-### 3. Obtener URL del Repositorio
+### 3. Get Repository URL
 
-Para poder clonar el repositorio desde GitKraken pueden utilizarse dos perspectivas:
+Two perspectives can be used to clone the repository from GitKraken:
 
-1. Vincular la cuenta de GitHub con la de Gitkraken
-1. Utilizar la URL del repositorio
+1. Linking GitHub's account with Gitkraken's account
+1. Use the repository URL
 
-Todos los servicios de repositorios tienen una URL pública así que se tomará este enfoque por ser el más universal. Una vez seguido los pasos en las imágenes, la URL quedará copiada en el portapapeles.
+All git repository services attach a public URL to the repository, so this approach will be taken because it is common to all providers.
+
+Once you follow the steps in the images, the URL will be copied to the clipboard.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_8-thumbnail.png){: width=1277 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_8.png }](/blog/images/git-guide-with-visual-interface/image_8.png ){: .gallery}
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_9-thumbnail.png){: width=1277 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_9.png }](/blog/images/git-guide-with-visual-interface/image_9.png ){: .gallery}
 
-### 4. Abrimos la ventana de Clone dentro del GitKraken
+### 4. Open the window of Clone inside the GitKraken
 
-En el menú File, Seleccionar la opción "Clone Repo"
+In the File menu, select the option "Clone Repo".
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_10-thumbnail.png){: .narrow width=370 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_10.png }](/blog/images/git-guide-with-visual-interface/image_10.png ){: .gallery}
 
-### 4 (Alternativa 1). Abrimos la ventana de Clone dentro del GitKraken
+### 4 (Alternative 1). Open the Clone window inside the GitKraken
 
-En todo momento, se puede utilizar el botón que se encuentra en la esquina superior izquierda
+At any time, you can use the button located in the upper left corner.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_11-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_11.png }](/blog/images/git-guide-with-visual-interface/image_11.png ){: .gallery}
 
-A continuación, se deberá escoger la opción Clone
+Then choose the Clone option.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_12-thumbnail.png){: .narrow width=164 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_12.png }](/blog/images/git-guide-with-visual-interface/image_12.png ){: .gallery}
 
-### 4 (Alternativa 2). Abrimos la ventana de Clone dentro del GitKraken
+### 4 (Alternative 2). Open the Clone window inside the GitKraken
 
-En caso de no tener ningún repositorio abierto, puede accederse al menú directamente desde la pantalla de inicio
+If no repository is open, the menu can be accessed directly from the home screen.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_13-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_13.png }](/blog/images/git-guide-with-visual-interface/image_13.png ){: .gallery}
 
-### 5. Pegamos la URL
+### 5. Paste the URL
 
-Adicionalmente se puede detallar la ruta donde se clonará el repositorio y así como cambiar el nombre de la carpeta destino. Es recomendable tener una carpeta "Repositories" y clonar todos los repositorios allí.
+Additionally, you can detail the **`path`** where the repository will be cloned and change the name of the destination folder. It is recommended to have a *"Repositories"* folder and clone all repositories there.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_14-thumbnail.png){: .narrow width=796 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_14.png }](/blog/images/git-guide-with-visual-interface/image_14.png ){: .gallery}
 
-### 5. Notificación de Éxito
+### 5. Notification of Success
 
-Una vez clonado el repositorio deberá aparecer en la parte superior una notificación que detalla que la operación fue exitosa. Uno puede utilizar el botón "Open Now" para abrir el repositorio inmediatamente. En este caso no se hará para ilustrar como se abre un repositorio desde cero.
+Once the repository has been cloned, a notification should appear at the top saying that the operation was successful. One can use the "Open Now" button to open the repository immediately. In this case, it will not be done to illustrate how to open a repository from scratch.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_15-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_15.png }](/blog/images/git-guide-with-visual-interface/image_15.png ){: .gallery}
 
-## Abrir un repositorio
+## Open a repository
 
-Una vez clonado el repositorio es necesario abrirlo para empezar a trabajar.
+Once the repository has been cloned, it is necessary to open it in order to start working.
 
-**NOTA:** El repositorio podría haber sido inicializado en lugar de clonado pero este escenario es poco probable ya que luego se debería realizar una vinculación con el repositorio remoto. Por lo que por lo general se utiliza el enfoque planteado al principio, la inicialización de repositorios queda fuera del alcance de esta guía.
+**NOTE:** The repository could have been initialized instead of cloned but this scenario is unlikely as a link to the remote repository should then be made. As the approach outlined at the beginning is generally used, initialization of repositories is beyond the scope of this guide.
 
-### 1. Ventana de Open
+### 1. Open Window
 
-En el menú File, seleccionar la opción "Open Repo"
+In the File menu, select the option "Open Repo".
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_16-thumbnail.png){: .narrow width=368 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_16.png }](/blog/images/git-guide-with-visual-interface/image_16.png ){: .gallery}
 
-### 1 (Alternativa 1). Ventana de Open
+### 1 (Alternative 1). Open Window
 
-Adicionalmente puede utilizarse el ícono de la esquina superior izquierda
+In addition, the icon in the upper left corner can be used.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_17-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_17.png }](/blog/images/git-guide-with-visual-interface/image_17.png ){: .gallery}
 
-### 1 (Alternativa 2). Ventana de Open
+### 1 (Alternative 2). Open Window
 
-En caso de no tener ningún repositorio abierto, puede utilizarse el botón de la pantalla de inicio.
+If no repository is opened, you can use the start screen button.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_18-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_18.png }](/blog/images/git-guide-with-visual-interface/image_18.png ){: .gallery}
 
-### 2. Seleccionar el repositorio
+### 2. Select the repository
 
-Se seleccionar "Open a Repository"
+"Open a Repository" is selected.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_19-thumbnail.png){: .narrow width=360 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_19.png }](/blog/images/git-guide-with-visual-interface/image_19.png ){: .gallery}
 
-### 3. Seleccionar la carpeta
+### 3. Select the folder
 
-Navegar hasta la carpeta donde se encuentra el repositorio, una manera fácil de identificarla es que debería verse una carpeta llamada ".git" (Esta carpeta puede no aparecer si uno no tiene habilitados los archivos ocultos de Windows).
+Navigate to the folder where the repository is located, an easy way to identify it is that you should see a folder called ".git" (This folder may not appear if you do not have Windows hidden files enabled).
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_20-thumbnail.png){: .narrow width=875 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_20.png }](/blog/images/git-guide-with-visual-interface/image_20.png ){: .gallery}
 
-## Elementos de la interfaz
+## Interface Elements
 
-### Interfaz básica
+### Basic interface
 
-Al abrir un repositorio nos encontraremos con la interfaz básica
+When opening a repository we will find the basic interface.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_21-thumbnail.png){: width=1300 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_21.png }](/blog/images/git-guide-with-visual-interface/image_21.png ){: .gallery}
+[![image alt text]({attach}images/git-guide-with-visual-interface/image_21-en-thumbnail.png){: width=1300 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_21-en.png }](/blog/images/git-guide-with-visual-interface/image_21-en.png ){: .gallery}
 
-### Arbol de Commits y Branches
+### Commits and Branches Tree
 
-Al tener varios commits y branches, en la parte central, es posible ver las bifurcaciones y las uniones, en la siguiente imagen se muestra un proyecto con varios branches (Sólo a modo de ejemplo).
+When having several commits and branches, in the central part, it is possible to see the bifurcations and the unions, in the following image is shown a project with several branches (Only as an example).
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_22-thumbnail.png){: .narrow width=807 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_22.png }](/blog/images/git-guide-with-visual-interface/image_22.png ){: .gallery}
 
-## Añadir Cambios
+## Add Changes
 
-Las herramientas de git pueden separarse en dos categorías:
+Git tools can be separated into two categories:
 
-- Integradas con los IDE
-- Desacopladas
+- Integrated with IDEs
+- Decoupled
 
-Muchos IDE vienen con su propia integración con Git, algunos ejemplos de esto son Eclipse, Visual Studio, PyCharm. Sin embargo, es posible utilizar aplicaciones completamente desacopladas como Gitkraken, Github Desktop o el mismo git de consola.
+Many IDEs come with their own integration with Git, some examples of this are Eclipse, Visual Studio and PyCharm. However, it is possible to use completely decoupled applications such as Gitkraken, Github Desktop or the git CLI itself.
 
-Las primeras tienen la ventaja de que el usuario no tiene que salir de la aplicación en la que desarrolla el código y las pruebas, pero tiene la desventaja de que puede confundir fácilmente cual es su branch actual y si el sistema está en un estado consistente, además, cada IDE tendrá su interfaz especial, y los IDE suelen cambiar si se cambia el lenguaje de programación. Por otro lado, las herramientas desacopladas como Gitkraken permiten que el desarrollador utilice el IDE sólo para lo que fue diseñado, la programación, la depuración y las pruebas, abstrayéndose totalmente del sistema de control de versiones, este enfoque tiene como ventaja que el usuario sólo debe preocuparse por el control de versiones al comenzar a trabajar y al momento de hacer los Stage-Commit y que se utiliza la misma interfaz independientemente de que IDE se haya utilizado, pero trae como desventaja que debe contarse con otro software adicional instalado.
+The former have the advantage that the user does not have to leave the application in which he develops the code and tests, but has the disadvantage that he can easily confuse which is his current branch and if the system is in a consistent state, in addition, each IDE will have its special interface, and the IDE tend to change if the programming language is changed. On the other hand, decoupled tools such as Gitkraken allow the developer to use the IDE only for what was designed, programming, debugging and testing, abstracting completely from the version control system, this approach has the advantage that the user only has to worry about version control when starting to work and when making the Stage-Commit and that the same interface is used regardless of which IDE has been used, but brings as a disadvantage that you must have additional software installed.
 
-Gracias a que Gitkraken tiene este enfoque es posible trabajar como se suele hacer habitualmente en el IDE tradicional y cuando se deseen añadir cambios al repositorio lo que aparecerá será algo como lo siguiente:
+When using Gitkraken it is possible to work as usual in the traditional IDE and when you want to add changes to the repository what will appear is something like the following:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_23-thumbnail.png){: .narrow width=343 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_23.png }](/blog/images/git-guide-with-visual-interface/image_23.png ){: .gallery}
 
-La sigla WIP (Work in Progress) hace referencia al Working Area. Al hacer clic en este recuadro se podrá ver en la parte derecha los cambios realizados separados por archivos y también una clara división entre la Working Area y la Staging Area.
+The acronym WIP (Work in Progress) refers to the Working Area. By clicking on this box you can see on the right side the changes made separated by files and also a clear division between the Working Area and the Staging Area.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_24-thumbnail.png){: .narrow width=322 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_24.png }](/blog/images/git-guide-with-visual-interface/image_24.png ){: .gallery}
+[![image alt text]({attach}images/git-guide-with-visual-interface/image_24-en-thumbnail.png){: .narrow width=322 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_24-en.png }](/blog/images/git-guide-with-visual-interface/image_24-en.png ){: .gallery}
 
-Asimismo, es importante aclarar la función de tres botones:
+It is also important to clarify the function of three buttons:
 
-- Cesto de basura en la esquina superior derecha: BORRA todos los cambios del Working Area, usar sólo si se sabe lo que se está haciendo
-- Tree: Permite visualizar los archivos en forma de árbol de directorios, dependiendo de la configuración puede no estar seleccionado por defecto, se recomienda utilizarlo
-- Stage Files/changes to commit: Genera un commit con el título y la descripción dados de todos los cambios que están en el Staging Area
+- Trash basket in the upper right corner: **DELETEs** all changes to the Working Area, use only if you know what you are doing.
+- Tree: Allows to visualize the files in the form of a tree of directories, depending on the configuration may not be selected by default, it is recommended to use it.
+- Stage Files/changes to commit: Generates a commit with the given title and description of all changes that are in the Staging Area.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_25.png){: .narrow width=329 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_25.png }](/blog/images/git-guide-with-visual-interface/image_25.png ){: .gallery}
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_26.png){: .narrow width=336 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_26.png }](/blog/images/git-guide-with-visual-interface/image_26.png ){: .gallery}
 
-
-Si uno hace clic sobre alguno de los archivos ya sea dentro del Working como del Staging Area, puede ver un detalle de los cambios:
+If you click on any of the files in both the Working and Staging Area, you can see a detail of the changes:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_27-thumbnail.png){: width=1261 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_27.png }](/blog/images/git-guide-with-visual-interface/image_27.png ){: .gallery}
 
-Cada línea sombreada con rojo implica que esa línea estaba en la última versión y será eliminada, las sombreadas con verde indican que no estaban en la última versión y serán añadidas. En Git no existe el concepto de modificar una línea por lo tanto si se hace una modificación, se borrará la línea de la versión anterior y se añadirá una idéntica pero con los cambios realizados.
+Each line shaded with red implies that that line was in the last version and will be removed, the green shaded indicate that they were not in the last version and will be added. In Git there is no concept of modifying a line so if a modification is made, the line from the previous version will be deleted and an identical one will be added but with the changes made.
 
-Si uno posiciona el mouse sobre una de esas líneas aparecerá un botón con un signo más (+) que nos permitirá mover líneas individuales al Staging Area:
+If one hovers the cursor over one of these lines, a button with a plus sign (+) will appear that will allow us to move individual lines to the Staging Area:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_28-thumbnail.png){: .narrow width=80 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_28.png }](/blog/images/git-guide-with-visual-interface/image_28.png ){: .gallery}
 
-Gitkraken, a su vez, identifica cambios por secciones en archivos y permite agregar varias secciones al Staging Area
+Gitkraken, in turn, identifies changes by sections in files and allows several sections to be added to the Staging Area.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_29-thumbnail.png){: .narrow width=173 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_29.png }](/blog/images/git-guide-with-visual-interface/image_29.png ){: .gallery}
 
-Por último, si uno desea añadir todos los cambios de un archivo al Staging Area, puede posicionar el cursor sobre ese archivo y utilizar el botón "Stage File" que aparecerá. También es posible pasar TODOS los archivos del Working Area al Staging Area con el botón “Stage all Changes”:
+Finally, if you want to add all the changes of a file to the Staging Area, you can position the cursor over that file and use the "Stage File" button that will appear. It is also possible to move ALL files from the Working Area to the Staging Area with the *"Stage all Changes"* button:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_30-thumbnail.png){: .narrow width=414 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_30.png }](/blog/images/git-guide-with-visual-interface/image_30.png ){: .gallery}
 
-El proceso para quitar cambios del Staging Area y pasarlos al Working Area es idéntico, sólo se debe seleccionar primeramente el archivo correspondiente desde el Staging Area, en este caso los botones son de color rojo y el botón con el más (+) pasa a ser un menos (-):
+The process to remove changes from the Staging Area and pass them to the Working Area is identical, only the corresponding file must be selected first from the Staging Area, in this case the buttons are red and the button with the plus (+) becomes a minus (-):
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_31-thumbnail.png){: .narrow width=74 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_31.png }](/blog/images/git-guide-with-visual-interface/image_31.png ){: .gallery}
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_32-thumbnail.png){: .narrow width=131 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_32.png }](/blog/images/git-guide-with-visual-interface/image_32.png ){: .gallery}
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_33-thumbnail.png){: .narrow width=424 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_33.png }](/blog/images/git-guide-with-visual-interface/image_33.png ){: .gallery}
 
-Una vez movidos los cambios deseados al Staging Area, se puede crear el commit deseado, para ello hace falta asignarle un título, también se puede detallar una descripción opcional:
+Once you have moved the desired changes to the Staging Area, you can create the desired commit, you need to assign it a title, you can also detail an optional description:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_34-thumbnail.png){: .narrow width=328 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_34.png }](/blog/images/git-guide-with-visual-interface/image_34.png ){: .gallery}
 
-Una vez hecho el commit, aparecerá en la pantalla principal con el nombre que se le haya asignado:
+Once the commit is done, it will appear in the main screen with the name assigned to it:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_35-thumbnail.png){: .narrow width=346 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_35.png }](/blog/images/git-guide-with-visual-interface/image_35.png ){: .gallery}
 
-Es importante descatar que esto genera el commit en el repositorio LOCAL y que estos cambios no impactaron aún en el repositorio remoto, Gitkraken nos muestra esto utilizando una computadora para el repositorio Local y el logo del usuario de Github para representar el repositorio remoto. En la siguiente sección se verá como sincronizar ambos repositorios.
+It is important to note that this generates the commit in the **LOCAL** repository and that these changes have not yet impacted the remote repository, Gitkraken shows us this by using a computer for the Local repository and the Github user logo to represent the remote repository. In the next section, we will see how to synchronize both repositories.
 
-## Sincronización con repositorios remotos
+## Synchronization with remote repositories
 
-Como se mencionó antes, para mantener dos repositorios actualizados hace falta utilizar las acciones de Pull y Push
+As mentioned before, to keep two repositories up to date you need to use the Pull and Push actions
 
-### Descargar los cambios del repositorio remoto
+### Download changes from the remote repository
 
-Es considerado una buena práctica, siempre antes de subir los cambios, hacer un Pull para traer cualquier cambio que no pudiéramos tener en nuestro equipo local. En esta oportunidad tendremos que distinguir entre la acción Pull y la acción Fetch.
+It is considered a good practice to always pull before uploading changes, this will bring any changes that we could not have in our local machine. In this opportunity, we will have to distinguish between the Pull action and the Fetch action.
 
-- Fetch: Revisa si hay cambios en el repositorio remoto y nos muestra cual es el estado del remoto con respecto al local
-- Pull: Hace Fetch y aplica esos cambios en el repositorio local.
+- **Fetch:** Check if there are changes in the remote repository and shows us what is the status of the remote with respect to the local
+- **Pull:** Makes a Fetch and applies those changes to the local repository.
 
-Fetch es por lo tanto una acción completamente segura, mientras que Pull puede traer cambios que generen colisiones con los nuestros, a pesar de que lo anterior no sea frecuente y sólo sea posible en entornos con múltiples usuarios, es considerado una buena práctica que el usuario resuelva los conflictos en su computadora local y que luego pueda subir los cambios. De no ser así, el repositorio remoto podría quedar en un estado inconsistente, deteniendo el avance de los demás miembros del equipo.
+Fetch is, therefore, a completely safe action, while Pull can bring changes that generate collisions with ours, although this is not frequent and is only possible in environments with multiple users, it is considered a good practice that the user resolves conflicts on his local computer and then can upload the changes. Otherwise, the remote repository could be left in an inconsistent state, halting the progress of other team members.
 
-En la barra de acciones del Gitkraken tenemos la acción de Fetch:
+In the Gitkraken action bar we have the Fetch action:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_36-thumbnail.png){: .narrow width=398 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_36.png }](/blog/images/git-guide-with-visual-interface/image_36.png ){: .gallery}
 
-Para acceder a la acción Pull debemos elegir la flecha que está junto a Fetch:
+To access the Pull action, choose the arrow next to Fetch:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_37-thumbnail.png){: .narrow width=398 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_37.png }](/blog/images/git-guide-with-visual-interface/image_37.png ){: .gallery}
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_38-thumbnail.png){: .narrow width=376 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_38.png }](/blog/images/git-guide-with-visual-interface/image_38.png ){: .gallery}
 
-En el caso del repositorio de ejemplo el Pull debería ser exitoso ya que no hubo cambios en el repositorio remoto
+In the case of the example repository, the Pull should be successful as there were no changes in the remote repository.
 
-### Subir los cambios al repositorio remoto
+### Upload changes to the remote repository
 
-Para subir los cambios es necesario primero realizar un Pull para resolver los conflictos (si los hubiera) una vez resueltos, se puede realizar un Push utilizando el botón asociado en la barra de acciones:
+To upload changes it is necessary to first perform a Pull to resolve conflicts (if any) once resolved, you can perform a Push using the associated button in the action bar:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_39-thumbnail.png){: .narrow width=393 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_39.png }](/blog/images/git-guide-with-visual-interface/image_39.png ){: .gallery}
 
-Una vez realizado, la forma más fácil de verificar que fue exitoso se ver el árbol de commits
+Once done, the easiest way to verify that it was successful is to see the commits tree.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_40-thumbnail.png){: .narrow width=350 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_40.png }](/blog/images/git-guide-with-visual-interface/image_40.png ){: .gallery}
 
-En esta oportunidad tanto el logo de usuario de Github como la computadora se encuentran juntos, mostrando así que el contenido se encuentra sincronizado.
+This time both the Github user logo and the computer are together, showing that the content is synchronized.
 
-### Ejemplo de Fetch y Pull
+### Example of Fetch and Pull
 
-Para ilustrar como se vería una situación inversa (se hicieron cambios en el repositorio remoto y queremos descargarlos). Primeramente hacemos Fetch y veremos algo como lo siguiente:
+To illustrate what a reverse situation would look like (changes were made to the remote repository and we want to download them). First, we do Fetch and we'll see something like this:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_41-thumbnail.png){: .narrow width=362 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_41.png }](/blog/images/git-guide-with-visual-interface/image_41.png ){: .gallery}
 
-Como se puede ver, el branch master está "adelantado" y tiene un commit llamado “Update README.md” que sólo está en el repositorio remoto (evidenciado por el logo de la cuenta de Github). Y nuestra versión local está “detrás”. En esta situación debemos evaluar los cambios y si existen conflictos (incluyendo los archivos del Working Area).  Es recomendable no tener nada en el Working Area al momento de hacer Pull, es decir, que todos los cambios ya estén dentro de commits, esto simplifica el proceso y disminuye la probabilidad de hallar conflictos. 
+As you can see, the branch master is "advanced" and has a commit called *"Update README.md"* that is only in the remote repository (evidenced by the Github account logo). And our local version is "behind". In this situation we have to evaluate the changes and if there are any conflicts (including the Working Area files).  It is recommended not to have anything in the Working Area at the time of Pulling, that is, that all changes are already inside commits, this simplifies the process and decreases the probability of finding conflicts.
 
-**NOTA:**  Existen situaciones avanzadas donde uno puede guardar temporalmente los cambios del Working Area en un Stash pero esta característica se encuentra fuera del alcance de esta guía.
+**NOTE:** There are advanced situations where you can temporarily save Working Area changes in a Stash but this feature is outside the scope of this guide.
 
-En caso de no existir conflictos, se puede realizar un Pull sin problemas:
+In case there are no conflicts, a Pull can be performed without problems:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_42-thumbnail.png){: .narrow width=340 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_42.png }](/blog/images/git-guide-with-visual-interface/image_42.png ){: .gallery}
 
-El resultado es el esperado, tanto el repositorio local como el remoto se encuentran sincronizados.
+The result is as expected, both the local and remote repositories are synchronized.
 
-## Trabajo en múltiples branches
+## Working in multiple branches
 
-Una vez que se pueda trabajar eficientemente en una rama, es sumamente recomendable seleccionar una Git Strategy y utilizar múltiples ramas.
+Once you can work efficiently on one branch, it is highly recommended to select one Git Strategy and use multiple branches.
 
-### Crear Branch
+### Create Branch
 
-Para crear rama primero debemos posicionarnos en una rama base, esta es la rama de la cual se bifurcará el nuevo branch 
+To create a branch we must first position ourselves in a base branch, this is the branch from which the new branch will bifurcate.
 
-**NOTA:**  Existe el concepto de ramas huérfanas, que son ramas que no se derivan de ninguna otra rama. Sin embargo su uso suele ser muy particular y específico y por ende están fuera del alcance de esta guía.
+**NOTE:** There is the concept of orphan branches, which are branches that are not derived from any other branch. However, their use is usually very particular and specific and they are therefore beyond the scope of this guide.
 
-En este caso vamos a crear una rama de master, le agregaremos dos commits, la uniremos y luego la borraremos.
+In this case, we will create a master branch, add two commits, join it and then delete it.
 
-En primer lugar nos posicionamos en master, para ello bastan con hacer doble clic en "master"
+In the first place, we position ourselves in master, double-clicking in *"master"*.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_43-thumbnail.png){: .narrow width=391 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_43.png }](/blog/images/git-guide-with-visual-interface/image_43.png ){: .gallery}
 
-Luego utilizamos el botón "Branch" de la barra de acciones
+Then use the **`Branch`** button on the action bar.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_44-thumbnail.png){: .narrow width=381 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_44.png }](/blog/images/git-guide-with-visual-interface/image_44.png ){: .gallery}
 
-Luego escribimos el nombre de la rama y presionamos enter:
+Then write the name of the branch and press enter:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_45-thumbnail.png){: .narrow width=356 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_45.png }](/blog/images/git-guide-with-visual-interface/image_45.png ){: .gallery}
 
-Gitkraken nos permite ver en varios lugares que la rama fue creada con éxito
+Gitkraken allows us to see in several places that the branch was successfully created.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_46-thumbnail.png){: .narrow width=503 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_46.png }](/blog/images/git-guide-with-visual-interface/image_46.png ){: .gallery}
 
-Sin embargo, es posible observar que en el árbol de commits no aparece la rama master, esto se debe a que se encuentra oculta en el ícono +1:
+However, it is possible to observe that in the commits tree that the master branch does not appear, this is because it is hidden in the *+1 icon*:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_47-thumbnail.png){: .narrow width=503 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_47.png }](/blog/images/git-guide-with-visual-interface/image_47.png ){: .gallery}
 
-Al pasar el cursor por arriba podemos ver que la rama es visible nuevamente:
+When passing the cursor over it we can see that the branch is visible again:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_48-thumbnail.png){: .narrow width=330 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_48.png }](/blog/images/git-guide-with-visual-interface/image_48.png ){: .gallery}
 
-Esta simplificación de la intefaz se debe a que el contenido de ambas ramas es idéntico (todavía no realizamos cambios) y si bien puede ser un poco confusos para los principiantes es sumamente útil cuando se tienen múltiples ramas. Por otro lado, la ayuda visual de GitKraken nos permite observar que el branch "add-license" sólo existe en el contexto local y que aún no existe en el repositorio remoto.
+This simplification of the interface is due to the fact that the content of both branches is identical (we haven't made any changes yet) and although it can be a little confusing for beginners, it is extremely useful when you have multiple branches. On the other hand, GitKraken's visual aid allows us to observe that the "add-license" branch only exists in the local context and does not yet exist in the remote repository.
 
-### Unir Branches (Merge)
+### Join Branches (Merge)
 
-Para poder unir dos branches es necesario que éstas sean diferentes, para ello se añaden algunos commits a la rama "add-license". Luego de añadir los commits, se obtiene algo como lo siguiente:
+In order to join two branches it is necessary that they are different, for it some commits are added to the branch "add-license". After adding the commits, you get something like the following:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_49-thumbnail.png){: .narrow width=327 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_49.png }](/blog/images/git-guide-with-visual-interface/image_49.png ){: .gallery}
 
-Si bien la rama sigue existiendo sólo en el contexto local, es importante ver como se encuentra "adelantada" a la rama master. Si bien en el esquema presentado al principio las ramas se disponen de forma paralela una a la otra, Gitkraken sólo las dispone de esa forma cuando existen varias “líneas de cambios”, es decir, sólo cuando la rama master se haya modificado y que esa modificación no sea alguno de los commits de la rama con la que está alineada (add-license) en este caso. Para ilustrar este ejemplo se añadirá un cambio a la rama master directamente (no en la rama add-license).
+While the branch still exists only in the local context, it is important to see how it is "ahead" of the master branch. Although in the scheme presented at the beginning the branches are arranged parallel to each other, Gitkraken only arranges them that way when there are several changes, that is, only when the master branch has been modified and that this modification is not one of the commits of the branch with which it is aligned (add-license) in this case. To illustrate this example, a change will be added to the master branch directly (not in the add-license branch).
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_50-thumbnail.png){: .narrow width=331 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_50.png }](/blog/images/git-guide-with-visual-interface/image_50.png ){: .gallery}
 
-Esta forma de visualizar las ramas es más similar a la vista con anterioridad, la vista cambió porque se agregó el commit "Add Contribution Guide" directamente en master.
+This way of visualizing branches is more similar to the previous view, the view changed because the commit "Add Contribution Guide" was added directly in the master.
 
-Antes de unir las ramas vamos a realizar un Push, en este caso, como la rama no existe en el repositorio remoto, nos preguntará si la queremos vincular con alguna rama del repositorio remoto ya existente, en caso de dejar el espacio en blanco y clickear en "Submit", creará una rama homónima en el repositorio remoto.
+Before joining the branches we are going to make a Push, in this case, as the branch does not exist in the remote repository, it will ask us if we want to link it with some branch of the already existing remote repository, if we leave the space blank and click on **`Submit`**, it will create a branch with the same name in the remote repository.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_51-thumbnail.png){: .narrow width=777 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_51.png }](/blog/images/git-guide-with-visual-interface/image_51.png ){: .gallery}
 
-Ahora ambas ramas están sincronizadas con el repositorio remoto:
+Now both branches are synchronized with the remote repository:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_52-thumbnail.png){: .narrow width=333 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_52.png }](/blog/images/git-guide-with-visual-interface/image_52.png ){: .gallery}
 
-Si bien no era necesario hacer un Push de la rama antes de unirla, es considerado una buena práctica para que quede público el historial de cambios y que los demás usuarios puedan visualizar quien, y como hizo los cambios.
+While it was not necessary to make a Push of the branch before joining it, it is considered good practice to make the history of changes public so other users can see who made the changes and how.
 
-Para unir las ramas (merge) Uno debe hacer clic en el nombre de la rama origen y arrastrar y soltar en el nombre de la rama destino, esto desplegará el siguiente menú, donde seleccionamos la opción de Merge.
+To merge branches one must click on the name of the source branch and drag and drop on the name of the destination branch, this will display the following menu, where we select the Merge option.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_53-thumbnail.png){: .narrow width=356 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_53.png }](/blog/images/git-guide-with-visual-interface/image_53.png ){: .gallery}
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_54-thumbnail.png){: .narrow width=446 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_54.png }](/blog/images/git-guide-with-visual-interface/image_54.png ){: .gallery}
 
-Una vez elegida la opción, el árbol de commits y branches se verá similar al siguiente:
+Once the option is chosen, the commits and branches tree will look similar to the next one:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_55-thumbnail.png){: .narrow width=332 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_55.png }](/blog/images/git-guide-with-visual-interface/image_55.png ){: .gallery}
 
-Como puede verse el merge fue exitoso, sin embargo aún no se verá reflejado en el repositorio remoto, por lo tanto, es necesario activar el repositorio master (haciendo doble click en el nombre) y luego hacer un Push.
+As you can see the merge was successful, however, it will not yet be reflected in the remote repository, therefore, it is necessary to activate the master repository (by double-clicking on the name) and then do a Push.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_56-thumbnail.png){: .narrow width=329 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_56.png }](/blog/images/git-guide-with-visual-interface/image_56.png ){: .gallery}
 
-Una vez hecho el Push, tanto las ramas como la operación de Merge se encuentran sincronizadas en el repositorio remoto y local
+Once the Push is done, both the branches and the Merge operation are synchronized in the remote and local repository.
 
-### Borrar Branch
+### Erase Branch
 
-A lo largo de la vida de un proyecto de desarrollo pueden crearse infinidad de ramas, por lo tanto, para mantener la interfaz limpia, es una buena práctica eliminar las ramas luego de que se unieron (merge) a master (o a la rama que corresponda según el Git Workflow establecido)
+Throughout the life of a development project can be created infinity of branches, therefore, to keep the interface clean, it is a good practice to remove the branches after they joined (merge) to master (or to the branch that corresponds according to the Git Workflow established).
 
-Para eliminar una rama basta con hacer clic derecho sobre el nombre y seleccionamos la opción que la elimina tanto del repositorio local como del remoto
+To remove a branch just right click on the name and select the option that removes it from both the local and remote repositories.
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_57-thumbnail.png){: .narrow width=460 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_57.png }](/blog/images/git-guide-with-visual-interface/image_57.png ){: .gallery}
 
-GitKraken nos advertirá que esta es una operación destructiva y que no puede deshacerse, seleccionamos Delete
+GitKraken will warn us that this is a destructive operation and can not be undone, select **Delete**
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_58-thumbnail.png){: .narrow width=717 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_58.png }](/blog/images/git-guide-with-visual-interface/image_58.png ){: .gallery}
 
-Una vez que la rama se haya eliminado exitosamente el árbol de commits y branches se verá similar al siguiente:
+Once the branch has been successfully removed the commits and branches tree will look similar to the next one:
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_59-thumbnail.png){: .narrow width=331 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_59.png }](/blog/images/git-guide-with-visual-interface/image_59.png ){: .gallery}
 
-Como puede verse, ya no existe la rama borrada ni en el repositorio local ni en el remoto, sin embargo, y es en esto donde está la utilidad, puede verse como claramente alguna vez existió y consistió en dos commits que luego fueron unidos al master. La ventaja de esta funcionalidad es que uno puede eliminar las ramas y no perder la historia de lo que se hizo, teniendo una separación en los commits que permite fácilmente rastrear quien hizo que cambios y como fueron hechos. Esto no sería posible (o mejor dicho, sería muchísimo más complejo) si sólo se trabajara con la rama master.
+As you can see, the deleted branch is neither in the local nor in the remote repository, however, and this is where the utility is, it can be clearly seen as it once existed and consisted of two commits that were then attached to the master. The advantage of this functionality is that one can remove the branches and not lose the history of what was done, having a separation in the commits that allows you to easily track who made what changes and how they were made. This wouldn't be possible (or rather, it would be much more complex) if you only worked with the master branch.
 
 ## Pull Requests
 
-En un entorno de desarrollo, es poco común que los desarrolladores realicen merge a master directamente, es por eso que se utiliza un mecanismo de aprobación y revisión antes de que se puedan realizar los merge en las ramas críticas. Cada proveedor llama a ese proceso de manera distinta, en el más popular (Github) ese proceso se llama Pull Request.
+In a development environment, it is rare for developers to perform merge to master directly, which is why an approval and review mechanism is used before merge can be performed on critical branches. Each provider calls that process differently, in the most popular (Github) that process is called Pull Request.
 
-Una Pull Request es básicamente decir lo siguiente: Tengo cambios hechos y quisiera unirlos a esta rama. Es una práctica común en las ramas más críticas dentro de proyectos de desarrollo, donde a la persona encargada de esas revisiones y aprobaciones se la suele llamar Release Manager y también es sumamente popular en los proyectos Open Source, donde se tiene el repositorio principal y las personas que quieran contribuir, al no tener permisos de editar el repositorio directamente, pueden realizar Pull Requests. El creador del repositorio podrá, luego, aceptarlas o rechazarlas.
+A Pull Request is basically the following: I have changes made and would like to attach them to this branch. It is a common practice in the most critical branches within development projects, where the person in charge of those reviews and approvals is usually called *Release Manager* and is also extremely popular in Open Source projects, where you have the main repository and people who want to contribute, not having permissions to edit the repository directly, can make Pull Requests. The creator of the repository will then be able to accept or reject them.
 
-Si bien las Pull Requests suelen hacerse mediante la interfaz del proveedor (Github en este caso). Son posibles hacerlas desde GitKraken también.
+Although Pull Requests are usually done through the provider's interface (Github in this case). They can also be done from GitKraken.
 
-Sólo con fines ilustrativos se muestra el procedimiento:
+The procedure is shown for illustrative purposes only:
 
-1. Se hace clic derecho en la rama desde la cual se quiere hacer la Pull Request
-1. Se selecciona la opción de la Pull Request
-1. Se completan los campos solicitados
+1. Right click on the branch from which you want to make the Pull Request
+1. The Pull Request option is selected
+1. The requested fields are completed
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_60-thumbnail.png){: .narrow width=397 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_60.png }](/blog/images/git-guide-with-visual-interface/image_60.png ){: .gallery}
 
 [![image alt text]({attach}images/git-guide-with-visual-interface/image_61-thumbnail.png){: .narrow width=479 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_61.png }](/blog/images/git-guide-with-visual-interface/image_61.png ){: .gallery}
 
-**NOTA:**  Las Pull Requests generalmente se deben realizar de una manera específica que se detalla en el mismo repositorio del software al que uno quiere contribuir por lo que el ejemplo mostrado es trivial, sólo para tener una noción de cómo sería el procedimiento.
+**NOTE:** Pull Requests must generally be made in a specific way that is detailed in the same repository of the software to which one wants to contribute to the example shown is trivial, only to have a notion of how the procedure would be.
 
-## Características Adicionales
+## Additional Features
 
-Aparte de todo lo mencionado en esta guía, queda aún mucho terreno para explorar tanto en lo que permite Git como en lo que se puede hacer con GitKraken, a continuación se listan algunas de estas posibilidades para que el lector pueda indagar en mayor detalle si lo desea
+Apart from everything mentioned in this guide, there is still a lot of ground to explore both in what Git allows and what can be done with GitKraken, some of these possibilities are listed below for the reader to investigate in more detail if desired
 
-- Tener repositorios dentro de repositorios. Buscar: **Submodules** y** Subtree**
-- Aplicar sólo un commit de una rama a otra y no hacer una unión de historial. Buscar: **Cherry Pick Commit**
-- Tener ramas completamente independientes de otras: Buscar: **Orphan Branch**
-- Unificar ramas olvidando la historia. Buscar: **Rebase**
-- Agregar contenidos a un commit anterior. Buscar: **Amend**
-- Deshacer varios commits conservando los cambios. Buscar: **Soft Reset**
-- Forzar cambios en el repositorio remoto. Buscar: **Push Force**
-- Es posible revertir cambios de un commit específico. Buscar: **Revert**
-- Guardar en un espacio temporal los cambios del Working Area. Buscar: **Stash**
-- Crear etiquetas para identificar versiones específicas de todo el repositorio cuando se encuentra en un estado consistente (linea base). Buscar: **Tags**
+- Have repositories within repositories. Search: **Submodules** and **Subtree**
+- Apply only one commit from one branch to another and not make a history union. Search: **Cherry Pick Commit**
+- Have branches completely independent of others: Search: **Orphan Branch**
+- Unify branches forgetting history. Search: **Rebase**
+- Add content to a previous commit. Search: **Amend**
+- Undo several commits while keeping the changes. Search: **Soft Reset**
+- Force changes in the remote repository. Search: **Push Force**
+- Revert changes of a specific commit. Search: **Revert**
+- Save changes to the Working Area in a temporary space. Search: **Stash**
+- Create tags to identify specific versions of the entire repository when it is in a consistent state (baseline). Search: **Tags**
 
-Algunas de las características mencionadas sólo pueden realizarse desde la consola, es decir, no son soportadas completamente en GitKraken
+Some of the above features can only be done from the console, i.e. they are not fully supported in GitKraken.
