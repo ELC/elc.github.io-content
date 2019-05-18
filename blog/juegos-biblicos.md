@@ -21,11 +21,11 @@ Adicionalmente, toda crítica, sugerencia y comentario es bien recibido, pueden 
 ## Índice
 
 - [Tabú Bíblico](#tabu-biblico)
-- [Espadeo Bíblico - Versión Modificada](#espadeo-biblico-version-modificada)
 - [Trivia Adolescente](#trivia-adolescente)
-- [Armá la Historia](#arma-la-historia)
-- [Memo Paralelo](#memo-paralelo)
 - [Conocé la historia](#conoce-la-historia)
+- [Espadeo Bíblico - Versión Modificada](#espadeo-biblico-version-modificada)
+- [Memo Paralelo](#memo-paralelo)
+- [Armá la Historia](#arma-la-historia)
 
 ## Tabú Bíblico
 
@@ -42,26 +42,6 @@ La tarjetas tienen distintas dificultades y deben estar mezcladas previamente, u
 Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/tabu-biblico){: target="_blank"}
 
 Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/tabu-biblico-pdf){: target="_blank"}
-
-## Espadeo Bíblico - Versión Modificada
-
-[Volver al Índice](#indice)
-
-[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_01-thumbnail.jpg){: .narrow .b-lazy width=669 data-src=/blog/images/juegos-biblicos/espadeo_01.jpg  }](/blog/images/juegos-biblicos/espadeo_01.jpg){: .gallery }
-
-[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_02-thumbnail.jpg){: .narrow .b-lazy width=748 data-src=/blog/images/juegos-biblicos/espadeo_02.jpg  }](/blog/images/juegos-biblicos/espadeo_02.jpg){: .gallery }
-
-[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_03-thumbnail.jpg){: .narrow .b-lazy width=739 data-src=/blog/images/juegos-biblicos/espadeo_03.jpg  }](/blog/images/juegos-biblicos/espadeo_03.jpg){: .gallery }
-
-Este es un juego con 3 modalidales, el organizador puede alternar entre ellas o escoger la que más se adapte a sus necesidades.
-
-- Modalidad clásica: Se lee una pequeña introducción y luego la cita de un versículo y los equipos deben buscarlo, el que lo encuentre debe comenzar a leerlo inmediatamente, si es el versículo correcto, gana.
-- Modalidad Completar el versículo: Se lee una pequeña introducción y luego un versículo en forma incompleta, los equipos tienen la posibilidad de completarlo si lo saben de memoria, se dan unos segundos para esto. En caso de que ninguno de los equipos haya respondido, se dice cuál es la cita y se procede con la modalidad clásica, el equipo que complete el versículo antes es el que gana.
-- Modalidad Preguntas con Opciones: Se hace una pregunta y se dan tres citas como posibles soluciones, en todos los casos hay sólo una respuesta correcta. Cada equipo debe buscar las opciones y comenzar a leer el versículo que corresponda. El primer equipo que lea el versículo correspondiente a la pregunta es el ganador. Los equipos pueden decir la cita y el versículo de memoria si lo saben.
-
-Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/espadeo-biblico){: target="_blank"}
-
-Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/espadeo-biblico-pdf){: target="_blank"}
 
 ## Trivia Adolescente
 
@@ -84,19 +64,41 @@ Descargar el documento editable [![Download DOC](https://elc.github.io/theme/ima
 
 Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/trivia-adolescente-pdf){: target="_blank"}
 
-## Armá la Historia
+## Conocé la historia
 
 [Volver al Índice](#indice)
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/arma_la_historia_01-thumbnail.jpg){: .narrow .b-lazy width=1090 data-src=/blog/images/juegos-biblicos/arma_la_historia_01.jpg  }](/blog/images/juegos-biblicos/arma_la_historia_01.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/conoce_la_historia_01-thumbnail.jpg){: .narrow .b-lazy width=1344 data-src=/blog/images/juegos-biblicos/conoce_la_historia_01.jpg  }](/blog/images/juegos-biblicos/conoce_la_historia_01.jpg){: .gallery }
 
-A cada equipo se le da una serie de tarjetas, algunas contienen pasajes y otras contienen eventos o historias. Cada equipo deberá asociar cada tarjeta de evento con una de un pasaje y luego ordenarlas para formar la historia bíblica.
+A cada jugador se le coloca una tarjeta en la espalda, cada tarjeta contiene una serie de oraciones que están vinculadas a un personaje bíblico, pueden ser eventos, lugares, pasajes o cualquier otro dato relacionado.
 
-Al principio a cada equipo se le da una historia fácil y cada vez que completen una historia se le da una de mayor dificultad, sólo se considerará correcta si todas las tarjetas están en la posición adecuada. El organizador deberá decir que es incorrecta sin mencionar dónde está el error. En caso de empate el punto va para el equipo que más tarjetas correctas tenga en la historia en curso.
+Los jugadores deberán preguntarles a los demás que dice su tarjeta, sin embargo sólo le dirán un dato, y para darle ese dato debe mencionar correctamente y en orden todos los anteriores. Es decir, el primer dato se lo dirá sin preguntar nada, para darle el segundo debe decir el primero, para darle el tercero debe decir el primero y el segundo.
 
-Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/arma-historia){: target="_blank"}
+El primer jugador que se acerque al organizador y pueda decir todos los datos correctamente y en orden será el ganador.
 
-Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/arma-historia-pdf){: target="_blank"}
+Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/conoce-historia){: target="_blank"}
+
+Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/conoce-historia-pdf){: target="_blank"}
+
+## Espadeo Bíblico - Versión Modificada
+
+[Volver al Índice](#indice)
+
+[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_01-thumbnail.jpg){: .narrow .b-lazy width=669 data-src=/blog/images/juegos-biblicos/espadeo_01.jpg  }](/blog/images/juegos-biblicos/espadeo_01.jpg){: .gallery }
+
+[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_02-thumbnail.jpg){: .narrow .b-lazy width=748 data-src=/blog/images/juegos-biblicos/espadeo_02.jpg  }](/blog/images/juegos-biblicos/espadeo_02.jpg){: .gallery }
+
+[![conoce_la_historia]({attach}images/juegos-biblicos/espadeo_03-thumbnail.jpg){: .narrow .b-lazy width=739 data-src=/blog/images/juegos-biblicos/espadeo_03.jpg  }](/blog/images/juegos-biblicos/espadeo_03.jpg){: .gallery }
+
+Este es un juego con 3 modalidales, el organizador puede alternar entre ellas o escoger la que más se adapte a sus necesidades.
+
+- Modalidad clásica: Se lee una pequeña introducción y luego la cita de un versículo y los equipos deben buscarlo, el que lo encuentre debe comenzar a leerlo inmediatamente, si es el versículo correcto, gana.
+- Modalidad Completar el versículo: Se lee una pequeña introducción y luego un versículo en forma incompleta, los equipos tienen la posibilidad de completarlo si lo saben de memoria, se dan unos segundos para esto. En caso de que ninguno de los equipos haya respondido, se dice cuál es la cita y se procede con la modalidad clásica, el equipo que complete el versículo antes es el que gana.
+- Modalidad Preguntas con Opciones: Se hace una pregunta y se dan tres citas como posibles soluciones, en todos los casos hay sólo una respuesta correcta. Cada equipo debe buscar las opciones y comenzar a leer el versículo que corresponda. El primer equipo que lea el versículo correspondiente a la pregunta es el ganador. Los equipos pueden decir la cita y el versículo de memoria si lo saben.
+
+Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/espadeo-biblico){: target="_blank"}
+
+Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/espadeo-biblico-pdf){: target="_blank"}
 
 ## Memo Paralelo
 
@@ -116,18 +118,16 @@ Descargar el documento editable [![Download DOC](https://elc.github.io/theme/ima
 
 Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/memo-paralelo-pdf){: target="_blank"}
 
-## Conocé la historia
+## Armá la Historia
 
 [Volver al Índice](#indice)
 
-[![conoce_la_historia]({attach}images/juegos-biblicos/conoce_la_historia_01-thumbnail.jpg){: .narrow .b-lazy width=1344 data-src=/blog/images/juegos-biblicos/conoce_la_historia_01.jpg  }](/blog/images/juegos-biblicos/conoce_la_historia_01.jpg){: .gallery }
+[![conoce_la_historia]({attach}images/juegos-biblicos/arma_la_historia_01-thumbnail.jpg){: .narrow .b-lazy width=1090 data-src=/blog/images/juegos-biblicos/arma_la_historia_01.jpg  }](/blog/images/juegos-biblicos/arma_la_historia_01.jpg){: .gallery }
 
-A cada jugador se le coloca una tarjeta en la espalda, cada tarjeta contiene una serie de oraciones que están vinculadas a un personaje bíblico, pueden ser eventos, lugares, pasajes o cualquier otro dato relacionado.
+A cada equipo se le da una serie de tarjetas, algunas contienen pasajes y otras contienen eventos o historias. Cada equipo deberá asociar cada tarjeta de evento con una de un pasaje y luego ordenarlas para formar la historia bíblica.
 
-Los jugadores deberán preguntarles a los demás que dice su tarjeta, sin embargo sólo le dirán un dato, y para darle ese dato debe mencionar correctamente y en orden todos los anteriores. Es decir, el primer dato se lo dirá sin preguntar nada, para darle el segundo debe decir el primero, para darle el tercero debe decir el primero y el segundo.
+Al principio a cada equipo se le da una historia fácil y cada vez que completen una historia se le da una de mayor dificultad, sólo se considerará correcta si todas las tarjetas están en la posición adecuada. El organizador deberá decir que es incorrecta sin mencionar dónde está el error. En caso de empate el punto va para el equipo que más tarjetas correctas tenga en la historia en curso.
 
-El primer jugador que se acerque al organizador y pueda decir todos los datos correctamente y en orden será el ganador.
+Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/arma-historia){: target="_blank"}
 
-Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/conoce-historia){: target="_blank"}
-
-Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/conoce-historia-pdf){: target="_blank"}
+Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/arma-historia-pdf){: target="_blank"}
