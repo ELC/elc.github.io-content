@@ -1,7 +1,7 @@
 Title: Juegos Bíblicos para Jóvenes y Adolescentes
 Date: 2018-12-28
 Category: Christianity
-Tags: Games, Bible
+Tags: Christian, Games, Bible
 Slug: juegos-biblicos
 Authors: Ezequiel Leonardo Castaño
 Lang: es
