@@ -17,7 +17,7 @@ After looking to a Mathologer Video about a beautiful pattern emerged from time 
 
 First, let's introduce the video I mentioned, in this video a very nice patterns emerges in something called "Times Tables"
 
-<iframe width="900" height="506" src="https://www.youtube.com/embed/qhbuKbxJsk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="900" height="506" src="https://www.youtube.com/embed/qhbuKbxJsk8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 These animations were made using Wolfram Mathematica, but in Python, there are enough tools to achieve the same.
 
@@ -148,7 +148,7 @@ After all the functions needed are defined, now plotting a static version is qui
     points = 100
     plot_static(factor, points)
 
-![times-table-2-100]({attach}images/times_tables/times-tables-2-100-thumbnail.png){: .narrow .b-lazy width=900px data-src=/blog/images/times_tables/times-tables-2-100.png }
+![times-table-2-100]({attach}images/times_tables/times-tables-2-100-thumbnail.png){: .narrow .b-lazy width=900 data-src=/blog/images/times_tables/times-tables-2-100.png }
 
 ## Parametric Version
 

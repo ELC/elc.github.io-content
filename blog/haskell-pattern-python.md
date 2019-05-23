@@ -16,17 +16,17 @@ I started to learn a bit of Haskell and one of its features amazed me: Pattern M
 
 <!-- PELICAN_END_SUMMARY -->
 
-# Pattern what?
+## Pattern what?
 
 Pattern matching is a feature of Haskell that allows us to think in terms of [wholemeal programming](https://stackoverflow.com/a/6957292/7690767){: target="_blank"}, this means that we forget about the specific details of what we are working with. For example: Think in terms of first and last element instead of index 0 and index -1. This way of thinking has a very strong link with another common functional pattern: Recursive Functions
 
-# Is this a Python or a Haskell thing?
+## Is this a Python or a Haskell thing?
 
 Haskell is much older than Python and there are other languages that implements it besides Haskell so we can't say it's from either. But it turned out to be something that useful that it was incorporated into Python in the [PEP 3132](https://www.python.org/dev/peps/pep-3132/#id3){: target="_blank"} (In case you don't know, PEPs are the python enhancenment proposals, where all new features are asked and discussed).
 
-# How does it look like?
+## How does it look like?
 
-## Tuple Unpacking
+### Tuple Unpacking
 
 You probably used and make yourself familiar with typica tuple unpacking
 
@@ -54,7 +54,7 @@ Or maybe you use it at the top of a for loop:
     for i, name in enumerate(names):
         print(f'{i}: {name}')
 
-## Extended Tuple Unpacking
+### Extended Tuple Unpacking
 
 These are common uses of the tuple unpacking but a more powerful feature is built on top of it: The extended version, which uses the [Unpacking Argument Lists (splat)](https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists){: target="_blank"}
 
@@ -75,7 +75,7 @@ Or even more simplified:
     :::python
     list_ = list(range(10))
 
-### Examples
+#### Examples
 
 Get the first item of a list:
 
@@ -92,7 +92,7 @@ Get the first and the last item of a list
     :::python
     first, *rest, last = list_
 
-# Caveats
+## Caveats
 
 Although it may seem quite simple an easy, there are lots of ways to get it wrong:
 
@@ -104,6 +104,6 @@ Although it may seem quite simple an easy, there are lots of ways to get it wron
     (a,b),c = 1,2,3                  # ERROR -- too many values to unpack
     (a,b), *c = 1,2,3                # ERROR - 'int' object is not iterable
 
-# Is there any logic behind it?
+## Is there any logic behind it?
 
 Of course there is! This is programming and for a full explanation I recommend you to read the PEP and this [answer](https://stackoverflow.com/a/6968451){: target="_blank"}
