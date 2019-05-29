@@ -239,3 +239,9 @@ The following are some screenshots of the running model
 ### Number of people vs Time (Multiple graphs)
 
 [![Number of people multi-graph]({attach}images/elevator-simulation/simulation-part7-thumbnail.jpg){: .b-lazy width=1439 data-src=/blog/images/elevator-simulation/simulation-part7.jpg }](./blog/images/elevator-simulation/simulation-part7.jpg){: .gallery }
+
+## Additional Resources
+
+- [AnyLogic Official Website](https://www.anylogic.com/){: target="_blank"}: Here you can see the software features, case studies and examples.
+- [AnyLogic in Three Days: Modeling and Simulation Textbook](https://www.anylogic.com/resources/books/free-simulation-book-and-modeling-tutorials/){: target="_blank"}: This was the book I used to learn the basics of the software although experimentation is also required to fully understand some topics.
+- [AnyLogic Cloud](https://cloud.anylogic.com/){: target="_blank"}: This is the online repository of AnyLogic, where you can find several models from different topics. Free registration is required in order to see and run the models. Here is where the elevator simulation model is hosted.

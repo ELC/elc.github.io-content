@@ -528,3 +528,10 @@ Aparte de todo lo mencionado en esta guía, queda aún mucho terreno para explor
 - Crear etiquetas para identificar versiones específicas de todo el repositorio cuando se encuentra en un estado consistente (linea base). Buscar: **Tags**
 
 Algunas de las características mencionadas sólo pueden realizarse desde la consola, es decir, no son soportadas completamente en GitKraken
+
+## Recursos Adicionales
+
+- [Página web oficial de GitKraken](https://www.gitkraken.com/){: target="_blank"}
+- [Página web oficial de Git](https://git-scm.com/){: target="_blank"}
+- [Git Console Sandbox](https://learngitbranching.js.org/){: target="_blank"}: Permite experimentar con varios comandos de la consola git en un entorno Sandbox dentro del navegador.
+- [Awesome Git](https://github.com/dictcp/awesome-git){: target="_blank"}: Una lista compilada de increíbles herramientas de Git y recursos.

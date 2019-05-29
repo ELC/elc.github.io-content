@@ -299,8 +299,17 @@ Read the [Full Article]({filename}./times-tables.md){: target="_blank"}
 
 In case you want to go deeper, here are some useful resources:
 
-- [Official Repository](https://github.com/SamLau95/nbinteract){: target="_blank"}
-- [Official Docs](https://www.nbinteract.com/){: target="_blank"}
-- [Gitter Channel](https://gitter.im/nbinteract/Lobby/){: target="_blank"}
+- [NBInteract Official Repository](https://github.com/SamLau95/nbinteract){: target="_blank"}
+- [NBInteract Official Docs](https://www.nbinteract.com/){: target="_blank"}
+- [NBInteract Gitter Channel](https://gitter.im/nbinteract/Lobby/){: target="_blank"}
 - [JupyterCon Talk from the creators of NBInteract](https://www.youtube.com/watch?v=jln6h-dE2-0){: target="_blank"}
 - [NBInteract: Official Technical Report](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2018/EECS-2018-57.pdf){: target="_blank"}
+
+Other resources to achieve similar things are:
+
+- [NBDime](https://nbdime.readthedocs.io/en/latest/){: target="_blank"}: Tool to work with git and Jupyter Notebook for easy Diff
+- [JupyterBook](https://jupyter.org/jupyter-book/intro.html){: target="_blank"}: This tool also integrates executable and interactive notebook cells but rather than embedding them into a webpage, it creates the whole website. Alternative to GitBook
+- [Voila](https://github.com/quantstack/voila){: target="_blank"}: Interactive renderer for creating Dashboards
+- [SageMathCell](https://sagecell.sagemath.org/){: target="_blank"}: A way to generate embeddings online for cells of notebooks. It supports Sage, Gap, GP, HTML, Maculay2, Maxima, Octave, Python, R and Singular
+- [ThebeLab](https://thebelab.readthedocs.io/en/latest/){: target="_blank"}: Thebe Lab turns your static HTML pages into interactive ones, powered by a kernel. It is an experiment attempting to rebuild Thebe with javascript APIs provided by JupyterLab.
+- [Awesome Jupyter](https://github.com/markusschanta/awesome-jupyter){: target="_blank"}: A curated list of awesome Jupyter projects, libraries and resources.

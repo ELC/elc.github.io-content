@@ -530,3 +530,10 @@ Apart from everything mentioned in this guide, there is still a lot of ground to
 - Create tags to identify specific versions of the entire repository when it is in a consistent state (baseline). Search: **Tags**
 
 Some of the above features can only be done from the console, i.e. they are not fully supported in GitKraken.
+
+## Aditional Resources
+
+- [GitKraken Official Website](https://www.gitkraken.com/){: target="_blank"}
+- [Git Official Website](https://git-scm.com/){: target="_blank"}
+- [Git Console Sandbox](https://learngitbranching.js.org/){: target="_blank"}: It allows to experiment with several git console commands in a sandbox environment inside the browser.
+- [Awesome Git](https://github.com/dictcp/awesome-git){: target="_blank"}: A curated list of amazingly awesome Git tools, resources and shiny things.
