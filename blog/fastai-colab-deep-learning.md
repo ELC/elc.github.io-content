@@ -17,6 +17,8 @@ Nowadays there are lots of tutorials and material to learn Artificial Inteligenc
 
 <!-- PELICAN_END_SUMMARY -->
 
+**EDIT: this post is now OBSOLETE since the FastAI Team prepare specific tutorial for this an other setups, this could be found in [their official course page](#https://course.fast.ai/index.html){: target="_blank"}.**
+
 **WARNING: The fastai framework is migrating because of the release of PyTorch 1.0. The content of this notebook will be updated but the code might not work until the version 1.x of fastai has clear instructions about its installation.**
 
 First of all I'm going to introduce some definitions and concepts just for those that are not familiar with these topics. If you just want to  jump directly to the tutorialn, scroll down to the [**tutorial section**](#tutorial)
