@@ -39,9 +39,9 @@ La persona designada puede saltear la carta si lo cree conveniente. Por cada tar
 
 La tarjetas tienen distintas dificultades y deben estar mezcladas previamente, una vez que la tarjeta fue adivinada se separa, las tarjetas salteadas o penalizadas siguen en juego.
 
-Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/tabu-biblico){: target="_blank"}
+Descargar el documento editable (Ver [Instrucciones](#instrucciones-para-la-version-editable)) [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow .svg-button }](/link/tabu-biblico){: target="_blank"}
 
-Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/tabu-biblico-pdf){: target="_blank"}
+Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow .svg-button }](/link/tabu-biblico-pdf){: target="_blank"}
 
 ## Trivia Adolescente
 
@@ -60,9 +60,9 @@ Las categorías son:
 - Deportes
 - Biblia
 
-Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/trivia-adolescente){: target="_blank"}
+Descargar el documento editable (Ver [Instrucciones](#instrucciones-para-la-version-editable)) [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow .svg-button }](/link/trivia-adolescente){: target="_blank"}
 
-Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/trivia-adolescente-pdf){: target="_blank"}
+Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow .svg-button }](/link/trivia-adolescente-pdf){: target="_blank"}
 
 ## Conocé la historia
 
@@ -76,9 +76,9 @@ Los jugadores deberán preguntarles a los demás que dice su tarjeta, sin embarg
 
 El primer jugador que se acerque al organizador y pueda decir todos los datos correctamente y en orden será el ganador.
 
-Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/conoce-historia){: target="_blank"}
+Descargar el documento editable (Ver [Instrucciones](#instrucciones-para-la-version-editable)) [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow .svg-button }](/link/conoce-historia){: target="_blank"}
 
-Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/conoce-historia-pdf){: target="_blank"}
+Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow .svg-button }](/link/conoce-historia-pdf){: target="_blank"}
 
 ## Espadeo Bíblico - Versión Modificada
 
@@ -96,9 +96,9 @@ Este es un juego con 3 modalidales, el organizador puede alternar entre ellas o 
 - Modalidad Completar el versículo: Se lee una pequeña introducción y luego un versículo en forma incompleta, los equipos tienen la posibilidad de completarlo si lo saben de memoria, se dan unos segundos para esto. En caso de que ninguno de los equipos haya respondido, se dice cuál es la cita y se procede con la modalidad clásica, el equipo que complete el versículo antes es el que gana.
 - Modalidad Preguntas con Opciones: Se hace una pregunta y se dan tres citas como posibles soluciones, en todos los casos hay sólo una respuesta correcta. Cada equipo debe buscar las opciones y comenzar a leer el versículo que corresponda. El primer equipo que lea el versículo correspondiente a la pregunta es el ganador. Los equipos pueden decir la cita y el versículo de memoria si lo saben.
 
-Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/espadeo-biblico){: target="_blank"}
+Descargar el documento editable (Ver [Instrucciones](#instrucciones-para-la-version-editable)) [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow .svg-button }](/link/espadeo-biblico){: target="_blank"}
 
-Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/espadeo-biblico-pdf){: target="_blank"}
+Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow .svg-button }](/link/espadeo-biblico-pdf){: target="_blank"}
 
 ## Memo Paralelo
 
@@ -114,9 +114,9 @@ La persona designada sólo podrá voltear dos tarjetas a la vez, si desea voltea
 
 Es importante asegurarse que antes de darles las tarjetas a los equipos cada tarjeta tenga su par. El organizador tendrá una lista de todos los pares para poder validar si los equipos resolvieron el juego correctamente, el equipo que haya encontrado más pares en el tiempo fijado será el ganador.
 
-Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/memo-paralelo){: target="_blank"}
+Descargar el documento editable (Ver [Instrucciones](#instrucciones-para-la-version-editable)) [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow .svg-button }](/link/memo-paralelo){: target="_blank"}
 
-Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/memo-paralelo-pdf){: target="_blank"}
+Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow .svg-button }](/link/memo-paralelo-pdf){: target="_blank"}
 
 ## Armá la Historia
 
@@ -128,6 +128,21 @@ A cada equipo se le da una serie de tarjetas, algunas contienen pasajes y otras 
 
 Al principio a cada equipo se le da una historia fácil y cada vez que completen una historia se le da una de mayor dificultad, sólo se considerará correcta si todas las tarjetas están en la posición adecuada. El organizador deberá decir que es incorrecta sin mencionar dónde está el error. En caso de empate el punto va para el equipo que más tarjetas correctas tenga en la historia en curso.
 
-Descargar el documento editable [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow }](/link/arma-historia){: target="_blank"}
+Descargar el documento editable (Ver [Instrucciones](#instrucciones-para-la-version-editable)) [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow .svg-button }](/link/arma-historia){: target="_blank"}
 
-Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow }](/link/arma-historia-pdf){: target="_blank"}
+Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow .svg-button }](/link/arma-historia-pdf){: target="_blank"}
+
+
+## Instrucciones para la versión editable
+
+Cada juego tiene se puede acceder de dos maneras, en PDF o en formato de Google Docs (Similar al Microsoft Word). Al final de la descripción de cada juego habrá dos botones para cada forma respectivamente.
+
+La versión en PDF no es editable pero es la más fácil de imprimir (no se cambia el formato al imprimir), en caso de requerir ediciones, éstas pueden hacerse libremente en el formato de Google Docs o Microsoft Word.
+
+Para utilizar la versión de Google Docs se debe iniciar primero en la cuenta de Google (en su correo de @gmail) y luego tendrá la posibilidad de "Hacer una copia" esa copia es completamente suya y allí podrá hacer todas las modificaciones necesarias.
+
+[![Hacer Copia Google Docs]({attach}images/juegos-biblicos/descargar_tutorial_01-thumbnail.png){: .narrow .b-lazy width=669 data-src=/blog/images/juegos-biblicos/descargar_tutorial_01.png  }](/blog/images/juegos-biblicos/descargar_tutorial_01.png){: .gallery }
+
+Por otro lado, en caso de preferir el entorno de Microsoft Word, basta con hacer click en "Descargar" y luego seleccionar el formato preferido, el de Microsoft Word es el "docx".
+
+[![Descargar Docx]({attach}images/juegos-biblicos/descargar_tutorial_02-thumbnail.png){: .narrow .b-lazy width=669 data-src=/blog/images/juegos-biblicos/descargar_tutorial_02.png  }](/blog/images/juegos-biblicos/descargar_tutorial_02.png){: .gallery }
