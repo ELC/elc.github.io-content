@@ -16,7 +16,9 @@ En el pasado yo siempre tuve una mirada despectiva de los juegos, pensé que era
 
 En este artículo voy a dejar todos los juegos que vaya diseñando, la idea es tener un lugar centralizado donde las personas puedan referenciar y también proveer plantillas para que puedan ser adaptados si hiciera falta. Cada juego va a tener una imagen que muestra como es, las instrucciones, un enlace a una versión en PDF lista para imprimir y recortar y un enlace a una versión de Google Docs lista para descargar y adaptar.
 
-Adicionalmente, toda crítica, sugerencia y comentario es bien recibido, pueden dejarlo expresado en los comentarios al final de este artículo
+Adicionalmente, toda crítica, sugerencia y comentario es bien recibido, pueden dejarlo expresado en los comentarios al final de este artículo.
+
+**También te puede interesar:** si participás en una actividad donde se utilizan presentationes en Power Point para pasar las letras de las canciones (campamentos, reunión de jóvenes, etc.), puede interesarte esta **[aplicación online](https://elc.github.io/lyrics-presentation/){: target="_blank"}** para generar las presentaciones automáticamente.
 
 ## Índice
 
@@ -132,12 +134,13 @@ Descargar el documento editable (Ver [Instrucciones](#instrucciones-para-la-vers
 
 Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow .svg-button }](/link/arma-historia-pdf){: target="_blank"}
 
-
 ## Instrucciones para la versión editable
 
 Cada juego tiene se puede acceder de dos maneras, en PDF o en formato de Google Docs (Similar al Microsoft Word). Al final de la descripción de cada juego habrá dos botones para cada forma respectivamente.
 
 La versión en PDF no es editable pero es la más fácil de imprimir (no se cambia el formato al imprimir), en caso de requerir ediciones, éstas pueden hacerse libremente en el formato de Google Docs o Microsoft Word.
+
+*Si decidiste modificar alguno de los juegos, me encantaría que pudieras compartir las modificaciones mandándome un email a **castanoezequielleonardo@gmail.com**.*
 
 Para utilizar la versión de Google Docs se debe iniciar primero en la cuenta de Google (en su correo de @gmail) y luego tendrá la posibilidad de "Hacer una copia" esa copia es completamente suya y allí podrá hacer todas las modificaciones necesarias.
 
