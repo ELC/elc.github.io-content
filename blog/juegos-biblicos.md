@@ -12,6 +12,8 @@ Compilado de juegos bíblicos listos para imprimir. Pensados y adaptados para j�
 
 <!-- PELICAN_END_SUMMARY -->
 
+EDICIÓN 2020.18.15: Ya está disponible la [app web para el Tabú Bíblico](/link/tabu-biblico-web)!
+
 En el pasado yo siempre tuve una mirada despectiva de los juegos, pensé que eran innecesarios e infantiles pero fue el Señor que me sorprendió dandome la habilidad para diseñarlos y encontrarme con que resultaron ser de suma utilidad, tanto en una reunión de jóvenes como de adolescentes.
 
 En este artículo voy a dejar todos los juegos que vaya diseñando, la idea es tener un lugar centralizado donde las personas puedan referenciar y también proveer plantillas para que puedan ser adaptados si hiciera falta. Cada juego va a tener una imagen que muestra como es, las instrucciones, un enlace a una versión en PDF lista para imprimir y recortar y un enlace a una versión de Google Docs lista para descargar y adaptar.
@@ -44,6 +46,8 @@ La tarjetas tienen distintas dificultades y deben estar mezcladas previamente, u
 Descargar el documento editable (Ver [Instrucciones](#instrucciones-para-la-version-editable)) [![Download DOC](https://elc.github.io/theme/images/DOC.svg){: .narrow .svg-button }](/link/tabu-biblico){: target="_blank"}
 
 Descargar el PDF listo para imprimir [![Downlaod PDF](https://elc.github.io/theme/images/PDF.svg){: .narrow .svg-button }](/link/tabu-biblico-pdf){: target="_blank"}
+
+Ahora también disponible como app web para celulares y PCs: Disponible online [aquí](/link/tabu-biblico-web)
 
 ## Trivia Adolescente
 
