@@ -7,7 +7,7 @@ Authors: Ezequiel Leonardo Castaño
 Lang: en
 headerimage: https://elc.github.io/blog/images/ode-python/ordinary-differential-equations-with-python-headerimage.png
 
-[![ODE Header Image]({attach}images/ode-python/ordinary-differential-equations-with-python-headerimage-thumbnail.png){: .b-lazy width=1333 data-src=/blog/images/ode-python/ordinary-differential-equations-with-python-headerimage.png }](/blog/images/ode-python/ordinary-differential-equations-with-python-headerimage.png){: .gallery }
+[![ODE Header Image]({static}images/ode-python/ordinary-differential-equations-with-python-headerimage-thumbnail.png){: .b-lazy width=1333 data-src=/blog/images/ode-python/ordinary-differential-equations-with-python-headerimage.png }](/blog/images/ode-python/ordinary-differential-equations-with-python-headerimage.png){: .gallery }
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 

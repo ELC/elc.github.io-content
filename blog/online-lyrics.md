@@ -8,7 +8,7 @@ Lang: en
 Headerimage: https://elc.github.io/blog/images/online-lyrics/online-lyrics-headerimage.png
 <!-- Status: draft -->
 
-[![Online Lyrics Presentation Generator Header Image]({attach}images/online-lyrics/online-lyrics-headerimage-thumbnail.png){: .b-lazy width=1920 data-src=/blog/images/online-lyrics/online-lyrics-headerimage.png }](/blog/images/online-lyrics/online-lyrics-headerimage.png){: .gallery }
+[![Online Lyrics Presentation Generator Header Image]({static}images/online-lyrics/online-lyrics-headerimage-thumbnail.png){: .b-lazy width=1920 data-src=/blog/images/online-lyrics/online-lyrics-headerimage.png }](/blog/images/online-lyrics/online-lyrics-headerimage.png){: .gallery }
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 

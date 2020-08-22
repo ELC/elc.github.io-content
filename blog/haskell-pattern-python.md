@@ -8,7 +8,7 @@ Lang: en
 level: Begginer
 headerimage: https://elc.github.io/blog/images/haskell_python/haskell_python_headerimage.png
 
-[![Haskell Header Image]({attach}images/haskell_python/haskell_python_headerimage-thumbnail.png){: .b-lazy width=1371 data-src=/blog/images/haskell_python/haskell_python_headerimage.png }](/blog/images/haskell_python/haskell_python_headerimage.png){: .gallery }
+[![Haskell Header Image]({static}images/haskell_python/haskell_python_headerimage-thumbnail.png){: .b-lazy width=1371 data-src=/blog/images/haskell_python/haskell_python_headerimage.png }](/blog/images/haskell_python/haskell_python_headerimage.png){: .gallery }
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 

@@ -8,7 +8,7 @@ Lang: en
 level: Beginner
 headerimage: https://elc.github.io/blog/images/fractals/factals_headerimage.png
 
-[![Fractals Header Image]({attach}images/fractals/factals_headerimage-thumbnail.png){: .b-lazy width=1920 data-src=/blog/images/fractals/factals_headerimage.png }](/blog/images/fractals/factals_headerimage.png){: .gallery }
+[![Fractals Header Image]({static}images/fractals/factals_headerimage-thumbnail.png){: .b-lazy width=1920 data-src=/blog/images/fractals/factals_headerimage.png }](/blog/images/fractals/factals_headerimage.png){: .gallery }
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 

@@ -8,7 +8,7 @@ Lang: en
 headerimage: https://elc.github.io/blog/images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage.png
 level: Intermediate
 
-[![Embed Interactive Notebooks Logo]({attach}images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage-thumbnail.png){: .b-lazy width=1401 data-src=/blog/images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage.png }](/blog/images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage.png){: .gallery }
+[![Embed Interactive Notebooks Logo]({static}images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage-thumbnail.png){: .b-lazy width=1401 data-src=/blog/images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage.png }](/blog/images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage.png){: .gallery }
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
@@ -96,21 +96,21 @@ In order to create a Gist, you have to first have a Github Account.
 
 Once logged in, you have to click on your profile image in the top bar
 
-[![Gist Tutorial Part 1]({attach}images/embed_interactive_notebooks/gist_tutorial_01-thumbnail.png){: width=1284 .b-lazy data-src=/blog/images/embed_interactive_notebooks/gist_tutorial_01.png }](/blog/images/embed_interactive_notebooks/gist_tutorial_01.png ){: .gallery}
+[![Gist Tutorial Part 1]({static}images/embed_interactive_notebooks/gist_tutorial_01-thumbnail.png){: width=1284 .b-lazy data-src=/blog/images/embed_interactive_notebooks/gist_tutorial_01.png }](/blog/images/embed_interactive_notebooks/gist_tutorial_01.png ){: .gallery}
 
 Now select "Your Gists"
 
-[![Gist Tutorial Part 2]({attach}images/embed_interactive_notebooks/gist_tutorial_02-thumbnail.png){: .narrow width=173 .b-lazy data-src=/blog/images/embed_interactive_notebooks/gist_tutorial_02.png }](/blog/images/embed_interactive_notebooks/gist_tutorial_02.png ){: .gallery}
+[![Gist Tutorial Part 2]({static}images/embed_interactive_notebooks/gist_tutorial_02-thumbnail.png){: .narrow width=173 .b-lazy data-src=/blog/images/embed_interactive_notebooks/gist_tutorial_02.png }](/blog/images/embed_interactive_notebooks/gist_tutorial_02.png ){: .gallery}
 
 The next page will change if you already have gists created but the top bar will remain the same, in the top bar select the "+" icon
 
-[![Gist Tutorial Part 3]({attach}images/embed_interactive_notebooks/gist_tutorial_03-thumbnail.png){: width=1280 .b-lazy data-src=/blog/images/embed_interactive_notebooks/gist_tutorial_03.png }](/blog/images/embed_interactive_notebooks/gist_tutorial_03.png ){: .gallery}
+[![Gist Tutorial Part 3]({static}images/embed_interactive_notebooks/gist_tutorial_03-thumbnail.png){: width=1280 .b-lazy data-src=/blog/images/embed_interactive_notebooks/gist_tutorial_03.png }](/blog/images/embed_interactive_notebooks/gist_tutorial_03.png ){: .gallery}
 
 Now you are in the Gist creation Template, here you have to write the Gist Name, the filename of the first file, its contents and you can additionally add files if necessary with the button below. When everything is set up, click in create public gist.
 
 Note: You can also create private gists for free but for NBInteract and thus this guide to work, the gist should be public.
 
-[![Gist Tutorial Part 4]({attach}images/embed_interactive_notebooks/gist_tutorial_04-thumbnail.png){: width=1366 .b-lazy data-src=/blog/images/embed_interactive_notebooks/gist_tutorial_04.png }](/blog/images/embed_interactive_notebooks/gist_tutorial_04.png ){: .gallery}
+[![Gist Tutorial Part 4]({static}images/embed_interactive_notebooks/gist_tutorial_04-thumbnail.png){: width=1366 .b-lazy data-src=/blog/images/embed_interactive_notebooks/gist_tutorial_04.png }](/blog/images/embed_interactive_notebooks/gist_tutorial_04.png ){: .gallery}
 
 ### Dependency Management
 
@@ -123,15 +123,15 @@ Once the gist is created, it should be tested with [MyBinder](https://mybinder.o
 
 In order to test it first select the Combo Box in the main page
 
-[![MyBinder Tutorial Part 1]({attach}images/embed_interactive_notebooks/mybinder_tutorial_01-thumbnail.png){: .narrow width=880 .b-lazy data-src=/blog/images/embed_interactive_notebooks/mybinder_tutorial_01.png }](/blog/images/embed_interactive_notebooks/mybinder_tutorial_01.png ){: .gallery}
+[![MyBinder Tutorial Part 1]({static}images/embed_interactive_notebooks/mybinder_tutorial_01-thumbnail.png){: .narrow width=880 .b-lazy data-src=/blog/images/embed_interactive_notebooks/mybinder_tutorial_01.png }](/blog/images/embed_interactive_notebooks/mybinder_tutorial_01.png ){: .gallery}
 
 Then select the Gist Option
 
-[![MyBinder Tutorial Part 2]({attach}images/embed_interactive_notebooks/mybinder_tutorial_02-thumbnail.png){: .narrow width=907 .b-lazy data-src=/blog/images/embed_interactive_notebooks/mybinder_tutorial_02.png }](/blog/images/embed_interactive_notebooks/mybinder_tutorial_02.png ){: .gallery}
+[![MyBinder Tutorial Part 2]({static}images/embed_interactive_notebooks/mybinder_tutorial_02-thumbnail.png){: .narrow width=907 .b-lazy data-src=/blog/images/embed_interactive_notebooks/mybinder_tutorial_02.png }](/blog/images/embed_interactive_notebooks/mybinder_tutorial_02.png ){: .gallery}
 
 And finally, write the `Username/GISTID` in the textbox and then click on "Launch"
 
-[![MyBinder Tutorial Part 3]({attach}images/embed_interactive_notebooks/mybinder_tutorial_03-thumbnail.png){: .narrow width=873 .b-lazy data-src=/blog/images/embed_interactive_notebooks/mybinder_tutorial_03.png }](/blog/images/embed_interactive_notebooks/mybinder_tutorial_03.png ){: .gallery}
+[![MyBinder Tutorial Part 3]({static}images/embed_interactive_notebooks/mybinder_tutorial_03-thumbnail.png){: .narrow width=873 .b-lazy data-src=/blog/images/embed_interactive_notebooks/mybinder_tutorial_03.png }](/blog/images/embed_interactive_notebooks/mybinder_tutorial_03.png ){: .gallery}
 
 **Note:** The first time you launch could take several minutes because it's building a docker image, this process is repeated each time you change the Gist so it is a good idea to always run your gists on Binder after you made a change.
 

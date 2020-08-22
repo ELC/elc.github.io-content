@@ -7,7 +7,7 @@ Authors: Ezequiel Leonardo Castaño
 Lang: en
 Headerimage: https://elc.github.io/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png
 
-[![Git Tutorial Header Image]({attach}images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage-thumbnail.png){: width=1365 .b-lazy width=2000 data-src=/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png }](/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png ){: .gallery}
+[![Git Tutorial Header Image]({static}images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage-thumbnail.png){: width=1365 .b-lazy width=2000 data-src=/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png }](/blog/images/git-guide-with-visual-interface/git-guide-with-visual-interface-headerimage.png ){: .gallery}
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
@@ -117,7 +117,7 @@ The last important concept is the **`branches`**, this is the key concept of Git
 
 This can be visualized much better in an image. Each arrow indicates a *merge* operation.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_0-thumbnail.png){: .narrow width=658 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_0.png }](/blog/images/git-guide-with-visual-interface/image_0.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_0-thumbnail.png){: .narrow width=658 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_0.png }](/blog/images/git-guide-with-visual-interface/image_0.png ){: .gallery}
 
 ### Additional Software
 
@@ -133,7 +133,7 @@ As mentioned, a fork is a stand-alone copy of a repository. The repository alrea
 
 First, we look in Github the repository from which the Fork is wanted, in this case, the Manim repository will be used, the animation engine created by 3Blue1Brown.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_1-thumbnail.png){: width=1280 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_1.png }](/blog/images/git-guide-with-visual-interface/image_1.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_1-thumbnail.png){: width=1280 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_1.png }](/blog/images/git-guide-with-visual-interface/image_1.png ){: .gallery}
 
 As you can see in the image, the repository creator is 3b1b and the currently logged user is ELC so the owner and the creator are different users.
 
@@ -141,15 +141,15 @@ As you can see in the image, the repository creator is 3b1b and the currently lo
 
 To make a fork, simply click on the Fork button at the top.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_2-thumbnail.png){: .narrow width=922 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_2.png }](/blog/images/git-guide-with-visual-interface/image_2.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_2-thumbnail.png){: .narrow width=922 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_2.png }](/blog/images/git-guide-with-visual-interface/image_2.png ){: .gallery}
 
 Immediately afterward, GitHub will redirect us to a screen that tells us that the Fork is being created.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_3-thumbnail.png){: width=1268 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_3.png }](/blog/images/git-guide-with-visual-interface/image_3.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_3-thumbnail.png){: width=1268 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_3.png }](/blog/images/git-guide-with-visual-interface/image_3.png ){: .gallery}
 
 Once the process is finished, a repository of the same name will be created in the logged user account.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_4-thumbnail.png){: .narrow width=924 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_4.png }](/blog/images/git-guide-with-visual-interface/image_4.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_4-thumbnail.png){: .narrow width=924 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_4.png }](/blog/images/git-guide-with-visual-interface/image_4.png ){: .gallery}
 
 As you can see in the image above, the repository now belongs to **`ELC`**, with a small label below that indicates that the repository is a Fork. A sign that this repository is independent and belongs to the logged user is that there is a new section **"Settings"** that otherwise would not appear.
 
@@ -171,19 +171,19 @@ The most traditional approach is to first create the repository on the remote se
 
 This can be done from the Github homepage.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_5-thumbnail.png){: width=1279 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_5.png }](/blog/images/git-guide-with-visual-interface/image_5.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_5-thumbnail.png){: width=1279 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_5.png }](/blog/images/git-guide-with-visual-interface/image_5.png ){: .gallery}
 
 ### 1 (Alternative). Create a repository
 
 Or from the repository section.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_6-thumbnail.png){: width=1279 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_6.png }](/blog/images/git-guide-with-visual-interface/image_6.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_6-thumbnail.png){: width=1279 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_6.png }](/blog/images/git-guide-with-visual-interface/image_6.png ){: .gallery}
 
 ### 2. Complete the necessary information
 
 **IMPORTANT:** In order to clone, our repository must be "Initialized" therefore, it is essential to check the option *"Initialize this repository with a README"*. The gitignore options allow git to ignore certain files (temporary files, caches, etc.) and the license allows you to choose a standard license from a list.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_7-thumbnail.png){: .narrow width=678 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_7.png }](/blog/images/git-guide-with-visual-interface/image_7.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_7-thumbnail.png){: .narrow width=678 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_7.png }](/blog/images/git-guide-with-visual-interface/image_7.png ){: .gallery}
 
 ### 3. Get Repository URL
 
@@ -196,43 +196,43 @@ All git repository services attach a public URL to the repository, so this appro
 
 Once you follow the steps in the images, the URL will be copied to the clipboard.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_8-thumbnail.png){: width=1277 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_8.png }](/blog/images/git-guide-with-visual-interface/image_8.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_8-thumbnail.png){: width=1277 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_8.png }](/blog/images/git-guide-with-visual-interface/image_8.png ){: .gallery}
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_9-thumbnail.png){: width=1277 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_9.png }](/blog/images/git-guide-with-visual-interface/image_9.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_9-thumbnail.png){: width=1277 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_9.png }](/blog/images/git-guide-with-visual-interface/image_9.png ){: .gallery}
 
 ### 4. Open the window of Clone inside the GitKraken
 
 In the File menu, select the option "Clone Repo".
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_10-thumbnail.png){: .narrow width=370 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_10.png }](/blog/images/git-guide-with-visual-interface/image_10.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_10-thumbnail.png){: .narrow width=370 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_10.png }](/blog/images/git-guide-with-visual-interface/image_10.png ){: .gallery}
 
 ### 4 (Alternative 1). Open the Clone window inside the GitKraken
 
 At any time, you can use the button located in the upper left corner.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_11-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_11.png }](/blog/images/git-guide-with-visual-interface/image_11.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_11-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_11.png }](/blog/images/git-guide-with-visual-interface/image_11.png ){: .gallery}
 
 Then choose the Clone option.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_12-thumbnail.png){: .narrow width=164 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_12.png }](/blog/images/git-guide-with-visual-interface/image_12.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_12-thumbnail.png){: .narrow width=164 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_12.png }](/blog/images/git-guide-with-visual-interface/image_12.png ){: .gallery}
 
 ### 4 (Alternative 2). Open the Clone window inside the GitKraken
 
 If no repository is open, the menu can be accessed directly from the home screen.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_13-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_13.png }](/blog/images/git-guide-with-visual-interface/image_13.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_13-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_13.png }](/blog/images/git-guide-with-visual-interface/image_13.png ){: .gallery}
 
 ### 5. Paste the URL
 
 Additionally, you can detail the **`path`** where the repository will be cloned and change the name of the destination folder. It is recommended to have a *"Repositories"* folder and clone all repositories there.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_14-thumbnail.png){: .narrow width=796 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_14.png }](/blog/images/git-guide-with-visual-interface/image_14.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_14-thumbnail.png){: .narrow width=796 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_14.png }](/blog/images/git-guide-with-visual-interface/image_14.png ){: .gallery}
 
 ### 5. Notification of Success
 
 Once the repository has been cloned, a notification should appear at the top saying that the operation was successful. One can use the "Open Now" button to open the repository immediately. In this case, it will not be done to illustrate how to open a repository from scratch.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_15-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_15.png }](/blog/images/git-guide-with-visual-interface/image_15.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_15-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_15.png }](/blog/images/git-guide-with-visual-interface/image_15.png ){: .gallery}
 
 ## Open a repository
 
@@ -244,31 +244,31 @@ Once the repository has been cloned, it is necessary to open it in order to star
 
 In the File menu, select the option "Open Repo".
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_16-thumbnail.png){: .narrow width=368 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_16.png }](/blog/images/git-guide-with-visual-interface/image_16.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_16-thumbnail.png){: .narrow width=368 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_16.png }](/blog/images/git-guide-with-visual-interface/image_16.png ){: .gallery}
 
 ### 1 (Alternative 1). Open Window
 
 In addition, the icon in the upper left corner can be used.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_17-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_17.png }](/blog/images/git-guide-with-visual-interface/image_17.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_17-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_17.png }](/blog/images/git-guide-with-visual-interface/image_17.png ){: .gallery}
 
 ### 1 (Alternative 2). Open Window
 
 If no repository is opened, you can use the start screen button.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_18-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_18.png }](/blog/images/git-guide-with-visual-interface/image_18.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_18-thumbnail.png){: width=1302 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_18.png }](/blog/images/git-guide-with-visual-interface/image_18.png ){: .gallery}
 
 ### 2. Select the repository
 
 "Open a Repository" is selected.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_19-thumbnail.png){: .narrow width=360 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_19.png }](/blog/images/git-guide-with-visual-interface/image_19.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_19-thumbnail.png){: .narrow width=360 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_19.png }](/blog/images/git-guide-with-visual-interface/image_19.png ){: .gallery}
 
 ### 3. Select the folder
 
 Navigate to the folder where the repository is located, an easy way to identify it is that you should see a folder called ".git" (This folder may not appear if you do not have Windows hidden files enabled).
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_20-thumbnail.png){: .narrow width=875 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_20.png }](/blog/images/git-guide-with-visual-interface/image_20.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_20-thumbnail.png){: .narrow width=875 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_20.png }](/blog/images/git-guide-with-visual-interface/image_20.png ){: .gallery}
 
 ## Interface Elements
 
@@ -276,13 +276,13 @@ Navigate to the folder where the repository is located, an easy way to identify 
 
 When opening a repository we will find the basic interface.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_21-en-thumbnail.png){: width=1300 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_21-en.png }](/blog/images/git-guide-with-visual-interface/image_21-en.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_21-en-thumbnail.png){: width=1300 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_21-en.png }](/blog/images/git-guide-with-visual-interface/image_21-en.png ){: .gallery}
 
 ### Commits and Branches Tree
 
 When having several commits and branches, in the central part, it is possible to see the bifurcations and the unions, in the following image is shown a project with several branches (Only as an example).
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_22-thumbnail.png){: .narrow width=807 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_22.png }](/blog/images/git-guide-with-visual-interface/image_22.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_22-thumbnail.png){: .narrow width=807 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_22.png }](/blog/images/git-guide-with-visual-interface/image_22.png ){: .gallery}
 
 ## Add Changes
 
@@ -297,11 +297,11 @@ The former have the advantage that the user does not have to leave the applicati
 
 When using Gitkraken it is possible to work as usual in the traditional IDE and when you want to add changes to the repository what will appear is something like the following:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_23-thumbnail.png){: .narrow width=343 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_23.png }](/blog/images/git-guide-with-visual-interface/image_23.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_23-thumbnail.png){: .narrow width=343 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_23.png }](/blog/images/git-guide-with-visual-interface/image_23.png ){: .gallery}
 
 The acronym WIP (Work in Progress) refers to the Working Area. By clicking on this box you can see on the right side the changes made separated by files and also a clear division between the Working Area and the Staging Area.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_24-en-thumbnail.png){: .narrow width=322 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_24-en.png }](/blog/images/git-guide-with-visual-interface/image_24-en.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_24-en-thumbnail.png){: .narrow width=322 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_24-en.png }](/blog/images/git-guide-with-visual-interface/image_24-en.png ){: .gallery}
 
 It is also important to clarify the function of three buttons:
 
@@ -309,41 +309,41 @@ It is also important to clarify the function of three buttons:
 - Tree: Allows to visualize the files in the form of a tree of directories, depending on the configuration may not be selected by default, it is recommended to use it.
 - Stage Files/changes to commit: Generates a commit with the given title and description of all changes that are in the Staging Area.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_25.png){: .narrow width=329 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_25.png }](/blog/images/git-guide-with-visual-interface/image_25.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_25.png){: .narrow width=329 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_25.png }](/blog/images/git-guide-with-visual-interface/image_25.png ){: .gallery}
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_26.png){: .narrow width=336 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_26.png }](/blog/images/git-guide-with-visual-interface/image_26.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_26.png){: .narrow width=336 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_26.png }](/blog/images/git-guide-with-visual-interface/image_26.png ){: .gallery}
 
 If you click on any of the files in both the Working and Staging Area, you can see a detail of the changes:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_27-thumbnail.png){: width=1261 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_27.png }](/blog/images/git-guide-with-visual-interface/image_27.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_27-thumbnail.png){: width=1261 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_27.png }](/blog/images/git-guide-with-visual-interface/image_27.png ){: .gallery}
 
 Each line shaded with red implies that that line was in the last version and will be removed, the green shaded indicate that they were not in the last version and will be added. In Git there is no concept of modifying a line so if a modification is made, the line from the previous version will be deleted and an identical one will be added but with the changes made.
 
 If one hovers the cursor over one of these lines, a button with a plus sign (+) will appear that will allow us to move individual lines to the Staging Area:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_28-thumbnail.png){: .narrow width=80 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_28.png }](/blog/images/git-guide-with-visual-interface/image_28.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_28-thumbnail.png){: .narrow width=80 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_28.png }](/blog/images/git-guide-with-visual-interface/image_28.png ){: .gallery}
 
 Gitkraken, in turn, identifies changes by sections in files and allows several sections to be added to the Staging Area.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_29-thumbnail.png){: .narrow width=173 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_29.png }](/blog/images/git-guide-with-visual-interface/image_29.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_29-thumbnail.png){: .narrow width=173 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_29.png }](/blog/images/git-guide-with-visual-interface/image_29.png ){: .gallery}
 
 Finally, if you want to add all the changes of a file to the Staging Area, you can position the cursor over that file and use the "Stage File" button that will appear. It is also possible to move ALL files from the Working Area to the Staging Area with the *"Stage all Changes"* button:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_30-thumbnail.png){: .narrow width=414 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_30.png }](/blog/images/git-guide-with-visual-interface/image_30.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_30-thumbnail.png){: .narrow width=414 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_30.png }](/blog/images/git-guide-with-visual-interface/image_30.png ){: .gallery}
 
 The process to remove changes from the Staging Area and pass them to the Working Area is identical, only the corresponding file must be selected first from the Staging Area, in this case the buttons are red and the button with the plus (+) becomes a minus (-):
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_31-thumbnail.png){: .narrow width=74 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_31.png }](/blog/images/git-guide-with-visual-interface/image_31.png ){: .gallery}
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_32-thumbnail.png){: .narrow width=131 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_32.png }](/blog/images/git-guide-with-visual-interface/image_32.png ){: .gallery}
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_33-thumbnail.png){: .narrow width=424 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_33.png }](/blog/images/git-guide-with-visual-interface/image_33.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_31-thumbnail.png){: .narrow width=74 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_31.png }](/blog/images/git-guide-with-visual-interface/image_31.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_32-thumbnail.png){: .narrow width=131 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_32.png }](/blog/images/git-guide-with-visual-interface/image_32.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_33-thumbnail.png){: .narrow width=424 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_33.png }](/blog/images/git-guide-with-visual-interface/image_33.png ){: .gallery}
 
 Once you have moved the desired changes to the Staging Area, you can create the desired commit, you need to assign it a title, you can also detail an optional description:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_34-thumbnail.png){: .narrow width=328 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_34.png }](/blog/images/git-guide-with-visual-interface/image_34.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_34-thumbnail.png){: .narrow width=328 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_34.png }](/blog/images/git-guide-with-visual-interface/image_34.png ){: .gallery}
 
 Once the commit is done, it will appear in the main screen with the name assigned to it:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_35-thumbnail.png){: .narrow width=346 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_35.png }](/blog/images/git-guide-with-visual-interface/image_35.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_35-thumbnail.png){: .narrow width=346 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_35.png }](/blog/images/git-guide-with-visual-interface/image_35.png ){: .gallery}
 
 It is important to note that this generates the commit in the **LOCAL** repository and that these changes have not yet impacted the remote repository, Gitkraken shows us this by using a computer for the Local repository and the Github user logo to represent the remote repository. In the next section, we will see how to synchronize both repositories.
 
@@ -362,13 +362,13 @@ Fetch is, therefore, a completely safe action, while Pull can bring changes that
 
 In the Gitkraken action bar we have the Fetch action:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_36-thumbnail.png){: .narrow width=398 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_36.png }](/blog/images/git-guide-with-visual-interface/image_36.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_36-thumbnail.png){: .narrow width=398 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_36.png }](/blog/images/git-guide-with-visual-interface/image_36.png ){: .gallery}
 
 To access the Pull action, choose the arrow next to Fetch:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_37-thumbnail.png){: .narrow width=398 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_37.png }](/blog/images/git-guide-with-visual-interface/image_37.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_37-thumbnail.png){: .narrow width=398 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_37.png }](/blog/images/git-guide-with-visual-interface/image_37.png ){: .gallery}
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_38-thumbnail.png){: .narrow width=376 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_38.png }](/blog/images/git-guide-with-visual-interface/image_38.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_38-thumbnail.png){: .narrow width=376 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_38.png }](/blog/images/git-guide-with-visual-interface/image_38.png ){: .gallery}
 
 In the case of the example repository, the Pull should be successful as there were no changes in the remote repository.
 
@@ -376,11 +376,11 @@ In the case of the example repository, the Pull should be successful as there we
 
 To upload changes it is necessary to first perform a Pull to resolve conflicts (if any) once resolved, you can perform a Push using the associated button in the action bar:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_39-thumbnail.png){: .narrow width=393 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_39.png }](/blog/images/git-guide-with-visual-interface/image_39.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_39-thumbnail.png){: .narrow width=393 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_39.png }](/blog/images/git-guide-with-visual-interface/image_39.png ){: .gallery}
 
 Once done, the easiest way to verify that it was successful is to see the commits tree.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_40-thumbnail.png){: .narrow width=350 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_40.png }](/blog/images/git-guide-with-visual-interface/image_40.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_40-thumbnail.png){: .narrow width=350 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_40.png }](/blog/images/git-guide-with-visual-interface/image_40.png ){: .gallery}
 
 This time both the Github user logo and the computer are together, showing that the content is synchronized.
 
@@ -388,7 +388,7 @@ This time both the Github user logo and the computer are together, showing that 
 
 To illustrate what a reverse situation would look like (changes were made to the remote repository and we want to download them). First, we do Fetch and we'll see something like this:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_41-thumbnail.png){: .narrow width=362 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_41.png }](/blog/images/git-guide-with-visual-interface/image_41.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_41-thumbnail.png){: .narrow width=362 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_41.png }](/blog/images/git-guide-with-visual-interface/image_41.png ){: .gallery}
 
 As you can see, the branch master is "advanced" and has a commit called *"Update README.md"* that is only in the remote repository (evidenced by the Github account logo). And our local version is "behind". In this situation we have to evaluate the changes and if there are any conflicts (including the Working Area files).  It is recommended not to have anything in the Working Area at the time of Pulling, that is, that all changes are already inside commits, this simplifies the process and decreases the probability of finding conflicts.
 
@@ -396,7 +396,7 @@ As you can see, the branch master is "advanced" and has a commit called *"Update
 
 In case there are no conflicts, a Pull can be performed without problems:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_42-thumbnail.png){: .narrow width=340 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_42.png }](/blog/images/git-guide-with-visual-interface/image_42.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_42-thumbnail.png){: .narrow width=340 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_42.png }](/blog/images/git-guide-with-visual-interface/image_42.png ){: .gallery}
 
 The result is as expected, both the local and remote repositories are synchronized.
 
@@ -414,27 +414,27 @@ In this case, we will create a master branch, add two commits, join it and then 
 
 In the first place, we position ourselves in master, double-clicking in *"master"*.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_43-thumbnail.png){: .narrow width=391 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_43.png }](/blog/images/git-guide-with-visual-interface/image_43.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_43-thumbnail.png){: .narrow width=391 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_43.png }](/blog/images/git-guide-with-visual-interface/image_43.png ){: .gallery}
 
 Then use the **`Branch`** button on the action bar.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_44-thumbnail.png){: .narrow width=381 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_44.png }](/blog/images/git-guide-with-visual-interface/image_44.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_44-thumbnail.png){: .narrow width=381 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_44.png }](/blog/images/git-guide-with-visual-interface/image_44.png ){: .gallery}
 
 Then write the name of the branch and press enter:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_45-thumbnail.png){: .narrow width=356 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_45.png }](/blog/images/git-guide-with-visual-interface/image_45.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_45-thumbnail.png){: .narrow width=356 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_45.png }](/blog/images/git-guide-with-visual-interface/image_45.png ){: .gallery}
 
 Gitkraken allows us to see in several places that the branch was successfully created.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_46-thumbnail.png){: .narrow width=503 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_46.png }](/blog/images/git-guide-with-visual-interface/image_46.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_46-thumbnail.png){: .narrow width=503 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_46.png }](/blog/images/git-guide-with-visual-interface/image_46.png ){: .gallery}
 
 However, it is possible to observe that in the commits tree that the master branch does not appear, this is because it is hidden in the *+1 icon*:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_47-thumbnail.png){: .narrow width=503 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_47.png }](/blog/images/git-guide-with-visual-interface/image_47.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_47-thumbnail.png){: .narrow width=503 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_47.png }](/blog/images/git-guide-with-visual-interface/image_47.png ){: .gallery}
 
 When passing the cursor over it we can see that the branch is visible again:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_48-thumbnail.png){: .narrow width=330 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_48.png }](/blog/images/git-guide-with-visual-interface/image_48.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_48-thumbnail.png){: .narrow width=330 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_48.png }](/blog/images/git-guide-with-visual-interface/image_48.png ){: .gallery}
 
 This simplification of the interface is due to the fact that the content of both branches is identical (we haven't made any changes yet) and although it can be a little confusing for beginners, it is extremely useful when you have multiple branches. On the other hand, GitKraken's visual aid allows us to observe that the "add-license" branch only exists in the local context and does not yet exist in the remote repository.
 
@@ -442,37 +442,37 @@ This simplification of the interface is due to the fact that the content of both
 
 In order to join two branches it is necessary that they are different, for it some commits are added to the branch "add-license". After adding the commits, you get something like the following:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_49-thumbnail.png){: .narrow width=327 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_49.png }](/blog/images/git-guide-with-visual-interface/image_49.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_49-thumbnail.png){: .narrow width=327 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_49.png }](/blog/images/git-guide-with-visual-interface/image_49.png ){: .gallery}
 
 While the branch still exists only in the local context, it is important to see how it is "ahead" of the master branch. Although in the scheme presented at the beginning the branches are arranged parallel to each other, Gitkraken only arranges them that way when there are several changes, that is, only when the master branch has been modified and that this modification is not one of the commits of the branch with which it is aligned (add-license) in this case. To illustrate this example, a change will be added to the master branch directly (not in the add-license branch).
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_50-thumbnail.png){: .narrow width=331 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_50.png }](/blog/images/git-guide-with-visual-interface/image_50.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_50-thumbnail.png){: .narrow width=331 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_50.png }](/blog/images/git-guide-with-visual-interface/image_50.png ){: .gallery}
 
 This way of visualizing branches is more similar to the previous view, the view changed because the commit "Add Contribution Guide" was added directly in the master.
 
 Before joining the branches we are going to make a Push, in this case, as the branch does not exist in the remote repository, it will ask us if we want to link it with some branch of the already existing remote repository, if we leave the space blank and click on **`Submit`**, it will create a branch with the same name in the remote repository.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_51-thumbnail.png){: .narrow width=777 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_51.png }](/blog/images/git-guide-with-visual-interface/image_51.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_51-thumbnail.png){: .narrow width=777 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_51.png }](/blog/images/git-guide-with-visual-interface/image_51.png ){: .gallery}
 
 Now both branches are synchronized with the remote repository:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_52-thumbnail.png){: .narrow width=333 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_52.png }](/blog/images/git-guide-with-visual-interface/image_52.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_52-thumbnail.png){: .narrow width=333 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_52.png }](/blog/images/git-guide-with-visual-interface/image_52.png ){: .gallery}
 
 While it was not necessary to make a Push of the branch before joining it, it is considered good practice to make the history of changes public so other users can see who made the changes and how.
 
 To merge branches one must click on the name of the source branch and drag and drop on the name of the destination branch, this will display the following menu, where we select the Merge option.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_53-thumbnail.png){: .narrow width=356 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_53.png }](/blog/images/git-guide-with-visual-interface/image_53.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_53-thumbnail.png){: .narrow width=356 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_53.png }](/blog/images/git-guide-with-visual-interface/image_53.png ){: .gallery}
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_54-thumbnail.png){: .narrow width=446 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_54.png }](/blog/images/git-guide-with-visual-interface/image_54.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_54-thumbnail.png){: .narrow width=446 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_54.png }](/blog/images/git-guide-with-visual-interface/image_54.png ){: .gallery}
 
 Once the option is chosen, the commits and branches tree will look similar to the next one:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_55-thumbnail.png){: .narrow width=332 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_55.png }](/blog/images/git-guide-with-visual-interface/image_55.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_55-thumbnail.png){: .narrow width=332 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_55.png }](/blog/images/git-guide-with-visual-interface/image_55.png ){: .gallery}
 
 As you can see the merge was successful, however, it will not yet be reflected in the remote repository, therefore, it is necessary to activate the master repository (by double-clicking on the name) and then do a Push.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_56-thumbnail.png){: .narrow width=329 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_56.png }](/blog/images/git-guide-with-visual-interface/image_56.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_56-thumbnail.png){: .narrow width=329 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_56.png }](/blog/images/git-guide-with-visual-interface/image_56.png ){: .gallery}
 
 Once the Push is done, both the branches and the Merge operation are synchronized in the remote and local repository.
 
@@ -482,15 +482,15 @@ Throughout the life of a development project can be created infinity of branches
 
 To remove a branch just right click on the name and select the option that removes it from both the local and remote repositories.
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_57-thumbnail.png){: .narrow width=460 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_57.png }](/blog/images/git-guide-with-visual-interface/image_57.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_57-thumbnail.png){: .narrow width=460 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_57.png }](/blog/images/git-guide-with-visual-interface/image_57.png ){: .gallery}
 
 GitKraken will warn us that this is a destructive operation and can not be undone, select **Delete**
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_58-thumbnail.png){: .narrow width=717 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_58.png }](/blog/images/git-guide-with-visual-interface/image_58.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_58-thumbnail.png){: .narrow width=717 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_58.png }](/blog/images/git-guide-with-visual-interface/image_58.png ){: .gallery}
 
 Once the branch has been successfully removed the commits and branches tree will look similar to the next one:
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_59-thumbnail.png){: .narrow width=331 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_59.png }](/blog/images/git-guide-with-visual-interface/image_59.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_59-thumbnail.png){: .narrow width=331 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_59.png }](/blog/images/git-guide-with-visual-interface/image_59.png ){: .gallery}
 
 As you can see, the deleted branch is neither in the local nor in the remote repository, however, and this is where the utility is, it can be clearly seen as it once existed and consisted of two commits that were then attached to the master. The advantage of this functionality is that one can remove the branches and not lose the history of what was done, having a separation in the commits that allows you to easily track who made what changes and how they were made. This wouldn't be possible (or rather, it would be much more complex) if you only worked with the master branch.
 
@@ -508,9 +508,9 @@ The procedure is shown for illustrative purposes only:
 1. The Pull Request option is selected
 1. The requested fields are completed
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_60-thumbnail.png){: .narrow width=397 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_60.png }](/blog/images/git-guide-with-visual-interface/image_60.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_60-thumbnail.png){: .narrow width=397 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_60.png }](/blog/images/git-guide-with-visual-interface/image_60.png ){: .gallery}
 
-[![image alt text]({attach}images/git-guide-with-visual-interface/image_61-thumbnail.png){: .narrow width=479 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_61.png }](/blog/images/git-guide-with-visual-interface/image_61.png ){: .gallery}
+[![image alt text]({static}images/git-guide-with-visual-interface/image_61-thumbnail.png){: .narrow width=479 .b-lazy data-src=/blog/images/git-guide-with-visual-interface/image_61.png }](/blog/images/git-guide-with-visual-interface/image_61.png ){: .gallery}
 
 **NOTE:** Pull Requests must generally be made in a specific way that is detailed in the same repository of the software to which one wants to contribute to the example shown is trivial, only to have a notion of how the procedure would be.
 
