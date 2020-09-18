@@ -1,7 +1,7 @@
-Title: Projects
-Slug: projects
+Title: Portfolio
+Slug: portfolio
 Lang: en
-order: 5
+order: 2
 
 As an engineering student I've worked in several projects, both on my own and working in a team with other students. This projects covers a wide range of areas and subjects, such as development of software, project planning, risks evaluation and simulation.
 
