@@ -1,5 +1,5 @@
 Title: Portfolio
-Slug: portfolio
+Slug: projects
 Lang: en
 order: 2
 
