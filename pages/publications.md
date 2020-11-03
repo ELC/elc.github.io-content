@@ -3,6 +3,8 @@ Slug: publications
 Lang: en
 order: 3
 save_as: publications.html
+modified: 2020.11.02
+url: publications.html
 
 This page lists my scientific publications and presentations. Each one will have a link to the proper resource.
 

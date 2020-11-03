@@ -2,8 +2,7 @@ Title: Portfolio
 Slug: projects
 Lang: en
 order: 2
-
-Latest Update: 2020.11.02
+modified: 2020.11.02
 
 So far I've worked on several projects, both on my own and in a team. This blog is the result of a side project.
 
