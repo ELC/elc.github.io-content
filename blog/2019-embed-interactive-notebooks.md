@@ -277,7 +277,7 @@ If you want to embed this widget in your website, just add the following HTML:
 <iframe src="https://elc.github.io/blog/iframes/ode-python/foxes-rabbits-iframe.html"></iframe>
 ```
 
-Read the [Full Article]({filename}./ordinary-differential-equations-with-python.md){: target="_blank"}
+Read the [Full Article]({filename}./2019-ordinary-differential-equations-with-python.md){: target="_blank"}
 
 ### Circular Times Table
 
@@ -293,7 +293,7 @@ If you want to embed this widget in your website, just add the following HTML:
 <iframe src="https://elc.github.io/blog/iframes/times-tables/times-table-line-by-line-iframe.html"></iframe>
 ```
 
-Read the [Full Article]({filename}./times-tables.md){: target="_blank"}
+Read the [Full Article]({filename}./2019-times-tables.md){: target="_blank"}
 
 ## Additional resources
 

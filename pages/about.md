@@ -1,7 +1,8 @@
 Title: About
 Slug: about
 Lang: en
-order:1
+order: 1
+modified: 2020.12.16
 
 My name is Ezequiel Leonardo Castaño, I'm christian and a senior engineering student. The reason why I started this blog was to show other people what I've learned over the years, my publications will cover topics related to Engineering, Programming, and Math but since I also enjoy reading the bible, there will be some christian-related publication now and then.
 

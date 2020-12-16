@@ -78,6 +78,6 @@ The parameter $p$ represents the probability of getting a $1$ and $q$ represents
 
 Here is how it looks like for $p = 0.2$
 
-![images]({static}images/chapter-1-1.svg)
+<!-- ![images]({static}images/chapter-1-1.svg) -->
 
 It might seem trivial but lets see how it changes as we change $p$
