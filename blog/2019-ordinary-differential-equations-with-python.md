@@ -1,4 +1,4 @@
-Title: Ordinary Differential Equations (ODE) with Python and Jupyter
+Title: Ordinary Differential Equations (ODE) with Python
 Date: 2019-01-29
 Category: Simulation
 Tags: Simulation, Programming, Math

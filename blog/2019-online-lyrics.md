@@ -1,4 +1,4 @@
-Title: Online Lyrics Presentation Generator
+Title: Lyrics Presentation Generator
 Date: 2019-05-22
 Category: Christianity
 Tags: Christian, WebApp

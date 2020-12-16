@@ -1,4 +1,4 @@
-Title: Deep Learning With Free GPU (Fastai + Colab)
+Title: Configuring FastAI with Google Colab
 Date: 2018-09-28
 Category: Programming
 Tags: Python, fastai, deep-learning
