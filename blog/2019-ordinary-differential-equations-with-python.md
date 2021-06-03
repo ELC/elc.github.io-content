@@ -102,14 +102,14 @@ Now I will comment part by part the code used, at the end of this section, I wil
 #### Function Definition
 
     ::python
-    def main(initial_salary, savings_ration, extraordinary_expenses, fixed_costs, days):
+    def main(initial_salary, savings_ratio, extraordinary_expenses, fixed_costs, days):
 
 First, we defined a function called `main` for easier use of `interact` which will produce the interactive widget. After that, all the constants are calculated, in this case `saving_limit` which is analogous to $s$ in the equation.
 
 #### ODE Specifics
 
 ```python
-saving_limit = savings_ration * initial_salary
+saving_limit = savings_ratio * initial_salary
 
 def function(capital, time):
     if capital <= saving_limit:
