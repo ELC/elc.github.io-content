@@ -9,6 +9,8 @@ Headerimage: https://elc.github.io/blog/images/jupyter-publishing/jupyter-publis
 
 [![Jupyter Publishing Header Image]({static}images/jupyter-publishing/jupyter-publishing-headerimage-thumbnail.png){: .b-lazy width=1444 data-src=/blog/images/jupyter-publishing/jupyter-publishing-headerimage.png }](/blog/images/jupyter-publishing/jupyter-publishing-headerimage.png)
 
+<!-- PELICAN_BEGIN_SUMMARY -->
+
 Jupyter Notebooks are the lingua franca for Data Science. There is hardly any
 data scientist that has never used this IDE. However, in contrast to its
 popularity and usefulness, the process of sharing a Jupyter Notebook is not
@@ -75,7 +77,7 @@ advantages, disadvantages, and a "when to use" section.
 
 ## (Optional) A bit of Context: The .ipynb format
 
-[![IPYNB format]({static}images/jupyter-publishing/ipynb-format-thumbnail.png){: .b-lazy width=500 data-src=/blog/images/jupyter-publishing/ipynb-format.png}](/blog/images/jupyter-publishing/ipynb-format.png)
+[![IPYNB format]({static}images/jupyter-publishing/ipynb-format-thumbnail.png){: .narrow .b-lazy width=500 data-src=/blog/images/jupyter-publishing/ipynb-format.png}](/blog/images/jupyter-publishing/ipynb-format.png)
 
 The format for a Jupyter notebook is JSON, but the extension used is `ipynb`.
 The reason behind using a different extension is twofold:
@@ -109,7 +111,7 @@ to share and publish a notebook is through the built-in Export solutions.
 
 ## Using Built-Ins: Export Solutions
 
-[![IPYNB format]({static}images/jupyter-publishing/html-export-thumbnail.png){: .b-lazy width=703 data-src=/blog/images/jupyter-publishing/html-export.png}](/blog/images/jupyter-publishing/html-export.png)
+[![IPYNB format]({static}images/jupyter-publishing/html-export-thumbnail.png){: .narrow .b-lazy width=703 data-src=/blog/images/jupyter-publishing/html-export.png}](/blog/images/jupyter-publishing/html-export.png)
 
 Jupyter, in particular JupyterLab, introduces [several formats](https://jupyterlab.readthedocs.io/en/stable/user/export.html){: target="_blank"}
 for exporting the notebook. However, in this section one will be highlighted: 
@@ -279,7 +281,7 @@ interactive plots are necessary, this option is not suitable.
 
 ## Static Site Generator Integration
 
-[![Static Site Generators]({static}images/jupyter-publishing/static-site-generators-thumbnail.png){: .b-lazy width=722 data-src=/blog/images/jupyter-publishing/static-site-generators.png }](/blog/images/jupyter-publishing/static-site-generators.png)
+[![Static Site Generators]({static}images/jupyter-publishing/static-site-generators-thumbnail.png){: .narrow .b-lazy width=722 data-src=/blog/images/jupyter-publishing/static-site-generators.png }](/blog/images/jupyter-publishing/static-site-generators.png)
 
 Nowadays, there is an increasing trend in popularity for Jamstack tools, i.e.
 Static Site Generators. That is why there are plenty of options available in
@@ -472,7 +474,7 @@ writers and readers alike.
 
 ## Google Colaboratory
 
-[![Google Colab]({static}images/jupyter-publishing/google-colab-thumbnail.png){: .b-lazy width=722 data-src=/blog/images/jupyter-publishing/google-colab.png }](/blog/images/jupyter-publishing/google-colab.png)
+[![Google Colab]({static}images/jupyter-publishing/google-colab-thumbnail.png){: .narrow .b-lazy width=722 data-src=/blog/images/jupyter-publishing/google-colab.png }](/blog/images/jupyter-publishing/google-colab.png)
 
 [Google Colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb){: target="_blank"} 
 or simply Colab is a service provided for free by Google that
@@ -516,7 +518,7 @@ especially in deep learning applications.
 
 ## My Binder
 
-[![Static Site Generators]({static}images/jupyter-publishing/my-binder-thumbnail.png){: .b-lazy width=722 data-src=/blog/images/jupyter-publishing/my-binder.png }](/blog/images/jupyter-publishing/my-binder.png)
+[![Static Site Generators]({static}images/jupyter-publishing/my-binder-thumbnail.png){:  .b-lazy width=1123 data-src=/blog/images/jupyter-publishing/my-binder.png }](/blog/images/jupyter-publishing/my-binder.png)
 
 
 [MyBinder](https://mybinder.org/){: target="_blank"} or simply Binder is a free
