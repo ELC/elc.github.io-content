@@ -1,5 +1,5 @@
 Title: Jupyter Publishing Guide: From Embedded to Book 
-Date: 2021-08-07
+Date: 2021-08-16
 Category: Programming 
 Tags: Jupyter 
 Slug: jupyter-publishing 
@@ -474,7 +474,7 @@ writers and readers alike.
 
 ## Google Colaboratory
 
-[![Google Colab]({static}images/jupyter-publishing/google-colab-thumbnail.png){: .narrow .b-lazy width=722 data-src=/blog/images/jupyter-publishing/google-colab.png }](/blog/images/jupyter-publishing/google-colab.png)
+[![Google Colab]({static}images/jupyter-publishing/google-colab-thumbnail.png){: .b-lazy width=1853 data-src=/blog/images/jupyter-publishing/google-colab.png }](/blog/images/jupyter-publishing/google-colab.png)
 
 [Google Colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb){: target="_blank"} 
 or simply Colab is a service provided for free by Google that
@@ -518,7 +518,7 @@ especially in deep learning applications.
 
 ## My Binder
 
-[![Static Site Generators]({static}images/jupyter-publishing/my-binder-thumbnail.png){:  .b-lazy width=1123 data-src=/blog/images/jupyter-publishing/my-binder.png }](/blog/images/jupyter-publishing/my-binder.png)
+[![Static Site Generators]({static}images/jupyter-publishing/my-binder-thumbnail.png){: .b-lazy width=1123 data-src=/blog/images/jupyter-publishing/my-binder.png }](/blog/images/jupyter-publishing/my-binder.png)
 
 
 [MyBinder](https://mybinder.org/){: target="_blank"} or simply Binder is a free
