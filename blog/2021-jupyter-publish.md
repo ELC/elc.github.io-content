@@ -295,6 +295,11 @@ From these three options, Nikola is the only one with [native support](https://g
 [Lektor](https://github.com/baldwint/lektor-jupyter){: target="_blank"} require
 plugins, once installed their use should be straightforward.
 
+Another possibility is to use [FastPages](https://fastpages.fast.ai/){: target="_blank"}, 
+an static site generator thought specifically for Jupyter Notebooks by the
+FastAI team. It is not as popular as the other three but it is raising in
+popularity in the last couple of years.
+
 Independently of the particular generator, the advantages and disadvantages are
 identical.
 
@@ -709,6 +714,20 @@ the LaTeX export option in the middle
 
 Some tools could be useful in some contexts but are not so widespread
 as the ones presented so far.
+
+- [NBdev](https://nbdev.fast.ai/){: target="_blank"}: is a tool developed by 
+  the [FastAI](https://www.fast.ai/){: target="_blank"} team and can be used
+  to create Python libraries from Jupyter Notebooks. The whole FastAI framework
+  is built with it. Not in the list because building libraries from notebooks
+  is more of a niche application and the project is still very young (just a 
+  few years). 
+
+- [Fastdoc](https://fastai.github.io/fastdoc/){: target="_blank"}: also from 
+  the [FastAI](https://www.fast.ai/){: target="_blank"} team, it is a library
+  to create publication ready books from Jupyter Notebooks. It was used to 
+  write the [O'Reilly FastAI Book](https://github.com/fastai/fastbook/){: target="_blank"}.
+  Not in the list because the project is not currently active (Latest release 
+  October 2020) and it is not as widespread as Jupyter-Book.
 
 - [Spell.ml](https://spell.ml/){: target="_blank"}: it is a service to provide
   workspaces to run Jupyter Notebooks. It has CPU support for free with
