@@ -281,7 +281,7 @@ interactive plots are necessary, this option is not suitable.
 
 ## Static Site Generator Integration
 
-[![Static Site Generators]({static}images/jupyter-publishing/static-site-generators-thumbnail.png){: .narrow .b-lazy width=722 data-src=/blog/images/jupyter-publishing/static-site-generators.png }](/blog/images/jupyter-publishing/static-site-generators.png)
+[![Static Site Generators]({static}images/jupyter-publishing/static-site-generators-thumbnail.png){: .narrow .b-lazy width=798 data-src=/blog/images/jupyter-publishing/static-site-generators.png }](/blog/images/jupyter-publishing/static-site-generators.png)
 
 Nowadays, there is an increasing trend in popularity for Jamstack tools, i.e.
 Static Site Generators. That is why there are plenty of options available in
