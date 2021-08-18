@@ -63,6 +63,7 @@ advantages, disadvantages, and a "when to use" section.
     - [Static Site Generator](#static-site-generator-integration)
     - [Static Jupyter Book](#jupyter-book-static)
 - [Executable Solutions](#executable-solutions)
+    - [JupyterLite](#jupyter-lite)
     - [Embedded](#embedded-solution)
     - [Google Colab](#google-colaboratory)
     - [MyBinder](#my-binder)
