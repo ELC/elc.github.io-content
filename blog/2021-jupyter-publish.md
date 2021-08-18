@@ -431,6 +431,52 @@ indirect.
 environment, meaning that there are no risks of running insecure code, neither
 for the writer or the reader.
 
+## Jupyter Lite
+
+[![Static Site Generators]({static}images/jupyter-publishing/jupyter-lite-thumbnail.png){: .narrow .b-lazy width=900 data-src=/blog/images/jupyter-publishing/jupyter-lite.png }](/blog/images/jupyter-publishing/jupyter-lite.png)
+
+[Jupyter Lite](https://github.com/jupyterlite/jupyterlite){: target="_blank"}
+is a young (First commit on the 21st March 2021) yet popular tool (1.6k stars)
+developed by the Jupyter team. The tool is still *unofficial* as per their docs
+but, managed to achieve something that was never done before: **Jupyter in the Browser
+without a Backend**. That means that having only a static server could bring a
+whole Jupyter Notebook/Lab environment.
+
+This works thanks to [Mozilla's Pyodide](https://pyodide.org/en/stable/){: target="_blank"},
+this other project ships the scientific Python stack compiled to WebAssembly
+and thus a backend is not needed as everything happens in the front-end.
+
+### Advantages
+
+- One of the most transparent experiences for Executable Jupyter Notebooks.
+- It does not require a setup for the reader.
+- The data is persisted to the browser localstorage.
+- It has multiple kernels (Python and Javascript) support built-in.
+
+### Disadvantages
+
+- It requires some setup for the writer.
+- It is a Notebook-only environment, it does not integrate with the existing
+  website or platform.
+- Configuration is not as straightforward as with other solutions.
+- It is still in Alpha, meaning breaking changes can be introduced without
+  prior notice. And the performance might be unstable (crashes).
+- Slower than solutions with a dedicated back-end.
+- Since there is no dedicated Back-End, performance might be compromised in
+  low-end PCs.
+- Good with the defaults but, having a custom configuration may require
+  additional setup.
+
+### When to use
+
+For proofs of concepts without complex dependencies, good internet connection,
+and modern hardware. This might be a great choice. Uses cases might be MOOCs or
+other events where participants need Jupyter and no dedicated server is
+provided.
+
+However, it is not recommended when a stable and robust solution is needed.
+
+
 ## Embedded Solution
 
 [![Static Site Generators]({static}images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage-thumbnail.png){: .b-lazy width=1401 data-src=/blog/images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage.png }](/blog/images/embed_interactive_notebooks/embed-interactive-notebooks_headerimage.png)
@@ -728,6 +774,26 @@ as the ones presented so far.
   write the [O'Reilly FastAI Book](https://github.com/fastai/fastbook/){: target="_blank"}.
   Not in the list because the project is not currently active (Latest release 
   October 2020) and it is not as widespread as Jupyter-Book.
+
+- [Starboard](https://starboard.gg/){: target="_blank"} is an online service
+  that provides literal notebooks (not Jupyter) with Jupyter-like capabilities
+  such as Code and Text cells. It runs completely on the browser (with Pyodide)
+  and its goal is to make notebooks easier to share. Not in the list because it
+  is its own format, not Jupyter (although Jupyter import is *possible*), and
+  because it is in early development.
+
+- [Github Codespaces](https://github.com/features/codespaces){: target="_blank"}:
+  is a Github project to work online in a Visual Studio Code hosted on the
+  browser. At the time of this writing, it can be used in any repository by
+  pressing "." (dot), one can navigate and edit the files with the free tier.
+  To attach a compute instance, a paid service is offered to selected
+  beta-tester organizations. Not in the list because it does not work with
+  Jupyter out of the box and it only has a paid solution.
+
+- [Cocalc](https://cocalc.com/){: target="_blank"}: a tool very similar to
+  Google Colab but with a less powerful free tier plan. It does have unique
+  features such as Chat Rooms and collaborative editing. Not in the list
+  because there is a feature overlap with Colab and it is not as widespread. 
 
 - [Spell.ml](https://spell.ml/){: target="_blank"}: it is a service to provide
   workspaces to run Jupyter Notebooks. It has CPU support for free with
