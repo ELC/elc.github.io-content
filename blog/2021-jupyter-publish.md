@@ -1,7 +1,7 @@
 Title: Jupyter Publishing Guide: From Embedded to Book 
 Date: 2021-08-16
 Category: Programming 
-Tags: Jupyter 
+Tags: Jupyter, Colab, Python, Notebooks, Binder, LaTeX
 Slug: jupyter-publishing 
 Authors: Ezequiel Leonardo Castaño 
 Lang: en 

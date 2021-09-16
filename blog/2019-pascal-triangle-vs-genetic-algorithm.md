@@ -1,7 +1,7 @@
 Title: Pascal Triangle and Genetic Algorithm - A Visualization
 Date: 2019-01-21
 Category: Data Visualization
-Tags: Data Visualization, Programming, Math
+Tags: Data Visualization, Python, Matplotlib, Animation
 Slug: pascal-triangle-vs-genetic-algorithm
 Authors: Ezequiel Leonardo Castaño
 Lang: en

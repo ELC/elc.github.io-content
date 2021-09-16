@@ -1,7 +1,7 @@
 Title: Lyrics Presentation Generator
 Date: 2019-05-22
 Category: Christianity
-Tags: Christian, WebApp
+Tags: Christian, WebApp, Presentation, Lyrics
 Slug: online-lyrics-presentation-generator
 Authors: Ezequiel Leonardo Castaño
 Lang: en

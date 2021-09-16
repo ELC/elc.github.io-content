@@ -5,6 +5,7 @@ Tags: Christian, Games, Bible
 Slug: juegos-biblicos
 Authors: Ezequiel Leonardo Castaño
 Lang: es
+omit_ad: True
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 

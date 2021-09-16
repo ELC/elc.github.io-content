@@ -1,7 +1,7 @@
 Title: Embed Interactive Jupyter Notebooks in Static Websites for Free
 Date: 2019-05-01
 Category: Programming
-Tags: Python, Jupyter, NBinteract
+Tags: Python, Jupyter, NBinteract, Static Website
 Slug: embed-interactive-notebooks
 Authors: Ezequiel Leonardo Castaño
 Lang: en

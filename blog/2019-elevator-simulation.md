@@ -1,7 +1,7 @@
 Title: Multi-Floor Elevator Simulation with AnyLogic
 Date: 2019-04-06
 Category: Simulation
-Tags: Simulation, Programming, Math
+Tags: Simulation, Programming, Math, AnyLogic
 Slug: multi-floor-elevator-simulation-anylogic
 Authors: Ezequiel Leonardo Castaño
 Lang: en

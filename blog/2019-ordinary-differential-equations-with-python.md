@@ -1,7 +1,7 @@
 Title: Ordinary Differential Equations (ODE) with Python
 Date: 2019-01-29
 Category: Simulation
-Tags: Simulation, Programming, Math
+Tags: Simulation, Math, Python, Scipy, ODE
 Slug: ordinary-differential-equations-with-python
 Authors: Ezequiel Leonardo Castaño
 Lang: en

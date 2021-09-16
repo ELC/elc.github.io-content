@@ -1,7 +1,7 @@
 Title: Configuring FastAI with Google Colab
 Date: 2018-09-28
 Category: Programming
-Tags: Python, fastai, deep-learning
+Tags: Python, FastAI, deep-learning, Jupyter Notebooks, Colab
 Slug: fastai-colab-deep-learning
 Authors: Ezequiel Leonardo Castaño
 Lang: en
