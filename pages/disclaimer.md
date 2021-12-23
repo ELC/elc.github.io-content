@@ -3,6 +3,7 @@ Slug: disclaimer
 Lang: en
 order: 10
 status: hidden
+footer: True
 save_as: disclaimer.html
 url: publications.html
 modified: 2021.12.23
