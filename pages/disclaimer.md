@@ -5,7 +5,7 @@ order: 10
 status: hidden
 footer: True
 save_as: disclaimer.html
-url: publications.html
+url: disclaimer.html
 modified: 2021.12.23
 
 This is a personal blog. Any views or opinions represented in this blog are
