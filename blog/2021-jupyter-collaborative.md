@@ -693,6 +693,11 @@ check out the privacy-first ad at the top of this page. Helping with fixing
 typos, suggesting edits, or leaving feedback in the comments is also valuable.
 If you like this content, please share it with others who might find it useful.
 
+If you want to contribute financially, invite me a
+[Ko-Fi](https://ko-fi.com/elcweb) or send me donation via
+[PayPal](https://www.paypal.com/donate/?hosted_button_id=948W4CFPMY2R2). If you
+are in Argentina, you can invite me a [Cafecito](https://cafecito.app/elc).
+
 ## Resources
 
 [Jupyter Official Documentation](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html){: target="_blank"}
