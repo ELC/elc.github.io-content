@@ -10,10 +10,10 @@ modified: 2022.01.11
 
 All the posts and content of this blog is free and promotes both free and open
 source software, as well as monetary and intellectual accessibility. If you
-want to support it, please check out the privacy-first ad at the [main
-site](https://elc.github.io/). Helping with fixing typos, suggesting edits, or
-leaving feedback in the comments is also valuable. If you like this content,
-please share it with others who might find it useful.
+want to support it, please check out the privacy-first ad at top. Helping with
+fixing typos, suggesting edits, or leaving feedback in the comments is also
+valuable. If you like this content, please share it with others who might find
+it useful.
 
 If you want to contribute financially, use any of the following options:
 
