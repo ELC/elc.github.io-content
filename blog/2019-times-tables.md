@@ -221,6 +221,10 @@ moving the sliders.
 
 ## Animate Construction Line by Line
 
+<video class="b-lazy" autoplay loop width=900>
+    <source data-src="/blog/images/times_tables/line_by_line.mp4" type="video/mp4">
+</video>
+
 In the next step, the focus shifts to animations. In this particular animation,
 the factor and the number of points remain constant while the lines change. This
 animation replicates the act of drawing these times tables by hand and provides
@@ -285,11 +289,11 @@ related to the animation's frames per second (FPS), which is calculated as FPS =
     <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-line-by-line-iframe.html"></iframe>
 </div>
 
-<video class="b-lazy" autoplay loop width=900>
-    <source data-src="/blog/images/times_tables/line_by_line.mp4" type="video/mp4">
-</video>
-
 ## Animate Construction Point by Point
+
+<video class="b-lazy" autoplay loop width=900>
+    <source data-src="/blog/images/times_tables/point_by_point.mp4" type="video/mp4">
+</video>
 
 The next animation focuses on the process of how the figure becomes clearer as
 the number of points increases. The factor is fixed, and all lines are plotted
@@ -348,11 +352,12 @@ of the figure.
     <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-point-by-point-iframe.html"></iframe>
 </div>
 
-<video class="b-lazy" autoplay loop width=900>
-    <source data-src="/blog/images/times_tables/point_by_point.mp4" type="video/mp4">
-</video>
 
 ## Animate Construction Factor by Factor
+
+<video class="b-lazy" autoplay loop width=900>
+    <source data-src="/blog/images/times_tables/factor_by_factor.mp4" type="video/mp4">
+</video>
 
 The animation displays the effect of incrementing the factor, with the number of
 points fixed and all lines plotted at once. To enhance the visual impact, the
@@ -412,11 +417,12 @@ the same color.
     <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-factor-by-factor-iframe.html"></iframe>
 </div>
 
-<video class="b-lazy" autoplay loop width=900>
-    <source data-src="/blog/images/times_tables/factor_by_factor.mp4" type="video/mp4">
-</video>
 
 ## Animate Construction Factor by Factor with Color
+
+<video class="b-lazy" autoplay loop width=900>
+    <source data-src="/blog/images/times_tables/factor_by_factor_colored.mp4" type="video/mp4">
+</video>
 
 The final animation is similar to the previous one, with the difference being
 the addition of color. To achieve this, the function
@@ -476,9 +482,6 @@ resulting in a range from 0 to 1.
     <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-factor-by-factor-colored-iframe.html"></iframe>
 </div>
 
-<video class="b-lazy" autoplay loop width=900>
-    <source data-src="/blog/images/times_tables/factor_by_factor_colored.mp4" type="video/mp4">
-</video>
 
 ## Export
 
