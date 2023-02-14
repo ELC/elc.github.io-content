@@ -1,7 +1,7 @@
-Title: Time Tables Visualization - Finding Patterns
+Title: Visualizing Math: A Guide to Creating Times Table Animations with Python
 Date: 2019-01-22
 Category: Data Visualization
-Tags: Data Visualization, Programming, Math
+Tags: Data Visualization, Matplotlib, Python, Animation
 Slug: times-tables
 Authors: Ezequiel Leonardo Castaño
 Lang: en
@@ -11,29 +11,58 @@ headerimage: https://elc.github.io/blog/images/times_tables/times-tables-headeri
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
-After looking to a Mathologer Video about a beautiful pattern emerged from time tables, I decided to use it as a challenge and write a script to do the same with Python. Animations Included!
+Explore the mesmerizing patterns of times tables with Python! In this blog post,
+we present an alternative implementation to the famous Mathologer's video where
+beautiful patterns emerge from times tables. Burkard highlights how stunning
+patterns arise from these tables and utilizes Wolfram Mathematica to demonstrate
+these patterns in greater detail. This blog post aims to showcase a similar
+implementation using Python.
 
 <!-- PELICAN_END_SUMMARY -->
 
-First, let's introduce the video I mentioned, in this video a very nice patterns emerges in something called "Times Tables"
+For those unfamiliar with the concept, it is recommended to view the video that
+served as inspiration for this post. It provides a comprehensive explanation of
+what Times Tables are.
 
 <iframe width="900" height="506" src="https://www.youtube.com/embed/qhbuKbxJsk8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-These animations were made using Wolfram Mathematica, but in Python, there are enough tools to achieve the same.
+This post provides an alternative approach to generate similar animations to the
+ones seen in the video, using Python and its libraries such as Matplotlib and
+IPython.
 
-This is the results built with Python:
+The following animations were created using Python and its supporting libraries.
 
 ![times-table-2-100]({static}images/times_tables/times-tables-2-100-thumbnail.png){: .narrow .b-lazy width=613 data-src=/blog/images/times_tables/times-tables-2-100.png }
 
-Now I will examine the code used to produced the previous image and also how to create animations, there will be a [**link to a online notebook**](#notebook) in case you want to experiment yourself. In this post I will show you several scenarios:
 
-- Static Version (as the one seen above)
-- Parametric Version: Where you can change with sliders the values and experiment by yourself.
-- Animate Construction Line by Line: Where the factor and the number of points is fixed but each line is plot one at a time
-- Animate Construction Point by Point: Where the factor and the lines are fixed but each frame increases the number of points
-- Animate Construction Factor by Factor: Where the lines and the number of points are fixed but the factor increases (The one shown at the end of the video), first monochrome and then with the rainbow effect seen in the video.
+Bringing this captivating video to life with Python is made easy with the help
+of a Jupyter Notebook. Explore the examples and discover the beauty of Times
+Tables for yourself by following along. With all the necessary dependencies
+already installed, the [Jupyter
+Notebook](https://elc.github.io/link/times_table_binder){: target="_blank"} is
+the perfect platform for experimentation and hands-on learning
 
-    **Note**: After each of the scenarios there will be both an **interactive** (Jupyter Widget) and a **static** (image or animation) representation of the code, the interactive is built through a backend so **please be patient** to see the results since each time you move the slider, the full animation is re-calculated. The **static** representation is useful for low-speed connections and for a faster **result** but it can't be changed or experimented with.
+In this post, multiple examples are provided, including:
+
+- A static version, as shown above An interactive, parametric version where you
+can experiment by adjusting values with sliders
+- An animated construction, line by line, where the factor and number of points
+  remain fixed, but each line is plotted one at a time
+- An animated construction, point by point, where the factor and lines are
+  fixed, but the number of points increases with each frame
+- An animated construction, factor by factor, where the lines and number of
+  points remain fixed, but the factor increases, first in monochrome and then
+  with a rainbow effect.n with the rainbow effect seen in the video.
+
+    **Note**: It's important to note that after exploring each scenario, both an
+    interactive and a static representation of the code will be provided. The
+    interactive version is built using Jupyter widgets, allowing you to adjust
+    parameters and see the results in real-time. However, this also means that
+    each time the sliders are moved, the full animation needs to be
+    re-calculated, so some patience is required. On the other hand, the static
+    representation is optimized for faster display and can be useful for
+    low-speed connections. It should be noted that the static representation
+    cannot be adjusted or experimented with.
 
 
 Requirements:
@@ -52,20 +81,26 @@ In order to produce these images and animations, the code should be split in 4 p
 
 ## Initialization
 
-It's a good practice to place all the imports at the top of the document to better trace dependencies and keep them updated, and also to know which tools are required. In this case there are General Purpose imports and Jupyter Specifics, in order to run as a script, it has to be adapted to replace the Jupyter Funtionalities
+It is recommended to place all imports at the beginning of the document for
+better organization and maintenance. This also helps to clearly identify the
+required tools. In this instance, there are both general purpose imports and
+those specific to Jupyter. To utilize the code outside of Jupyter, it may need
+to be modified to remove Jupyter-specific components. This ensures the code can
+run as a standalone script.
 
     ::python
     # General Purpose
-    import numpy as np
-    from matplotlib import pyplot as plt
-    from matplotlib import animation, rc
-    import matplotlib.lines as mlines
     import colorsys
+    from typing import Optional, List
+
+    from matplotlib import animation, rc
+    from matplotlib import pyplot as plt
     from matplotlib.collections import LineCollection
+    from matplotlib.lines import Line2D
+    import numpy as np
+    import numpy.typing as npt
 
     # Jupyter Specifics
-    import matplotlib as mpl
-    from IPython.display import HTML
     from ipywidgets.widgets import interact, IntSlider, FloatSlider, Layout
 
     %matplotlib inline
@@ -73,76 +108,73 @@ It's a good practice to place all the imports at the top of the document to bett
 
 ## Basic Functions
 
-Once everything is imported and ready to use, several functions must be defined, namely:
+With all the necessary imports in place, it's time to define a few functions
+that will bring this project to life. These functions include:
 
-1. One function to calculate the points arround a circle
-1. One function to generate each of the lines
-1. One function to plot the labels and the point in the circle
-1. One function to plot the lines in the circle
+1. A function to calculate the points around a circle
+1. A function to generate each of the lines
+1. A function to plot the labels and points on the circle
+1. A function to plot the lines on the circle
 
-The first function is called `points_arround_circle` and it basically uses polar coordinates to place a given number of points arround a circle of a given radius. Here numpy is needed to make the calculation performant.
-
-    ::python
-    def points_arround_circle(number=100, center=(0,0), radius=1):
-        theta = np.linspace(0, 2 * np.pi - (2 * np.pi / number), number)
-        x = radius * np.cos(theta)
-        y = radius * np.sin(theta)
-        return (x, y)
-
-Second, in order to generate the lines, the list of points is given and a new line is generated, a different approach is needed when using this function in an animation so two sets of logic are defined inside de function.
+The first function, named `points_around_circle`, uses polar coordinates to
+determine a specified number of points around a circle of radius 1. The use of
+numpy in this calculation enhances its performance.
 
     ::python
-    def get_lines_from_points(x, y, factor, animated=None):
-        limit = len(x)
-        if animated is not None:
-            for i in range(limit):
-                x_range = (x[i], x[int(i * factor) % limit])
-                y_range = (y[i], y[int(i * factor) % limit])
-                yield mlines.Line2D(x_range, y_range)
-        else:
-            for i in range(limit):
-                start = (x[i], y[i])
-                index = int((i * factor) % limit)
-                end = (x[index], y[index])
-                yield end, start
+    def points_around_circle(number: int = 100) -> npt.NDArray[np.float64]:
+        theta = np.linspace(0, 2 * np.pi, number, endpoint=False)
+        xs, ys = np.cos(theta), np.sin(theta)
+        return np.stack((xs, ys))
 
-Now it's time to plot and in the `plot_circle_points`, both the circle, the points and the labels are ploted
+The second function pertains to the generation of lines. Given a list of points,
+this function generates a new line.
 
     ::python
-    def plot_circle_points(x, y, ax, labels=None):
-        ax.annotate("Points: {}".format(len(x)), (0.8, 0.9))
-        ax.plot(x, y, "-ko", markevery=1)
-        if not labels is None:
-            for i, (x, y) in enumerate(zip(x, y)):
-                ax.annotate(i, (x, y))
+    def generate_lines_from_points(
+        points: npt.NDArray[np.float64], factor: float
+    ) -> npt.NDArray[np.float64]:
+        _, size = points.shape
+        index = (np.arange(size) * factor) % size
 
-Finally, a function which receives the axis object plot all the lines, with the option to use a color in a HSV format (this will be used in the final animation)
+        line_starts = points.T
+        line_ends = line_starts[index.astype(int)]
+
+        return np.stack((line_ends, line_starts), axis=1)
+
+However, the line in numpy format is not directly plotable. To translate the
+numpy array into a data structure compatible with matplotlib, a LineCollection
+is used. The function `generate_line_collection` not only generates the line
+collection, but also specifies the color based on the HSV format. This
+capability will come in handy when creating the final animation.
 
     ::python
-    def plot_lines(x, y, factor, ax, color=None):
-        ax.annotate("Factor: {}".format(factor), (0.8, 1))
-        lines = list(get_lines_from_points(x, y, factor))
-        if color is None:
-            line_segments = LineCollection(lines)
-        else:
-            line_segments = LineCollection(lines, colors=colorsys.hsv_to_rgb(color, 1.0, 0.8))
+    def generate_line_collection(
+        points: npt.NDArray[np.float64], factor: float, color: Optional[float] = None
+    ) -> LineCollection:
+        lines = generate_lines_from_points(points, factor)
+        color_ = colorsys.hsv_to_rgb(color, 1.0, 0.8) if color else None
+        return LineCollection(lines, color=color_)
 
-        ax.add_collection(line_segments)
 
 ## Static Version
 
-After all the functions needed are defined, now plotting a static version is quite simple, just generate the axis object and invoke the functions in the logical order and you get the image. This approach is useful to quickly experiment with a fixed number of factor and points
+With all the required functions defined, plotting a static version of the data
+is straightforward. Simply generate the axis object and call the functions in
+the appropriate order, and the image will be generated. This approach is useful
+for quickly experimenting with a fixed number of factors and points.
 
     ::python
-    def plot_static(factor, points):
+    def plot_static(factor: float, number_of_points: int) -> None:
+        points = points_around_circle(number=number_of_points)
+        lines = generate_line_collection(points, factor)
+
         plt.figure(figsize=(10, 10))
-        ax = plt.subplot()
-        plt.axis('off')
-
-        x, y = points_arround_circle(number=points)
-
-        plot_circle_points(x, y, ax)
-        plot_lines(x, y, factor, ax)
+        ax = plt.gca()
+        ax.axis("off")
+        ax.annotate(f"Points: {number_of_points}", (0.8, 0.9))
+        ax.annotate(f"Factor: {factor}", (0.8, 1))
+        ax.plot(*points, "-ko", markevery=1)
+        ax.add_collection(lines)
 
     factor = 2
     points = 100
@@ -152,24 +184,36 @@ After all the functions needed are defined, now plotting a static version is qui
 
 ## Parametric Version
 
-One approach is to manually change the `factor` and `points` variables and then just execute the cell/funtion again but since Jupyter provides support for interaction, a more user friendly approach can be used through Sliders (a built in UI of IPython). Here the function `plot_parametric` is exactly the same as `plot_static` but it uses `plt.show()` at the end to plot the image. Here the image is also static but can be change moving the sliders to either side.
+One method to update the factor and points variables is to manually change them
+and re-execute the cell or function. However, Jupyter offers support for
+interaction, allowing for a more user-friendly approach via Sliders, a built-in
+user interface of IPython. The function plot_parametric serves the same purpose
+as plot_static, with the addition of a call to plt.show() at the end to display
+the image. While the image is still static, the user can adjust the variables by
+moving the sliders.
 
     ::python
-    def plot_parametric(Factor=2, Points=100):
+    def plot_parametric(factor: float = 2, points: int = 100) -> None:
+        points = points_around_circle(number=points)
+        lines = generate_line_collection(points, factor)
+
         plt.figure(figsize=(10, 10))
-        ax = plt.subplot()
-        plt.axis('off')
-        x, y = points_arround_circle(number=Points)
-        plot_circle_points(x, y, ax)
-        plot_lines(x, y, Factor, ax)
+        ax = plt.gca()
+        ax.axis("off")
+        ax.plot(*points, "-ko", markevery=1)
+        ax.add_collection(lines)
         plt.show()
+
 
     factors = [21, 29, 33, 34, 49, 51, 66, 67, 73, 76, 79, 80, 86, 91, 99]
     print("Try these Factors with different number of points:", *factors)
 
-    interact(plot_parametric, 
-            Factor=FloatSlider(min=0, max=100, step=0.1, value=2, layout=Layout(width='99%')),
-            Points=IntSlider(min=0, max=300, step=25, value=100, layout=Layout(width='99%')));
+    interact(
+        plot_parametric,
+        factor=FloatSlider(min=0, max=100, step=0.1, value=2, layout=Layout(width="99%")),
+        points=IntSlider(min=0, max=300, step=25, value=100, layout=Layout(width="99%")),
+    )
+
 
 <div class="iframe-container" style="padding-top: 101%">
     <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-parametric-iframe.html"></iframe>
@@ -177,32 +221,65 @@ One approach is to manually change the `factor` and `points` variables and then 
 
 ## Animate Construction Line by Line
 
-Now we move to animations and in this first animation both the factor and the number of points are fixed, which changes is the lines, this animations mimics the process of drawing some of theses times tables by hand and could also give some insight about the order in which the lines are plotted instead of just seen them all at once.
+In the next step, the focus shifts to animations. In this particular animation,
+the factor and the number of points remain constant while the lines change. This
+animation replicates the act of drawing these times tables by hand and provides
+a deeper understanding of the sequence in which the lines are plotted, instead
+of simply presenting them all together.
 
-Animations in Matplotlib are built through an `animate` function, which basically returns the objects to be printed in each frame. That's why in this animation and the following, two functions should be defined, one for the `animate` API of matplotlib and the other to embed in the `interact` function of IPython. Here a `line_by_line` takes a given `Factor`, a number of `Points` and an `Interval`, the first two are already familiar since we used them in the previous functions and the `Interval` is just the delay between frames in miliseconds, it is tightly related to the FPS of the final animation: `FPS = 1000 / delay`.
+In Matplotlib, animations are constructed using the animate function, which
+returns the objects to be displayed in each frame. As a result, two functions
+need to be defined in this and the following animations. The first is for the
+animate API of Matplotlib and the second is to be integrated into the interact
+function of IPython. In this particular case, the function line_by_line takes a
+given `factor`, a specified number of `max_points`, and an `interval`. The first
+two parameters are already familiar from previous functions, while interval
+represents the delay between frames in milliseconds. This delay is directly
+related to the animation's frames per second (FPS), which is calculated as FPS =
+1000 / delay.
 
     ::python
-    def animate_line_by_line(i, lines, ax):
-        ax.add_line(next(lines))
+    def animate_line_by_line(
+        i: int, lines: npt.NDArray[np.float64], ax: plt.Axes
+    ) -> List[Line2D]:
+        start_point, end_point = lines[i].T
+        line = Line2D(start_point, end_point)
+        ax.add_line(line)
         return []
 
-    def line_by_line(Factor, Points, Interval):
-        fig, ax = plt.subplots(figsize=(10, 10));
-        plt.axis('off')
-        x, y = points_arround_circle(number=Points)
-        plot_circle_points(x, y, ax)
-        ax.annotate("Factor: {}".format(Factor), (0.8, 1))
-        ax.annotate("Interval: {}".format(Interval), (0.8, 0.8))
-        lines = get_lines_from_points(x, y, Factor, animated=True)
-        anim = animation.FuncAnimation(fig, animate_line_by_line, frames=len(x)-2, interval=Interval, blit=True, fargs=(lines, ax));
+
+    def line_by_line(
+        factor: float, max_points: int, interval: int
+    ) -> animation.FuncAnimation:
+        points = points_around_circle(number=max_points)
+        lines = generate_lines_from_points(points, factor)
+
+        fig = plt.figure(figsize=(10, 10))
+        ax = plt.gca()
+        ax.axis("off")
+        ax.annotate(f"Factor: {factor}", (0.8, 1))
+        ax.annotate(f"Interval: {interval}", (0.8, 0.8))
+        ax.annotate(f"Points: {max_points}", (0.8, 0.9))
+        ax.plot(*points, "-ko", markevery=1)
+        anim = animation.FuncAnimation(
+            fig,
+            animate_line_by_line,
+            frames=max_points - 2,
+            interval=interval,
+            blit=True,
+            fargs=(lines, ax),
+        )
         plt.close()
 
         return anim
 
-    interact(line_by_line,
-            Factor=FloatSlider(min=0, max=100, step=0.1, value=2, layout=Layout(width='99%')), 
-            Points=IntSlider(min=1, max=200, step=1, value=100, layout=Layout(width='99%')),
-            Interval=IntSlider(min=5, max=500, step=5, value=75, layout=Layout(width='99%')));
+
+    interact(
+        line_by_line,
+        factor=FloatSlider(min=0, max=100, step=0.1, value=2, layout=Layout(width="99%")),
+        max_points=IntSlider(min=1, max=200, step=1, value=100, layout=Layout(width="99%")),
+        interval=IntSlider(min=5, max=500, step=5, value=75, layout=Layout(width="99%")),
+    )
 
 <div class="iframe-container" style="padding-top: 101%">
     <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-line-by-line-iframe.html"></iframe>
@@ -214,32 +291,58 @@ Animations in Matplotlib are built through an `animate` function, which basicall
 
 ## Animate Construction Point by Point
 
-Taking another perspective, maybe what's interesting isn't how the lines are plot but rather how the figure gets clearer when we add more points so in this animation the `factor` is fixed and the lines are plotted all at once but each frame increases the number of points from 0 to a given number of `MaxPoints`.
+The next animation focuses on the process of how the figure becomes clearer as
+the number of points increases. The factor is fixed, and all lines are plotted
+at once, but with each frame, the number of points increases incrementally from
+0 to a specified maximum number of `max_points`. This perspective provides a
+different view on the relationship between the number of points and the clarity
+of the figure.
 
     ::python
 
-    def animate_point_by_point(i, ax, Factor, Interval):
+    def animate_point_by_point(
+        i: int, ax: plt.Axes, factor: float, interval: int, max_points: int
+    ) -> List[Line2D]:
+        points = points_around_circle(number=i + 1)
+        lines = generate_line_collection(points, factor)
+
         ax.cla()
-        ax.axis('off')
+        ax.axis("off")
         ax.set_ylim(-1.2, 1.2)
         ax.set_xlim(-1.2, 1.2)
-        ax.annotate("Interval: {}".format(Interval), (0.8, 0.8))
-        x, y = points_arround_circle(number=i+1)
-        plot_circle_points(x, y, ax)
-        plot_lines(x,y,Factor, ax)
+        ax.annotate(f"Interval: {interval}", (0.8, 0.8))
+        ax.annotate(f"Points: {max_points}", (0.8, 0.9))
+        ax.annotate(f"Factor: {factor}", (0.8, 1))
+        ax.plot(*points, "-ko", markevery=1)
+        ax.add_collection(lines)
         return []
 
-    def point_by_point(Factor, Interval, Max_Points):
-        fig, ax = plt.subplots(figsize=(10, 10));
-        anim = animation.FuncAnimation(fig, animate_point_by_point, frames=Max_Points, interval=Interval, blit=True, fargs=(ax, Factor, Interval));
+
+    def point_by_point(
+        factor: float, interval: int, max_points: int
+    ) -> animation.FuncAnimation:
+        fig = plt.figure(figsize=(10, 10))
+        ax = plt.gca()
+        anim = animation.FuncAnimation(
+            fig,
+            animate_point_by_point,
+            frames=max_points,
+            interval=interval,
+            blit=True,
+            fargs=(ax, factor, interval, max_points),
+        )
         plt.close()
 
         return anim
 
-    interact(point_by_point,
-            Factor=FloatSlider(min=0, max=100, step=0.1, value=2, layout=Layout(width='99%')),
-            Max_Points=IntSlider(min=1, max=200, step=1, value=75, layout=Layout(width='99%')),
-            Interval=IntSlider(min=100, max=500, step=1, value=200, layout=Layout(width='99%')));
+
+    interact(
+        point_by_point,
+        factor=FloatSlider(min=0, max=100, step=0.1, value=2, layout=Layout(width="99%")),
+        max_points=IntSlider(min=1, max=200, step=1, value=75, layout=Layout(width="99%")),
+        interval=IntSlider(min=100, max=500, step=1, value=200, layout=Layout(width="99%")),
+    )
+
 
 <div class="iframe-container" style="padding-top: 101%">
     <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-point-by-point-iframe.html"></iframe>
@@ -251,33 +354,59 @@ Taking another perspective, maybe what's interesting isn't how the lines are plo
 
 ## Animate Construction Factor by Factor
 
-Now the animation showed in the video, which the number of points fixed and all lines are plotted at ones but the factor is increased frame by frame. When the factor is increased with a step of 1, the animation changes drastically so in for this example the factor is changed by steps of 0.1, to achieve a smoother animation. This version is monochrome, all the lines are always the same color.
+The animation displays the effect of incrementing the factor, with the number of
+points fixed and all lines plotted at once. To enhance the visual impact, the
+factor is increased in increments of 0.1 instead of 1. This results in a
+smoother animation. This version is monochromatic, with all lines appearing in
+the same color.
 
     ::python
-    def animate_factor_by_factor(i, ax, Max_Points, Interval, frames):
+    def animate_factor_by_factor(
+        i: int, ax: plt.Axes, max_points: int, interval: int
+    ) -> List[Line2D]:
+        points = points_around_circle(number=max_points)
+        lines = generate_line_collection(points, i / 10)
+
         ax.cla()
-        ax.axis('off')
+        ax.axis("off")
         ax.set_ylim(-1.2, 1.2)
         ax.set_xlim(-1.2, 1.2)
-        ax.annotate("Interval: {}".format(Interval), (0.8, 0.8))
-        x, y = points_arround_circle(number=Max_Points)
-        plot_circle_points(x, y, ax)
-        plot_lines(x, y, i / 10, ax)
+        ax.annotate(f"Interval: {interval}", (0.8, 0.8))
+        ax.annotate(f"Points: {max_points}", (0.8, 0.9))
+        ax.annotate(f"Factor: {factor}", (0.8, 1))
+        ax.plot(*points, "-ko", markevery=1)
+        ax.add_collection(lines)
         return []
 
-    def factor_by_factor(Factor, Interval, Max_Points):
-        fig, ax = plt.subplots(figsize=(10, 10));
-        frames = int(Factor * 10)
-        anim = animation.FuncAnimation(fig, animate_factor_by_factor, frames=frames, interval=Interval, blit=True, fargs=(ax, Max_Points, Interval, frames));
+
+    def factor_by_factor(
+        factor: float, interval: int, max_points: int
+    ) -> animation.FuncAnimation:
+        fig = plt.figure(figsize=(10, 10))
+        ax = plt.gca()
+
+        frames = int(factor * 10)
+        anim = animation.FuncAnimation(
+            fig,
+            animate_factor_by_factor,
+            frames=frames,
+            interval=interval,
+            blit=True,
+            fargs=(ax, max_points, interval),
+        )
 
         plt.close()
 
         return anim
 
-    interact(factor_by_factor,
-            Factor=FloatSlider(min=0, max=100, step=0.1, value=5, layout=Layout(width='99%')),
-            Max_Points=IntSlider(min=1, max=200, step=1, value=100, layout=Layout(width='99%')),
-            Interval=IntSlider(min=50, max=500, step=25, value=100, layout=Layout(width='99%')));
+
+    interact(
+        factor_by_factor,
+        factor=FloatSlider(min=0, max=100, step=0.1, value=5, layout=Layout(width="99%")),
+        max_points=IntSlider(min=1, max=200, step=1, value=100, layout=Layout(width="99%")),
+        interval=IntSlider(min=50, max=500, step=25, value=100, layout=Layout(width="99%")),
+    )
+
 
 <div class="iframe-container" style="padding-top: 101%">
     <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-factor-by-factor-iframe.html"></iframe>
@@ -289,33 +418,59 @@ Now the animation showed in the video, which the number of points fixed and all 
 
 ## Animate Construction Factor by Factor with Color
 
-Just as the previous one but with color added, in this case an additional `frames` parameter is passed to the `animate_factor_by_factor_colored` function and this value is the total number of frames so the HSV system is used with fixed Saturation and Value and the Hue is changing from 0 to 1 depending on the frame. To achieved this, the current frame `i` is divided by the total number of frames `frames`, and thus ranging from 0 to 1.
+The final animation is similar to the previous one, with the difference being
+the addition of color. To achieve this, the function
+`animate_factor_by_factor_colored` is passed an additional parameter, `frames`,
+which specifies the total number of frames. The HSV color system is utilized,
+with fixed saturation and value, while the hue changes from 0 to 1 as the
+current frame (`i`) is divided by the total number of frames (`frames`),
+resulting in a range from 0 to 1.
 
     ::python
-    def animate_factor_by_factor_colored(i, ax, Max_Points, Interval, frames):
+    def animate_factor_by_factor_colored(
+        i: int, ax: plt.Axes, max_points: int, interval: int, frames: int
+    ) -> List[Line2D]:
+        points = points_around_circle(number=max_points)
+        lines = generate_line_collection(points, i / 10, color=i / frames)
+
         ax.cla()
-        ax.axis('off')
-        ax.set_ylim(-1.2, 1.2)
-        ax.set_xlim(-1.2, 1.2)
-        ax.annotate("Interval: {}".format(Interval), (0.8, 0.8))
-        x, y = points_arround_circle(number=Max_Points)
-        plot_circle_points(x, y, ax)
-        plot_lines(x, y, i / 10, ax, color=i / frames)
+        ax.axis("off")
+        ax.annotate(f"Interval: {interval}", (0.8, 0.8))
+        ax.annotate(f"Points: {max_points}", (0.8, 0.9))
+        ax.annotate(f"Factor: {factor}", (0.8, 1))
+        ax.plot(*points, "-ko", markevery=1)
+        ax.add_collection(lines)
         return []
 
-    def factor_by_factor_colored(Factor, Interval, Max_Points):
-        fig, ax = plt.subplots(figsize=(10, 10));
-        frames = int(Factor * 10)
-        anim = animation.FuncAnimation(fig, animate_factor_by_factor_colored, frames=frames, interval=Interval, blit=True, fargs=(ax, Max_Points, Interval, frames));
+
+    def factor_by_factor_colored(
+        factor: float, interval: int, max_points: int
+    ) -> animation.FuncAnimation:
+        fig = plt.figure(figsize=(10, 10))
+        ax = plt.gca()
+
+        frames = int(factor * 10)
+        anim = animation.FuncAnimation(
+            fig,
+            animate_factor_by_factor_colored,
+            frames=frames,
+            interval=interval,
+            blit=True,
+            fargs=(ax, max_points, interval, frames),
+        )
 
         plt.close()
 
         return anim
 
-    interact(factor_by_factor_colored,
-            Factor=FloatSlider(min=0, max=100, step=0.1, value=5, layout=Layout(width='99%')),
-            Max_Points=IntSlider(min=1, max=200, step=1, value=100, layout=Layout(width='99%')),
-            Interval=IntSlider(min=50, max=500, step=25, value=100, layout=Layout(width='99%')));
+
+    interact(
+        factor_by_factor_colored,
+        factor=FloatSlider(min=0, max=100, step=0.1, value=5, layout=Layout(width="99%")),
+        max_points=IntSlider(min=1, max=200, step=1, value=100, layout=Layout(width="99%")),
+        interval=IntSlider(min=50, max=500, step=25, value=100, layout=Layout(width="99%")),
+    )
+
 
 <div class="iframe-container" style="padding-top: 101%">
     <iframe class="b-lazy" data-src="https://elc.github.io/blog/iframes/times-tables/times-table-factor-by-factor-colored-iframe.html"></iframe>
@@ -327,16 +482,17 @@ Just as the previous one but with color added, in this case an additional `frame
 
 ## Export
 
-Every animation generated can be exported as an mp4 file. It simply needs to call the function, store the result in a variable and then use the following snipped. Change `Specific_function` with the one you like, and place the corresponding parameters. For instance: `factor_by_factor_colored`, `animate_point_by_point`
+The generated animations can be exported as mp4 files by calling the appropriate
+function, storing the result in a variable and using the following code snippet.
+The function `specific_function` should be replaced with the desired animation,
+such as `factor_by_factor_colored` or `animate_point_by_point`, and the
+corresponding parameters should be included.
 
     ::python
-    anim = Specific_function(*args)
+    anim = specific_function(*args)
+    filename = "my_animation.mp4"
 
     Writer = animation.writers['ffmpeg']
     writer = Writer(fps=30)
 
-    anim.save('filename.mp4', writer=writer)
-
-## Notebook
-
-Everything showed above can be executed without installing anything just by using Binder, [**open the gist online**](https://elc.github.io/link/times_table_binder){: target="_blank"} and experiment yourself.
+    anim.save(filename, writer=writer)
