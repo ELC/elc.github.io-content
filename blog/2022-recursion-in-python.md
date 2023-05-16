@@ -1,4 +1,4 @@
-Title: Python Recursion: Head to Tail, mutual and nested
+Title: Python Recursion: Mutual Head to Nested Tail
 Date: 2022-10-25
 Category: Programming 
 Tags: Python, Functional Programming
@@ -17,33 +17,7 @@ Status: draft
 <!-- PELICAN_END_SUMMARY -->
 
 
-## Disclaimer
-
-
-Arity
-Higher Order Functions
-Closure
-Partial Application
-Currying
-Function Composition
-Pure Function
-Side effects
-Idempotent
-Point-Free Style
-Predicate
-Referential Transparency
-
-## Sidenote before deep diving
-
-This article is heavily inspired by [Mike Vanier
-post](https://mvanier.livejournal.com/2897.html), however examples there are
-written in the Scheme programming language and this posts uses Python.
-Moreover, the approach taken is different since it is mostly focused to
-programmers that have little to no background on Functional Programming (FP)
-concepts and focuses more on showing different FP concepts which ends in the Y
-combinator, instead of using it to drive the narrative.
-
-## An old friend
+## An old friend: The Factorial
 
 Many if not all programming courses introduce the factorial function at some
 point. This function has great mathematical importance and yet it is simple
@@ -104,15 +78,17 @@ Since the previous implementations are non-recursive, the [call
 graph](https://en.wikipedia.org/wiki/Call_graph){: target="_blank"}  consists of
 a single node:
 
-[![Non Recursive Factorial Call Graph]({static}images/recursion/non_recursive_factorial-thumbnail.png){: .b-lazy width=554 data-src=/blog/images/recursion/non_recursive_factorial.png }](/blog/images/recursion/non_recursive_factorial.png)
+[![Non Recursive Factorial Call Graph]({static}images/recursion/non_recursive_factorial-thumbnail.png){: .narrow .b-lazy width=554 data-src=/blog/images/recursion/non_recursive_factorial.png }](/blog/images/recursion/non_recursive_factorial.png)
 
 
 ## Recursion
 
-After introducing one of the previous two definitions of factorials, the
+After introducing one of the previous definitions of the factorial function, the
 "recursive form" is usually presented. A recursive function is a function that
 calls itself. There are multiple types of recursion though and understanding
-them may have a huge impact on some programming languages.
+them may have a huge impact on some programming languages. Before showing how
+the recursive version of the factorial looks like, it is important to clarify
+some concepts.
 
 
 ## Direct vs Indirect Recursion
@@ -142,8 +118,8 @@ Based on the number of recursive calls:
 
 Based on the number of functions involved:
 
-- Direct Recursion
-- Indirect Recursion (also called mutual recursion)
+- Direct Recursion (a single function)
+- Indirect Recursion (multiple functions, also called mutual recursion)
 
 
 ## Linear Recursion
@@ -184,7 +160,7 @@ contexts.
 The call graph in the case of linear recursive functions is a series a nodes
 called sequentially:
 
-[![Recursive Factorial Call Graph]({static}images/recursion/recursive_factorial-thumbnail.png){: .b-lazy width=554 data-src=/blog/images/recursion/recursive_factorial.png }](/blog/images/recursion/recursive_factorial.png)
+[![Recursive Factorial Call Graph]({static}images/recursion/recursive_factorial-thumbnail.png){: .narrow .b-lazy width=200 data-src=/blog/images/recursion/recursive_factorial.png }](/blog/images/recursion/recursive_factorial.png)
 
 
 ## Tail Recursion
@@ -193,8 +169,8 @@ Tail recursion is when the return statement of the function is **only a
 recursive call**, this means that a function call could be replace with another
 function call directly. Some languages (Python is not one of them), use a
 technique named [Tail-Call
-Optimization](https://en.wikipedia.org/wiki/Tail_call), which makes this
-particular type of recursion very efficient.
+Optimization](https://en.wikipedia.org/wiki/Tail_call){: target="_blank"}, which
+makes this particular type of recursion very efficient.
 
 One important clarification is that the return **must not be an expression**.
 
@@ -216,7 +192,7 @@ assert not palindrome("abca")
 assert palindrome("tattarrattat")
 ```
 
-[![Recursive Palindrome]({static}images/recursion/recursive_palindrome-thumbnail.png){: .b-lazy width=1604 data-src=/blog/images/recursion/recursive_palindrome.png }](/blog/images/recursion/recursive_palindrome.png)
+[![Recursive Palindrome]({static}images/recursion/recursive_palindrome-thumbnail.png){: .narrow .b-lazy width=600 data-src=/blog/images/recursion/recursive_palindrome.png }](/blog/images/recursion/recursive_palindrome.png)
 
 To better illustrate the fact that the returning statement must be **only a
 function call**, the following implementation is **NOT** a tail recursive
@@ -257,7 +233,7 @@ assert sum_integer_up_to_n(3) == 6
 assert sum_integer_up_to_n(5) == 15
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/recursive_sum_integer_up_to_n-thumbnail.png){: .b-lazy width=971 data-src=/blog/images/recursion/recursive_sum_integer_up_to_n.png }](/blog/images/recursion/recursive_sum_integer_up_to_n.png)
+[![Recursive Sum Integer up to N]({static}images/recursion/recursive_sum_integer_up_to_n-thumbnail.png){: .narrow .b-lazy width=400 data-src=/blog/images/recursion/recursive_sum_integer_up_to_n.png }](/blog/images/recursion/recursive_sum_integer_up_to_n.png)
 
 Can be rewritten into tail recursive form as:
 
@@ -274,7 +250,7 @@ assert sum_integer_up_to_n(1) == 1
 assert sum_integer_up_to_n(3) == 6
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/tail_recursive_sum_integer_up_to_n-thumbnail.png){: .b-lazy width=1275 data-src=/blog/images/recursion/tail_recursive_sum_integer_up_to_n.png }](/blog/images/recursion/tail_recursive_sum_integer_up_to_n.png)
+[![Recursive Sum Integer up to N]({static}images/recursion/tail_recursive_sum_integer_up_to_n-thumbnail.png){: .narrow .b-lazy width=400 data-src=/blog/images/recursion/tail_recursive_sum_integer_up_to_n.png }](/blog/images/recursion/tail_recursive_sum_integer_up_to_n.png)
 
 
 This last version uses an additional paramenter to pass the total down the call
@@ -300,7 +276,7 @@ def factorial(n: int, result: int = 1) -> int:
 assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/tail_recursive_factorial-thumbnail.png){: .b-lazy width=704 data-src=/blog/images/recursion/tail_recursive_factorial.png }](/blog/images/recursion/tail_recursive_factorial.png)
+[![Tail Recursive Factorial]({static}images/recursion/tail_recursive_factorial-thumbnail.png){: .narrow .b-lazy width=300 data-src=/blog/images/recursion/tail_recursive_factorial.png }](/blog/images/recursion/tail_recursive_factorial.png)
 
 
 When comparing head/middle and tail recursion, the way each approach works can be
@@ -358,7 +334,7 @@ def fibonacci(n: int) -> int:
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/recursive_fibonacci-thumbnail.png){: .b-lazy width=2750 data-src=/blog/images/recursion/recursive_fibonacci.png }](/blog/images/recursion/recursive_fibonacci.png)
+[![Multi Recursive Fibonacci]({static}images/recursion/recursive_fibonacci-thumbnail.png){: .b-lazy width=2750 data-src=/blog/images/recursion/recursive_fibonacci.png }](/blog/images/recursion/recursive_fibonacci.png)
 
 In some cases, multi recursive functions can be refactor into linear tail
 recursive functions.
@@ -374,7 +350,7 @@ def fibonacci(n: int, partial_result: int = 0, result: int = 1) -> int:
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/tail_recursive_fibonacci-thumbnail.png){: .b-lazy width=729 data-src=/blog/images/recursion/tail_recursive_fibonacci.png }](/blog/images/recursion/tail_recursive_fibonacci.png)
+[![Fibonacci Tail Recursive]({static}images/recursion/tail_recursive_fibonacci-thumbnail.png){: .narrow .b-lazy width=300 data-src=/blog/images/recursion/tail_recursive_fibonacci.png }](/blog/images/recursion/tail_recursive_fibonacci.png)
 
 ## Tree Recursion
 
@@ -398,7 +374,7 @@ assert quicksort([2, 4, 3, 5, 0, 1]) == list(range(6))
 assert quicksort(list(reversed(range(10)))) == list(range(10))
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/recursive_quicksort-thumbnail.png){: .b-lazy width=2710 data-src=/blog/images/recursion/recursive_quicksort.png }](/blog/images/recursion/recursive_quicksort.png)
+[![Tree recursive quicksort]({static}images/recursion/recursive_quicksort-thumbnail.png){: .b-lazy width=2710 data-src=/blog/images/recursion/recursive_quicksort.png }](/blog/images/recursion/recursive_quicksort.png)
 
 Here the function divides the input into two parts and each recursive call is
 sent one of the parts. This strategy reduces the number of recursive calls.
@@ -426,12 +402,12 @@ assert maximum([2, 4, 3, 5, 0, 1]) == 5
 assert maximum(list(range(10))) == 9
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/recursive_maximum-thumbnail.png){: .b-lazy width=1033 data-src=/blog/images/recursion/recursive_maximum.png }](/blog/images/recursion/recursive_maximum.png)
+[![Maximum Linear recursion]({static}images/recursion/recursive_maximum-thumbnail.png){: .narrow .b-lazy width=400 data-src=/blog/images/recursion/recursive_maximum.png }](/blog/images/recursion/recursive_maximum.png)
 
 This function will have as many recursive calls as elements are in the list. A
 similar approach as the quicksort algorithm can be used to reduce the number of
-calls to a base two logarithm of the length of the list. The number of total
-calls will be the same, however the recursive stack will be much shorter.
+calls to a base two logarithm of the length of the list. With this approach the
+recursive stack will be much shorter.
 
 ```python
 def maximum(numbers: list[float]) -> float:
@@ -448,7 +424,7 @@ assert maximum([2, 4, 3, 5, 0, 1]) == 5
 assert maximum(list(range(10))) == 9
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/tree_recursive_maximum-thumbnail.png){: .b-lazy width=3260 data-src=/blog/images/recursion/tree_recursive_maximum.png }](/blog/images/recursion/tree_recursive_maximum.png)
+[![Maximum Tree Recursion]({static}images/recursion/tree_recursive_maximum-thumbnail.png){: .b-lazy width=3260 data-src=/blog/images/recursion/tree_recursive_maximum.png }](/blog/images/recursion/tree_recursive_maximum.png)
 
 This is not always possible, for functions like fibonacci, it is not trivial to
 use a tree approach that reduces the number of recursive calls. A known solution
@@ -477,7 +453,7 @@ def fibonacci(n):
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/fast_double_fibonacci-thumbnail.png){: .b-lazy width=1508 data-src=/blog/images/recursion/fast_double_fibonacci.png }](/blog/images/recursion/fast_double_fibonacci.png)
+[![Fast Double Fibonacci]({static}images/recursion/fast_double_fibonacci-thumbnail.png){: .narrow .b-lazy width=700 data-src=/blog/images/recursion/fast_double_fibonacci.png }](/blog/images/recursion/fast_double_fibonacci.png)
 
 It is even possible to further reduce the number of recursive calls by
 converting the multi recursive function into a linear recursive function by
@@ -501,7 +477,18 @@ def fibonacci(n):
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
 
-[![Recursive Sum Integer up to N]({static}images/recursion/efficient_recursive_fibonacci-thumbnail.png){: .b-lazy width=1004 data-src=/blog/images/recursion/efficient_recursive_fibonacci.png }](/blog/images/recursion/efficient_recursive_fibonacci.png)
+[![Linear Recursive Fibonacci]({static}images/recursion/efficient_recursive_fibonacci-thumbnail.png){: .nested .b-lazy width=400 data-src=/blog/images/recursion/efficient_recursive_fibonacci.png }](/blog/images/recursion/efficient_recursive_fibonacci.png)
+
+
+Even though in these examples with `fibonacci(4)` the difference is not drastic,
+the number of total calls in the call graph scales in notoriously different ways
+for each implementation, take for example `fibonacci(100)`:
+
+- Typical Multi Recursive Implementation: 1,146,295,688,027,634,168,203 calls ≈ 1 sextillion calls
+- Fast Doubles: 163 calls
+- Tail Recursive Implementation (Memoization has no effect): 100 calls
+- Linear Recursive Implementation (Memoization has no effect): 8 calls
+
 
 ## Nested Recursion
 
@@ -544,7 +531,7 @@ assert [hofstadter_h(i) for i in range(7)] ==  [0, 1, 1, 2, 3, 4, 4]
 
 Some functions can have multiple arguments and be nested recursive. The
 Ackermann function grows extremely fast due to this nested recursive definition
-and it is the simplest functions proved not to be primitive recursive, meaning
+and it is the simplest function proved not to be primitive recursive, meaning
 that it cannot be expressed in iterative form with for loops.
 
 This functions is currently used to test compilers efficiency at handling really
@@ -593,11 +580,11 @@ assert [is_even(i) for i in range(6)] == [True, False, True, False, True, False]
 assert [is_odd(i) for i in range(6)] == [False, True, False, True, False, True]
 ```
 
-[![Recursive Is Even]({static}images/recursion/recursive_is_even-thumbnail.png){: .b-lazy width=538 data-src=/blog/images/recursion/recursive_is_even.png }](/blog/images/recursion/recursive_is_even.png)
+[![Recursive Is Even]({static}images/recursion/recursive_is_even-thumbnail.png){: .narrow .b-lazy width=200 data-src=/blog/images/recursion/recursive_is_even.png }](/blog/images/recursion/recursive_is_even.png)
 
 Of course it is also possible to implement a function that computes the same in
 a non recursive form, however, this example does not require division or modulo
-computation, it is much slower thougn for big numbers.
+computation, it is much slower though for big numbers.
 
 
 ## Mutual Multi Recursion
@@ -695,7 +682,7 @@ assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/mutual_recursive_fibonacci_alternative-thumbnail.png){: .b-lazy width=3163 data-src=/blog/images/recursion/mutual_recursive_fibonacci_alternative.png }](/blog/images/recursion/mutual_recursive_fibonacci_alternative.png)
 
-## Mutual Mested Recursion
+## Mutual Nested Recursion
 
 Mutual recursion can also appear in nested form, as it is the case of the
 Hofstadter Female and Male sequences which are mutual nested recursive.
@@ -724,8 +711,6 @@ combines the lucas, fibonacci and multiply last two functions in a triple mutual
 recursive form, where each function uses at the other two and itself.
 
 ```python
-# Mutual Nonlineal bifurcating Triple Recursion
-
 import math
 
 def lucas(n: int) -> int:
@@ -733,7 +718,10 @@ def lucas(n: int) -> int:
         return 2
     if n == 1:
         return 1
-    return 2 * math.log2(multiply_last_two(n - 1) * multiply_last_two(n - 2)) - fibonacci(n-1) + lucas(n-2)
+    return (
+        2 * math.log2(multiply_last_two(n - 1) * multiply_last_two(n - 2))
+        - fibonacci(n-1) + lucas(n-2)
+    )
 
 
 def fibonacci(n: int) -> int:
@@ -764,486 +752,91 @@ assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
 
 ## Recursion related techniques
 
+One dealing with recursive functions, it is important to keep track of the call
+stack and to optimize to avoid wasting resources. Many recursive functions call
+themselves multiple times with the same parameters in their call graph, these
+repeated calls can be cached to avoid (1) continue traversing a recursive tree
+and (2) return the result in constant time. This technique of caching previously
+computed results is called **memoization**.
+
+
+Take for example the following call graph for a multi recursive implementation of `fibonacci(5)`:
+
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/recursive_non_memoized_fibonacci-thumbnail.png){: .b-lazy width=4106 data-src=/blog/images/recursion/recursive_non_memoized_fibonacci.png }](/blog/images/recursion/recursive_non_memoized_fibonacci.png)
+
+When using memoization the total number of calls is reduced significantly (from 15 calls to 9):
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/recursive_memoized_fibonacci-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/recursive_memoized_fibonacci.png }](/blog/images/recursion/recursive_memoized_fibonacci.png)
 
+Depending on the implementation, the effect of memoization is similar to
+*linearizing* the multi recursive function, as the tree has much fewer branches
+while the depth is kept the same.
 
+If considering the Fibonacci Fast Doubles implementation of `fibonacci(10)`:
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/non_memoized_fast_double_fibonacci-thumbnail.png){: .b-lazy width=4106 data-src=/blog/images/recursion/non_memoized_fast_double_fibonacci.png }](/blog/images/recursion/non_memoized_fast_double_fibonacci.png)
 
+This can also be reduced (from 15 calls to 11):
+
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_fast_double_fibonacci-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_fast_double_fibonacci.png }](/blog/images/recursion/memoized_fast_double_fibonacci.png)
 
-
+Memoization can also be applied to nested recursive functions such as the `hofstadter_g(4)`:
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/non_memoized_hofstadter_g-thumbnail.png){: .b-lazy width=4106 data-src=/blog/images/recursion/non_memoized_hofstadter_g.png }](/blog/images/recursion/non_memoized_hofstadter_g.png)
 
+Now memoized (from 19 calls to 9):
+
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_hofstadter_g-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_hofstadter_g.png }](/blog/images/recursion/memoized_hofstadter_g.png)
 
+Or deeply nested recursive functions like the `hofstadter_h(3)`:
+
+[![Recursive Hofstadter H]({static}images/recursion/recursive_hofstadter_h-thumbnail.png){: .b-lazy width=9794 data-src=/blog/images/recursion/recursive_hofstadter_h.png }](/blog/images/recursion/recursive_hofstadter_h.png)
+
+And now memoized (from 22 to 10 calls)
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_hofstadter_h-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_hofstadter_h.png }](/blog/images/recursion/memoized_hofstadter_h.png)
 
+Same applies for more complex functions like the Ackermann function with `Ackermann(2, 3)`:
+
+[![Recursive Ackerman]({static}images/recursion/recursive_ackermann-thumbnail.png){: .b-lazy width=6185 data-src=/blog/images/recursion/recursive_ackermann.png }](/blog/images/recursion/recursive_ackermann.png)
+
+And now memoized (from 44 calls to 23):
+
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_ackermann-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_ackermann.png }](/blog/images/recursion/memoized_ackermann.png)
+
+
+Memoization can also be used for mutual recursive functions, the following examples show the mutual fibonacci-lucas recursion, the hofstadter female-male
+
+
+Multi recursive fibonacci-lucas:
+
+[![Mutual Recursive Fibonacci]({static}images/recursion/mutual_recursive_fibonacci-thumbnail.png){: .b-lazy width=5365 data-src=/blog/images/recursion/mutual_recursive_fibonacci.png }](/blog/images/recursion/mutual_recursive_fibonacci.png)
+
+And now memoized (from 26 to 13):
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_mutual_recursive_fibonacci-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_mutual_recursive_fibonacci.png }](/blog/images/recursion/memoized_mutual_recursive_fibonacci.png)
 
+
+And the hofstadter female-male recursion:
+
+[![Mutual Recursive Fibonacci Alternative]({static}images/recursion/mutual_recursive_hofstadter_female-thumbnail.png){: .b-lazy width=5290 data-src=/blog/images/recursion/mutual_recursive_hofstadter_female.png }](/blog/images/recursion/mutual_recursive_hofstadter_female.png)
+
+And now memoized (from 15 to 11 calls)
+
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_hofstadter_female-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_hofstadter_female.png }](/blog/images/recursion/memoized_hofstadter_female.png)
 
-## Memoization
 
-## Trampoline
+Taking the `fibonacci(100)` example from the previous section, when
+incorporating the memoized approaches the results change substantially:
 
+- Typical Multi Recursive Implementation: 1,146,295,688,027,634,168,203 calls ≈ 1 sextillion calls
+- Memoized Typical Multi Recursive Implementation: 199 calls
+- Fast Doubles: 163 calls
+- Tail Recursive Implementation (Memoization has no effect): 100 calls
+- Memoized Fast Doubles: 29 calls
+- Linear Recursive Implementation (Memoization has no effect): 8 calls
 
+Since the tail recursive and the linear recursive implementation do not have
+repeated calls, memoization has no effect.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```python
-# Traditional Recursive Form
-def factorial(n):
-    if n == 0:
-        return 1
-    
-    return n * factorial(n - 1)
-
-assert factorial(6) == 720
-```
-# factorial(3)
-# 3 * factorial(3 - 1)
-# 3 * factorial(2)
-# 3 * 2 * factorial(2 - 1)
-# 3 * 2 * factorial(1)
-# 3 * 2 * 1 * factorial(1 - 1)
-# 3 * 2 * 1 * factorial(0)
-# 3 * 2 * 1 * 1
-```python
-# Remove direct recursion using mutual recursion
-def aux(n):
-    return factorial(n)
-
-def factorial(n):
-    if n == 0:
-        return 1
-    
-    return n * aux(n - 1)
-
-assert factorial(6) == 720
-```
-# factorial(3)
-# 3 * aux(3 - 1)
-# 3 * aux(2)
-# 3 * factorial(2)
-# 3 * 2 * aux(2 - 1)
-# 3 * 2 * aux(1)
-# 3 * 2 * factorial(1)
-# 3 * 2 * 1 * aux(1 - 1)
-# 3 * 2 * 1 * aux(0)
-# 3 * 2 * 1 * factorial(0)
-# 3 * 2 * 1 * 1
-
-```python
-# Remove hardcoded references in aux
-def aux(f, n):
-    return f(n)
-
-def factorial(n):
-    if n == 0:
-        return 1
-    
-    return n * aux(factorial, n - 1)
-
-assert factorial(6) == 720
-```
-
-# factorial(3)
-# 3 * aux(factorial, 3 - 1)
-# 3 * aux(factorial, 2)
-# 3 * factorial(2)
-# 3 * 2 * aux(factorial, 2 - 1)
-# 3 * 2 * aux(factorial, 1)
-# 3 * 2 * factorial(1)
-# 3 * 2 * 1 * aux(factorial, 1 - 1)
-# 3 * 2 * 1 * aux(factorial, 0)
-# 3 * 2 * 1 * factorial(0)
-# 3 * 2 * 1 * 1
-
-```python
-# Remove hardcoded references in factorial
-def aux(f, n):
-    return f(f, n)
-
-
-def factorial(f, n):
-    if n == 0:
-        return 1
-    
-    return n * f(f, n - 1)
-
-assert aux(factorial, 6) == 720
-```
-
-# aux(factorial, 3)
-# factorial(factorial, 3)
-# 3 * factorial(factorial, 3 - 1)
-# 3 * factorial(factorial, 2)
-# 3 * 2 * factorial(factorial, 2 - 1)
-# 3 * 2 * factorial(factorial, 1)
-# 3 * 2 * 1 * factorial(factorial, 1 - 1)
-# 3 * 2 * 1 * factorial(factorial, 0)
-# 3 * 2 * 1 * 1
-
-```python
-# Change to single parameter form
-def aux(f):
-    def aux_2(n):
-        return f(aux_2)(n)
-    return aux_2
-
-def factorial(f):
-    def factorial_step(n):
-        if n == 0:
-            return 1
-        
-        return n * f(n - 1)
-    return factorial_step
-
-assert aux(factorial)(6) == 720
-```
-# aux(factorial)(3)
-# aux_2(3)
-# factorial(aux_2)(3)
-# factorial_step(3)
-# 3 * aux_2(3 - 1)
-# 3 * aux_2(2)
-# 3 * factorial(aux_2)(2)
-# 3 * factorial_step(2)
-# 3 * 2 * aux_2(2 - 1)
-# 3 * 2 * aux_2(1)
-# 3 * 2 * factorial(aux_2)(1)
-# 3 * 2 * factorial_step(1)
-# 3 * 2 * 1 * aux_2(1 - 1)
-# 3 * 2 * 1 * aux_2(0)
-# 3 * 2 * 1 * factorial(aux_2)(0)
-# 3 * 2 * 1 * factorial_step(0)
-# 3 * 2 * 1 * 1
-
-```python
-# Remove recursion from aux_2
-
-def aux(f-factorial):
-    def aux_3(f_2=aux_3):
-        def aux_2(n):
-            return f_2(f_2)(n)
-        return f(aux_2)
-    return aux_3(aux_3)
-
-def factorial(f):
-    def factorial_step(n):
-        if n == 0:
-            return 1
-        
-        return n * f(n - 1)
-    return factorial_step
-
-assert aux(factorial)(6) == 720
-```
-
-# aux(factorial)(3)
-# aux_3(aux_3)(3)
-# factorial(aux_2)(3)
-# factorial_step(3)
-# 3 * aux_2(3 - 1)
-# 3 * aux_2(2)
-# 3 * aux_3(aux_3)(2)
-# 3 * factorial(aux_2)(2)
-# 3 * factorial_step(2)
-# 3 * 2 * aux_2(2 - 1)
-# 3 * 2 * aux_2(1)
-# 3 * 2 * aux_3(aux_3)(1)
-# 3 * 2 * factorial(aux_2)(1)
-# 3 * 2 * factorial_step(1)
-# 3 * 2 * 1 * aux_2(1 - 1)
-# 3 * 2 * 1 * aux_2(0)
-# 3 * 2 * 1 * aux_3(aux_3)(0)
-# 3 * 2 * 1 * factorial(aux_2)(0)
-# 3 * 2 * 1 * factorial_step(0)
-# 3 * 2 * 1 * 1
-
-```python
-# Change factorial_step into lambda form
-
-def aux(f):
-    def aux_3(f_2):
-        def aux_2(n):
-            return f_2(f_2)(n)
-        return f(aux_2)
-    return aux_3(aux_3)
-
-def factorial(f):
-    return lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-# aux(factorial)(3)
-# aux_3(aux_3)(3)
-# factorial(aux_2)(3)
-# (lambda n: 1 if n == 0 else n * aux_2(n-1))(3)
-# 3 * aux_2(3 - 1)
-# 3 * aux_2(2)
-# 3 * aux_3(aux_3)(2)
-# 3 * factorial(aux_2)(2)
-# 3 * (lambda n: 1 if n == 0 else n * aux_2(n-1))(2)
-# 3 * 2 * aux_2(2 - 1)
-# 3 * 2 * aux_2(1)
-# 3 * 2 * aux_3(aux_3)(1)
-# 3 * 2 * factorial(aux_2)(1)
-# 3 * 2 * (lambda n: 1 if n == 0 else n * aux_2(n-1))(1)
-# 3 * 2 * 1 * aux_2(1 - 1)
-# 3 * 2 * 1 * aux_2(0)
-# 3 * 2 * 1 * aux_3(aux_3)(0)
-# 3 * 2 * 1 * factorial(aux_2)(0)
-# 3 * 2 * 1 * (lambda n: 1 if n == 0 else n * aux_2(n-1))(0)
-# 3 * 2 * 1 * 1
-
-```python
-# Change factorial into lambda form
-
-def aux(f):
-    def aux_3(f_2):
-        def aux_2(n):
-            return f_2(f_2)(n)
-        return f(aux_2)
-    return aux_3(aux_3)
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-# aux(factorial)(3)
-# aux(lambda f: lambda n: 1 if n == 0 else n * f(n-1))(3)
-# aux_3(aux_3)(3)
-# (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(aux_2)(3)
-# (lambda n: 1 if n == 0 else n * aux_2(n-1))(3)
-# 3 * aux_2(3 - 1)
-# 3 * aux_2(2)
-# 3 * aux_3(aux_3)(2)
-# 3 * (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(aux_2)(2)
-# 3 * (lambda n: 1 if n == 0 else n * aux_2(n-1))2)
-# 3 * 2 * aux_2(2 - 1)
-# 3 * 2 * aux_2(1)
-# 3 * 2 * aux_3(aux_3)(1)
-# 3 * 2 * (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(aux_2)(1)
-# 3 * 2 * (lambda n: 1 if n == 0 else n * aux_2(n-1))(1)
-# 3 * 2 * 1 * aux_2(1 - 1)
-# 3 * 2 * 1 * aux_2(0)
-# 3 * 2 * 1 * aux_3(aux_3)(0)
-# 3 * 2 * 1 * (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(aux_2)(0)
-# 3 * 2 * 1 * (lambda n: 1 if n == 0 else n * aux_2(n-1))(0)
-# 3 * 2 * 1 * 1
-
-```python
-# Change aux_2 into lambda form
-def aux(f):
-    def aux_3(f_2):
-        return f(lambda n: f_2(f_2)(n))
-    return aux_3(aux_3)
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-
-# aux(factorial)(3)
-# aux(lambda f: lambda n: 1 if n == 0 else n * f(n-1))(3)
-# aux_3(aux_3)(3)
-# (lambda f: lambda n: 1 if n == 0 else n * f(n-1))((lambda n: aux_3(aux_3)(n)))(3)
-# (lambda n: 1 if n == 0 else n * (lambda n: aux_3(aux_3)(n))(n-1))(3)
-# 3 * (lambda n: aux_3(aux_3)(n))(3 - 1)
-# 3 * (lambda n: aux_3(aux_3)(n))(2)
-# 3 * aux_3(aux_3)(2)
-# 3 * (lambda f: lambda n: 1 if n == 0 else n * f(n-1))((lambda n: aux_3(aux_3)(n)))(2)
-# 3 * (lambda n: 1 if n == 0 else n * (lambda n: aux_3(aux_3)(n))(n-1))(2)
-# 3 * 2 * (lambda n: aux_3(aux_3)(n))(2 - 1)
-# 3 * 2 * (lambda n: aux_3(aux_3)(n))(1)
-# 3 * 2 * aux_3(aux_3)(1)
-# 3 * 2 * (lambda f: lambda n: 1 if n == 0 else n * f(n-1))((lambda n: aux_3(aux_3)(n)))(1)
-# 3 * 2 * (lambda n: 1 if n == 0 else n * (lambda n: aux_3(aux_3)(n))(n-1))(1)
-# 3 * 2 * 1 * (lambda n: aux_3(aux_3)(n))(1 - 1)
-# 3 * 2 * 1 * (lambda n: aux_3(aux_3)(n))(0)
-# 3 * 2 * 1 * aux_3(aux_3)(0)
-# 3 * 2 * 1 * (lambda f: lambda n: 1 if n == 0 else n * f(n-1))((lambda n: aux_3(aux_3)(n)))(0)
-# 3 * 2 * 1 * (lambda n: 1 if n == 0 else n * (lambda n: aux_3(aux_3)(n))(n-1))(0)
-# 3 * 2 * 1 * 1
-
-```python
-# Change aux_3 into lambda form
-def aux(f):
-    aux_3 = lambda f_2: f(lambda n: f_2(f_2)(n))
-    return aux_3(aux_3)
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-# aux(factorial)(3)
-# aux(lambda f: lambda n: 1 if n == 0 else n * f(n-1))(3)
-# aux_3(aux_3)(3)
-# (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))(lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))(3)
-# (lambda f: lambda n: 1 if n == 0 else n * f(n-1))((lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n)))(3)
-# (lambda n: 1 if n == 0 else n * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(n-1))(3)
-# 3 * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(3 - 1)
-# 3 * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(2)
-# 3 * (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(2)
-# 3 * (lambda f: lambda n: 1 if n == 0 else n * f(n-1))((lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n)))(2)
-# 3 * (lambda n: 1 if n == 0 else n * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(n-1))(2)
-# 3 * 2 * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(2 - 1)
-# 3 * 2 * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(1)
-# 3 * 2 * (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(1)
-# 3 * 2 * (lambda f: lambda n: 1 if n == 0 else n * f(n-1))((lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n)))(1)
-# 3 * 2 * (lambda n: 1 if n == 0 else n * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(n-1))(1)
-# 3 * 2 * 1 * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(1 - 1)
-# 3 * 2 * 1 * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(0)
-# 3 * 2 * 1 * (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(0)
-# 3 * 2 * 1 * (lambda f: lambda n: 1 if n == 0 else n * f(n-1))((lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n)))(0)
-# 3 * 2 * 1 * (lambda n: 1 if n == 0 else n * (lambda n: (lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n)))((lambda f_2: (lambda f: lambda n: 1 if n == 0 else n * f(n-1))(lambda n: f_2(f_2)(n))))(n))(n-1))(0)
-# 3 * 2 * 1 * 1
-
-```python
-# Remove named references
-def aux(f):
-    return (lambda f_2: f(lambda n: f_2(f_2)(n)))(lambda f_2: f(lambda n: f_2(f_2)(n)))
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-```python
-# Change aux into lambda form
-aux = lambda f:(lambda f_2: f(lambda n: f_2(f_2)(n)))(lambda f_2: f(lambda n: f_2(f_2)(n)))
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-
-```python
-# Add Loop function to avoid duplicated code
-def aux(f):
-    def loop(z):
-        return z(z)
-    aux_3 = lambda f_2: f(lambda n: f_2(f_2)(n))
-    return loop(aux_3)
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-
-```python
-# Change loop into lambda form
-def aux(f):
-    loop = lambda z: z(z)
-    aux_3 = lambda f_2: f(lambda n: f_2(f_2)(n))
-    return loop(aux_3)
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-```python
-# Remove named references in aux
-def aux(f):
-    return (lambda z: z(z))(lambda f_2: f(lambda n: f_2(f_2)(n)))
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-```python
-# Change aux into lambda form
-aux = lambda f: (lambda z: z(z))(lambda f_2: f(lambda n: f_2(f_2)(n)))
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-
-# Y(factorial)(3)
-# self_apply(self_apply)(3)
-# outer_function(recursive_step)(3)
-# factorial(recursive_step)(3)
-# factorial_compute(3)
-# 3 * recursion(3 - 1)
-# 3 * recursion(2)
-# 3 * recursive_step(2)
-# 3 * x(x)(2)
-# 3 * self_apply(self_apply)(2)
-# 3 * outer_function(recursive_step)(2)
-# 3 * factorial(recursive_step)(2)
-# 3 * factorial_compute(2)
-# 3 * 2 * recursion(2 - 1)
-# 3 * 2 * recursion(1)
-# 3 * 2 * recursive_step(1)
-# 3 * 2 * x(x)(1)
-# 3 * 2 * self_apply(self_apply)(1)
-# 3 * 2 * outer_function(recursive_step)(1)
-# 3 * 2 * factorial(recursive_step)(1)
-# 3 * 2 * factorial_compute(1)
-# 3 * 2 * 1
-
-```python
-# Alternative non-pure version
-aux = lambda f: (lambda z: z(z))(lambda f_2: f(lambda *args, **kwargs: f_2(f_2)(*args, **kwargs)))
-
-factorial = lambda f: lambda n: 1 if n == 0 else n * f(n-1)
-
-assert aux(factorial)(6) == 720
-```
-```python
-# Alternative non-pure version compatible with multiple parameters
-aux = lambda f: (lambda z: z(z))(lambda f_2: f(lambda *args, **kwargs: f_2(f_2)(*args, **kwargs)))
-
-def modified_factorial(f):
-    def factorial_step(n, /, x, *, p):
-        if n == 0:
-            return 1
-        
-        return n * f(n - 1, x, p=p) + x + p
-    return factorial_step
-
-assert aux(modified_factorial)(6, 2, p=3) == 6905
-```
