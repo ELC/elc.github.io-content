@@ -2,17 +2,19 @@ Title: Python Recursion: Mutual Head to Nested Tail
 Date: 2022-10-25
 Category: Programming 
 Tags: Python, Functional Programming
-Slug: functional-python
+Slug: recursion-python
 Authors: Ezequiel Leonardo Castaño 
 Lang: en 
-Headerimage: https://elc.github.io/blog/images/streamlit-lessons/streamlit-lessons_headerimage.png
+Headerimage: https://elc.github.io/blog/images/recursion/srecursive-python_headerimage.png
 Status: draft
 
-[![Jupyter Publishing Header Image]({static}images/streamlit-lessons/streamlit-lessons_headerimage-thumbnail.png){: .b-lazy width=1444 data-src=/blog/images/streamlit-lessons/streamlit-lessons_headerimage.png }](/blog/images/streamlit-lessons/streamlit-lessons_headerimage.png)
+[![Jupyter Publishing Header Image]({static}images/recursion/srecursive-python_headerimage-thumbnail.png){: .b-lazy width=1444 data-src=/blog/images/recursion/srecursive-python_headerimage.png }](/blog/images/recursion/srecursive-python_headerimage.png)
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
-...
+Recursion is a key concept of programming. However it is covered superficially
+by many courses. Here the different ways of having recursion are explored using
+Python examples, showcasing examples of head, tail, nested and mutual recursion.
 
 <!-- PELICAN_END_SUMMARY -->
 
@@ -121,6 +123,11 @@ Based on the number of functions involved:
 - Direct Recursion (a single function)
 - Indirect Recursion (multiple functions, also called mutual recursion)
 
+Besides the previous clasification, all recursive function must have a
+termination condition or else would enter an infinite loop. Even though it is
+not necessary that recursive functions are pure (i.e. they do not have side
+effects), it is common for recursive functions to be pure, this simplifies the
+interpretation. All the examples in this article are pure functions.
 
 ## Linear Recursion
 
@@ -433,7 +440,7 @@ lot of effort and mathmatical derivaiton and may not be applicable to other
 functions.
 
 ```python
-def fibonacci(n):
+def fibonacci(n: int) -> int:
     # Fast Doubling Method
     if n == 0:
         return 0
@@ -460,9 +467,9 @@ converting the multi recursive function into a linear recursive function by
 changing its structure to return two values at once:
 
 ```python
-def fibonacci(n):
+def fibonacci(n: int) -> int:
     # based on: https://www.nayuki.io/page/fast-fibonacci-algorithms
-    def nth_and_nth_plus_one(n):
+    def nth_and_nth_plus_one(n: int) -> tuple[int, int]:
         if n == 0:
             return 0, 1
         a, b = nth_and_nth_plus_one(n // 2)
@@ -539,7 +546,7 @@ deep recursive functions. This is a case of a nested recursive function that is
 also tail recursive.
 
 ```python
-def ackermann(m, n):
+def ackermann(m: int, n: int) -> int:
     if m == 0:
         return n + 1
     if m > 0 and n == 0:
