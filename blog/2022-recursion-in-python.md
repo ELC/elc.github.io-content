@@ -13,8 +13,9 @@ Status: draft
 <!-- PELICAN_BEGIN_SUMMARY -->
 
 Recursion is a key concept of programming. However it is covered superficially
-by many courses. Here the different ways of having recursion are explored using
-Python examples, showcasing examples of head, tail, nested and mutual recursion.
+by many courses. There are different ways of having recursion, this post will
+explore them by using Python examples, including cases of head, tail, nested and
+mutual recursion. For each case the call graph will be shown.
 
 <!-- PELICAN_END_SUMMARY -->
 
@@ -23,20 +24,20 @@ Python examples, showcasing examples of head, tail, nested and mutual recursion.
 
 Many if not all programming courses introduce the factorial function at some
 point. This function has great mathematical importance and yet it is simple
-enough to showcase how recursion works. However, the approach towards this
-function and recursion in general is superficial.
+enough to showcase how recursion works. However, the approach towards it and
+recursion in general is usually superficial.
 
-Starting from some common ground, the factorial function can be defined in a
-non-recursive way with for loops or while loops.
+Before digging into recursion, a procedural implementation using for loops and
+while loops will be shown.
 
-### Sidenote
+### Side Note
 
 This post abuses the fact that, in Python, when a function defined multiple
-times only the last definition is used for future references. There will be
-many refinements over the definition and to avoid any confusion names will not
-be changed to reflect that, they all do the same. To further reinforce this
-idea, an assert statement will be added to show that results do not change even
-if the definition changes.
+times only the last definition is used for future references. There will be many
+refinements over the definitions and to avoid any confusion, names will not be
+changed to reflect that, they all do the same. To further reinforce this idea,
+an assert statement will be added to show that results do not change even if the
+definition changes.
 
 ```python
 def factorial(n: int) -> int:
@@ -61,12 +62,13 @@ assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 ```
 
 Between the for loop and the while loop implementation differences are clearly
-visible. The for loop approach is usually the one found in many posts online,
+visible. The for loop approach is usually the one found in many sources online,
 it is short, uses only basic constructs and does the job. Whereas the while
-approach uses one extra variable, that being said, both are valid.
+approach uses one extra variable, that being said, both are valid and share the
+same time and space complexity.
 
-Another possibility that is not as common is the functional implementation using
-reduce:
+Another possibility, not as common as the previous ones, is a functional
+implementation using `reduce`:
 
 ```python
 def factorial(n: int) -> int:
@@ -123,11 +125,11 @@ Based on the number of functions involved:
 - Direct Recursion (a single function)
 - Indirect Recursion (multiple functions, also called mutual recursion)
 
-Besides the previous clasification, all recursive function must have a
-termination condition or else would enter an infinite loop. Even though it is
-not necessary that recursive functions are pure (i.e. they do not have side
-effects), it is common for recursive functions to be pure, this simplifies the
-interpretation. All the examples in this article are pure functions.
+Besides the previous classification, all recursive function must have a
+termination condition or else they would enter in an infinite loop. Even though
+it is not necessary that recursive functions are pure (i.e. they do not have
+side effects), it is common for recursive functions to be pure, this simplifies
+the interpretation. All the examples in this article are pure functions.
 
 ## Linear Recursion
 
@@ -140,11 +142,12 @@ Based on the position of the recursive call it could be further subdivided into:
 - Tail Recursion: recursive call is the last statement.
 
 There is no difference between Middle Recursion and Head Recursion from an
-efficiency and algorithmic perspective. So no further exploration will be done
-on those two.
+efficiency and algorithmic perspective. So no further exploration will not be
+done on those two.
 
 When a function has more than one recursive call is called Multi Recursion,
-Nonlinear Recursion or Exponential Recursion.
+Nonlinear Recursion or Exponential Recursion. These case will be covered in a
+later section.
 
 The following is an example of a middle recursion implementation of the
 factorial function.
@@ -152,6 +155,7 @@ factorial function.
 
 ```python
 def factorial(n: int) -> int:
+    """Middle Recursion implementation of the factorial function"""
     if n == 0:
         return 1
     return n * factorial(n - 1)
@@ -160,26 +164,47 @@ assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 ```
 
 It is middle recursion because the last statement is a multiplication (`*`) and
-not the recursive call itself. Dependending on the operation order it could also
-be considered head recursion but that difference is not relevant for most
-contexts.
+not the recursive call itself. Depending on the operation order it could also be
+considered head recursion but that difference is not relevant for most contexts.
+
+Another way to better show why this is middle recursion is to use additional
+variables to store interim results:
+
+```python
+def factorial(n: int) -> int:
+    """Middle Recursion implementation of the factorial function"""
+    if n == 0:
+        return 1
+    previous_factorial = factorial(n - 1)
+    current_factorial = n * previous_factorial
+    return current_factorial
+
+assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
+```
+
+In this more explicit implementation it is clearer that the last logical
+statement is the multiplication `n * previous_factorial`. 
 
 The call graph in the case of linear recursive functions is a series a nodes
-called sequentially:
+called sequentially, hence the name:
 
 [![Recursive Factorial Call Graph]({static}images/recursion/recursive_factorial-thumbnail.png){: .narrow .b-lazy width=200 data-src=/blog/images/recursion/recursive_factorial.png }](/blog/images/recursion/recursive_factorial.png)
 
+When the last statement is the recursive call, the function is called tail
+recursion, which will be explored in the next section.
 
 ## Tail Recursion
 
 Tail recursion is when the return statement of the function is **only a
-recursive call**, this means that a function call could be replace with another
+recursive call**, this means that a function call could be replaced with another
 function call directly. Some languages (Python is not one of them), use a
 technique named [Tail-Call
 Optimization](https://en.wikipedia.org/wiki/Tail_call){: target="_blank"}, which
 makes this particular type of recursion very efficient.
 
-One important clarification is that the return **must not be an expression**.
+One important clarification is that the return **must not be an expression**. An
+example of a straightforward function that can be implemented in a tail
+recursive way is the `palindrome` function:
 
 ```python
 def palindrome(string: str) -> bool:
@@ -195,8 +220,8 @@ def palindrome(string: str) -> bool:
 assert palindrome("a")
 assert palindrome("aa")
 assert palindrome("aba")
-assert not palindrome("abca")
-assert palindrome("tattarrattat")
+assert not palindrome("learn")
+assert palindrome("rotator")
 ```
 
 [![Recursive Palindrome]({static}images/recursion/recursive_palindrome-thumbnail.png){: .narrow .b-lazy width=600 data-src=/blog/images/recursion/recursive_palindrome.png }](/blog/images/recursion/recursive_palindrome.png)
@@ -207,6 +232,8 @@ function because the last statement is not a function call, it is a boolean
 expression that requires the function call to be executed prior to returning
 because the `and` operator needs the value. This implementation is then a middle
 recursion.
+
+    [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20palindrome%28string%3A%20str%29%20-%3E%20bool%3A%0A%20%20%20%20%22Returns%20True%20if%20the%20given%20string%20is%20a%20palindrome.%20Using%20middle%20recursion.%22%0A%20%20%20%20if%20len%28string%29%20%3C%202%3A%0A%20%20%20%20%20%20%20%20return%20True%0A%0A%20%20%20%20first,%20*rest,%20last%20%3D%20string%0A%20%20%20%20return%20first%20%3D%3D%20last%20and%20palindrome%28rest%29%0A%0Aassert%20palindrome%28%22a%22%29%0Aassert%20palindrome%28%22aa%22%29%0Aassert%20palindrome%28%22aba%22%29%0Aassert%20not%20palindrome%28%22learn%22%29%0Aassert%20palindrome%28%22rotator%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
 
 ```python
 def palindrome(string: str) -> bool:
@@ -220,7 +247,8 @@ def palindrome(string: str) -> bool:
 assert palindrome("a")
 assert palindrome("aa")
 assert palindrome("aba")
-assert not palindrome("abca")
+assert not palindrome("learn")
+assert palindrome("rotator")
 ```
 
 Sometimes a function that is not expressed in tail-call form can be converted
