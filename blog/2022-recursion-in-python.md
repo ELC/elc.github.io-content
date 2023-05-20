@@ -5,10 +5,10 @@ Tags: Python, Functional Programming
 Slug: recursion-python
 Authors: Ezequiel Leonardo Castaño 
 Lang: en 
-Headerimage: https://elc.github.io/blog/images/recursion/srecursive-python_headerimage.png
+Headerimage: https://elc.github.io/blog/images/recursion/recursive-python_headerimage.png
 Status: draft
 
-[![Jupyter Publishing Header Image]({static}images/recursion/srecursive-python_headerimage-thumbnail.png){: .b-lazy width=1444 data-src=/blog/images/recursion/srecursive-python_headerimage.png }](/blog/images/recursion/srecursive-python_headerimage.png)
+[![Jupyter Publishing Header Image]({static}images/recursion/recursive-python_headerimage-thumbnail.png){: .b-lazy width=1444 data-src=/blog/images/recursion/recursive-python_headerimage.png }](/blog/images/recursion/recursive-python_headerimage.png)
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
