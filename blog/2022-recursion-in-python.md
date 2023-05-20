@@ -39,6 +39,8 @@ changed to reflect that, they all do the same. To further reinforce this idea,
 an assert statement will be added to show that results do not change even if the
 definition changes.
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20factorial%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Factorial%20function%20implemented%20using%20for%20loops%22%22%22%0A%20%20%20%20result%20%3D%201%0A%20%20%20%20for%20i%20in%20range%281,%20n%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20result%20*%3D%20i%0A%20%20%20%20return%20result%0A%0Aassert%20%5Bfactorial%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%206,%2024,%20120,%20720%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def factorial(n: int) -> int:
     """Factorial function implemented using for loops"""
@@ -48,7 +50,13 @@ def factorial(n: int) -> int:
     return result
 
 assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
+```
 
+And next the while loop equivalent:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20factorial%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Factorial%20function%20implemented%20using%20while%20loops%22%22%22%0A%20%20%20%20result%20%3D%201%0A%20%20%20%20multiplier%20%3D%20n%0A%20%20%20%20while%20multiplier%20!%3D%200%3A%0A%20%20%20%20%20%20%20%20result%20*%3D%20multiplier%0A%20%20%20%20%20%20%20%20multiplier%20-%3D%201%0A%20%20%20%20return%20result%0A%0Aassert%20%5Bfactorial%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%206,%2024,%20120,%20720%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
+```python
 def factorial(n: int) -> int:
     """Factorial function implemented using while loops"""
     result = 1
@@ -69,6 +77,8 @@ same time and space complexity.
 
 Another possibility, not as common as the previous ones, is a functional
 implementation using `reduce`:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20factorial%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Factorial%20function%20implemented%20using%20reduce%22%22%22%0A%20%20%20%20return%20reduce%28lambda%20x,%20y%3A%20x%20*%20y,%20range%281,%20n%20%2B%201%29,%201%29%0A%0Aassert%20%5Bfactorial%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%206,%2024,%20120,%20720%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def factorial(n: int) -> int:
@@ -153,6 +163,8 @@ The following is an example of a middle recursion implementation of the
 factorial function.
 
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20factorial%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Middle%20Recursion%20implementation%20of%20the%20factorial%20function%22%22%22%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20n%20*%20factorial%28n%20-%201%29%0A%0Aassert%20%5Bfactorial%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%206,%2024,%20120,%20720%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def factorial(n: int) -> int:
     """Middle Recursion implementation of the factorial function"""
@@ -169,6 +181,8 @@ considered head recursion but that difference is not relevant for most contexts.
 
 Another way to better show why this is middle recursion is to use additional
 variables to store interim results:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20factorial%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Middle%20Recursion%20implementation%20of%20the%20factorial%20function%22%22%22%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20previous_factorial%20%3D%20factorial%28n%20-%201%29%0A%20%20%20%20current_factorial%20%3D%20n%20*%20previous_factorial%0A%20%20%20%20return%20current_factorial%0A%0Aassert%20%5Bfactorial%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%206,%2024,%20120,%20720%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def factorial(n: int) -> int:
@@ -205,6 +219,8 @@ makes this particular type of recursion very efficient.
 One important clarification is that the return **must not be an expression**. An
 example of a straightforward function that can be implemented in a tail
 recursive way is the `palindrome` function:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20palindrome%28string%3A%20str%29%20-%3E%20bool%3A%0A%20%20%20%20%22Returns%20True%20if%20the%20given%20string%20is%20a%20palindrome.%20Using%20tail%20recursion.%22%0A%20%20%20%20if%20len%28string%29%20%3C%202%3A%0A%20%20%20%20%20%20%20%20return%20True%0A%0A%20%20%20%20first,%20*rest,%20last%20%3D%20string%0A%20%20%20%20if%20first%20!%3D%20last%3A%0A%20%20%20%20%20%20%20%20return%20False%0A%20%20%20%20return%20palindrome%28rest%29%0A%0Aassert%20palindrome%28%22a%22%29%0Aassert%20palindrome%28%22aa%22%29%0Aassert%20palindrome%28%22aba%22%29%0Aassert%20not%20palindrome%28%22learn%22%29%0Aassert%20palindrome%28%22rotator%22%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def palindrome(string: str) -> bool:
@@ -254,6 +270,8 @@ assert palindrome("rotator")
 Sometimes a function that is not expressed in tail-call form can be converted
 to that form. For example the following middle recursion:
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20sum_integer_up_to_n%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Sums%20all%20integers%20from%20zero%20to%20n.%20Using%20middle%20recursion%22%22%22%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20%0A%20%20%20%20return%20n%20%2B%20sum_integer_up_to_n%28n%20-%201%29%0A%0Aassert%20sum_integer_up_to_n%280%29%20%3D%3D%200%0Aassert%20sum_integer_up_to_n%281%29%20%3D%3D%201%0Aassert%20sum_integer_up_to_n%283%29%20%3D%3D%206%0Aassert%20sum_integer_up_to_n%285%29%20%3D%3D%2015&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def sum_integer_up_to_n(n: int) -> int:
     """Sums all integers from zero to n. Using middle recursion"""
@@ -272,6 +290,8 @@ assert sum_integer_up_to_n(5) == 15
 
 Can be rewritten into tail recursive form as:
 
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20sum_integer_up_to_n%28n%3A%20int,%20total%3A%20int%20%3D%200%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Sums%20all%20integers%20from%20zero%20to%20n.%20Using%20Tail%20recursion%22%22%22%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20total%0A%0A%20%20%20%20return%20sum_integer_up_to_n%28n%20-%201,%20total%3Dn%20%2B%20total%29%0A%0Aassert%20sum_integer_up_to_n%281%29%20%3D%3D%201%0Aassert%20sum_integer_up_to_n%283%29%20%3D%3D%206&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def sum_integer_up_to_n(n: int, total: int = 0) -> int:
@@ -300,6 +320,8 @@ many coding styles. Use with caution.
 
 In the same way as `sum_integer_up_to_n`, the factorial function could be
 re-written into tail recursive form:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20factorial%28n%3A%20int,%20result%3A%20int%20%3D%201%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%0A%20%20%20%20return%20factorial%28n%20-%201,%20n%20*%20result%29%0A%0Aassert%20%5Bfactorial%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%206,%2024,%20120,%20720%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def factorial(n: int, result: int = 1) -> int:
@@ -358,6 +380,8 @@ numbers, to call the function two successive recursive calls are used.
 
 This is the traditional implementaiton of the fibonacci function that returns the nth fibonacci number:
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20fibonacci%28n-1%29%20%2B%20fibonacci%28n-2%29%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def fibonacci(n: int) -> int:
     if n == 0:
@@ -373,6 +397,8 @@ assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 
 In some cases, multi recursive functions can be refactor into linear tail
 recursive functions.
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%3A%20int,%20partial_result%3A%20int%20%3D%200,%20result%3A%20int%20%3D%201%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%20%20%20%20return%20fibonacci%28n-1,%20result,%20partial_result%2Bresult%29%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def fibonacci(n: int, partial_result: int = 0, result: int = 1) -> int:
@@ -393,6 +419,8 @@ In the case of multi recursive functions, it is possible to construct a tree of
 the function calls. All multi recursive functions produce a tree, however, in
 some cases the definition leverages the divide-and-conquer strategy, minimizing
 the depth of the tree. One example of this is the quicksort algorithm:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20quicksort%28numbers%3A%20list%5Bfloat%5D%29%20-%3E%20list%5Bfloat%5D%3A%0A%20%20%20%20if%20len%28numbers%29%20%3C%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20numbers%0A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%0A%20%20%20%20left%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3C%20first%5D%0A%20%20%20%20right%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3E%3D%20first%5D%0A%20%20%20%20return%20quicksort%28left%29%20%2B%20%5Bfirst%5D%20%2B%20quicksort%28right%29%0A%0Aassert%20quicksort%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%20list%28range%286%29%29%0Aassert%20quicksort%28list%28reversed%28range%2810%29%29%29%29%20%3D%3D%20list%28range%2810%29%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def quicksort(numbers: list[float]) -> list[float]:
@@ -424,6 +452,8 @@ functions that operates on arrays.
 Here is a linear recursive implementation of a function that returns the maximum
 value of a list:
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20maximum%28numbers%3A%20list%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20rest_max%20%3D%20maximum%28rest%29%0A%20%20%20%20return%20first%20if%20first%20%3E%20rest_max%20else%20rest_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def maximum(numbers: list[float]) -> float:
     first, *rest = numbers
@@ -443,6 +473,8 @@ This function will have as many recursive calls as elements are in the list. A
 similar approach as the quicksort algorithm can be used to reduce the number of
 calls to a base two logarithm of the length of the list. With this approach the
 recursive stack will be much shorter.
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20maximum%28numbers%3A%20list%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20middle%20%3D%20len%28numbers%29%20//%202%0A%20%20%20%20left_max%20%3D%20maximum%28numbers%5B%3Amiddle%5D%29%0A%20%20%20%20right_max%20%3D%20maximum%28numbers%5Bmiddle%3A%5D%29%0A%20%20%20%20return%20left_max%20if%20left_max%20%3E%20right_max%20else%20right_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def maximum(numbers: list[float]) -> float:
@@ -466,6 +498,8 @@ use a tree approach that reduces the number of recursive calls. A known solution
 called Fast Doubling has been discovered, finding this implementation requires a
 lot of effort and mathmatical derivaiton and may not be applicable to other
 functions.
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%23%20Fast%20Doubling%20Method%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20%0A%20%20%20%20is_odd%20%3D%20n%20%25%202%0A%20%20%20%20m%20%3D%20n%20//%202%20%2B%20is_odd%0A%20%20%20%20fib_m%20%3D%20fibonacci%28m%29%0A%20%20%20%20fib_m_1%20%3D%20fibonacci%28m%20-%201%29%0A%0A%20%20%20%20if%20is_odd%3A%0A%20%20%20%20%20%20%20%20return%20fib_m_1%20**%202%20%2B%20fib_m%20**%202%0A%20%20%20%20return%202%20*%20fib_m%20*%20fib_m_1%20%2B%20fib_m%20**%202%0A%0A%20%20%20%20%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def fibonacci(n: int) -> int:
@@ -493,6 +527,8 @@ assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 It is even possible to further reduce the number of recursive calls by
 converting the multi recursive function into a linear recursive function by
 changing its structure to return two values at once:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%23%20based%20on%3A%20https%3A//www.nayuki.io/page/fast-fibonacci-algorithms%0A%20%20%20%20def%20nth_and_nth_plus_one%28n%3A%20int%29%20-%3E%20tuple%5Bint,%20int%5D%3A%0A%20%20%20%20%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%200,%201%0A%20%20%20%20%20%20%20%20a,%20b%20%3D%20nth_and_nth_plus_one%28n%20//%202%29%0A%20%20%20%20%20%20%20%20c%20%3D%20a%20*%20b%20*%202%20-%20a%20**%202%0A%20%20%20%20%20%20%20%20d%20%3D%20a%20**%202%20%2B%20b%20**%202%0A%20%20%20%20%20%20%20%20nth,%20nth_plus_one%20%3D%20%28c,%20d%29%20if%20n%20%25%202%20%3D%3D%200%20else%20%28d,%20c%20%2B%20d%29%0A%20%20%20%20%20%20%20%20return%20nth,%20nth_plus_one%0A%20%20%20%20%0A%20%20%20%20nth,%20_%20%3D%20nth_and_nth_plus_one%28n%29%0A%20%20%20%20return%20nth%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def fibonacci(n: int) -> int:
@@ -531,6 +567,8 @@ One special case of multi recursion is when the argument of the recursive call
 is itself a recursive call. This is not usual in software development but could
 arise in mathmatical fields. One example is the Hofstadter G Sequence:
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_g%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_g%28hofstadter_g%28n%20-%201%29%29%0A%0Aassert%20%5Bhofstadter_g%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%203,%204%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def hofstadter_g(n: int) -> int:
     if n == 0:
@@ -549,6 +587,8 @@ is a non-trivial task and sometimes it may be impossible.
 
 The level of nesting is not limited to just two calls, the Hofstadter H Sequence
 has triple nesting recursion for example:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_h%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_h%28hofstadter_h%28hofstadter_h%28n%20-%201%29%29%29%0A%0Aassert%20%5Bhofstadter_h%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%20%5B0,%201,%201,%202,%203,%204,%204%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def hofstadter_h(n: int) -> int:
@@ -572,6 +612,8 @@ that it cannot be expressed in iterative form with for loops.
 This functions is currently used to test compilers efficiency at handling really
 deep recursive functions. This is a case of a nested recursive function that is
 also tail recursive.
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20ackermann%28m%3A%20int,%20n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20m%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20n%20%2B%201%0A%20%20%20%20if%20m%20%3E%200%20and%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20ackermann%28m%20-%201,%201%29%20%20%20%20%0A%20%20%20%20return%20ackermann%28m%20-%201,%20ackermann%28m,%20n%20-%201%29%29%0A%0Aassert%20%5Backermann%28i,%20j%29%20for%20i%20in%20range%284%29%20for%20j%20in%20range%284%29%5D%20%3D%3D%20%5B1,%202,%203,%204,%202,%203,%204,%205,%203,%205,%207,%209,%205,%2013,%2029,%2061%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def ackermann(m: int, n: int) -> int:
@@ -600,6 +642,8 @@ recursive.
 A simple example of mutual linear tail recursion is a set of functions that
 determines if a number is odd or even:  
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20is_even%28n%3A%20int%29%20-%3E%20bool%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20return%20is_odd%28n%20-%201%29%0A%0Adef%20is_odd%28n%3A%20int%29%20-%3E%20bool%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20False%0A%20%20%20%20return%20is_even%28n%20-%201%29%0A%0Aassert%20%5Bis_even%28i%29%20for%20i%20in%20range%286%29%5D%20%3D%3D%20%5BTrue,%20False,%20True,%20False,%20True,%20False%5D%0Aassert%20%5Bis_odd%28i%29%20for%20i%20in%20range%286%29%5D%20%3D%3D%20%5BFalse,%20True,%20False,%20True,%20False,%20True%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def is_even(n: int) -> bool:
     if n == 0:
@@ -627,6 +671,8 @@ computation, it is much slower though for big numbers.
 Mutual recursion can also happen in multi recursive functions. Take the
 following direct multi recursive function that computes the nth lucas number:
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20lucas%28n-1%29%20%2B%20lucas%28n-2%29%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207,%2011,%2018%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def lucas(n: int) -> int:
     if n == 0:
@@ -642,6 +688,8 @@ assert [lucas(i) for i in range(7)] == [2, 1, 3, 4, 7, 11, 18]
 
 It is possible to write both the lucas and the fibonacci functions in a mutual
 recursive form:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%202%20*%20fibonacci%28n%29%20-%20fibonacci%28n-1%29%20%2B%20lucas%28n-2%29%0A%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci%28n-1%29%20%2B%20lucas%28n-1%29%29%20//%202%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207,%2011,%2018%5D%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def lucas(n: int) -> int:
@@ -676,6 +724,8 @@ Similarly, the sequence defined as the multiplication of the last two terms can
 be implemented in a direct multi recursive form:
 
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20multiply_last_two%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20return%20multiply_last_two%28n%20-%201%29%20*%20multiply_last_two%28n%20-%202%29%0A%0A%0Aassert%20%5Bmultiply_last_two%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%202,%202,%204,%208,%2032,%20256%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def multiply_last_two(n: int) -> int:
     if n == 0:
@@ -692,6 +742,8 @@ assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
 
 This again can be used to implement the fibonacci and the multiply last two as
 mutually recursive functions.
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20int%28math.log2%28multiply_last_two%28n%20-%201%29%20*%20multiply_last_two%28n%20-%202%29%29%29%0A%0Adef%20multiply_last_two%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20return%202%20**%20%28fibonacci%28n-1%29%20%2B%20fibonacci%28n-2%29%29%0A%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D%0Aassert%20%5Bmultiply_last_two%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%202,%202,%204,%208,%2032,%20256%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 import math
@@ -722,6 +774,8 @@ assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
 Mutual recursion can also appear in nested form, as it is the case of the
 Hofstadter Female and Male sequences which are mutual nested recursive.
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_female%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20n%20-%20hofstadter_male%28hofstadter_female%28n%20-%201%29%29%0A%0Adef%20hofstadter_male%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_female%28hofstadter_male%28n%20-%201%29%29%0A%0Aassert%20%5Bhofstadter_female%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%202,%203,%203,%204%5D%0Aassert%20%5Bhofstadter_male%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%200,%201,%202,%202,%203,%204%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
 def hofstadter_female(n: int) -> int:
     if n == 0:
@@ -744,6 +798,8 @@ assert [hofstadter_male(i) for i in range(7)] == [0, 0, 1, 2, 2, 3, 4]
 Indirect recursion is not limited to only two functions, the following example
 combines the lucas, fibonacci and multiply last two functions in a triple mutual
 recursive form, where each function uses at the other two and itself.
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28%0A%20%20%20%20%20%20%20%202%20*%20math.log2%28multiply_last_two%28n%20-%201%29%20*%20multiply_last_two%28n%20-%202%29%29%0A%20%20%20%20%20%20%20%20-%20fibonacci%28n-1%29%20%2B%20lucas%28n-2%29%0A%20%20%20%20%29%0A%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci%28n-1%29%20%2B%20lucas%28n-1%29%29%20//%202%0A%0A%0Adef%20multiply_last_two%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20return%202%20**%20%281.5%20*%20fibonacci%28n-2%29%20%2B%200.5%20*%20lucas%28n-2%29%29%0A%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207,%2011,%2018%5D%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D%0A%0Aassert%20%5Bmultiply_last_two%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%202,%202,%204,%208,%2032,%20256%5D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 import math
