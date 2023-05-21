@@ -25,14 +25,14 @@ mutual recursion. For each case, the call graph will be shown.
 Many if not all programming courses introduce the factorial function at some
 point. This function has great mathematical importance and yet it is simple
 enough to showcase how recursion works. However, the approach towards it and
-recursion in general is usually superficial.
+recursion, in general, is usually superficial.
 
-Before digging into recursion, a procedural implementation using for loops and
+Before digging into recursion, a procedural implementation using for-loops and
 while loops will be shown.
 
 ### Side Note
 
-This post abuses the fact that, in Python, when a function defined multiple
+This post abuses the fact that, in Python, when a function is defined multiple
 times only the last definition is used for future references. There will be many
 refinements over the definitions and to avoid any confusion, names will not be
 changed to reflect that, they all do the same. To further reinforce this idea,
@@ -69,11 +69,11 @@ def factorial(n: int) -> int:
 assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 ```
 
-Between the for loop and the while loop implementation differences are clearly
-visible. The for loop approach is usually the one found in many sources online,
-it is short, uses only basic constructs and does the job. Whereas the while
-approach uses one extra variable, that being said, both are valid and share the
-same time and space complexity.
+Between the for loop and the while loop implementation differences are visible.
+The for-loop approach is usually the one found in many sources online, it is
+short, uses only basic constructs and does the job. Whereas the while approach
+uses one extra variable, that being said, both are valid and share the same time
+and space complexity.
 
 Another possibility, not as common as the previous ones, is a functional
 implementation using `reduce`:
@@ -92,18 +92,58 @@ Since the previous implementations are non-recursive, the [call
 graph](https://en.wikipedia.org/wiki/Call_graph){: target="_blank"}  consists of
 a single node:
 
-[![Non Recursive Factorial Call Graph]({static}images/recursion/non_recursive_factorial-thumbnail.png){: .narrow .b-lazy width=554 data-src=/blog/images/recursion/non_recursive_factorial.png }](/blog/images/recursion/non_recursive_factorial.png)
+[![Non-Recursive Factorial Call Graph]({static}images/recursion/non_recursive_factorial-thumbnail.png){: .narrow .b-lazy width=554 data-src=/blog/images/recursion/non_recursive_factorial.png }](/blog/images/recursion/non_recursive_factorial.png)
 
 
 ## Recursion
 
 After introducing one of the previous definitions of the factorial function, the
 "recursive form" is usually presented. A recursive function is a function that
-calls itself. There are multiple types of recursion though and understanding
-them may have a huge impact on some programming languages. Before showing how
+calls itself. There are multiple types of recursion though, and understanding
+them may have a huge impact on some programming languages. Before showing what
 the recursive version of the factorial looks like, it is important to clarify
 some concepts.
 
+
+## Why Recursion?
+
+Recursion in and of itself is a wide field in computer science which may attract
+attention. However, it is sometimes portrayed as a difficult topic and receives
+less attention that other techniques. 
+
+Although some may avoid recursion altogether, there are clear and noticeable
+benefits of using recursive functions, such as:
+
+- **Declarative style**: recursive functions are written by thinking **what**
+  the function does instead of **how** it does it. Iterative style usually leads
+  the programmer to think about low level details like indexes and pointers
+  whereas recursion brings the whole problem into mind.
+- **Simplicity and Readability**: Recursive functions can provide a more elegant and
+  concise solution for solving complex problems by breaking them down into
+  simpler subproblems. The recursive approach often closely resembles the
+  problem's definition, making the code more intuitive and easier to understand.
+- **Divide and Conquer**: Recursive functions can leverage the divide and conquer
+  technique, where a problem is divided into smaller subproblems that are solved
+  independently. This approach simplifies the problem-solving process by
+  reducing complex tasks into manageable pieces.
+- **Code Reusability**: Recursive functions are often reusable. Once implemented,
+  they can be called multiple times with different inputs, allowing for
+  efficient and modular code. Recursive functions can be applied to various
+  instances of the same problem, enabling code reuse and promoting good software
+  engineering practices.
+- **Handling Recursive Structures**: Recursive functions are especially useful when
+  dealing with recursive data structures, such as trees or linked lists. The
+  recursive nature of the data can be mirrored in the recursive functions,
+  making it easier to traverse, manipulate, or process such structures.
+- **Mathematical and Algorithmic Modeling**: Many mathematical and algorithmic
+  problems are naturally defined in terms of recursion. Recursive functions
+  provide a natural and direct way to express these problems, making the code
+  more closely aligned with the underlying mathematical or algorithmic concepts.
+- **Time and Space Optimization**: Recursive functions can often lead to more
+  efficient algorithms in terms of time and space complexity. By breaking down a
+  problem into smaller subproblems, recursive functions can avoid unnecessary
+  computations by reusing previously calculated results (memoization) or
+  eliminating redundant iterations.
 
 ## Direct vs Indirect Recursion
 
@@ -113,8 +153,7 @@ recursive is through "indirect recursion" where, instead of calling itself, it
 calls another function (or chain of functions) that will in turn call the first
 function.
 
-There are different types of direct recursions that are worth mentioning,
-namely:
+Different types of direct recursions worth mentioning are:
 
 Based on where the recursive call is done:
 
@@ -135,7 +174,7 @@ Based on the number of functions involved:
 - Direct Recursion (a single function)
 - Indirect Recursion (multiple functions, also called mutual recursion)
 
-Besides the previous classification, all recursive function must have a
+Besides the previous classification, all recursive functions must have a
 termination condition or else they would enter in an infinite loop. Even though
 it is not necessary that recursive functions are pure (i.e. they do not have
 side effects), it is common for recursive functions to be pure, this simplifies
@@ -148,7 +187,8 @@ Linear recursion refers to functions where there is **only one recursive call**.
 Based on the position of the recursive call it could be further subdivided into:
 
 - Head Recursion: recursive call is the first statement.
-- Middle Recursion: there are other statements before and after recursive call.
+- Middle Recursion: there are other statements before and after a recursive
+  call.
 - Tail Recursion: recursive call is the last statement.
 
 There is no difference between Middle Recursion and Head Recursion from an
@@ -156,7 +196,7 @@ efficiency and algorithmic perspective. So no further exploration will not be
 done on those two.
 
 When a function has more than one recursive call is called Multi Recursion,
-Nonlinear Recursion or Exponential Recursion. These case will be covered in a
+Nonlinear Recursion or Exponential Recursion. These cases will be covered in a
 later section.
 
 The following is an example of a middle recursion implementation of the
@@ -267,8 +307,8 @@ assert not palindrome("learn")
 assert palindrome("rotator")
 ```
 
-Sometimes a function that is not expressed in tail-call form can be converted
-to that form. For example the following middle recursion:
+Sometimes a function that is not expressed in tail-call form can be converted to
+that form. For example the following middle recursive function:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20sum_integer_up_to_n%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Sums%20all%20integers%20from%20zero%20to%20n.%20Using%20middle%20recursion%22%22%22%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20%0A%20%20%20%20return%20n%20%2B%20sum_integer_up_to_n%28n%20-%201%29%0A%0Aassert%20sum_integer_up_to_n%280%29%20%3D%3D%200%0Aassert%20sum_integer_up_to_n%281%29%20%3D%3D%201%0Aassert%20sum_integer_up_to_n%283%29%20%3D%3D%206%0Aassert%20sum_integer_up_to_n%285%29%20%3D%3D%2015&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -308,18 +348,18 @@ assert sum_integer_up_to_n(3) == 6
 [![Recursive Sum Integer up to N]({static}images/recursion/tail_recursive_sum_integer_up_to_n-thumbnail.png){: .narrow .b-lazy width=400 data-src=/blog/images/recursion/tail_recursive_sum_integer_up_to_n.png }](/blog/images/recursion/tail_recursive_sum_integer_up_to_n.png)
 
 
-This last version uses an additional paramenter to pass the total down the call
+This last version uses an additional parameter to pass the total down the call
 chain. This compromises readability for performance if the language implements
 tail-call optimization. This style of programming is widely used in languages
-like Prolog. 
+like Prolog and some purely-functional languages.
 
-In Python however the extra parameter can be *hidden* by using
-default values, this makes this modified implementation more similar to the
-original but it is implicitly hidding the way it truly works, which is against
-many coding styles. Use with caution.
+In Python however the extra parameter can be *hidden* by using default values,
+this makes the implementation more similar to the original but it is implicitly
+hiding the way it truly works, which is against many coding styles. Use with
+caution.
 
 In the same way as `sum_integer_up_to_n`, the factorial function could be
-re-written into tail recursive form:
+re-written into a tail recursive form:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20factorial%28n%3A%20int,%20result%3A%20int%20%3D%201%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%0A%20%20%20%20return%20factorial%28n%20-%201,%20n%20*%20result%29%0A%0Aassert%20%5Bfactorial%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%206,%2024,%20120,%20720%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -336,8 +376,8 @@ assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 [![Tail Recursive Factorial]({static}images/recursion/tail_recursive_factorial-thumbnail.png){: .narrow .b-lazy width=300 data-src=/blog/images/recursion/tail_recursive_factorial.png }](/blog/images/recursion/tail_recursive_factorial.png)
 
 
-When comparing head/middle and tail recursion, the way each approach works can be
-illustrated by inspecting step by step: 
+When comparing head/middle with tail recursion, the way each approach works
+differs and can be illustrated by inspecting the execution step by step: 
 
 ```python
 # Head/Middle Recursion
@@ -367,18 +407,19 @@ factorial(0, 6)
 
 ## Multi Recursion
 
-When there are more than one recursive call, a function is said to be multi
-recursive. Multi recursive functions can also be middle/head recursive or tail
-recursive. An special case of Multi Recursion is when the recursive call is one
-of the arguments, in this case it is referred to as nested recursive.
+When there is more than one recursive call, a function is said to be
+multi-recursive. Multi-recursive functions can also be middle/head recursive or
+tail-recursive. A special case of Multi Recursion is when the recursive call is
+one of the arguments, in this case, it is referred to as nested recursive.
 
-## General Non Linear
+## General Non-Linear Recursion
 
 Many functions do not follow a precise pattern and they just use multiple
-recursive calls as part of their definition. One such example is the fibonacci
-numbers, to call the function two successive recursive calls are used.
+recursive calls as part of their definition. One such example is a function that
+returns the nth Fibonacci number, to call the function two successive recursive
+calls are used.
 
-This is the traditional implementaiton of the fibonacci function that returns the nth fibonacci number:
+This is the traditional implementation:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20fibonacci%28n-1%29%20%2B%20fibonacci%28n-2%29%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -395,7 +436,7 @@ assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 
 [![Multi Recursive Fibonacci]({static}images/recursion/recursive_fibonacci-thumbnail.png){: .b-lazy width=2750 data-src=/blog/images/recursion/recursive_fibonacci.png }](/blog/images/recursion/recursive_fibonacci.png)
 
-In some cases, multi recursive functions can be refactor into linear tail
+In some cases, multi-recursive functions can be refactored into linear tail
 recursive functions.
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%3A%20int,%20partial_result%3A%20int%20%3D%200,%20result%3A%20int%20%3D%201%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%20%20%20%20return%20fibonacci%28n-1,%20result,%20partial_result%2Bresult%29%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
@@ -406,7 +447,7 @@ def fibonacci(n: int, partial_result: int = 0, result: int = 1) -> int:
         return 0
     if n == 1:
         return result
-    return fibonacci(n-1, result, partial_result+result)
+    return fibonacci(n-1, result, partial_result + result)
 
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
@@ -415,10 +456,11 @@ assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 
 ## Tree Recursion
 
-In the case of multi recursive functions, it is possible to construct a tree of
-the function calls. All multi recursive functions produce a tree, however, in
-some cases the definition leverages the divide-and-conquer strategy, minimizing
-the depth of the tree. One example of this is the quicksort algorithm:
+In the case of multi-recursive functions, it is possible to construct a tree of
+the function calls. All multi-recursive functions produce a tree, that being
+said, in some cases the definition leverages the divide-and-conquer strategy,
+minimizing the depth of the tree. One example of this is the quicksort
+algorithm:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20quicksort%28numbers%3A%20list%5Bfloat%5D%29%20-%3E%20list%5Bfloat%5D%3A%0A%20%20%20%20if%20len%28numbers%29%20%3C%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20numbers%0A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%0A%20%20%20%20left%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3C%20first%5D%0A%20%20%20%20right%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3E%3D%20first%5D%0A%20%20%20%20return%20quicksort%28left%29%20%2B%20%5Bfirst%5D%20%2B%20quicksort%28right%29%0A%0Aassert%20quicksort%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%20list%28range%286%29%29%0Aassert%20quicksort%28list%28reversed%28range%2810%29%29%29%29%20%3D%3D%20list%28range%2810%29%29&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -439,15 +481,15 @@ assert quicksort(list(reversed(range(10)))) == list(range(10))
 
 [![Tree recursive quicksort]({static}images/recursion/recursive_quicksort-thumbnail.png){: .b-lazy width=2710 data-src=/blog/images/recursion/recursive_quicksort.png }](/blog/images/recursion/recursive_quicksort.png)
 
-Here the function divides the input into two parts and each recursive call is
-sent one of the parts. This strategy reduces the number of recursive calls.
-
+Here the function divides the input into two parts and each recursive call gets
+one of the parts. This strategy reduces the number of recursive calls by a great
+amount.
 
 ## Converting non-tree recursion into tree recursion
 
-Some functions that are originally linear recursive can be converted to tree
+Some functions that are originally linear recursive can be converted into tree
 recursive to reduce the depth of the recursive stack. This is usually easy on
-functions that operates on arrays.
+functions that operate on arrays.
 
 Here is a linear recursive implementation of a function that returns the maximum
 value of a list:
@@ -469,10 +511,30 @@ assert maximum(list(range(10))) == 9
 
 [![Maximum Linear recursion]({static}images/recursion/recursive_maximum-thumbnail.png){: .narrow .b-lazy width=400 data-src=/blog/images/recursion/recursive_maximum.png }](/blog/images/recursion/recursive_maximum.png)
 
-This function will have as many recursive calls as elements are in the list. A
-similar approach as the quicksort algorithm can be used to reduce the number of
-calls to a base two logarithm of the length of the list. With this approach the
-recursive stack will be much shorter.
+
+This holds even if re-written into a tail-recursive form:
+
+```python
+def maximum(numbers: list[float], max_value: Optional[float] = None) -> float:
+    first, *rest = numbers
+
+    if max_value is None or first > max_value:
+        max_value = first
+
+    if not rest:
+        return max_value
+
+    return maximum(rest, max_value)
+
+assert maximum([2, 4, 3, 5, 0, 1]) == 5
+```
+
+[![Maximum Linear tail recursion]({static}images/recursion/recursive_maximum_tail-thumbnail.png){: .narrow .b-lazy width=400 data-src=/blog/images/recursion/recursive_maximum_tail.png }](/blog/images/recursion/recursive_maximum_tail.png)
+
+Both implementations will have as many recursive calls as there are elements in
+the list. A similar approach to the quicksort algorithm can be used to reduce
+the number of calls, halving the length of the list each time. With this
+approach, the recursive stack will be shorter.
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20maximum%28numbers%3A%20list%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20middle%20%3D%20len%28numbers%29%20//%202%0A%20%20%20%20left_max%20%3D%20maximum%28numbers%5B%3Amiddle%5D%29%0A%20%20%20%20right_max%20%3D%20maximum%28numbers%5Bmiddle%3A%5D%29%0A%20%20%20%20return%20left_max%20if%20left_max%20%3E%20right_max%20else%20right_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -493,11 +555,13 @@ assert maximum(list(range(10))) == 9
 
 [![Maximum Tree Recursion]({static}images/recursion/tree_recursive_maximum-thumbnail.png){: .b-lazy width=3260 data-src=/blog/images/recursion/tree_recursive_maximum.png }](/blog/images/recursion/tree_recursive_maximum.png)
 
-This is not always possible, for functions like fibonacci, it is not trivial to
-use a tree approach that reduces the number of recursive calls. A known solution
-called Fast Doubling has been discovered, finding this implementation requires a
-lot of effort and mathmatical derivaiton and may not be applicable to other
-functions.
+Refactoring functions this way is not always possible, for functions like nth
+Fibonacci, it is not trivial to use a tree approach that reduces the number of
+recursive calls. A known solution called Fast Doubling has been discovered.
+Deriving this implementation requires a lot of effort and mathematical
+knowledge, such approach may not apply to other functions.
+
+The Fast Doubling Implementation is as follows:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%23%20Fast%20Doubling%20Method%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20%0A%20%20%20%20is_odd%20%3D%20n%20%25%202%0A%20%20%20%20m%20%3D%20n%20//%202%20%2B%20is_odd%0A%20%20%20%20fib_m%20%3D%20fibonacci%28m%29%0A%20%20%20%20fib_m_1%20%3D%20fibonacci%28m%20-%201%29%0A%0A%20%20%20%20if%20is_odd%3A%0A%20%20%20%20%20%20%20%20return%20fib_m_1%20**%202%20%2B%20fib_m%20**%202%0A%20%20%20%20return%202%20*%20fib_m%20*%20fib_m_1%20%2B%20fib_m%20**%202%0A%0A%20%20%20%20%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -525,7 +589,7 @@ assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 [![Fast Double Fibonacci]({static}images/recursion/fast_double_fibonacci-thumbnail.png){: .narrow .b-lazy width=700 data-src=/blog/images/recursion/fast_double_fibonacci.png }](/blog/images/recursion/fast_double_fibonacci.png)
 
 It is even possible to further reduce the number of recursive calls by
-converting the multi recursive function into a linear recursive function by
+converting the multi-recursive function into a linear recursive function by
 changing its structure to return two values at once:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%23%20based%20on%3A%20https%3A//www.nayuki.io/page/fast-fibonacci-algorithms%0A%20%20%20%20def%20nth_and_nth_plus_one%28n%3A%20int%29%20-%3E%20tuple%5Bint,%20int%5D%3A%0A%20%20%20%20%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%200,%201%0A%20%20%20%20%20%20%20%20a,%20b%20%3D%20nth_and_nth_plus_one%28n%20//%202%29%0A%20%20%20%20%20%20%20%20c%20%3D%20a%20*%20b%20*%202%20-%20a%20**%202%0A%20%20%20%20%20%20%20%20d%20%3D%20a%20**%202%20%2B%20b%20**%202%0A%20%20%20%20%20%20%20%20nth,%20nth_plus_one%20%3D%20%28c,%20d%29%20if%20n%20%25%202%20%3D%3D%200%20else%20%28d,%20c%20%2B%20d%29%0A%20%20%20%20%20%20%20%20return%20nth,%20nth_plus_one%0A%20%20%20%20%0A%20%20%20%20nth,%20_%20%3D%20nth_and_nth_plus_one%28n%29%0A%20%20%20%20return%20nth%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
@@ -536,12 +600,17 @@ def fibonacci(n: int) -> int:
     def nth_and_nth_plus_one(n: int) -> tuple[int, int]:
         if n == 0:
             return 0, 1
-        a, b = nth_and_nth_plus_one(n // 2)
-        c = a * b * 2 - a ** 2
-        d = a ** 2 + b ** 2
-        nth, nth_plus_one = (c, d) if n % 2 == 0 else (d, c + d)
+
+        fib_m, fib_m_1 = nth_and_nth_plus_one(n // 2)
+        nth = fib_m * fib_m_1 * 2 - fib_m ** 2
+        nth_plus_one = fib_m ** 2 + fib_m_1 ** 2
+
+        is_odd = n % 2
+        if is_odd:
+            nth_plus_two = nth + nth_plus_one
+            return nth_plus_one, nth_plus_two
         return nth, nth_plus_one
-    
+
     nth, _ = nth_and_nth_plus_one(n)
     return nth
 
@@ -557,15 +626,15 @@ for each implementation, take for example `fibonacci(100)`:
 
 - Typical Multi Recursive Implementation: 1,146,295,688,027,634,168,203 calls ≈ 1 sextillion calls
 - Fast Doubles: 163 calls
-- Tail Recursive Implementation (Memoization has no effect): 100 calls
-- Linear Recursive Implementation (Memoization has no effect): 8 calls
+- Tail Recursive Implementation: 100 calls
+- Linear Recursive Implementation: 8 calls
 
 
 ## Nested Recursion
 
-One special case of multi recursion is when the argument of the recursive call
+One special case of multi-recursion is when the argument of the recursive call
 is itself a recursive call. This is not usual in software development but could
-arise in mathmatical fields. One example is the Hofstadter G Sequence:
+arise in mathematical fields. One example is the [Hofstadter G Sequence](https://mathworld.wolfram.com/HofstadterG-Sequence.html){: target="_blank"}:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_g%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_g%28hofstadter_g%28n%20-%201%29%29%0A%0Aassert%20%5Bhofstadter_g%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%203,%204%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -580,12 +649,12 @@ assert [hofstadter_g(i) for i in range(7)] == [0, 1, 1, 2, 3, 3, 4]
 
 [![Recursive Hofstadter G]({static}images/recursion/recursive_hofstadter_g-thumbnail.png){: .b-lazy width=3702 data-src=/blog/images/recursion/recursive_hofstadter_g.png }](/blog/images/recursion/recursive_hofstadter_g.png)
 
-Refactoring nested recursion into non-nested multi recursion or linear recursion
+Refactoring nested recursion into non-nested multi-recursion or linear recursion
 is a non-trivial task and sometimes it may be impossible.
 
 ## Triple Nested Recursion
 
-The level of nesting is not limited to just two calls, the Hofstadter H Sequence
+The level of nesting is not limited to just two calls, the [Hofstadter H Sequence](https://mathworld.wolfram.com/HofstadterH-Sequence.html){: target="_blank"}
 has triple nesting recursion for example:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_h%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_h%28hofstadter_h%28hofstadter_h%28n%20-%201%29%29%29%0A%0Aassert%20%5Bhofstadter_h%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%20%5B0,%201,%201,%202,%203,%204,%204%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
@@ -604,12 +673,14 @@ assert [hofstadter_h(i) for i in range(7)] ==  [0, 1, 1, 2, 3, 4, 4]
 
 ## Nested Recursion with more than one argument
 
-Some functions can have multiple arguments and be nested recursive. The
-Ackermann function grows extremely fast due to this nested recursive definition
+Some functions can have multiple arguments and be nested recursive. One example
+is the [Ackermann
+function](https://mathworld.wolfram.com/AckermannFunction.html){:
+target="_blank"} grows extremely fast due to this nested recursive definition
 and it is the simplest function proved not to be primitive recursive, meaning
 that it cannot be expressed in iterative form with for loops.
 
-This functions is currently used to test compilers efficiency at handling really
+This function is currently used to test compilers' efficiency at handling really
 deep recursive functions. This is a case of a nested recursive function that is
 also tail recursive.
 
@@ -632,11 +703,9 @@ assert [ackermann(i, j) for i in range(4) for j in range(4)] == [1, 2, 3, 4, 2, 
 
 So far, all the examples showed functions that called themselves, this is direct
 recursion. An alternative approach is indirect recursion, also known as mutual
-recursion. In this case the same categories could be applied (linear, tail,
-head, nested, etc.), but a recursive call now may be the same function or other
-function, with the condition that the other function must also be mutually
-recursive.
-
+recursion. In this case, the same categories could be applied (linear, tail,
+head, nested, etc.), but the recursive call is now to another function, that
+other function will, in turn, call the original one.
 ## Mutual Linear Recursion
 
 A simple example of mutual linear tail recursion is a set of functions that
@@ -661,15 +730,15 @@ assert [is_odd(i) for i in range(6)] == [False, True, False, True, False, True]
 
 [![Recursive Is Even]({static}images/recursion/recursive_is_even-thumbnail.png){: .narrow .b-lazy width=200 data-src=/blog/images/recursion/recursive_is_even.png }](/blog/images/recursion/recursive_is_even.png)
 
-Of course it is also possible to implement a function that computes the same in
-a non recursive form, however, this example does not require division or modulo
-computation, it is much slower though for big numbers.
+Of course, it is also possible to implement a function that computes the same in
+a non-recursive form. However, this example does not require division or modulo
+computation, it is much slower for big numbers.
 
 
 ## Mutual Multi Recursion
 
-Mutual recursion can also happen in multi recursive functions. Take the
-following direct multi recursive function that computes the nth lucas number:
+Mutual recursion can also happen in multi-recursive functions. Take the
+following direct multi-recursive function that computes the nth Lucas number:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20lucas%28n-1%29%20%2B%20lucas%28n-2%29%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207,%2011,%2018%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -686,7 +755,7 @@ assert [lucas(i) for i in range(7)] == [2, 1, 3, 4, 7, 11, 18]
 
 [![Recursive Lucas]({static}images/recursion/recursive_lucas-thumbnail.png){: .b-lazy width=2225 data-src=/blog/images/recursion/recursive_lucas.png }](/blog/images/recursion/recursive_lucas.png)
 
-It is possible to write both the lucas and the fibonacci functions in a mutual
+It is possible to write both the Lucas and the Fibonacci functions in a mutual
 recursive form:
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%202%20*%20fibonacci%28n%29%20-%20fibonacci%28n-1%29%20%2B%20lucas%28n-2%29%0A%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci%28n-1%29%20%2B%20lucas%28n-1%29%29%20//%202%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207,%2011,%2018%5D%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
@@ -714,14 +783,13 @@ assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 
 [![Mutual Recursive Fibonacci]({static}images/recursion/mutual_recursive_fibonacci-thumbnail.png){: .b-lazy width=5365 data-src=/blog/images/recursion/mutual_recursive_fibonacci.png }](/blog/images/recursion/mutual_recursive_fibonacci.png)
 
-This implementation is standalone and does not require any of the two funtions
+This implementation is standalone and does not require any of the two functions
 to be defined in a direct recursive way. In practical terms, there is no gain as
 it makes the whole computation slower and less efficient, it is just for
 demonstration purposes.
 
-
 Similarly, the sequence defined as the multiplication of the last two terms can
-be implemented in a direct multi recursive form:
+be implemented in a direct multi-recursive form:
 
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20multiply_last_two%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20return%20multiply_last_two%28n%20-%201%29%20*%20multiply_last_two%28n%20-%202%29%0A%0A%0Aassert%20%5Bmultiply_last_two%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%202,%202,%204,%208,%2032,%20256%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
@@ -740,7 +808,7 @@ assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
 
 [![Mutual Recursive Fibonacci]({static}images/recursion/recursive_multiply_last_two-thumbnail.png){: .b-lazy width=3988 data-src=/blog/images/recursion/recursive_multiply_last_two.png }](/blog/images/recursion/recursive_multiply_last_two.png)
 
-This again can be used to implement the fibonacci and the multiply last two as
+This again can be used to implement the Fibonacci and the multiply last two as
 mutually recursive functions.
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20int%28math.log2%28multiply_last_two%28n%20-%201%29%20*%20multiply_last_two%28n%20-%202%29%29%29%0A%0Adef%20multiply_last_two%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20return%202%20**%20%28fibonacci%28n-1%29%20%2B%20fibonacci%28n-2%29%29%0A%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D%0Aassert%20%5Bmultiply_last_two%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%202,%202,%204,%208,%2032,%20256%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
@@ -771,8 +839,8 @@ assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
 
 ## Mutual Nested Recursion
 
-Mutual recursion can also appear in nested form, as it is the case of the
-Hofstadter Female and Male sequences which are mutual nested recursive.
+Mutual recursion can also appear in a nested form, as is the case of the
+[Hofstadter Female and Male sequences](https://mathworld.wolfram.com/HofstadterMale-FemaleSequences.html#:~:text=are%201%2C%201%2C%202%2C,(OEIS%20A005378).){: target="_blank"} which are mutually nested recursive.
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_female%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20n%20-%20hofstadter_male%28hofstadter_female%28n%20-%201%29%29%0A%0Adef%20hofstadter_male%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_female%28hofstadter_male%28n%20-%201%29%29%0A%0Aassert%20%5Bhofstadter_female%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%202,%203,%203,%204%5D%0Aassert%20%5Bhofstadter_male%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%200,%201,%202,%202,%203,%204%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -796,8 +864,8 @@ assert [hofstadter_male(i) for i in range(7)] == [0, 0, 1, 2, 2, 3, 4]
 ## Mutual Triple Recursion
 
 Indirect recursion is not limited to only two functions, the following example
-combines the lucas, fibonacci and multiply last two functions in a triple mutual
-recursive form, where each function uses at the other two and itself.
+combines the Lucas, Fibonacci and multiply last two functions in a triple mutual
+recursive form, where each function uses the other two and itself.
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28%0A%20%20%20%20%20%20%20%202%20*%20math.log2%28multiply_last_two%28n%20-%201%29%20*%20multiply_last_two%28n%20-%202%29%29%0A%20%20%20%20%20%20%20%20-%20fibonacci%28n-1%29%20%2B%20lucas%28n-2%29%0A%20%20%20%20%29%0A%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci%28n-1%29%20%2B%20lucas%28n-1%29%29%20//%202%0A%0A%0Adef%20multiply_last_two%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20return%202%20**%20%281.5%20*%20fibonacci%28n-2%29%20%2B%200.5%20*%20lucas%28n-2%29%29%0A%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207,%2011,%2018%5D%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D%0A%0Aassert%20%5Bmultiply_last_two%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%202,%202,%204,%208,%2032,%20256%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
@@ -843,19 +911,65 @@ assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
 
 ## Recursion related techniques
 
-One dealing with recursive functions, it is important to keep track of the call
-stack and to optimize to avoid wasting resources. Many recursive functions call
+Recursion is a wide field, and due to language, compilers and general developer
+experience limitations, several tools and techniques have been developed to
+improve recursion support and performance.
+
+## Memoization
+
+When dealing with recursive functions, it is important to keep track of the call
+stack and optimize it to avoid wasting resources. Many recursive functions call
 themselves multiple times with the same parameters in their call graph, these
-repeated calls can be cached to avoid (1) continue traversing a recursive tree
-and (2) return the result in constant time. This technique of caching previously
-computed results is called **memoization**.
+repeated calls can be cached (assuming the function is pure) to avoid (1)
+continuing traversing a recursive tree unnecessarily and (2) returning the
+result in constant time. This technique of caching previously computed results
+is called [**memoization**](https://en.wikipedia.org/wiki/Memoization){:
+target="_blank"}.
 
+Memoization is easy to implement in Python, both from scratch and using the
+standard library. 
 
-Take for example the following call graph for a multi recursive implementation of `fibonacci(5)`:
+The from-scratch implementation can be written using decorators:
+
+```python
+from functools import wraps
+from typing import Callable, TypeVar, ParamSpec
+
+T = TypeVar("T")
+P = ParamSpec("P")
+
+def memoize(function: Callable[P, T]) -> Callable[P, T]:
+    cache: dict[str, T] = {}
+
+    @wraps(function)
+    def wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
+        nonlocal cache
+    
+        cacheable_args = str(tuple(sorted(args)) + tuple(sorted(kwargs.items())))
+        if cacheable_args not in cache:
+            cache[cacheable_args] = function(*args, **kwargs)
+        return cache[cacheable_args]
+
+    return wrapper
+```
+
+Another possibility is to use the standard library, which has support for
+memoization through `functools.cache`, this function is available in Python 3.9
+or later. For older versions, it is also possible to use `functools.lru_cache`,
+which also adds the capability of setting a max limit of cached entries.
+
+## Memoization Examples
+
+This section will show what the call graph of the above examples looks like when
+memoization is applied.
+
+Take for example the following call graph for a multi-recursive implementation
+of `fibonacci(5)`:
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/recursive_non_memoized_fibonacci-thumbnail.png){: .b-lazy width=4106 data-src=/blog/images/recursion/recursive_non_memoized_fibonacci.png }](/blog/images/recursion/recursive_non_memoized_fibonacci.png)
 
-When using memoization the total number of calls is reduced significantly (from 15 calls to 9):
+When using memoization the total number of calls is reduced significantly (from
+15 calls to 9):
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/recursive_memoized_fibonacci-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/recursive_memoized_fibonacci.png }](/blog/images/recursion/recursive_memoized_fibonacci.png)
 
@@ -871,7 +985,8 @@ This can also be reduced (from 15 calls to 11):
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_fast_double_fibonacci-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_fast_double_fibonacci.png }](/blog/images/recursion/memoized_fast_double_fibonacci.png)
 
-Memoization can also be applied to nested recursive functions such as the `hofstadter_g(4)`:
+Memoization can also be applied to nested recursive functions such as the
+`hofstadter_g(4)`:
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/non_memoized_hofstadter_g-thumbnail.png){: .b-lazy width=4106 data-src=/blog/images/recursion/non_memoized_hofstadter_g.png }](/blog/images/recursion/non_memoized_hofstadter_g.png)
 
@@ -887,7 +1002,8 @@ And now memoized (from 22 to 10 calls)
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_hofstadter_h-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_hofstadter_h.png }](/blog/images/recursion/memoized_hofstadter_h.png)
 
-Same applies for more complex functions like the Ackermann function with `Ackermann(2, 3)`:
+The same applies for more complex functions like the Ackermann function with
+`Ackermann(2, 3)`:
 
 [![Recursive Ackerman]({static}images/recursion/recursive_ackermann-thumbnail.png){: .b-lazy width=6185 data-src=/blog/images/recursion/recursive_ackermann.png }](/blog/images/recursion/recursive_ackermann.png)
 
@@ -896,7 +1012,8 @@ And now memoized (from 44 calls to 23):
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_ackermann-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_ackermann.png }](/blog/images/recursion/memoized_ackermann.png)
 
 
-Memoization can also be used for mutual recursive functions, the following examples show the mutual fibonacci-lucas recursion, the hofstadter female-male
+Memoization can also be used for mutual recursive functions, the following
+examples show the mutual fibonacci-lucas recursion, the hofstadter female-male
 
 
 Multi recursive fibonacci-lucas:
@@ -918,16 +1035,90 @@ And now memoized (from 15 to 11 calls)
 
 
 Taking the `fibonacci(100)` example from the previous section, when
-incorporating the memoized approaches the results change substantially:
+incorporating the memoized approach the results change substantially:
 
-- Typical Multi Recursive Implementation: 1,146,295,688,027,634,168,203 calls ≈ 1 sextillion calls
-- Memoized Typical Multi Recursive Implementation: 199 calls
+- Typical Multi Recursive Implementation: 1,146,295,688,027,634,168,203 calls ≈
+  1 sextillion calls
+- Memoized Typical Multi-Recursive Implementation: 199 calls
+  (0.00000000000000002% of the orignal)
 - Fast Doubles: 163 calls
 - Tail Recursive Implementation (Memoization has no effect): 100 calls
-- Memoized Fast Doubles: 29 calls
+- Memoized Fast Doubles: 29 calls (17.79% of the original)
 - Linear Recursive Implementation (Memoization has no effect): 8 calls
 
 Since the tail recursive and the linear recursive implementation do not have
 repeated calls, memoization has no effect.
 
+## Trampolining
 
+Another restriction that many languages (such as Python) have is call stack
+overflow, this happens when there are too many recursive calls in the call
+stack. It is possible with minimal modifications to the original functions to
+surpass this limitation and make the language treat the recursive function as an
+iteration and thus bypass the overflow. This technique is called
+[**trampoline**](https://en.wikipedia.org/wiki/Trampoline_(computing)){:
+target="_blank"} and requires the function to be implemented in
+**tail-recursive** form.
+
+Moreover, the function should **defer the evaluation** of the tail call by using
+an anonymous function (in Python called `lambda`s). This step is needed to
+simulate a lazy evaluation.
+
+The following is an example of how to implement the tail recursive Fibonacci
+using trampolining for `fibonacci(10000)` which would normally cause
+[`RecursionError`](https://docs.python.org/3/library/exceptions.html#RecursionError){:
+target="_blank"}.
+
+```python
+from typing import TypeVar, Callable, TypeAlias
+
+T = TypeVar("T")
+TrampolineFunction: TypeAlias = "int | Callable[[], int | TrampolineFunction]"
+
+def trampoline(function: TrampolineFunction) -> int:
+    if not callable(function):
+        return function
+
+    result = function()
+    while callable(result):
+        result = result()
+    return result
+
+
+def fibonacci(n: int, partial_result: int = 0, result: int = 1) -> TrampolineFunction:
+    if n == 0:
+        return 0
+    if n == 1:
+        return result
+
+    continuation: TrampolineFunction = lambda: fibonacci(n-1, result, partial_result+result)
+    return continuation
+
+assert str(trampoline(fibonacci(10000))).startswith('3364476487')
+```
+
+This way of programming has several similarities with the [continuation passing
+style](https://en.wikipedia.org/wiki/Continuation-passing_style){:
+target="_blank"} since instead of executing the command, the function defers the
+execution to another function which in the end runs the command. In Object
+Oriented Programming similar behavior could have been achieved using the
+[Command Pattern](https://en.wikipedia.org/wiki/Command_pattern){:
+target="_blank"}.
+
+## Call-By-Need
+
+Some programming languages execute instructions following a [non-strict binding
+strategy](https://en.wikipedia.org/wiki/Evaluation_strategy#Non-strict_binding_strategies){:
+target="_blank"}, that is, the parameters of a function are not evaluated before
+the function is called. One such strategy is called
+[call-by-need](https://en.wikipedia.org/wiki/Evaluation_strategy#Call_by_need),
+which only evaluates the parameters when needed in the body of the function and
+caches them in case they are re-used.
+
+When using recursive functions in languages that support call-by-need (like
+Haskell or R), the execution could be optimized as only a subset of all the
+recursive calls might be evaluated, thus reducing the cost of recursive
+functions.
+
+
+## Conclusion
