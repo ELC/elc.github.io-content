@@ -1,4 +1,4 @@
-Title: Python Recursion: Mutual Head to Nested Tail
+Title: Python Recursion: a Trampoline from the Mutual Head to the Memoized Nested Tail
 Date: 2022-10-25
 Category: Programming 
 Tags: Python, Functional Programming
@@ -464,10 +464,12 @@ said, in some cases the definition leverages the divide-and-conquer strategy,
 minimizing the depth of the tree. One example of this is the quicksort
 algorithm:
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20List%0A%0Adef%20quicksort%28numbers%3A%20List%5Bfloat%5D%29%20-%3E%20List%5Bfloat%5D%3A%0A%20%20%20%20if%20len%28numbers%29%20%3C%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20numbers%0A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%0A%20%20%20%20left%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3C%20first%5D%0A%20%20%20%20right%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3E%3D%20first%5D%0A%20%20%20%20return%20quicksort%28left%29%20%2B%20%5Bfirst%5D%20%2B%20quicksort%28right%29%0A%0Aassert%20quicksort%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%20list%28range%286%29%29%0Aassert%20quicksort%28list%28reversed%28range%2810%29%29%29%29%20%3D%3D%20list%28range%2810%29%29&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20Collection,%20List%0A%0Adef%20quicksort%28numbers%3A%20Collection%5Bfloat%5D%29%20-%3E%20List%5Bfloat%5D%3A%0A%20%20%20%20if%20len%28numbers%29%20%3C%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20numbers%0A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%0A%20%20%20%20left%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3C%20first%5D%0A%20%20%20%20right%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3E%3D%20first%5D%0A%20%20%20%20return%20quicksort%28left%29%20%2B%20%5Bfirst%5D%20%2B%20quicksort%28right%29%0A%0Aassert%20quicksort%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%20list%28range%286%29%29%0Aassert%20quicksort%28list%28reversed%28range%2810%29%29%29%29%20%3D%3D%20list%28range%2810%29%29&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
-def quicksort(numbers: list[float]) -> list[float]:
+from typing import Collection
+
+def quicksort(numbers: Collection[float]) -> list[float]:
     if len(numbers) <= 1:
         return numbers
 
@@ -496,10 +498,12 @@ functions that operate on arrays.
 Here is a linear recursive implementation of a function that returns the maximum
 value of a list:
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20List%0A%0Adef%20maximum%28numbers%3A%20List%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20rest_max%20%3D%20maximum%28rest%29%0A%20%20%20%20return%20first%20if%20first%20%3E%20rest_max%20else%20rest_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20Iterable%0A%0Adef%20maximum%28numbers%3A%20Iterable%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20rest_max%20%3D%20maximum%28rest%29%0A%20%20%20%20return%20first%20if%20first%20%3E%20rest_max%20else%20rest_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
-def maximum(numbers: list[float]) -> float:
+from typing import Iterable
+
+def maximum(numbers: Iterable[float]) -> float:
     first, *rest = numbers
     if not rest:
         return first
@@ -516,12 +520,12 @@ assert maximum(list(range(10))) == 9
 
 This holds even if re-written into a tail-recursive form:
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20List,%20Optional%0A%0Adef%20maximum%28numbers%3A%20List%5Bfloat%5D,%20max_value%3A%20Optional%5Bfloat%5D%20%3D%20None%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%0A%20%20%20%20if%20max_value%20is%20None%20or%20first%20%3E%20max_value%3A%0A%20%20%20%20%20%20%20%20max_value%20%3D%20first%0A%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20max_value%0A%0A%20%20%20%20return%20maximum%28rest,%20max_value%29%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20Optional,%20Iterable%0A%0Adef%20maximum%28numbers%3A%20Iterable%5Bfloat%5D,%20max_value%3A%20Optional%5Bfloat%5D%20%3D%20None%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%0A%20%20%20%20if%20max_value%20is%20None%20or%20first%20%3E%20max_value%3A%0A%20%20%20%20%20%20%20%20max_value%20%3D%20first%0A%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20max_value%0A%0A%20%20%20%20return%20maximum%28rest,%20max_value%29%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
-from typing import Optional
+from typing import Optional, Iterable
 
-def maximum(numbers: list[float], max_value: Optional[float] = None) -> float:
+def maximum(numbers: Iterable[float], max_value: Optional[float] = None) -> float:
     first, *rest = numbers
 
     if max_value is None or first > max_value:
@@ -542,10 +546,12 @@ the list. A similar approach to the quicksort algorithm can be used to reduce
 the number of calls, halving the length of the list each time. With this
 approach, the recursive stack will be shorter.
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20List%0A%0Adef%20maximum%28numbers%3A%20List%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20middle%20%3D%20len%28numbers%29%20//%202%0A%20%20%20%20left_max%20%3D%20maximum%28numbers%5B%3Amiddle%5D%29%0A%20%20%20%20right_max%20%3D%20maximum%28numbers%5Bmiddle%3A%5D%29%0A%20%20%20%20return%20left_max%20if%20left_max%20%3E%20right_max%20else%20right_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20Collection%0A%0Adef%20maximum%28numbers%3A%20Collection%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20middle%20%3D%20len%28numbers%29%20//%202%0A%20%20%20%20left_max%20%3D%20maximum%28numbers%5B%3Amiddle%5D%29%0A%20%20%20%20right_max%20%3D%20maximum%28numbers%5Bmiddle%3A%5D%29%0A%20%20%20%20return%20left_max%20if%20left_max%20%3E%20right_max%20else%20right_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
-def maximum(numbers: list[float]) -> float:
+from typing import Collection
+
+def maximum(numbers: Collection[float]) -> float:
     first, *rest = numbers
     if not rest:
         return first
@@ -681,8 +687,7 @@ assert [hofstadter_h(i) for i in range(6)] ==  [0, 1, 1, 2, 3, 4]
 
 Some functions can have multiple arguments and be nested recursive. One example
 is the [Ackermann
-function](https://mathworld.wolfram.com/AckermannFunction.html){:
-target="_blank"} grows extremely fast due to this nested recursive definition
+function](https://mathworld.wolfram.com/AckermannFunction.html){: target="_blank"} grows extremely fast due to this nested recursive definition
 and it is the simplest function proved not to be primitive recursive, meaning
 that it cannot be expressed in iterative form with for loops.
 
@@ -837,8 +842,8 @@ def multiply_last_two(n: int) -> int:
     return 2 ** (fibonacci(n-1) + fibonacci(n-2))
 
 
-assert [fibonacci(i) for i in range(6)] == [0, 1, 1, 2, 3, 5, 8]
-assert [multiply_last_two(i) for i in range(6)] == [1, 2, 2, 4, 8, 32, 256]
+assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
+assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
 ```
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/mutual_recursive_fibonacci_alternative-thumbnail.png){: .b-lazy width=3163 data-src=/blog/images/recursion/mutual_recursive_fibonacci_alternative.png }](/blog/images/recursion/mutual_recursive_fibonacci_alternative.png)
@@ -929,8 +934,7 @@ themselves multiple times with the same parameters in their call graph, these
 repeated calls can be cached (assuming the function is pure) to avoid (1)
 continuing traversing a recursive tree unnecessarily and (2) returning the
 result in constant time. This technique of caching previously computed results
-is called [**memoization**](https://en.wikipedia.org/wiki/Memoization){:
-target="_blank"}.
+is called [**memoization**](https://en.wikipedia.org/wiki/Memoization){: target="_blank"}.
 
 Memoization is easy to implement in Python, both from scratch and using the
 standard library. 
@@ -1061,7 +1065,7 @@ incorporating the memoized approach the results change substantially:
 - Typical Multi Recursive Implementation: 1,146,295,688,027,634,168,203 calls ≈
   1 sextillion calls
 - Memoized Typical Multi-Recursive Implementation: 199 calls
-  (0.00000000000000002% of the orignal)
+  (0.00000000000000002% of the original)
 - Fast Doubles: 163 calls
 - Tail Recursive Implementation (Memoization has no effect): 100 calls
 - Memoized Fast Doubles: 29 calls (17.79% of the original)
@@ -1077,8 +1081,7 @@ overflow, this happens when there are too many recursive calls in the call
 stack. It is possible with minimal modifications to the original functions to
 surpass this limitation and make the language treat the recursive function as an
 iteration and thus bypass the overflow. This technique is called
-[**trampoline**](https://en.wikipedia.org/wiki/Trampoline_(computing)){:
-target="_blank"} and requires the function to be implemented in
+[**trampoline**](https://en.wikipedia.org/wiki/Trampoline_(computing)){: target="_blank"} and requires the function to be implemented in
 **tail-recursive** form.
 
 Moreover, the function should **defer the evaluation** of the tail call by using
@@ -1087,10 +1090,9 @@ simulate a lazy evaluation.
 
 The following is an example of how to implement the tail recursive Fibonacci
 using trampolining for `fibonacci(10000)` which would normally cause
-[`RecursionError`](https://docs.python.org/3/library/exceptions.html#RecursionError){:
-target="_blank"}.
+[`RecursionError`](https://docs.python.org/3/library/exceptions.html#RecursionError){: target="_blank"}.
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20TypeVar,%20Callable%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0ATrampolineFunction%20%3D%20%22int%20%7C%20Callable%5B%5B%5D,%20int%20%7C%20TrampolineFunction%5D%22%0A%0Adef%20trampoline%28function%3A%20TrampolineFunction%29%20-%3E%20int%3A%0A%20%20%20%20if%20not%20callable%28function%29%3A%0A%20%20%20%20%20%20%20%20return%20function%0A%0A%20%20%20%20result%20%3D%20function%28%29%0A%20%20%20%20while%20callable%28result%29%3A%0A%20%20%20%20%20%20%20%20result%20%3D%20result%28%29%0A%20%20%20%20return%20result%0A%0A%0Adef%20fibonacci%28n%3A%20int,%20partial_result%3A%20int%20%3D%200,%20result%3A%20int%20%3D%201%29%20-%3E%20TrampolineFunction%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%0A%20%20%20%20return%20lambda%3A%20fibonacci%28n-1,%20result,%20partial_result%2Bresult%29%0A%0Aassert%20trampoline%28fibonacci%2830%29%29%20%3D%3D%20832040%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20TypeVar,%20Callable%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0ATrampolineFunction%20%3D%20%22int%20%7C%20Callable%5B%5B%5D,%20int%20%7C%20TrampolineFunction%5D%22%0A%0Adef%20trampoline%28function%3A%20TrampolineFunction%29%20-%3E%20int%3A%0A%20%20%20%20if%20not%20callable%28function%29%3A%0A%20%20%20%20%20%20%20%20return%20function%0A%0A%20%20%20%20result%20%3D%20function%28%29%0A%20%20%20%20while%20callable%28result%29%3A%0A%20%20%20%20%20%20%20%20result%20%3D%20result%28%29%0A%20%20%20%20return%20result%0A%0A%0Adef%20fibonacci%28n%3A%20int,%20partial_result%3A%20int%20%3D%200,%20result%3A%20int%20%3D%201%29%20-%3E%20TrampolineFunction%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%0A%20%20%20%20return%20lambda%3A%20fibonacci%28n-1,%20result,%20partial_result%2Bresult%29%0A%0A%23%20Python%20Tutor%20Recursion%20limit%20is%2030%20which%20is%20much%20less%20than%20%0A%23%20the%20needed%20for%20computing%20fibonacci%2830%29%0Aassert%20trampoline%28fibonacci%2830%29%29%20%3D%3D%20832040&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 from typing import TypeVar, Callable, TypeAlias
@@ -1121,18 +1123,15 @@ assert str(trampoline(fibonacci(10000))).startswith('3364476487')
 ```
 
 This way of programming has several similarities with the [continuation passing
-style](https://en.wikipedia.org/wiki/Continuation-passing_style){:
-target="_blank"} since instead of executing the command, the function defers the
+style](https://en.wikipedia.org/wiki/Continuation-passing_style){: target="_blank"} since instead of executing the command, the function defers the
 execution to another function which in the end runs the command. In Object
 Oriented Programming similar behavior could have been achieved using the
-[Command Pattern](https://en.wikipedia.org/wiki/Command_pattern){:
-target="_blank"}.
+[Command Pattern](https://en.wikipedia.org/wiki/Command_pattern){: target="_blank"}.
 
 ## Call-By-Need
 
 Some programming languages execute instructions following a [non-strict binding
-strategy](https://en.wikipedia.org/wiki/Evaluation_strategy#Non-strict_binding_strategies){:
-target="_blank"}, that is, the parameters of a function are not evaluated before
+strategy](https://en.wikipedia.org/wiki/Evaluation_strategy#Non-strict_binding_strategies){: target="_blank"}, that is, the parameters of a function are not evaluated before
 the function is called. One such strategy is called
 [call-by-need](https://en.wikipedia.org/wiki/Evaluation_strategy#Call_by_need),
 which only evaluates the parameters when needed in the body of the function and
