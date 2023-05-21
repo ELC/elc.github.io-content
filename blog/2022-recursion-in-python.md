@@ -1,5 +1,5 @@
 Title: Python Recursion: a Trampoline from the Mutual Head to the Memoized Nested Tail
-Date: 2022-10-25
+Date: 2023-05-21
 Category: Programming 
 Tags: Python, Functional Programming
 Slug: recursion-python
@@ -8,7 +8,7 @@ Lang: en
 Headerimage: https://elc.github.io/blog/images/recursion/recursive-python_headerimage.png
 Status: draft
 
-[![Jupyter Publishing Header Image]({static}images/recursion/recursive-python_headerimage-thumbnail.png){: .b-lazy width=1444 data-src=/blog/images/recursion/recursive-python_headerimage.png }](/blog/images/recursion/recursive-python_headerimage.png)
+[![Recursion in Python]({static}images/recursion/recursive-python_headerimage-thumbnail.png){: .b-lazy width=1444 data-src=/blog/images/recursion/recursive-python_headerimage.png }](/blog/images/recursion/recursive-python_headerimage.png)
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
@@ -83,9 +83,11 @@ implementation using `reduce`:
 ```python
 from functools import reduce
 
+
 def factorial(n: int) -> int:
     """Factorial function implemented using reduce"""
     return reduce(lambda x, y: x * y, range(1, n + 1), 1)
+
 
 assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 ```
@@ -214,6 +216,7 @@ def factorial(n: int) -> int:
         return 1
     return n * factorial(n - 1)
 
+
 assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 ```
 
@@ -234,6 +237,7 @@ def factorial(n: int) -> int:
     previous_factorial = factorial(n - 1)
     current_factorial = n * previous_factorial
     return current_factorial
+
 
 assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 ```
@@ -275,6 +279,7 @@ def palindrome(string: str) -> bool:
         return False
     return palindrome(rest)
 
+
 assert palindrome("a")
 assert palindrome("aa")
 assert palindrome("aba")
@@ -302,6 +307,7 @@ def palindrome(string: str) -> bool:
     first, *rest, last = string
     return first == last and palindrome(rest)
 
+
 assert palindrome("a")
 assert palindrome("aa")
 assert palindrome("aba")
@@ -319,8 +325,9 @@ def sum_integer_up_to_n(n: int) -> int:
     """Sums all integers from zero to n. Using middle recursion"""
     if n == 0:
         return 0
-    
+
     return n + sum_integer_up_to_n(n - 1)
+
 
 assert sum_integer_up_to_n(0) == 0
 assert sum_integer_up_to_n(1) == 1
@@ -342,6 +349,7 @@ def sum_integer_up_to_n(n: int, total: int = 0) -> int:
         return total
 
     return sum_integer_up_to_n(n - 1, total=n + total)
+
 
 assert sum_integer_up_to_n(1) == 1
 assert sum_integer_up_to_n(3) == 6
@@ -371,6 +379,7 @@ def factorial(n: int, result: int = 1) -> int:
         return result
 
     return factorial(n - 1, n * result)
+
 
 assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 ```
@@ -431,7 +440,8 @@ def fibonacci(n: int) -> int:
         return 0
     if n == 1:
         return 1
-    return fibonacci(n-1) + fibonacci(n-2)
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
 
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
@@ -449,7 +459,8 @@ def fibonacci(n: int, partial_result: int = 0, result: int = 1) -> int:
         return 0
     if n == 1:
         return result
-    return fibonacci(n-1, result, partial_result + result)
+    return fibonacci(n - 1, result, partial_result + result)
+
 
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
@@ -469,6 +480,7 @@ algorithm:
 ```python
 from typing import Collection
 
+
 def quicksort(numbers: Collection[float]) -> list[float]:
     if len(numbers) <= 1:
         return numbers
@@ -478,6 +490,7 @@ def quicksort(numbers: Collection[float]) -> list[float]:
     left = [x for x in rest if x < first]
     right = [x for x in rest if x >= first]
     return quicksort(left) + [first] + quicksort(right)
+
 
 assert quicksort([2, 4, 3, 5, 0, 1]) == list(range(6))
 assert quicksort(list(reversed(range(10)))) == list(range(10))
@@ -503,6 +516,7 @@ value of a list:
 ```python
 from typing import Iterable
 
+
 def maximum(numbers: Iterable[float]) -> float:
     first, *rest = numbers
     if not rest:
@@ -510,6 +524,7 @@ def maximum(numbers: Iterable[float]) -> float:
 
     rest_max = maximum(rest)
     return first if first > rest_max else rest_max
+
 
 assert maximum([2, 4, 3, 5, 0, 1]) == 5
 assert maximum(list(range(10))) == 9
@@ -525,6 +540,7 @@ This holds even if re-written into a tail-recursive form:
 ```python
 from typing import Optional, Iterable
 
+
 def maximum(numbers: Iterable[float], max_value: Optional[float] = None) -> float:
     first, *rest = numbers
 
@@ -535,6 +551,7 @@ def maximum(numbers: Iterable[float], max_value: Optional[float] = None) -> floa
         return max_value
 
     return maximum(rest, max_value)
+
 
 assert maximum([2, 4, 3, 5, 0, 1]) == 5
 ```
@@ -551,6 +568,7 @@ approach, the recursive stack will be shorter.
 ```python
 from typing import Collection
 
+
 def maximum(numbers: Collection[float]) -> float:
     first, *rest = numbers
     if not rest:
@@ -560,6 +578,7 @@ def maximum(numbers: Collection[float]) -> float:
     left_max = maximum(numbers[:middle])
     right_max = maximum(numbers[middle:])
     return left_max if left_max > right_max else right_max
+
 
 assert maximum([2, 4, 3, 5, 0, 1]) == 5
 assert maximum(list(range(10))) == 9
@@ -584,17 +603,17 @@ def fibonacci(n: int) -> int:
         return 0
     if n == 1:
         return 1
-    
+
     is_odd = n % 2
     m = n // 2 + is_odd
     fib_m = fibonacci(m)
     fib_m_1 = fibonacci(m - 1)
 
     if is_odd:
-        return fib_m_1 ** 2 + fib_m ** 2
-    return 2 * fib_m * fib_m_1 + fib_m ** 2
+        return fib_m_1**2 + fib_m**2
+    return 2 * fib_m * fib_m_1 + fib_m**2
 
-    
+
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
 
@@ -614,8 +633,8 @@ def fibonacci(n: int) -> int:
             return 0, 1
 
         fib_m, fib_m_1 = nth_and_nth_plus_one(n // 2)
-        nth = fib_m * fib_m_1 * 2 - fib_m ** 2
-        nth_plus_one = fib_m ** 2 + fib_m_1 ** 2
+        nth = fib_m * fib_m_1 * 2 - fib_m**2
+        nth_plus_one = fib_m**2 + fib_m_1**2
 
         is_odd = n % 2
         if is_odd:
@@ -625,6 +644,7 @@ def fibonacci(n: int) -> int:
 
     nth, _ = nth_and_nth_plus_one(n)
     return nth
+
 
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
@@ -656,6 +676,7 @@ def hofstadter_g(n: int) -> int:
         return 0
     return n - hofstadter_g(hofstadter_g(n - 1))
 
+
 assert [hofstadter_g(i) for i in range(7)] == [0, 1, 1, 2, 3, 3, 4]
 ```
 
@@ -677,7 +698,8 @@ def hofstadter_h(n: int) -> int:
         return 0
     return n - hofstadter_h(hofstadter_h(hofstadter_h(n - 1)))
 
-assert [hofstadter_h(i) for i in range(6)] ==  [0, 1, 1, 2, 3, 4]
+
+assert [hofstadter_h(i) for i in range(6)] == [0, 1, 1, 2, 3, 4]
 ```
 
 [![Recursive Hofstadter H]({static}images/recursion/recursive_hofstadter_h-thumbnail.png){: .b-lazy width=9794 data-src=/blog/images/recursion/recursive_hofstadter_h.png }](/blog/images/recursion/recursive_hofstadter_h.png)
@@ -705,6 +727,7 @@ def ackermann(m: int, n: int) -> int:
         return ackermann(m - 1, 1)    
     return ackermann(m - 1, ackermann(m, n - 1))
 
+
 assert [ackermann(i, j) for i in range(3) for j in range(3)] == [1, 2, 3, 2, 3, 4, 3, 5, 7]
 ```
 
@@ -730,10 +753,12 @@ def is_even(n: int) -> bool:
         return True
     return is_odd(n - 1)
 
+
 def is_odd(n: int) -> bool:
     if n == 0:
         return False
     return is_even(n - 1)
+
 
 assert [is_even(i) for i in range(6)] == [True, False, True, False, True, False]
 assert [is_odd(i) for i in range(6)] == [False, True, False, True, False, True]
@@ -759,7 +784,8 @@ def lucas(n: int) -> int:
         return 2
     if n == 1:
         return 1
-    return lucas(n-1) + lucas(n-2)
+    return lucas(n - 1) + lucas(n - 2)
+
 
 assert [lucas(i) for i in range(7)] == [2, 1, 3, 4, 7, 11, 18]
 ```
@@ -777,7 +803,7 @@ def lucas(n: int) -> int:
         return 2
     if n == 1:
         return 1
-    return 2 * fibonacci(n) - fibonacci(n-1) + lucas(n-2)
+    return 2 * fibonacci(n) - fibonacci(n - 1) + lucas(n - 2)
 
 
 def fibonacci(n: int) -> int:
@@ -785,7 +811,8 @@ def fibonacci(n: int) -> int:
         return 0
     if n == 1:
         return 1
-    return (fibonacci(n-1) + lucas(n-1)) // 2
+    return (fibonacci(n - 1) + lucas(n - 1)) // 2
+
 
 assert [lucas(i) for i in range(5)] == [2, 1, 3, 4, 7]
 
@@ -827,6 +854,7 @@ mutually recursive functions.
 ```python
 import math
 
+
 def fibonacci(n: int) -> int:
     if n == 0:
         return 0
@@ -834,12 +862,13 @@ def fibonacci(n: int) -> int:
         return 1
     return int(math.log2(multiply_last_two(n - 1) * multiply_last_two(n - 2)))
 
+
 def multiply_last_two(n: int) -> int:
     if n == 0:
         return 1
     if n == 1:
         return 2
-    return 2 ** (fibonacci(n-1) + fibonacci(n-2))
+    return 2 ** (fibonacci(n - 1) + fibonacci(n - 2))
 
 
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
@@ -861,10 +890,12 @@ def hofstadter_female(n: int) -> int:
         return 1
     return n - hofstadter_male(hofstadter_female(n - 1))
 
+
 def hofstadter_male(n: int) -> int:
     if n == 0:
         return 0
     return n - hofstadter_female(hofstadter_male(n - 1))
+
 
 assert [hofstadter_female(i) for i in range(6)] == [1, 1, 2, 2, 3, 3]
 assert [hofstadter_male(i) for i in range(6)] == [0, 0, 1, 2, 2, 3]
@@ -883,6 +914,7 @@ recursive form, where each function uses the other two and itself.
 ```python
 import math
 
+
 def lucas(n: int) -> int:
     if n == 0:
         return 2
@@ -890,7 +922,8 @@ def lucas(n: int) -> int:
         return 1
     return (
         2 * math.log2(multiply_last_two(n - 1) * multiply_last_two(n - 2))
-        - fibonacci(n-1) + lucas(n-2)
+        - fibonacci(n - 1)
+        + lucas(n - 2)
     )
 
 
@@ -899,7 +932,7 @@ def fibonacci(n: int) -> int:
         return 0
     if n == 1:
         return 1
-    return (fibonacci(n-1) + lucas(n-1)) // 2
+    return (fibonacci(n - 1) + lucas(n - 1)) // 2
 
 
 def multiply_last_two(n: int) -> int:
@@ -907,7 +940,7 @@ def multiply_last_two(n: int) -> int:
         return 1
     if n == 1:
         return 2
-    return 2 ** (1.5 * fibonacci(n-2) + 0.5 * lucas(n-2))
+    return 2 ** (1.5 * fibonacci(n - 2) + 0.5 * lucas(n - 2))
 
 
 assert [lucas(i) for i in range(6)] == [2, 1, 3, 4, 7, 11]
@@ -948,13 +981,14 @@ from typing import Callable, TypeVar, ParamSpec
 T = TypeVar("T")
 P = ParamSpec("P")
 
+
 def memoize(function: Callable[P, T]) -> Callable[P, T]:
     cache: dict[str, T] = {}
 
     @wraps(function)
     def wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
         nonlocal cache
-    
+
         cacheable_args = str(tuple(sorted(args)) + tuple(sorted(kwargs.items())))
         if cacheable_args not in cache:
             cache[cacheable_args] = function(*args, **kwargs)
@@ -1092,41 +1126,159 @@ The following is an example of how to implement the tail recursive Fibonacci
 using trampolining for `fibonacci(10000)` which would normally cause
 [`RecursionError`](https://docs.python.org/3/library/exceptions.html#RecursionError){: target="_blank"}.
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20TypeVar,%20Callable%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0ATrampolineFunction%20%3D%20%22int%20%7C%20Callable%5B%5B%5D,%20int%20%7C%20TrampolineFunction%5D%22%0A%0Adef%20trampoline%28function%3A%20TrampolineFunction%29%20-%3E%20int%3A%0A%20%20%20%20if%20not%20callable%28function%29%3A%0A%20%20%20%20%20%20%20%20return%20function%0A%0A%20%20%20%20result%20%3D%20function%28%29%0A%20%20%20%20while%20callable%28result%29%3A%0A%20%20%20%20%20%20%20%20result%20%3D%20result%28%29%0A%20%20%20%20return%20result%0A%0A%0Adef%20fibonacci%28n%3A%20int,%20partial_result%3A%20int%20%3D%200,%20result%3A%20int%20%3D%201%29%20-%3E%20TrampolineFunction%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%0A%20%20%20%20return%20lambda%3A%20fibonacci%28n-1,%20result,%20partial_result%2Bresult%29%0A%0A%23%20Python%20Tutor%20Recursion%20limit%20is%2030%20which%20is%20much%20less%20than%20%0A%23%20the%20needed%20for%20computing%20fibonacci%2830%29%0Aassert%20trampoline%28fibonacci%2830%29%29%20%3D%3D%20832040&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20trampoline%28function_or_result%29%3A%0A%20%20%20%20if%20not%20callable%28function_or_result%29%3A%0A%20%20%20%20%20%20%20%20return%20function_or_result%0A%0A%20%20%20%20while%20callable%28function_or_result%29%3A%0A%20%20%20%20%20%20%20%20function_or_result%20%3D%20function_or_result%28%29%0A%0A%20%20%20%20return%20function_or_result%0A%0A%0Adef%20fibonacci%28n%3A%20int,%20partial_result%3A%20int%20%3D%200,%20result%3A%20int%20%3D%201%29%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%0A%20%20%20%20return%20lambda%3A%20fibonacci%28n%20-%201,%20result,%20partial_result%20%2B%20result%29%0A%0A%0Aassert%20trampoline%28fibonacci%2830%29%29%20%3D%3D%20832040&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
+from __future__ import annotations
+
 from typing import TypeVar, Callable, TypeAlias
 
 T = TypeVar("T")
-TrampolineFunction: TypeAlias = "int | Callable[[], int | TrampolineFunction]"
-
-def trampoline(function: TrampolineFunction) -> int:
-    if not callable(function):
-        return function
-
-    result = function()
-    while callable(result):
-        result = result()
-    return result
+TrampolineFunction: TypeAlias = "Callable[[], T | TrampolineFunction[T]]"
 
 
-def fibonacci(n: int, partial_result: int = 0, result: int = 1) -> TrampolineFunction:
+def trampoline(function_or_result: T | TrampolineFunction[T]) -> T:
+    if not callable(function_or_result):
+        return function_or_result
+
+    while callable(function_or_result):
+        function_or_result = function_or_result()
+
+    return function_or_result
+
+
+def fibonacci(
+    n: int, partial_result: int = 0, result: int = 1
+) -> int | TrampolineFunction[int]:
     if n == 0:
         return 0
     if n == 1:
         return result
 
-    continuation: TrampolineFunction = lambda: fibonacci(n-1, result, partial_result+result)
-    return continuation
+    return lambda: fibonacci(n - 1, result, partial_result + result)
 
-assert str(trampoline(fibonacci(10000))).startswith('3364476487')
+
+assert str(trampoline(fibonacci(10000))).startswith("3364476487")
 ```
 
 This way of programming has several similarities with the [continuation passing
-style](https://en.wikipedia.org/wiki/Continuation-passing_style){: target="_blank"} since instead of executing the command, the function defers the
+style](https://en.wikipedia.org/wiki/Continuation-passing_style){:
+target="_blank"} since instead of executing the command, the function defers the
 execution to another function which in the end runs the command. In Object
 Oriented Programming similar behavior could have been achieved using the
-[Command Pattern](https://en.wikipedia.org/wiki/Command_pattern){: target="_blank"}.
+[Command
+Pattern](https://en.wikipedia.org/wiki/Command_pattern){:target="_blank"}.
+
+This particular implementation has a significant drawback, it hinders debugging
+and makes it less transparent, as can be seen in the run step-by-step example.
+This is the reason why the author of Python [rejected the
+proposal](http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html){:target="_blank"}
+to incorporate tail call optimization into the language.
+
+The implementation above using `lambda`s is typical of other languages like
+Javascript. In Python, it is possible to implement it in a different way
+following [Guido's
+approach](http://neopythonic.blogspot.com/2009/04/final-words-on-tail-calls.html){:target="_blank"}
+which makes debugging easier and less cryptic. On the other hand, types become a
+bit more convoluted.
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20trampoline%28function,%20args%29%3A%0A%20%20%20%20result%20%3D%20function%28*args%29%0A%0A%20%20%20%20while%20hasattr%28result,%20%22__iter__%22%29%3A%0A%20%20%20%20%20%20%20%20function,%20args%20%3D%20result%0A%20%20%20%20%20%20%20%20result%20%3D%20function%28*args%29%0A%0A%20%20%20%20return%20result%0A%0Adef%20fibonacci%28n%3A%20int,%20partial_result%3A%20int%20%3D%200,%20result%3A%20int%20%3D%201%29%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%0A%20%20%20%20return%20fibonacci,%20%28n-1,%20result,%20partial_result%20%2B%20result%29%0A%0Aassert%20trampoline%28fibonacci,%20%2830,%20%29%29%20%3D%3D%20832040&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
+```python
+from __future__ import annotations
+
+from typing import TypeVar, Callable, TypeAlias, Iterable, cast
+
+T = TypeVar("T")
+
+TrampolineFunction: TypeAlias = "Callable[..., T | TrampolineResult[T] | T]"
+TrampolineArgs = Iterable[T]
+TrampolineResult: TypeAlias = "tuple[TrampolineFunction[T], TrampolineArgs[T]]"
+
+
+def trampoline(function: TrampolineFunction[T], args: TrampolineArgs[T]) -> T:
+    result = function(*args)
+
+    while isinstance(result, Iterable):
+        result = cast("TrampolineResult[T]", result)
+        function, args = result
+        result = function(*args)
+
+    return result
+
+
+def fibonacci(
+    n: int, partial_result: int = 0, result: int = 1
+) -> tuple[TrampolineFunction[int], tuple[int, int, int]] | int:
+    if n == 0:
+        return 0
+    if n == 1:
+        return result
+
+    return fibonacci, (n - 1, result, partial_result + result)
+
+
+assert str(trampoline(fibonacci, (10000,))).startswith("3364476487")
+```
+
+A combination of the previous two approaches can also be achieved by using
+[partial
+evaluation](https://en.wikipedia.org/wiki/Partial_evaluation?oldformat=true){:target="_blank"}
+through `functools.partial`. This way, the code is simpler and more similar to
+what one could find in other languages while still being easy to debug:
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20functools%20import%20partial%0A%0Adef%20trampoline%28function_or_result%29%3A%0A%20%20%20%20if%20not%20callable%28function_or_result%29%3A%0A%20%20%20%20%20%20%20%20return%20function_or_result%0A%0A%20%20%20%20while%20callable%28function_or_result%29%3A%0A%20%20%20%20%20%20%20%20function_or_result%20%3D%20function_or_result%28%29%0A%0A%20%20%20%20return%20function_or_result%0A%0Adef%20fibonacci%28n%3A%20int,%20partial_result%3A%20int%20%3D%200,%20result%3A%20int%20%3D%201%29%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%0A%20%20%20%20return%20partial%28fibonacci,%20n%3Dn%20-%201,%20partial_result%3Dresult,%20result%3Dpartial_result%20%2B%20result%29%0A%0Aassert%20trampoline%28fibonacci%2830%29%29%20%3D%3D%20832040&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
+```python
+from __future__ import annotations
+
+from functools import partial
+from typing import TypeVar, Callable, TypeAlias
+
+
+T = TypeVar("T")
+TrampolineFunction: TypeAlias = "Callable[[], T | TrampolineFunction[T]]"
+
+
+def trampoline(function: T | TrampolineFunction[T]) -> T:
+    if not callable(function):
+        return function
+
+    while callable(function):
+        function = function()
+
+    return function
+
+
+def fibonacci(
+    n: int, partial_result: int = 0, result: int = 1
+) -> int | TrampolineFunction[int]:
+    if n == 0:
+        return 0
+    if n == 1:
+        return result
+
+    return partial(
+        fibonacci, n=n - 1, partial_result=result, result=partial_result + result
+    )
+
+
+assert str(trampoline(fibonacci(10000))).startswith("3364476487")
+```
+
+Trampolines allow to convert of recursive function calls into iterations. There
+is no built-in support like with the memoized technique and due to technical
+limitations, it is not possible to implement them as decorators, which would
+reduce the changes needed on the original function. The different
+implementations shown should give a grasp of what is possible and how it could
+be applied to other functions.
+
+It is also possible to modify the default configuration of the interpreter to
+allow deeper recursions though. This can be done by setting a higher value to
+the
+[`sys.setrecursionlimit`](https://docs.python.org/3/library/sys.html#sys.setrecursionlimit){:target="_blank"}.
+This method requires however access to the `sys` module which may not be always
+available or editable.
 
 ## Call-By-Need
 
