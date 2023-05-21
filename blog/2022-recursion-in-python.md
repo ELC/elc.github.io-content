@@ -107,33 +107,32 @@ some concepts.
 
 ## Why Recursion?
 
-Recursion in and of itself is a wide field in computer science which may attract
-attention. However, it is sometimes portrayed as a difficult topic and receives
+Recursion in and of itself is a wide field in computer science that may attract attention. However, it is sometimes portrayed as a difficult topic and receives
 less attention that other techniques. 
 
 Although some may avoid recursion altogether, there are clear and noticeable
 benefits of using recursive functions, such as:
 
-- **Declarative style**: recursive functions are written by thinking **what**
-  the function does instead of **how** it does it. Iterative style usually leads
-  the programmer to think about low level details like indexes and pointers
-  whereas recursion brings the whole problem into mind.
-- **Simplicity and Readability**: Recursive functions can provide a more elegant and
-  concise solution for solving complex problems by breaking them down into
+- **Declarative style**: Recursive functions are written by thinking **what**
+  the function does instead of **how** it does it. The iterative style usually
+  leads the programmer to think about low-level details like indexes and
+  pointers whereas recursion brings the whole problem into mind.
+- **Simplicity and Readability**: Recursive functions can provide a more elegant
+  and concise solution for solving complex problems by breaking them down into
   simpler subproblems. The recursive approach often closely resembles the
   problem's definition, making the code more intuitive and easier to understand.
-- **Divide and Conquer**: Recursive functions can leverage the divide and conquer
-  technique, where a problem is divided into smaller subproblems that are solved
-  independently. This approach simplifies the problem-solving process by
-  reducing complex tasks into manageable pieces.
-- **Code Reusability**: Recursive functions are often reusable. Once implemented,
-  they can be called multiple times with different inputs, allowing for
-  efficient and modular code. Recursive functions can be applied to various
+- **Divide and Conquer**: Recursive functions can leverage the divide and
+  conquer technique, where a problem is divided into smaller subproblems that
+  are solved independently. This approach simplifies the problem-solving process
+  by reducing complex tasks into manageable pieces.
+- **Code Reusability**: Recursive functions are often reusable. Once
+  implemented, they can be called multiple times with different inputs, allowing
+  for efficient and modular code. Recursive functions can be applied to various
   instances of the same problem, enabling code reuse and promoting good software
   engineering practices.
-- **Handling Recursive Structures**: Recursive functions are especially useful when
-  dealing with recursive data structures, such as trees or linked lists. The
-  recursive nature of the data can be mirrored in the recursive functions,
+- **Handling Recursive Structures**: Recursive functions are especially useful
+  when dealing with recursive data structures, such as trees or linked lists.
+  The recursive nature of the data can be mirrored in the recursive functions,
   making it easier to traverse, manipulate, or process such structures.
 - **Mathematical and Algorithmic Modeling**: Many mathematical and algorithmic
   problems are naturally defined in terms of recursion. Recursive functions
@@ -176,9 +175,9 @@ Based on the number of functions involved:
 
 Besides the previous classification, all recursive functions must have a
 termination condition or else they would enter in an infinite loop. Even though
-it is not necessary that recursive functions are pure (i.e. they do not have
-side effects), it is common for recursive functions to be pure, this simplifies
-the interpretation. All the examples in this article are pure functions.
+recursive functions do not need to be pure (i.e. they do not have side effects),
+it is common for recursive functions to be pure, this simplifies the
+interpretation. All the examples in this article are pure functions.
 
 ## Linear Recursion
 
@@ -236,10 +235,10 @@ def factorial(n: int) -> int:
 assert [factorial(i) for i in range(7)] == [1, 1, 2, 6, 24, 120, 720]
 ```
 
-In this more explicit implementation it is clearer that the last logical
+In this more explicit implementation, it is clearer that the last logical
 statement is the multiplication `n * previous_factorial`. 
 
-The call graph in the case of linear recursive functions is a series a nodes
+The call graph in the case of linear recursive functions is a series of nodes
 called sequentially, hence the name:
 
 [![Recursive Factorial Call Graph]({static}images/recursion/recursive_factorial-thumbnail.png){: .narrow .b-lazy width=200 data-src=/blog/images/recursion/recursive_factorial.png }](/blog/images/recursion/recursive_factorial.png)
@@ -328,7 +327,7 @@ assert sum_integer_up_to_n(5) == 15
 
 [![Recursive Sum Integer up to N]({static}images/recursion/recursive_sum_integer_up_to_n-thumbnail.png){: .narrow .b-lazy width=400 data-src=/blog/images/recursion/recursive_sum_integer_up_to_n.png }](/blog/images/recursion/recursive_sum_integer_up_to_n.png)
 
-Can be rewritten into tail recursive form as:
+Can be rewritten into tail-recursive form as:
 
 
 [Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20sum_integer_up_to_n%28n%3A%20int,%20total%3A%20int%20%3D%200%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Sums%20all%20integers%20from%20zero%20to%20n.%20Using%20Tail%20recursion%22%22%22%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20total%0A%0A%20%20%20%20return%20sum_integer_up_to_n%28n%20-%201,%20total%3Dn%20%2B%20total%29%0A%0Aassert%20sum_integer_up_to_n%281%29%20%3D%3D%201%0Aassert%20sum_integer_up_to_n%283%29%20%3D%3D%206&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
@@ -559,7 +558,7 @@ Refactoring functions this way is not always possible, for functions like nth
 Fibonacci, it is not trivial to use a tree approach that reduces the number of
 recursive calls. A known solution called Fast Doubling has been discovered.
 Deriving this implementation requires a lot of effort and mathematical
-knowledge, such approach may not apply to other functions.
+knowledge, such an approach may not apply to other functions.
 
 The Fast Doubling Implementation is as follows:
 
@@ -974,7 +973,7 @@ When using memoization the total number of calls is reduced significantly (from
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/recursive_memoized_fibonacci-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/recursive_memoized_fibonacci.png }](/blog/images/recursion/recursive_memoized_fibonacci.png)
 
 Depending on the implementation, the effect of memoization is similar to
-*linearizing* the multi recursive function, as the tree has much fewer branches
+*linearizing* the multi-recursive function, as the tree has much fewer branches
 while the depth is kept the same.
 
 If considering the Fibonacci Fast Doubles implementation of `fibonacci(10)`:
@@ -1002,7 +1001,7 @@ And now memoized (from 22 to 10 calls)
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_hofstadter_h-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_hofstadter_h.png }](/blog/images/recursion/memoized_hofstadter_h.png)
 
-The same applies for more complex functions like the Ackermann function with
+The same applies to more complex functions like the Ackermann function with
 `Ackermann(2, 3)`:
 
 [![Recursive Ackerman]({static}images/recursion/recursive_ackermann-thumbnail.png){: .b-lazy width=6185 data-src=/blog/images/recursion/recursive_ackermann.png }](/blog/images/recursion/recursive_ackermann.png)
@@ -1119,6 +1118,5 @@ When using recursive functions in languages that support call-by-need (like
 Haskell or R), the execution could be optimized as only a subset of all the
 recursive calls might be evaluated, thus reducing the cost of recursive
 functions.
-
 
 ## Conclusion
