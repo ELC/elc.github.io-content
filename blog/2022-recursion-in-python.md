@@ -78,9 +78,11 @@ and space complexity.
 Another possibility, not as common as the previous ones, is a functional
 implementation using `reduce`:
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20factorial%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Factorial%20function%20implemented%20using%20reduce%22%22%22%0A%20%20%20%20return%20reduce%28lambda%20x,%20y%3A%20x%20*%20y,%20range%281,%20n%20%2B%201%29,%201%29%0A%0Aassert%20%5Bfactorial%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%206,%2024,%20120,%20720%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20functools%20import%20reduce%0A%0Adef%20factorial%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%22%22%22Factorial%20function%20implemented%20using%20reduce%22%22%22%0A%20%20%20%20return%20reduce%28lambda%20x,%20y%3A%20x%20*%20y,%20range%281,%20n%20%2B%201%29,%201%29%0A%0Aassert%20%5Bfactorial%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%206,%2024,%20120,%20720%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
+from functools import reduce
+
 def factorial(n: int) -> int:
     """Factorial function implemented using reduce"""
     return reduce(lambda x, y: x * y, range(1, n + 1), 1)
@@ -107,15 +109,16 @@ some concepts.
 
 ## Why Recursion?
 
-Recursion in and of itself is a wide field in computer science that may attract attention. However, it is sometimes portrayed as a difficult topic and receives
-less attention that other techniques. 
+Recursion in and of itself is a wide field in computer science that may attract
+scientists and researchers. However, it is sometimes portrayed as a difficult
+topic and receives less attention than other techniques. 
 
 Although some may avoid recursion altogether, there are clear and noticeable
 benefits of using recursive functions, such as:
 
-- **Declarative style**: Recursive functions are written by thinking **what**
-  the function does instead of **how** it does it. The iterative style usually
-  leads the programmer to think about low-level details like indexes and
+- **Declarative style**: Recursive functions are written by thinking about
+  **what** the function does instead of **how** it does it. The iterative style
+  usually leads the programmer to think about low-level details like indexes and
   pointers whereas recursion brings the whole problem into mind.
 - **Simplicity and Readability**: Recursive functions can provide a more elegant
   and concise solution for solving complex problems by breaking them down into
@@ -461,7 +464,7 @@ said, in some cases the definition leverages the divide-and-conquer strategy,
 minimizing the depth of the tree. One example of this is the quicksort
 algorithm:
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20quicksort%28numbers%3A%20list%5Bfloat%5D%29%20-%3E%20list%5Bfloat%5D%3A%0A%20%20%20%20if%20len%28numbers%29%20%3C%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20numbers%0A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%0A%20%20%20%20left%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3C%20first%5D%0A%20%20%20%20right%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3E%3D%20first%5D%0A%20%20%20%20return%20quicksort%28left%29%20%2B%20%5Bfirst%5D%20%2B%20quicksort%28right%29%0A%0Aassert%20quicksort%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%20list%28range%286%29%29%0Aassert%20quicksort%28list%28reversed%28range%2810%29%29%29%29%20%3D%3D%20list%28range%2810%29%29&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20List%0A%0Adef%20quicksort%28numbers%3A%20List%5Bfloat%5D%29%20-%3E%20List%5Bfloat%5D%3A%0A%20%20%20%20if%20len%28numbers%29%20%3C%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20numbers%0A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%0A%20%20%20%20left%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3C%20first%5D%0A%20%20%20%20right%20%3D%20%5Bx%20for%20x%20in%20rest%20if%20x%20%3E%3D%20first%5D%0A%20%20%20%20return%20quicksort%28left%29%20%2B%20%5Bfirst%5D%20%2B%20quicksort%28right%29%0A%0Aassert%20quicksort%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%20list%28range%286%29%29%0Aassert%20quicksort%28list%28reversed%28range%2810%29%29%29%29%20%3D%3D%20list%28range%2810%29%29&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def quicksort(numbers: list[float]) -> list[float]:
@@ -493,7 +496,7 @@ functions that operate on arrays.
 Here is a linear recursive implementation of a function that returns the maximum
 value of a list:
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20maximum%28numbers%3A%20list%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20rest_max%20%3D%20maximum%28rest%29%0A%20%20%20%20return%20first%20if%20first%20%3E%20rest_max%20else%20rest_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20List%0A%0Adef%20maximum%28numbers%3A%20List%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20rest_max%20%3D%20maximum%28rest%29%0A%20%20%20%20return%20first%20if%20first%20%3E%20rest_max%20else%20rest_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def maximum(numbers: list[float]) -> float:
@@ -513,7 +516,11 @@ assert maximum(list(range(10))) == 9
 
 This holds even if re-written into a tail-recursive form:
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20List,%20Optional%0A%0Adef%20maximum%28numbers%3A%20List%5Bfloat%5D,%20max_value%3A%20Optional%5Bfloat%5D%20%3D%20None%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%0A%20%20%20%20if%20max_value%20is%20None%20or%20first%20%3E%20max_value%3A%0A%20%20%20%20%20%20%20%20max_value%20%3D%20first%0A%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20max_value%0A%0A%20%20%20%20return%20maximum%28rest,%20max_value%29%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 ```python
+from typing import Optional
+
 def maximum(numbers: list[float], max_value: Optional[float] = None) -> float:
     first, *rest = numbers
 
@@ -535,7 +542,7 @@ the list. A similar approach to the quicksort algorithm can be used to reduce
 the number of calls, halving the length of the list each time. With this
 approach, the recursive stack will be shorter.
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20maximum%28numbers%3A%20list%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20middle%20%3D%20len%28numbers%29%20//%202%0A%20%20%20%20left_max%20%3D%20maximum%28numbers%5B%3Amiddle%5D%29%0A%20%20%20%20right_max%20%3D%20maximum%28numbers%5Bmiddle%3A%5D%29%0A%20%20%20%20return%20left_max%20if%20left_max%20%3E%20right_max%20else%20right_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20List%0A%0Adef%20maximum%28numbers%3A%20List%5Bfloat%5D%29%20-%3E%20float%3A%0A%20%20%20%20first,%20*rest%20%3D%20numbers%0A%20%20%20%20if%20not%20rest%3A%0A%20%20%20%20%20%20%20%20return%20first%0A%0A%20%20%20%20middle%20%3D%20len%28numbers%29%20//%202%0A%20%20%20%20left_max%20%3D%20maximum%28numbers%5B%3Amiddle%5D%29%0A%20%20%20%20right_max%20%3D%20maximum%28numbers%5Bmiddle%3A%5D%29%0A%20%20%20%20return%20left_max%20if%20left_max%20%3E%20right_max%20else%20right_max%0A%0Aassert%20maximum%28%5B2,%204,%203,%205,%200,%201%5D%29%20%3D%3D%205%0Aassert%20maximum%28list%28range%2810%29%29%29%20%3D%3D%209&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def maximum(numbers: list[float]) -> float:
@@ -591,7 +598,7 @@ It is even possible to further reduce the number of recursive calls by
 converting the multi-recursive function into a linear recursive function by
 changing its structure to return two values at once:
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%23%20based%20on%3A%20https%3A//www.nayuki.io/page/fast-fibonacci-algorithms%0A%20%20%20%20def%20nth_and_nth_plus_one%28n%3A%20int%29%20-%3E%20tuple%5Bint,%20int%5D%3A%0A%20%20%20%20%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%200,%201%0A%20%20%20%20%20%20%20%20a,%20b%20%3D%20nth_and_nth_plus_one%28n%20//%202%29%0A%20%20%20%20%20%20%20%20c%20%3D%20a%20*%20b%20*%202%20-%20a%20**%202%0A%20%20%20%20%20%20%20%20d%20%3D%20a%20**%202%20%2B%20b%20**%202%0A%20%20%20%20%20%20%20%20nth,%20nth_plus_one%20%3D%20%28c,%20d%29%20if%20n%20%25%202%20%3D%3D%200%20else%20%28d,%20c%20%2B%20d%29%0A%20%20%20%20%20%20%20%20return%20nth,%20nth_plus_one%0A%20%20%20%20%0A%20%20%20%20nth,%20_%20%3D%20nth_and_nth_plus_one%28n%29%0A%20%20%20%20return%20nth%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20Tuple%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%23%20based%20on%3A%20https%3A//www.nayuki.io/page/fast-fibonacci-algorithms%0A%20%20%20%20def%20nth_and_nth_plus_one%28n%3A%20int%29%20-%3E%20Tuple%5Bint,%20int%5D%3A%0A%20%20%20%20%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%200,%201%0A%0A%20%20%20%20%20%20%20%20fib_m,%20fib_m_1%20%3D%20nth_and_nth_plus_one%28n%20//%202%29%0A%20%20%20%20%20%20%20%20nth%20%3D%20fib_m%20*%20fib_m_1%20*%202%20-%20fib_m%20**%202%0A%20%20%20%20%20%20%20%20nth_plus_one%20%3D%20fib_m%20**%202%20%2B%20fib_m_1%20**%202%0A%0A%20%20%20%20%20%20%20%20is_odd%20%3D%20n%20%25%202%0A%20%20%20%20%20%20%20%20if%20is_odd%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20nth_plus_two%20%3D%20nth%20%2B%20nth_plus_one%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20nth_plus_one,%20nth_plus_two%0A%20%20%20%20%20%20%20%20return%20nth,%20nth_plus_one%0A%0A%20%20%20%20nth,%20_%20%3D%20nth_and_nth_plus_one%28n%29%0A%20%20%20%20return%20nth%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def fibonacci(n: int) -> int:
@@ -616,7 +623,7 @@ def fibonacci(n: int) -> int:
 assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
 ```
 
-[![Linear Recursive Fibonacci]({static}images/recursion/efficient_recursive_fibonacci-thumbnail.png){: .nested .b-lazy width=400 data-src=/blog/images/recursion/efficient_recursive_fibonacci.png }](/blog/images/recursion/efficient_recursive_fibonacci.png)
+[![Linear Recursive Fibonacci]({static}images/recursion/efficient_recursive_fibonacci-thumbnail.png){: .narrow .b-lazy width=400 data-src=/blog/images/recursion/efficient_recursive_fibonacci.png }](/blog/images/recursion/efficient_recursive_fibonacci.png)
 
 
 Even though in these examples with `fibonacci(4)` the difference is not drastic,
@@ -656,7 +663,7 @@ is a non-trivial task and sometimes it may be impossible.
 The level of nesting is not limited to just two calls, the [Hofstadter H Sequence](https://mathworld.wolfram.com/HofstadterH-Sequence.html){: target="_blank"}
 has triple nesting recursion for example:
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_h%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_h%28hofstadter_h%28hofstadter_h%28n%20-%201%29%29%29%0A%0Aassert%20%5Bhofstadter_h%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%20%5B0,%201,%201,%202,%203,%204,%204%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_h%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_h%28hofstadter_h%28hofstadter_h%28n%20-%201%29%29%29%0A%0Aassert%20%5Bhofstadter_h%28i%29%20for%20i%20in%20range%286%29%5D%20%3D%3D%20%20%5B0,%201,%201,%202,%203,%204%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def hofstadter_h(n: int) -> int:
@@ -664,7 +671,7 @@ def hofstadter_h(n: int) -> int:
         return 0
     return n - hofstadter_h(hofstadter_h(hofstadter_h(n - 1)))
 
-assert [hofstadter_h(i) for i in range(7)] ==  [0, 1, 1, 2, 3, 4, 4]
+assert [hofstadter_h(i) for i in range(6)] ==  [0, 1, 1, 2, 3, 4]
 ```
 
 [![Recursive Hofstadter H]({static}images/recursion/recursive_hofstadter_h-thumbnail.png){: .b-lazy width=9794 data-src=/blog/images/recursion/recursive_hofstadter_h.png }](/blog/images/recursion/recursive_hofstadter_h.png)
@@ -683,7 +690,7 @@ This function is currently used to test compilers' efficiency at handling really
 deep recursive functions. This is a case of a nested recursive function that is
 also tail recursive.
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20ackermann%28m%3A%20int,%20n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20m%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20n%20%2B%201%0A%20%20%20%20if%20m%20%3E%200%20and%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20ackermann%28m%20-%201,%201%29%20%20%20%20%0A%20%20%20%20return%20ackermann%28m%20-%201,%20ackermann%28m,%20n%20-%201%29%29%0A%0Aassert%20%5Backermann%28i,%20j%29%20for%20i%20in%20range%284%29%20for%20j%20in%20range%284%29%5D%20%3D%3D%20%5B1,%202,%203,%204,%202,%203,%204,%205,%203,%205,%207,%209,%205,%2013,%2029,%2061%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20ackermann%28m%3A%20int,%20n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20m%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20n%20%2B%201%0A%20%20%20%20if%20m%20%3E%200%20and%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20ackermann%28m%20-%201,%201%29%20%20%20%20%0A%20%20%20%20return%20ackermann%28m%20-%201,%20ackermann%28m,%20n%20-%201%29%29%0A%0Aassert%20%5Backermann%28i,%20j%29%20for%20i%20in%20range%283%29%20for%20j%20in%20range%283%29%5D%20%3D%3D%20%5B1,%202,%203,%202,%203,%204,%203,%205,%207%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def ackermann(m: int, n: int) -> int:
@@ -693,7 +700,7 @@ def ackermann(m: int, n: int) -> int:
         return ackermann(m - 1, 1)    
     return ackermann(m - 1, ackermann(m, n - 1))
 
-assert [ackermann(i, j) for i in range(4) for j in range(4)] == [1, 2, 3, 4, 2, 3, 4, 5, 3, 5, 7, 9, 5, 13, 29, 61]
+assert [ackermann(i, j) for i in range(3) for j in range(3)] == [1, 2, 3, 2, 3, 4, 3, 5, 7]
 ```
 
 [![Recursive Ackerman]({static}images/recursion/recursive_ackermann-thumbnail.png){: .b-lazy width=6185 data-src=/blog/images/recursion/recursive_ackermann.png }](/blog/images/recursion/recursive_ackermann.png)
@@ -757,7 +764,7 @@ assert [lucas(i) for i in range(7)] == [2, 1, 3, 4, 7, 11, 18]
 It is possible to write both the Lucas and the Fibonacci functions in a mutual
 recursive form:
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%202%20*%20fibonacci%28n%29%20-%20fibonacci%28n-1%29%20%2B%20lucas%28n-2%29%0A%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci%28n-1%29%20%2B%20lucas%28n-1%29%29%20//%202%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207,%2011,%2018%5D%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%202%20*%20fibonacci%28n%29%20-%20fibonacci%28n-1%29%20%2B%20lucas%28n-2%29%0A%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci%28n-1%29%20%2B%20lucas%28n-1%29%29%20//%202%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%285%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207%5D%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%285%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def lucas(n: int) -> int:
@@ -775,9 +782,9 @@ def fibonacci(n: int) -> int:
         return 1
     return (fibonacci(n-1) + lucas(n-1)) // 2
 
-assert [lucas(i) for i in range(7)] == [2, 1, 3, 4, 7, 11, 18]
+assert [lucas(i) for i in range(5)] == [2, 1, 3, 4, 7]
 
-assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
+assert [fibonacci(i) for i in range(5)] == [0, 1, 1, 2, 3]
 ```
 
 [![Mutual Recursive Fibonacci]({static}images/recursion/mutual_recursive_fibonacci-thumbnail.png){: .b-lazy width=5365 data-src=/blog/images/recursion/mutual_recursive_fibonacci.png }](/blog/images/recursion/mutual_recursive_fibonacci.png)
@@ -830,8 +837,8 @@ def multiply_last_two(n: int) -> int:
     return 2 ** (fibonacci(n-1) + fibonacci(n-2))
 
 
-assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
-assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
+assert [fibonacci(i) for i in range(6)] == [0, 1, 1, 2, 3, 5, 8]
+assert [multiply_last_two(i) for i in range(6)] == [1, 2, 2, 4, 8, 32, 256]
 ```
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/mutual_recursive_fibonacci_alternative-thumbnail.png){: .b-lazy width=3163 data-src=/blog/images/recursion/mutual_recursive_fibonacci_alternative.png }](/blog/images/recursion/mutual_recursive_fibonacci_alternative.png)
@@ -841,7 +848,7 @@ assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
 Mutual recursion can also appear in a nested form, as is the case of the
 [Hofstadter Female and Male sequences](https://mathworld.wolfram.com/HofstadterMale-FemaleSequences.html#:~:text=are%201%2C%201%2C%202%2C,(OEIS%20A005378).){: target="_blank"} which are mutually nested recursive.
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_female%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20n%20-%20hofstadter_male%28hofstadter_female%28n%20-%201%29%29%0A%0Adef%20hofstadter_male%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_female%28hofstadter_male%28n%20-%201%29%29%0A%0Aassert%20%5Bhofstadter_female%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%201,%202,%202,%203,%203,%204%5D%0Aassert%20%5Bhofstadter_male%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%200,%201,%202,%202,%203,%204%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=def%20hofstadter_female%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20n%20-%20hofstadter_male%28hofstadter_female%28n%20-%201%29%29%0A%0Adef%20hofstadter_male%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_female%28hofstadter_male%28n%20-%201%29%29%0A%0Aassert%20%5Bhofstadter_female%28i%29%20for%20i%20in%20range%286%29%5D%20%3D%3D%20%5B1,%201,%202,%202,%203,%203%5D%0Aassert%20%5Bhofstadter_male%28i%29%20for%20i%20in%20range%286%29%5D%20%3D%3D%20%5B0,%200,%201,%202,%202,%203%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 def hofstadter_female(n: int) -> int:
@@ -854,8 +861,8 @@ def hofstadter_male(n: int) -> int:
         return 0
     return n - hofstadter_female(hofstadter_male(n - 1))
 
-assert [hofstadter_female(i) for i in range(7)] == [1, 1, 2, 2, 3, 3, 4]
-assert [hofstadter_male(i) for i in range(7)] == [0, 0, 1, 2, 2, 3, 4]
+assert [hofstadter_female(i) for i in range(6)] == [1, 1, 2, 2, 3, 3]
+assert [hofstadter_male(i) for i in range(6)] == [0, 0, 1, 2, 2, 3]
 ```
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/mutual_recursive_hofstadter_female-thumbnail.png){: .b-lazy width=5290 data-src=/blog/images/recursion/mutual_recursive_hofstadter_female.png }](/blog/images/recursion/mutual_recursive_hofstadter_female.png)
@@ -866,7 +873,7 @@ Indirect recursion is not limited to only two functions, the following example
 combines the Lucas, Fibonacci and multiply last two functions in a triple mutual
 recursive form, where each function uses the other two and itself.
 
-[Run Step by Step Online](https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28%0A%20%20%20%20%20%20%20%202%20*%20math.log2%28multiply_last_two%28n%20-%201%29%20*%20multiply_last_two%28n%20-%202%29%29%0A%20%20%20%20%20%20%20%20-%20fibonacci%28n-1%29%20%2B%20lucas%28n-2%29%0A%20%20%20%20%29%0A%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci%28n-1%29%20%2B%20lucas%28n-1%29%29%20//%202%0A%0A%0Adef%20multiply_last_two%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20return%202%20**%20%281.5%20*%20fibonacci%28n-2%29%20%2B%200.5%20*%20lucas%28n-2%29%29%0A%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207,%2011,%2018%5D%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205,%208%5D%0A%0Aassert%20%5Bmultiply_last_two%28i%29%20for%20i%20in%20range%287%29%5D%20%3D%3D%20%5B1,%202,%202,%204,%208,%2032,%20256%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20lucas%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28%0A%20%20%20%20%20%20%20%202%20*%20math.log2%28multiply_last_two%28n%20-%201%29%20*%20multiply_last_two%28n%20-%202%29%29%0A%20%20%20%20%20%20%20%20-%20fibonacci%28n-1%29%20%2B%20lucas%28n-2%29%0A%20%20%20%20%29%0A%0A%0Adef%20fibonacci%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci%28n-1%29%20%2B%20lucas%28n-1%29%29%20//%202%0A%0A%0Adef%20multiply_last_two%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20return%202%20**%20%281.5%20*%20fibonacci%28n-2%29%20%2B%200.5%20*%20lucas%28n-2%29%29%0A%0A%0Aassert%20%5Blucas%28i%29%20for%20i%20in%20range%286%29%5D%20%3D%3D%20%5B2,%201,%203,%204,%207,%2011%5D%0A%0Aassert%20%5Bfibonacci%28i%29%20for%20i%20in%20range%286%29%5D%20%3D%3D%20%5B0,%201,%201,%202,%203,%205%5D%0A%0Aassert%20%5Bmultiply_last_two%28i%29%20for%20i%20in%20range%286%29%5D%20%3D%3D%20%5B1,%202,%202,%204,%208,%2032%5D&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 import math
@@ -898,11 +905,11 @@ def multiply_last_two(n: int) -> int:
     return 2 ** (1.5 * fibonacci(n-2) + 0.5 * lucas(n-2))
 
 
-assert [lucas(i) for i in range(7)] == [2, 1, 3, 4, 7, 11, 18]
+assert [lucas(i) for i in range(6)] == [2, 1, 3, 4, 7, 11]
 
-assert [fibonacci(i) for i in range(7)] == [0, 1, 1, 2, 3, 5, 8]
+assert [fibonacci(i) for i in range(6)] == [0, 1, 1, 2, 3, 5]
 
-assert [multiply_last_two(i) for i in range(7)] == [1, 2, 2, 4, 8, 32, 256]
+assert [multiply_last_two(i) for i in range(6)] == [1, 2, 2, 4, 8, 32]
 ```
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/mutual_triple_recursive_fibonacci-thumbnail.png){: .b-lazy width=6969 data-src=/blog/images/recursion/mutual_triple_recursive_fibonacci.png }](/blog/images/recursion/mutual_triple_recursive_fibonacci.png)
@@ -970,6 +977,8 @@ of `fibonacci(5)`:
 When using memoization the total number of calls is reduced significantly (from
 15 calls to 9):
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20functools%20import%20wraps%0Afrom%20typing%20import%20Callable,%20TypeVar,%20Any%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0A%0A%23%20With%20Scratch%20Implementation%0Adef%20memoize%28function%3A%20Callable%5B...,%20T%5D%29%20-%3E%20Callable%5B...,%20T%5D%3A%0A%20%20%20%20cache%3A%20dict%5Bstr,%20T%5D%20%3D%20%7B%7D%0A%0A%20%20%20%20%40wraps%28function%29%0A%20%20%20%20def%20wrapper%28*args,%20**kwargs%29%20-%3E%20T%3A%0A%20%20%20%20%20%20%20%20nonlocal%20cache%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20cacheable_args%20%3D%20str%28tuple%28sorted%28args%29%29%20%2B%20tuple%28sorted%28kwargs.items%28%29%29%29%29%0A%20%20%20%20%20%20%20%20if%20cacheable_args%20not%20in%20cache%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20cache%5Bcacheable_args%5D%20%3D%20function%28*args,%20**kwargs%29%0A%20%20%20%20%20%20%20%20return%20cache%5Bcacheable_args%5D%0A%0A%20%20%20%20return%20wrapper%0A%0A%40memoize%0Adef%20fibonacci_memoize%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20fibonacci_memoize%28n-1%29%20%2B%20fibonacci_memoize%28n-2%29%0A%0Aassert%20fibonacci_memoize%285%29%20%3D%3D%205%0Aassert%20fibonacci_memoize%285%29%20%3D%3D%205%0A%0A%0A%23%20With%20Functools%20Implementation%0Afrom%20functools%20import%20lru_cache%0A%0A%40lru_cache%28maxsize%3DNone%29%0Adef%20fibonacci_lru%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20fibonacci_lru%28n-1%29%20%2B%20fibonacci_lru%28n-2%29%0A%0Aassert%20fibonacci_lru%285%29%20%3D%3D%205%0Aassert%20fibonacci_lru%285%29%20%3D%3D%205%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/recursive_memoized_fibonacci-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/recursive_memoized_fibonacci.png }](/blog/images/recursion/recursive_memoized_fibonacci.png)
 
 Depending on the implementation, the effect of memoization is similar to
@@ -982,6 +991,8 @@ If considering the Fibonacci Fast Doubles implementation of `fibonacci(10)`:
 
 This can also be reduced (from 15 calls to 11):
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20functools%20import%20wraps%0Afrom%20typing%20import%20Callable,%20TypeVar,%20Any%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0A%0A%23%20With%20Scratch%20Implementation%0Adef%20memoize%28function%3A%20Callable%5B...,%20T%5D%29%20-%3E%20Callable%5B...,%20T%5D%3A%0A%20%20%20%20cache%3A%20dict%5Bstr,%20T%5D%20%3D%20%7B%7D%0A%0A%20%20%20%20%40wraps%28function%29%0A%20%20%20%20def%20wrapper%28*args,%20**kwargs%29%20-%3E%20T%3A%0A%20%20%20%20%20%20%20%20nonlocal%20cache%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20cacheable_args%20%3D%20str%28tuple%28sorted%28args%29%29%20%2B%20tuple%28sorted%28kwargs.items%28%29%29%29%29%0A%20%20%20%20%20%20%20%20if%20cacheable_args%20not%20in%20cache%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20cache%5Bcacheable_args%5D%20%3D%20function%28*args,%20**kwargs%29%0A%20%20%20%20%20%20%20%20return%20cache%5Bcacheable_args%5D%0A%0A%20%20%20%20return%20wrapper%0A%0A%0A%40memoize%0Adef%20fibonacci_memoize%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%23%20Fast%20Doubling%20Method%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20%0A%20%20%20%20is_odd%20%3D%20n%20%25%202%0A%20%20%20%20m%20%3D%20n%20//%202%20%2B%20is_odd%0A%20%20%20%20fib_m%20%3D%20fibonacci_memoize%28m%29%0A%20%20%20%20fib_m_1%20%3D%20fibonacci_memoize%28m%20-%201%29%0A%0A%20%20%20%20if%20is_odd%3A%0A%20%20%20%20%20%20%20%20return%20fib_m_1%20**%202%20%2B%20fib_m%20**%202%0A%20%20%20%20return%202%20*%20fib_m%20*%20fib_m_1%20%2B%20fib_m%20**%202%0A%0Aassert%20fibonacci_memoize%285%29%20%3D%3D%205%0Aassert%20fibonacci_memoize%285%29%20%3D%3D%205%0A%0A%0A%23%20With%20Functools%20Implementation%0Afrom%20functools%20import%20lru_cache%0A%0A%40lru_cache%28maxsize%3DNone%29%0Adef%20fibonacci_lru%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20%23%20Fast%20Doubling%20Method%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20%0A%20%20%20%20is_odd%20%3D%20n%20%25%202%0A%20%20%20%20m%20%3D%20n%20//%202%20%2B%20is_odd%0A%20%20%20%20fib_m%20%3D%20fibonacci_lru%28m%29%0A%20%20%20%20fib_m_1%20%3D%20fibonacci_lru%28m%20-%201%29%0A%0A%20%20%20%20if%20is_odd%3A%0A%20%20%20%20%20%20%20%20return%20fib_m_1%20**%202%20%2B%20fib_m%20**%202%0A%20%20%20%20return%202%20*%20fib_m%20*%20fib_m_1%20%2B%20fib_m%20**%202%0A%0Aassert%20fibonacci_lru%285%29%20%3D%3D%205%0Aassert%20fibonacci_lru%285%29%20%3D%3D%205%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_fast_double_fibonacci-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_fast_double_fibonacci.png }](/blog/images/recursion/memoized_fast_double_fibonacci.png)
 
 Memoization can also be applied to nested recursive functions such as the
@@ -991,6 +1002,8 @@ Memoization can also be applied to nested recursive functions such as the
 
 Now memoized (from 19 calls to 9):
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20functools%20import%20wraps%0Afrom%20typing%20import%20Callable,%20TypeVar,%20Any%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0A%0A%23%20With%20Scratch%20Implementation%0Adef%20memoize%28function%3A%20Callable%5B...,%20T%5D%29%20-%3E%20Callable%5B...,%20T%5D%3A%0A%20%20%20%20cache%3A%20dict%5Bstr,%20T%5D%20%3D%20%7B%7D%0A%0A%20%20%20%20%40wraps%28function%29%0A%20%20%20%20def%20wrapper%28*args,%20**kwargs%29%20-%3E%20T%3A%0A%20%20%20%20%20%20%20%20nonlocal%20cache%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20cacheable_args%20%3D%20str%28tuple%28sorted%28args%29%29%20%2B%20tuple%28sorted%28kwargs.items%28%29%29%29%29%0A%20%20%20%20%20%20%20%20if%20cacheable_args%20not%20in%20cache%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20cache%5Bcacheable_args%5D%20%3D%20function%28*args,%20**kwargs%29%0A%20%20%20%20%20%20%20%20return%20cache%5Bcacheable_args%5D%0A%0A%20%20%20%20return%20wrapper%0A%0A%0A%40memoize%0Adef%20hofstadter_g_memoize%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_g_memoize%28hofstadter_g_memoize%28n%20-%201%29%29%0A%0Aassert%20hofstadter_g_memoize%285%29%20%3D%3D%203%0Aassert%20hofstadter_g_memoize%285%29%20%3D%3D%203%0A%0A%0A%23%20With%20Functools%20Implementation%0Afrom%20functools%20import%20lru_cache%0A%0A%40lru_cache%28maxsize%3DNone%29%0Adef%20hofstadter_g_lru%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_g_lru%28hofstadter_g_lru%28n%20-%201%29%29%0A%0Aassert%20hofstadter_g_lru%285%29%20%3D%3D%203%0Aassert%20hofstadter_g_lru%285%29%20%3D%3D%203%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_hofstadter_g-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_hofstadter_g.png }](/blog/images/recursion/memoized_hofstadter_g.png)
 
 Or deeply nested recursive functions like the `hofstadter_h(3)`:
@@ -998,6 +1011,8 @@ Or deeply nested recursive functions like the `hofstadter_h(3)`:
 [![Recursive Hofstadter H]({static}images/recursion/recursive_hofstadter_h-thumbnail.png){: .b-lazy width=9794 data-src=/blog/images/recursion/recursive_hofstadter_h.png }](/blog/images/recursion/recursive_hofstadter_h.png)
 
 And now memoized (from 22 to 10 calls)
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20functools%20import%20wraps%0Afrom%20typing%20import%20Callable,%20TypeVar,%20Any%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0A%0A%23%20With%20Scratch%20Implementation%0Adef%20memoize%28function%3A%20Callable%5B...,%20T%5D%29%20-%3E%20Callable%5B...,%20T%5D%3A%0A%20%20%20%20cache%3A%20dict%5Bstr,%20T%5D%20%3D%20%7B%7D%0A%0A%20%20%20%20%40wraps%28function%29%0A%20%20%20%20def%20wrapper%28*args,%20**kwargs%29%20-%3E%20T%3A%0A%20%20%20%20%20%20%20%20nonlocal%20cache%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20cacheable_args%20%3D%20str%28tuple%28sorted%28args%29%29%20%2B%20tuple%28sorted%28kwargs.items%28%29%29%29%29%0A%20%20%20%20%20%20%20%20if%20cacheable_args%20not%20in%20cache%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20cache%5Bcacheable_args%5D%20%3D%20function%28*args,%20**kwargs%29%0A%20%20%20%20%20%20%20%20return%20cache%5Bcacheable_args%5D%0A%0A%20%20%20%20return%20wrapper%0A%0A%0A%40memoize%0Adef%20hofstadter_h_memoize%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_h_memoize%28hofstadter_h_memoize%28hofstadter_h_memoize%28n%20-%201%29%29%29%0A%0Aassert%20hofstadter_h_memoize%285%29%20%3D%3D%204%0Aassert%20hofstadter_h_memoize%285%29%20%3D%3D%204%0A%0A%0A%23%20With%20Functools%20Implementation%0Afrom%20functools%20import%20lru_cache%0A%0A%40lru_cache%28maxsize%3DNone%29%0Adef%20hofstadter_h_lru%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_h_lru%28hofstadter_h_lru%28hofstadter_h_lru%28n%20-%201%29%29%29%0A%0Aassert%20hofstadter_h_lru%285%29%20%3D%3D%204%0Aassert%20hofstadter_h_lru%285%29%20%3D%3D%204%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_hofstadter_h-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_hofstadter_h.png }](/blog/images/recursion/memoized_hofstadter_h.png)
 
@@ -1008,11 +1023,14 @@ The same applies to more complex functions like the Ackermann function with
 
 And now memoized (from 44 calls to 23):
 
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20functools%20import%20wraps%0Afrom%20typing%20import%20Callable,%20TypeVar,%20Any%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0A%0A%23%20With%20Scratch%20Implementation%0Adef%20memoize%28function%3A%20Callable%5B...,%20T%5D%29%20-%3E%20Callable%5B...,%20T%5D%3A%0A%20%20%20%20cache%3A%20dict%5Bstr,%20T%5D%20%3D%20%7B%7D%0A%0A%20%20%20%20%40wraps%28function%29%0A%20%20%20%20def%20wrapper%28*args,%20**kwargs%29%20-%3E%20T%3A%0A%20%20%20%20%20%20%20%20nonlocal%20cache%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20cacheable_args%20%3D%20str%28tuple%28sorted%28args%29%29%20%2B%20tuple%28sorted%28kwargs.items%28%29%29%29%29%0A%20%20%20%20%20%20%20%20if%20cacheable_args%20not%20in%20cache%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20cache%5Bcacheable_args%5D%20%3D%20function%28*args,%20**kwargs%29%0A%20%20%20%20%20%20%20%20return%20cache%5Bcacheable_args%5D%0A%0A%20%20%20%20return%20wrapper%0A%0A%0A%40memoize%0Adef%20ackermann_memoize%28m%3A%20int,%20n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20m%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20n%20%2B%201%0A%20%20%20%20if%20m%20%3E%200%20and%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20ackermann_memoize%28m%20-%201,%201%29%20%20%20%20%0A%20%20%20%20return%20ackermann_memoize%28m%20-%201,%20ackermann_memoize%28m,%20n%20-%201%29%29%0A%0Aassert%20ackermann_memoize%282,%202%29%20%3D%3D%207%0Aassert%20ackermann_memoize%282,%202%29%20%3D%3D%207%0A%0A%0A%23%20With%20Functools%20Implementation%0Afrom%20functools%20import%20lru_cache%0A%0A%40lru_cache%28maxsize%3DNone%29%0Adef%20ackermann_lru%28m%3A%20int,%20n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20m%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20n%20%2B%201%0A%20%20%20%20if%20m%20%3E%200%20and%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%20ackermann_lru%28m%20-%201,%201%29%20%20%20%20%0A%20%20%20%20return%20ackermann_lru%28m%20-%201,%20ackermann_lru%28m,%20n%20-%201%29%29%0A%0Aassert%20ackermann_lru%282,%202%29%20%3D%3D%207%0Aassert%20ackermann_lru%282,%202%29%20%3D%3D%207%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
+
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_ackermann-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_ackermann.png }](/blog/images/recursion/memoized_ackermann.png)
 
 
 Memoization can also be used for mutual recursive functions, the following
-examples show the mutual fibonacci-lucas recursion, the hofstadter female-male
+examples show the mutual fibonacci-lucas recursion and  the Hofstadter
+female-male
 
 
 Multi recursive fibonacci-lucas:
@@ -1020,6 +1038,8 @@ Multi recursive fibonacci-lucas:
 [![Mutual Recursive Fibonacci]({static}images/recursion/mutual_recursive_fibonacci-thumbnail.png){: .b-lazy width=5365 data-src=/blog/images/recursion/mutual_recursive_fibonacci.png }](/blog/images/recursion/mutual_recursive_fibonacci.png)
 
 And now memoized (from 26 to 13):
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20functools%20import%20wraps%0Afrom%20typing%20import%20Callable,%20TypeVar,%20Any%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0A%0A%23%20With%20Scratch%20Implementation%0Adef%20memoize%28function%3A%20Callable%5B...,%20T%5D%29%20-%3E%20Callable%5B...,%20T%5D%3A%0A%20%20%20%20cache%3A%20dict%5Bstr,%20T%5D%20%3D%20%7B%7D%0A%0A%20%20%20%20%40wraps%28function%29%0A%20%20%20%20def%20wrapper%28*args,%20**kwargs%29%20-%3E%20T%3A%0A%20%20%20%20%20%20%20%20nonlocal%20cache%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20cacheable_args%20%3D%20str%28tuple%28sorted%28args%29%29%20%2B%20tuple%28sorted%28kwargs.items%28%29%29%29%29%0A%20%20%20%20%20%20%20%20if%20cacheable_args%20not%20in%20cache%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20cache%5Bcacheable_args%5D%20%3D%20function%28*args,%20**kwargs%29%0A%20%20%20%20%20%20%20%20return%20cache%5Bcacheable_args%5D%0A%0A%20%20%20%20return%20wrapper%0A%0A%0A%40memoize%0Adef%20lucas_memoize%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%202%20*%20fibonacci_memoize%28n%29%20-%20fibonacci_memoize%28n-1%29%20%2B%20lucas_memoize%28n-2%29%0A%0A%40memoize%0Adef%20fibonacci_memoize%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci_memoize%28n-1%29%20%2B%20lucas_memoize%28n-1%29%29%20//%202%0A%0Aassert%20lucas_memoize%284%29%20%3D%3D%207%0Aassert%20lucas_memoize%284%29%20%3D%3D%207%0Aassert%20fibonacci_memoize%284%29%20%3D%3D%203%0Aassert%20fibonacci_memoize%284%29%20%3D%3D%203%0A%0A%0A%23%20With%20Functools%20Implementation%0Afrom%20functools%20import%20lru_cache%0A%0A%40lru_cache%28maxsize%3DNone%29%0Adef%20lucas_lru%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%202%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%202%20*%20fibonacci_lru%28n%29%20-%20fibonacci_lru%28n-1%29%20%2B%20lucas_lru%28n-2%29%0A%0A%40lru_cache%28maxsize%3DNone%29%0Adef%20fibonacci_lru%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20%28fibonacci_lru%28n-1%29%20%2B%20lucas_lru%28n-1%29%29%20//%202%0A%0Aassert%20lucas_lru%284%29%20%3D%3D%207%0Aassert%20lucas_lru%284%29%20%3D%3D%207%0Aassert%20fibonacci_lru%284%29%20%3D%3D%203%0Aassert%20fibonacci_lru%284%29%20%3D%3D%203%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_mutual_recursive_fibonacci-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_mutual_recursive_fibonacci.png }](/blog/images/recursion/memoized_mutual_recursive_fibonacci.png)
 
@@ -1029,6 +1049,8 @@ And the hofstadter female-male recursion:
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/mutual_recursive_hofstadter_female-thumbnail.png){: .b-lazy width=5290 data-src=/blog/images/recursion/mutual_recursive_hofstadter_female.png }](/blog/images/recursion/mutual_recursive_hofstadter_female.png)
 
 And now memoized (from 15 to 11 calls)
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20functools%20import%20wraps%0Afrom%20typing%20import%20Callable,%20TypeVar,%20Any%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0A%0A%23%20With%20Scratch%20Implementation%0Adef%20memoize%28function%3A%20Callable%5B...,%20T%5D%29%20-%3E%20Callable%5B...,%20T%5D%3A%0A%20%20%20%20cache%3A%20dict%5Bstr,%20T%5D%20%3D%20%7B%7D%0A%0A%20%20%20%20%40wraps%28function%29%0A%20%20%20%20def%20wrapper%28*args,%20**kwargs%29%20-%3E%20T%3A%0A%20%20%20%20%20%20%20%20nonlocal%20cache%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20cacheable_args%20%3D%20str%28tuple%28sorted%28args%29%29%20%2B%20tuple%28sorted%28kwargs.items%28%29%29%29%29%0A%20%20%20%20%20%20%20%20if%20cacheable_args%20not%20in%20cache%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20cache%5Bcacheable_args%5D%20%3D%20function%28*args,%20**kwargs%29%0A%20%20%20%20%20%20%20%20return%20cache%5Bcacheable_args%5D%0A%0A%20%20%20%20return%20wrapper%0A%0A%0A%40memoize%0Adef%20hofstadter_female_memoize%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20n%20-%20hofstadter_male_memoize%28hofstadter_female_memoize%28n%20-%201%29%29%0A%0A%40memoize%0Adef%20hofstadter_male_memoize%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_female_memoize%28hofstadter_male_memoize%28n%20-%201%29%29%0A%0Aassert%20hofstadter_female_memoize%284%29%20%3D%3D%203%0Aassert%20hofstadter_female_memoize%284%29%20%3D%3D%203%0Aassert%20hofstadter_male_memoize%284%29%20%3D%3D%202%0Aassert%20hofstadter_male_memoize%284%29%20%3D%3D%202%0A%0A%0A%23%20With%20Functools%20Implementation%0Afrom%20functools%20import%20lru_cache%0A%0A%40lru_cache%28maxsize%3DNone%29%0Adef%20hofstadter_female_lru%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20n%20-%20hofstadter_male_lru%28hofstadter_female_lru%28n%20-%201%29%29%0A%0A%40lru_cache%28maxsize%3DNone%29%0Adef%20hofstadter_male_lru%28n%3A%20int%29%20-%3E%20int%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20return%20n%20-%20hofstadter_female_lru%28hofstadter_male_lru%28n%20-%201%29%29%0A%0Aassert%20hofstadter_female_memoize%284%29%20%3D%3D%203%0Aassert%20hofstadter_female_memoize%284%29%20%3D%3D%203%0Aassert%20hofstadter_male_memoize%284%29%20%3D%3D%202%0Aassert%20hofstadter_male_memoize%284%29%20%3D%3D%202%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 [![Mutual Recursive Fibonacci Alternative]({static}images/recursion/memoized_hofstadter_female-thumbnail.png){: .b-lazy width=2125 data-src=/blog/images/recursion/memoized_hofstadter_female.png }](/blog/images/recursion/memoized_hofstadter_female.png)
 
@@ -1067,6 +1089,8 @@ The following is an example of how to implement the tail recursive Fibonacci
 using trampolining for `fibonacci(10000)` which would normally cause
 [`RecursionError`](https://docs.python.org/3/library/exceptions.html#RecursionError){:
 target="_blank"}.
+
+[Run Step by Step Online](https://pythontutor.com/visualize.html#code=from%20typing%20import%20TypeVar,%20Callable%0A%0AT%20%3D%20TypeVar%28%22T%22%29%0ATrampolineFunction%20%3D%20%22int%20%7C%20Callable%5B%5B%5D,%20int%20%7C%20TrampolineFunction%5D%22%0A%0Adef%20trampoline%28function%3A%20TrampolineFunction%29%20-%3E%20int%3A%0A%20%20%20%20if%20not%20callable%28function%29%3A%0A%20%20%20%20%20%20%20%20return%20function%0A%0A%20%20%20%20result%20%3D%20function%28%29%0A%20%20%20%20while%20callable%28result%29%3A%0A%20%20%20%20%20%20%20%20result%20%3D%20result%28%29%0A%20%20%20%20return%20result%0A%0A%0Adef%20fibonacci%28n%3A%20int,%20partial_result%3A%20int%20%3D%200,%20result%3A%20int%20%3D%201%29%20-%3E%20TrampolineFunction%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20if%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20result%0A%0A%20%20%20%20return%20lambda%3A%20fibonacci%28n-1,%20result,%20partial_result%2Bresult%29%0A%0Aassert%20trampoline%28fibonacci%2830%29%29%20%3D%3D%20832040%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){: target="_blank"}
 
 ```python
 from typing import TypeVar, Callable, TypeAlias
