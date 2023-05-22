@@ -19,6 +19,32 @@ call graph will be shown.
 
 <!-- PELICAN_END_SUMMARY -->
 
+Content covered in this post:
+
+- [An old friend: The Factorial](#an-old-friend-the-factorial)
+- [Recursion](#recursion)
+  - [Why Recursion?](#why-recursion)
+- [Direct vs Indirect Recursion](#direct-vs-indirect-recursion)
+- [Linear Recursion](#linear-recursion)
+  - [Tail Recursion](#tail-recursion)
+- [Multi Recursion](#multi-recursion)
+  - [General Non-Linear Recursion](#general-non-linear-recursion)
+  - [Tree Recursion](#tree-recursion)
+  - [Converting non-tree recursion into tree recursion](#converting-non-tree-recursion-into-tree-recursion)
+  - [Nested Recursion](#nested-recursion)
+  - [Triple Nested Recursion](#triple-nested-recursion)
+  - [Nested Recursion with more than one argument](#nested-recursion-with-more-than-one-argument)
+- [Indirect Recursion](#indirect-recursion)
+   - [Mutual Linear Recursion](#mutual-linear-recursion)
+   - [Mutual Multi Recursion](#mutual-multi-recursion)
+   - [Mutual Nested Recursion](#mutual-nested-recursion)
+   - [Mutual Triple Recursion](#mutual-triple-recursion)
+- [Recursion related techniques](#recursion-related-techniques)
+    - [Memoization](#memoization)
+    - [Memoization Examples](#memoization-examples)
+    - [Trampolining](#trampolining)
+    - [Call-By-Need](#call-by-need)
+- [Conclusion](#conclusion)
 
 ## An old friend: The Factorial
 
