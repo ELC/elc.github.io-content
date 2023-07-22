@@ -1,8 +1,11 @@
-Title: ANGEL - An oppinionated guide on how to learn programming (with Python
-examples) Date: 2022-01-14 Category: Programming Tags: Streamlit, Python, Github
-Slug: streamlit-multipage Authors: Ezequiel Leonardo Castaño Lang: en
-Headerimage:
-https://elc.github.io/blog/images/streamlit-mutipage/streamlit-mutipage_headerimage.png
+Title: ANGEL - An oppinionated guide on how to learn programming (focusing on Python) 
+Date: 2023-07-22
+Category: Programming
+Tags: Python, learning
+Slug: angel
+Authors: Ezequiel Leonardo Castaño
+Lang: en
+Headerimage: https://elc.github.io/blog/images/streamlit-mutipage/streamlit-mutipage_headerimage.png
 Status: draft
 
 <!-- PELICAN_BEGIN_SUMMARY -->
