@@ -1,4 +1,4 @@
-Title: ANGEL - An oppinionated guide on how to learn programming (focusing on Python) 
+Title: ANGEL - An Oppinionated Guide on how to Learn Programming (focusing on Python) 
 Date: 2023-07-22
 Category: Programming
 Tags: Python, learning
@@ -534,16 +534,21 @@ special competencies that may not be easily obtainable in other languages.
 
 The remaining of this article will focus on how to achieve competence, for that,
 consider the [Four Stages of
-Competence](https://www.wikiwand.com/en/Four%20stages%20of%20competence):
+Competence](https://www.wikiwand.com/en/Four%20stages%20of%20competence) plus
+some personal contributions:
 
-1. **Unconscious Incompetence**: one is unaware of programming and does not
-realize that it is a skill they can learn.
-1. **Conscious Incompetence**: one becomes aware of programming, but struggles
-to write code and recognizes their lack of proficiency.
-1. **Conscious Competence**: one gains programming skills through practice, but
-still needs to concentrate and think deliberately while coding.
-1. **Unconscious Competence**: Programming becomes second nature, and one can
-write code effortlessly, with deep knowledge and skill.
+1. **Unconscious Incompetence**: one is unaware of programming and does
+   notrealize that it is a skill they can learn.
+1. **Conscious Incompetence**: one becomes aware of programming, but strugglesto
+   write code and recognizes their lack of proficiency.
+1. **Conscious Competence**: one gains programming skills through practice,
+   butstill needs to concentrate and think deliberately while coding.
+1. **Unconscious Competence**: programming becomes second nature, and one
+   canwrite code effortlessly, with deep knowledge and skill.
+1. **Reflective Competence**: they identify their weaknesses and always try to
+   go outside of their comfort zone.
+1. **Replicative Competence**: they have a multiplicative effect on others
+   around them, they help other grow their level of competence exponentially.
 
 ## Unconscious Incompetence - Take Off
 
@@ -663,15 +668,53 @@ Most of the building happens at this stage, so this is the "Portfolio" stage. It
 is okay to try some experimental frameworks but the bulk of the building you be
 done should be in well stablished frameworks and tools.
 
-## Unconscious Competence - Research and Development
+## Unconscious Competence - Independence
 
 You have built so many projects that you know the steps by heart, it feels
 second nature and you do not have doubts about how things work the way they do.
 
-This is a risky position as it can cause stagnation, either willingly or
-unwillingly. Once you master something, you create a comfort zone around you and
-after all the effort you put it, it may present some friction to leave that
-zone.
+However, there is caveat, keeping onself at this level of competence requires
+uninterrupted practice, knowledge may last longer but competency rusts over
+time. This stage is also a risky position as it can cause stagnation, either
+willingly or unwillingly. Once one masters something, a create a comfort zone
+around is created and all the effort put in may become friction to move beyond.
+
+You can consider "Independent", you are most likely not a junior
+any more but maybe your comfort zone is quite limited, try to expand it little
+by little to include more topics. Look for a mentor that knows much more than
+you to give you advice, do not expect other people to invest time without
+compensation.
+
+This is a good moment to continue Top-Down and start incorporating Experimental
+learning. Nevertheless, this is the first "stable" stage, where one can sit back
+and just keep the status quo, depending on your context you may never be forced
+to move.
+
+A perfect example of this is experts in an old, unpopular yet still used
+language like COBOL, they are competent and independent and may never leave
+COBOL for as long as it is still use. But this situation is also fragile, the
+more one stays the same, the harder it will be to move to something different.
+
+Without continuous and conscious action, one's unconscious competence could fade
+into unconscious incompetence, like a developer specializing in Flash now
+realizing Flash is not used anywhere and migrating to alternative technologies
+is not trivial.
+
+Remember: Expertise is not a free ticket to rest on one's laurels.
+
+## Reflective Competence - Research and Development
+
+The original model of four stages of competences does not include a fifth stage
+but some authors proposed one called "Reflective Competence". This stage is when
+individuals not only possess a skill to the point where they can perform it
+effortlessly and automatically but also have the ability to reflect on their own
+performance and continuously improve.
+
+At this stage, one is aware and understands their own thought process, i.e.
+metacognition. They developed a metacompetency: proactiveness. The hability to
+self-assess oneself, take initiative, anticipate future needs, adapt in advance
+and actively seek feedback. This stage is the highest level of competency that
+one can achieve individually.
 
 In the technology world, change is always constant and to avoid getting
 outdated, I suggest always pushing yourself outside of your comfort zone but
@@ -692,11 +735,99 @@ Some examples:
 - You master your field's favourite library, try fixing some issues or develop
   new features
 
-You can consider "Competent and independent", you are most likely not a junior
-any more but maybe your comfort zone is quite limited, try to expand it little
-by little to include more topics. Look for a mentor that knows much more than
-you to give you advice, do not expect other people to invest time without
-compensation.
+People in this group can act with just some small pieces of information, an idea
+may be enough to spark the whole process and they can keep it burning. The
+industry usually call these individuals different names "Leaders", "Seniors",
+"Tech Leads", "Mentors/Coach" and so on.
+
+## Replicative Competence - Exponential Growth
+
+This stage is not formal and it is my personal contribution. Once an individual
+reaches Reflective Competence, there is only one way to continue growing:
+horizontally. This stage assumes one does not operate in a silo and has people
+around them.
+
+People at this stage not only can perpetually grow themselves but also foster an
+environment for efficient, engaging and motivating grow for everyone around
+them. 
+
+This involves several competencies that exceeds the technical side and may not
+be something desirable for everyone, as previously mentioned, not everyone wants
+to leave the IC role. These individuals are people who C.A.R.E.S
+
+C - Competence in the Domain: They are experts in the specific domain or skill
+they aim to multiply in others.
+
+A - Adaptive Communication: They have effective and adaptable communication
+skills, ensuring clear and relatable knowledge transfer.
+
+R - Relational Empathy: They build strong relationships and connect with others'
+needs and emotions.
+
+E - Encouraging Patience: They cultivate patience and persistence to support and
+guide individuals through their learning journey, even during challenging
+moments.
+
+S - Supportive Coaching: They provide constructive feedback, coaching, and
+mentorship, fostering growth and critical thinking in others.
+
+By having a single individual at this level on a team, they make it possible for
+the other team members to grow at a rate which would not have been possible
+otherwise. They enable others and by doing so produce "Exponential Growth".
+
+These is the stage any person aspiring for a leadership possition should aim,
+people at this level are influential, they lead by example and they create a
+subculture in an organization. They are sought and they actively look for
+opportunities, not just for them, but for people around them. They are a never
+ending fountain of knowledge and experience.
+
+## Self-Assessment and Criticism
+
+It would be ironical that the whole article talks about self-assessing oneself
+without providing an example of such excercise. The roamap for the different
+levels of competence presented is incomplete and protays an image of reality
+that is quite different from what actually happens.
+
+There are two main criticism of these approach, but I encourage the reader to
+also provide their feedback and we can expand this section further:
+
+- Beginners do not care about X, Y, Z level of competence, they just want to
+  gain the skill and that is it.
+- This is utopian and unrealistic and there are many external factors not
+  considered in this article.
+
+## Begineers do not Care
+
+The fact that beginners may or may not care is subjective. However, I
+anticipated at the beginning, this is a process every learner should own. Going
+for pre-backed solutions is not owning the process.
+
+The content presented was thought for programming and Python, but most of it is
+applicable to any field. That being said, there is indeed one assumption, this
+content is for people who want a plan and not just a quick-fix solution or just
+the inmediate next step. It is for people who sit down and thinks in advance and
+want to have a goal long term, something they could aim, even if it is far away.
+
+I recognize the value deliver by this content is not a short-term gain, it
+focuses on long-term processes and thus has a long-term return. It is meant to
+be something one slowly internalizes and incorporates into their own learning
+process.
+
+## This is Utopian and Unrealistic
+
+People may argue that this is written as if the only thing one does is learning,
+there is work, family, travel, and any other number of things a person does in
+life. There are also negative things than impedes progress such as toxic
+cultures, economic instability, family problems, etc.
+
+All of the previous is true, and it is a fair point, the approach is flawed as
+any other guide one may find online. It is impossible to tackle the problem for
+all possible angles, but, if we have a goal, albeit it idealistic, we can make
+adjustments to our own situation to cope with the challenges and adapt, in the
+end, that is a competence worth having.
+
+The real world is not only rush, it is chaotic, but having in mind some order
+about what loose next steps are, could help us weather the storm.
 
 ## Closing Thoughts
 
@@ -704,7 +835,9 @@ There are no perfect resources, everyone learns at different rates and with
 different approaches. Beware of your know strenghts and weaknesses when learning
 and create a roadmap that is compatible and comfortable to your style.
 
-Do not trust too much what you see online, but also avoid going on your own
-adventure unless you know what you are doing.
+Do not trust too much what you see online (including this article), but also
+avoid going on your own adventure unless you know what you are doing. Always
+question yourself and look for feedback from people more experience than you.
 
-
+Exposed yourself to things that contradicts your beliefs on a regular basis,
+otherwise you may experience confirmation bias.
