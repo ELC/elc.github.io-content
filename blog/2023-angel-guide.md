@@ -8,7 +8,7 @@ Lang: en
 Headerimage: https://elc.github.io/blog/images/angel-guide/angel-guide-headerimage.png
 Status: draft
 
-[![Article Header Image]({static}images/angel-guide/angel-guide-headerimage-thumbnail.png){: .b-lazy width=1444 data-src=/blog/images/angel-guide/angel-guide-headerimage.png }](/blog/images/angel-guide/angel-guide-headerimage.png)
+[![Article Header Image]({static}images/angel-guide/angel-guide-headerimage-thumbnail.png){: .b-lazy width=1280 data-src=/blog/images/angel-guide/angel-guide-headerimage.png }](/blog/images/angel-guide/angel-guide-headerimage.png)
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
@@ -593,27 +593,27 @@ consider the [Four Stages of
 Competence](https://www.wikiwand.com/en/Four%20stages%20of%20competence){: target="_blank"}  plus
 some personal contributions:
 
-1. Unconscious Incompetence: one is unaware of programming and does not realize
+1. **Unconscious Incompetence**: one is unaware of programming and does not realize
    that it is a learnable skill. They might not even recognize the significance
    of programming in today's world.
-2. Conscious Incompetence: individuals become aware of programming and its
+2. **Conscious Incompetence**: individuals become aware of programming and its
    importance. However, they struggle to write code and acknowledge their lack
    of proficiency. They are conscious of their limitations and the need to
    improve their skills.
-3. Conscious Competence: they can write code, but it requires concentration and
+3. **Conscious Competence**: they can write code, but it requires concentration and
    deliberate thinking. They are competent programmers, but the process still
    demands effort and focus.
-4. Unconscious Competence: programming becomes second nature to learners. They
+4. **Unconscious Competence**: programming becomes second nature to learners. They
    can write code effortlessly, with deep knowledge and skill. Their proficiency
    allows them to navigate complex problems seamlessly.
 
 Additional Contributions:
 
-5. Reflective Competence: Learners at this stage continually evaluate their
+5. **Reflective Competence**: Learners at this stage continually evaluate their
    skills and actively seek to identify their weaknesses. They are self-aware
    and strive to go beyond their comfort zone, taking on challenging projects
    and seeking opportunities for growth and improvement.
-6. Replicative Competence: Individuals who have achieved replicative competence
+6. **Replicative Competence**: Individuals who have achieved replicative competence
    have a profound impact on those around them. They become mentors and role
    models, helping others grow their level of competence exponentially. Their
    expertise and support empower others to excel in their learning journeys.
