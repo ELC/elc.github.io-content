@@ -5,8 +5,10 @@ Tags: Python, learning
 Slug: angel
 Authors: Ezequiel Leonardo Castaño
 Lang: en
-Headerimage: https://elc.github.io/blog/images/streamlit-mutipage/streamlit-mutipage_headerimage.png
+Headerimage: https://elc.github.io/blog/images/angel-guide/angel-guide-headerimage.png
 Status: draft
+
+[![Article Header Image]({static}images/angel-guide/angel-guide-headerimage-thumbnail.png){: .b-lazy width=1444 data-src=/blog/images/angel-guide/angel-guide-headerimage.png }](/blog/images/angel-guide/angel-guide-headerimage.png)
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
@@ -107,7 +109,7 @@ the job done.
 For instance, individuals with a background in the stock market may be
 interested in learning Python for algorithmic trading, as highlighted in this
 [FreeCodeCamp Course with 2M
-views](https://www.youtube.com/watch?v=xfzGZB4HhEE{: target="_blank"} .
+views](https://www.youtube.com/watch?v=xfzGZB4HhEE){: target="_blank"} .
 
 These learners typically possess expertise in their respective fields but may
 have limited or no programming background. They are focused on achieving
