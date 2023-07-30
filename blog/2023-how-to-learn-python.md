@@ -10,251 +10,279 @@ Status: draft
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
-Courses and trainings that promises fast results are on the rise nowadays,
-however it is not always clear how to filter the noise of the plethora of online
-resources. This is ANGEL, which stands for "ANGEL's Not a Guide to Effortlessly
-Learning". The goal is to show the reader an approach towards the learning
-experience in programming. Examples are specific to Python but the content could
-be applied to any programming language/framework.
+Courses and pieces of training claiming to deliver rapid results have become
+increasingly popular these days. Nonetheless, amidst the abundance of online
+resources, it can be challenging to distinguish valuable ones from the noise.
+Enter ANGEL, which stands for "ANGEL's Not a Guide to Effortlessly Learning."
+This guide presents readers with a practical approach to the programming
+learning experience. While the examples will be specific to Python, the reader
+can apply the core content to any programming language or framework.
 
 <!-- PELICAN_END_SUMMARY -->
 
-This article is written in a way that may help the two potential readers, I will
-use the "learner" as the protagonist, in a more impersonal way but, if you are a
-learner or someone wanting to learn, YOU are the learner, if you are a teacher,
-the learner represents YOUR learners. This may sound trivial, but writing for
-both audiences means that they may be resources that are more oriented to
-learners and other more oriented to teachers.
+Indeed, writing with both potential readers in mind is essential to ensure that
+the content resonates with learners and teachers alike. In this article, we'll
+address "the learner" as the protagonist in a more impersonal manner. Whenever
+"the learner" is mentioned, it refers to YOU if you are someone eager to learn,
+and if you are a teacher, "the learner" represents YOUR learners. By striking
+this balance, we can provide valuable insights and guidance to everyone involved
+in the learning process.
 
-Programming is not an innate hability, it is a skill one has to develop. It is
-not impossible to learn but [neither is it something everyone should
-know](https://www.youtube.com/watch?v=EFwa5Owp0-k). This guide is a meta
-analysis from a angel's point of view (pun intended), **there are no precise
-resources or a specific order of topics to cover**, instead it focuses on the
-learning process itself, giving some tips to avoid frustration, keep engagement
-and provide a framework for progression.
+Programming is not an innate ability but rather a skill that requires deliberate
+development. Although not impossible to learn, it may not be [necessary or
+suitable for everyone](https://www.youtube.com/watch?v=EFwa5Owp0-k){: target="_blank"}. This guide
+takes a meta-analysis approach from an "angel's" point of view (pun intended).
+Rather than providing a rigid set of precise resources or a specific order of
+topics, this guide concentrates on the learning journey. It offers valuable
+insights and tips to help learners avoid frustration, maintain engagement, and
+establish a clear framework for progression.
 
-There are some key ideas that should be taken into consideration while reading:
 
-- **Ownership**: the learning process belongs to the learner, no one will be
-  able to help them with "learning to learn" better than themselves. Teachers
-  and mentors are of course needed but they cannot guide you the learner through
-  the process of discovering how they best learn. It is important that the most
-  interested person in improving the learner experience is the learner
-  themselves.
-- **Overshooting and Undershooting**: these come from control theory, in
-  practical terms, it means that being too strict or too loose may hinder the
-  learning process. It is important to understand the process, advantages and
-  disadvantages, however big deviations could lead to uncharted territory and
-  make things more challenging than they may be. The learner should  try new
-  things, but always in a controlled way, do explore but avoid chaos.
-- **Same Destination**: if one is following a roadmap to learn something, this
-  does not mean that everyone will follow the same path. Diversity is ubiquous
-  in learning and one should not underestimate or overestimate other learners
-  just because they learn in a different way, shape or form. At the end of the
-  day, with enough time and dedication everyone will reach a comparable level,
-  although personal objetives may lead them to slightly different outcomes. 
+Some key ideas should be taken into consideration while reading:
 
-The post is organized as follows:
+- **Ownership**: The learning process belongs to the learner. No one can guide
+  them better in "learning to learn" than themselves. While teachers and mentors
+  are valuable sources of support and guidance, the learner must take charge of
+  discovering how they learn best, being actively involved and interested in
+  shaping their learning process to make it more effective and enjoyable.
+- **Overshooting and Undershooting**:  drawing from control theory, in practical
+  terms, it means that Being too strict or too lax in one's approach can hinder
+  progress. While understanding the advantages and disadvantages of different
+  method is vital, excessively deviating from a structured approach may lead to
+  confusion and challenges. The learner should be open to exploring new things
+  in a controlled and measured way while avoiding chaos.
+- **Same Destination**: when following a roadmap to learn something, it's
+  crucial to recognize that not everyone will take the same path. Diversity in
+  learning styles and methods is natural and should be embraced. Each learner's
+  unique approach doesn't necessarily indicate superiority or inferiority in
+  learning ability. With enough time and dedication, everyone can achieve a
+  comparable level of proficiency, although individual objectives may lead to
+  slightly different outcomes. 
 
-- Learner profiles: background information and personal goals.
-- Learning approaches: how content is structured and organized.
-- Thinking style: how data is processed and information is generated.
-- Learning material: considerations when choosing material.
-- Roadmap: four stages to become a competent and independent programmer.
-- Closing Thoughts: conclusions, next steps and useful resources
+The sections in this article are thoughtfully structured as follows:
 
-**SPOILER ALERT**: If you are looking for a fast guide, or a learn X in Y
-minutes, this post may not be for you, there are no TL;DR, summaries or
-skippable sections. This guide will only benefit those who are willing to spend
-time reading it thoroughly.
+
+- Learner Profiles: This section provides background information about the
+  learners, including their previous experiences and personal goals related to
+  programming.
+- Learning Approaches: Here, the post explores how the content is structured and
+  organized, potentially outlining different learning paths or methodologies.
+- Thinking Style: This section delves into how learners process information and
+  generate insights, which can impact their learning experience.
+- Learning Material: Considerations for selecting appropriate learning
+  materials. The quality and relevance of the resources chosen can significantly
+  impact the learning journey.
+- Roadmap: This roadmap serves as a clear path to follow, highlighting stages
+  for learners to progress steadily in their programming competence.
+- Closing Thoughts:  It wraps up the guide, giving learners a sense of direction
+  and motivation to continue their learning journey.
+
+**SPOILER ALERT**: It's essential to note that this guide isn't a quick and
+superficial "Learn X in Y minutes" type of resource. There are no TL;DR,
+summaries, or skippable sections. This post is thought for those genuinely
+invested and wanting to thoroughly read and absorb the content. 
 
 ## Learner Profiles
 
-People decide to learn programming for different reason and with different
-backgrounds. Understanding and adjusting expectation is important to ensure a
-proper roadmap to acquire the desired knowledge.
+Individuals embark on learning programming for various reasons and bring diverse
+backgrounds to the table. Acknowledging these differences and adjusting
+expectations is vital to create a roadmap that facilitates effective knowledge
+acquisition.
 
-The following sections will describe some typical learner stereotypes. They are
-not accurate and definitely do not include the wide variety and diverty of
-profiles but it is a fair simplification to plan and organize.
+Below, some typical learner stereotypes will be examined. While it's crucial to
+recognize that these stereotypes are not entirely accurate and may not encompass
+the full breadth of learner profiles, they provide a fair simplification that
+allows for better planning and organization.
 
 ## Other Field Professional
 
-Learners coming from finance, biology, marketing or any non-IT field, may be
-interested in learning programming or Python in particular to enhance their
-professional skills. They typically have specific goals in mind, such as
-automating repetitive tasks, data analysis, or building applications relevant to
-their domain. 
+Learners from diverse fields like finance, biology, marketing, or any non-IT
+domain, often seek to learn programming, particularly Python, to enhance their
+skill sets. Their motivation stems from specific goals, such as automating
+repetitive tasks, conducting data analysis, or developing applications relevant
+to their respective domains. While they might not prioritize high-quality code,
+their main objective is to achieve efficient and effective solutions that get
+the job done.
 
-For instance, someone with stocks market background knowledge may want to learn
-Python for algorithmic trading. As this [FreeCodeCamp Course with 2M
-views](https://www.youtube.com/watch?v=xfzGZB4HhEE) proposes.
+For instance, individuals with a background in the stock market may be
+interested in learning Python for algorithmic trading, as highlighted in this
+[FreeCodeCamp Course with 2M
+views](https://www.youtube.com/watch?v=xfzGZB4HhEE{: target="_blank"} .
 
-They usually have expertise in their fields, with little or no programming
-background. They are results-oriented and do not necessarily want high quality
-code, just something that will have the job done.
-
-Python is particularly useful for those with this profile, as it can be seen in
-the [PyData Conferences](https://www.youtube.com/user/PyDataTV), many
-professional from non-IT fields use Python on a daily basis.
+These learners typically possess expertise in their respective fields but may
+have limited or no programming background. They are focused on achieving
+tangible results and may prioritize functionality over writing high-quality
+code. [PyData Conferences](https://www.youtube.com/user/PyDataTV){: target="_blank"}  are a
+testament to the widespread adoption of Python among learners  from non-IT
+fields, where many professionals showcase how they employ Python as an effective
+tool in their daily work.
 
 ## Tinkerers
 
-Python attracts learners who are curious and enjoy experimenting with code.
-These learners may engage in personal projects, create utilities, or explore
-Python's potential for creative expression. 
+Python has a magnetic appeal for learners who have a tinkering spirit and love
+to experiment with code. These learners are naturally curious and enjoy the
+process of experimenting with code, embarking on personal projects, creating
+utilities, and exploring Python's vast potential for creative expression.
 
-An example of this kind is someone who wants to learn Python to automate
-something on their home using Raspberry PIs and domotics. As this [Sentdex Guide
-with 500K
-views](https://www.youtube.com/playlist?list=PLQVvvaa0QuDesV8WWHLLXW_avmTzHmJLv)
-shows.
+A prime example of this kind of learner is someone who aims to learn Python to
+automate tasks in their home using Raspberry Pi and delve into the world of
+domotics, as showcased in the [Sentdex Guide with 500K
+views](https://www.youtube.com/playlist?list=PLQVvvaa0QuDesV8WWHLLXW_avmTzHmJLv){: target="_blank"} .
  
-They like to learn what they are doing, however they will not deepen their
-knowledge on the theory side, they usually test several solutions and look for
-performance. They want to understand the code even if it is just superficially.
+While they are keen on understanding what they are doing, they might not
+necessarily delve deeply into the theoretical aspects of programming. Instead,
+the focus lies on testing multiple solutions and optimizing for performance.
+They prefer practical and tangible outcomes rather than diving into the
+intricacies of the underlying algorithms.
 
-## Career Switchers / Levearage Seeker
+## Career Switchers / Leverage Seeker
 
-These are learners who want to change their career focus, they may or may not
-come from a programming background and usually look for leverage, how to
-maximize returns with low/minimal effort.
+These learners want to transition to a new career as their primary goal, often
+utilizing programming as leverage to achieve this change. They may or may not
+have a background in programming but are especially interested in maximizing
+returns with minimal effort.
 
-An example of this kind is someone who works with a technology that feels
-lock-in and wants to change their job or company by using something like Python.
-As this [FreeCodeCamp Course with 40M
-views](https://www.youtube.com/watch?v=rfscVS0vtbw) shows
+An example could be someone feeling locked into their current job or career
+path. They are not entirely comfortable with their daily job and seek an exit
+strategy. As a result, they are often looking for efficient and rapid ways to
+acquire the necessary programming skills that can open new opportunities. As
+this [FreeCodeCamp Course with 40M
+views](https://www.youtube.com/watch?v=rfscVS0vtbw){: target="_blank"}  shows
 
-Although not always, these people are often not confortable doing their daily
-job and look for a change, some may want to spend some time but most will look
-for a quick exit. They usually do not want to learn anything that will not yield
-immediate benefit in interviews or a raise in their paycheck.
-
-A typical subtype is the high school / college student who only wants to learn
-what is needed to pass an exam.
+A typical subtype within this category is the high school or college student who
+solely wants to learn what is needed to pass an exam or fulfill specific
+academic requirements. Their focus is on attaining the necessary skills to
+achieve academic success.
 
 ## Theorists / Scholars
 
-People with Computer Science or similar background that want (or must) learn
-Python to implement algorithms, data structures and focuses a lot on code
-analysis, such as time and space complexity.
+Theorists and scholars, often coming from a Computer Science or related
+background, approach learning Python with a specific purpose – to implement
+algorithms and data structures with a strong emphasis on code analysis,
+particularly time and space complexity.
 
-An cannonical example is the college student attending and Algorithms and Data
-Structures class or someone working in research on that field. As this [MIT
-Course with 5M
-views](https://www.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb)
-demonstrates.
+A classic example of this type of learner is a college student attending an
+Algorithms and Data Structures class or someone involved in research within this
+field. For instance, this [MIT Course with 5M
+views](https://www.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb){: target="_blank"} .
 
-They have usually a narrow view about code, they focus about performance,
-correctness and theoretic analysis. They do not usually care about what is
-"idiomatic" or how a software project would be managed. Their focus is
-maximazing any given piece of code.
+Theorists and scholars typically have a narrow perspective on code, emphasizing
+performance, correctness, and theoretical analysis. They are less concerned with
+"idiomatic" or conventional coding practices and may not prioritize aspects
+related to software project management. Instead, they focus on maximizing the
+efficiency and effectiveness of individual pieces of code.
 
 ## Professional Developer
 
-They work with Python or other programming languages and have software
-development interest. They see Python as another programming language that have
-its uses and may provide a benefit in certain scenarios.
+Professional developers who work with Python or other programming languages
+bring a wealth of experience and software development knowledge to the table.
+For them, Python is another valuable tool in their arsenal that can be
+beneficial in specific scenarios and alongside other languages.
 
-One example could be someone who learnt Python but want to dig deeper into
-design patterns to make their code more robust. As this [Arjan's Software Design
-Playlist with 250K
-views](https://www.youtube.com/playlist?list=PLC0nd42SBTaNuP4iB4L6SJlMaHE71FG6N).
+An exemplary case of this type of learner is someone who has already learned
+Python but is now looking to deepen their understanding of design patterns to
+enhance the robustness of their code. As this [Arjan's Software Design Playlist
+with 250K views
+shows](https://www.youtube.com/playlist?list=PLC0nd42SBTaNuP4iB4L6SJlMaHE71FG6N){: target="_blank"} .
 
-They have luggage from their background and usually do not adapt to Python's
-"way of doing things" but their strive for quality in their code and have a
-product-oriented approach.
+These learners often come with a set of pre-existing skills and practices from
+their background in software development. As a result, they might not fully
+embrace Python's "way of doing things," but they are dedicated to maintaining
+high-quality code and adopting a product-oriented approach.
 
 ## Learning approaches
 
-Independently of the learner profile, courses have their own style and approach,
-which may or may not be compatible with everyone. This sections discusses three
-of the most typical learning approaches available online.
+Learning approaches can vary widely across available resources, and not all
+styles may be suitable for every learner, regardless of their profile. In this
+section, we'll explore three of the most typical learning approaches:
 
 ## Bottom-Up
 
-This strategy start from the foundations, teaching how with a lot of building
-blocks one can build something bigger.
+The Bottom-Up learning strategy is characterized by starting from foundational
+concepts and gradually building upon them to understand more complex ideas. This
+approach breaks down concepts into smaller, easy-to-digest pieces, emphasizing a
+solid foundation before tackling more advanced topics.
 
 ### Pros
 
-- It gives a solid foundation one can trust. Since the smaller pieces are
-  well-understood, there are only few things that can go wrong, debugging is
-  usually easier and the confidence in one's own solution is high.
-- It focuses on easy-to-digest bits, so everything is well understood.
-- It builds new knowledge based on previously taught material.
-- Gives a feeling of continuity and progression.
+- Solid Foundation: Learners gain a reliable and solid foundation in
+  programming. By understanding the smaller building blocks, they can construct
+  more significant and complex solutions.
+- Easy-to-Digest: Focusing on manageable and easy-to-understand bits ensures
+  learners grasp the fundamentals thoroughly, preventing information overload.
+- Progressive Learning: New knowledge is built upon previously taught material,
+  creating a sense of continuity and progression in the learning journey.
 
 ### Cons
 
-- Takes time to see tangible results. Most of the time is dedicated towards
-  learning the basics and the building blocks, that means that even after a
-  couple of months the learner may render their learning experience useless
-  since they did not "build anything".
-- One can be specially susceptible to a strong [impostor syndrome](#MISSING).
-  Things like "I never built anything, I just know the building blocks" is a
-  typical way of thinking for learners following this approach. This
-  considerable overestimates the complexity of the problem.
-- Most of the "successes" are independent parts and it is hard to see the big
-  picture.
-- It usually involves start from scratch, which is unrealistic as one could
-  always find a similar enough example to start working from.
-- Knowledge is usually fragmented and could hinder long-term retention is not
+- Time to Tangible Results: The emphasis on learning basics and building blocks
+  may delay seeing tangible results or practical applications, leading to
+  frustration or an unproductive sensation.
+- Impostor Syndrome: Learners may develop [impostor
+  syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome){: target="_blank"} , feeling that they
+  only know the building blocks and haven't built anything substantial,
+  underestimating their capabilities.
+- Fragmented Knowledge: The focus on independent parts can hinder learners from
+  seeing the big picture and understanding how different concepts relate.
+- Start from Scratch: This approach often involves starting from scratch, which
+  may not align with real-world scenarios where learners might work with
+  existing codebases.
+- Long-Term Retention: As learners progress through individual components, their
+  knowledge can become fragmented and hinder long-term retention if not
   periodically reviewed.
 
 ### Example
 
-Most of the guides and tutorials online operate in this fashion, universities
-usually follow this pattern as well, specially if they focus on research. The
-cannonical example is teaching variables, then control structures, then data
-structures and then solving larger problems re-using previously taught concepts.
+Most guides, tutorials, and even university courses often follow the bottom-up
+learning approach. They start by teaching foundational concepts such as
+variables, control structures, and data structures, and then progressively move
+to solving larger problems by reusing the previously taught concepts.
 
-Proponents would say "You cannot start with X unless you cover W, Y, Z in detail
-first."
+Proponents would say "You cannot start with X unless you cover W, Y, and Z in
+detail first."
 
 Detractor would say one may be "Missing the forest for the trees".
 
 ## Top-Down
 
-This approaches focuses on "The Big Picture", make something work even if you
-don't understand how fully, and then work from there.
+The top-down learning approach focuses on starting with the "big picture" and
+making something work even if the learner doesn't fully understand all the
+underlying details. From there, they build on the working solution and delve
+into the specifics.
 
 ### Pros
 
-- It avoid excessive frustration. Specially for begineers, the errors one faces
-  are usually trivial, some syntax errors, wrong operators and such. In this
-  approach one generally starts with a known solution so these types of errors
-  are minimized
-- It provides a "working solution" relatively fast and with all components
-  working
-- It has a natural project-based approach, with frequenty resonates with
-  learners.
-- It gives the learner a database of examples they can use in the future,
-  reducing the need for long-term recall.
+- Avoiding Excessive Frustration: it helps avoid excessive frustration as
+  learners start with a known solution, reducing trivial errors like syntax
+  mistakes or wrong operators.
+- Fast Working Solution: Learners can achieve a functional result relatively
+  quickly, gaining a sense of accomplishment early on.
+- Project-Based Approach: The top-down approach naturally adopts a project-based
+  learning style, resonating well with many learners who prefer practical,
+  hands-on experiences.
+- Database of Examples: By starting with working solutions, learners build a
+  database of examples that can be leveraged in future projects, reducing the
+  need for extensive long-term recall.
 
 ### Cons
 
-- One may be specially susceptible to a strong [Dunning-Krugger
-  Effect](https://www.youtube.com/watch?v=kcfRe15I47I). Thinking that since the
-  solution worked from the start, one understands how and overestimates their
-  competence. This also applies to the teachers, "if the learners were able to
-  do X, they sure are able to do Z" is not always true in a full top-down
-  approach.
-- It uses knowledge from different places and includes many concepts at once
-  that the learner may not have been exposed to.
-- Troubleshooting becomes difficult for the student when left on their own, as
-  they may not have the tools to explore why and how errors happened.
-- Since everything is a project with some boilerplate already fill in, it may be
-  difficult for the learner to start something from scratch.
-- Sometimes concepts may be oversimplified hiding the complexity of the topic,
-  when the learner deviates from the taught path, all those complexities may be
-  daunting.
+- [Dunning-Krugger Effect](https://www.youtube.com/watch?v=kcfRe15I47I){: target="_blank"} :
+  Learners may be susceptible to overestimating their competence, believing they
+  understand more than they do, leading to a false sense of mastery.
+- Difficulty in Troubleshooting: When faced with errors or issues, learners may
+  struggle to troubleshoot effectively, lacking the foundational knowledge to
+  explore the reasons behind them.
+- Starting from Scratch: Learners might experience challenges when starting a
+  project from scratch, as they have accustomed to pre-filled boilerplate code
+  during the initial phase.
+- Oversimplification of Concepts: In some cases, concepts may be oversimplified,
+  hiding their true complexities. When learners deviate too much, they may
+  encounter daunting intricacies.
 
 ### Example
 
-One of the most prominent resources in this space is [FastAI's Practical Deep
-Learning for Coders](https://course.fast.ai/). 
+A prominent resource that follows the top-down approach is [FastAI's Practical
+Deep Learning for Coders](https://course.fast.ai/){: target="_blank"} . 
 
 Proponents would say:
 
@@ -265,42 +293,52 @@ Detractor would say one may be "Ignoring the devil in the details".
 
 ## Experimental
 
-This is a try and error approach, it tries to make some specific solution work,
-without caring too much about other solutions or how the building blocks
-interact.
+The experimental learning approach is characterized by a trial-and-error
+mindset. Learners focus on making a specific solution work without overly
+concerning themselves with alternative approaches or how individual building
+blocks interact.
 
 ### Pros
 
-- It creates domain expertise as many paths are being explored.
-- Consolidates learning by hands-on experience.
-- Prevents Dunning-Kruger effect by facing errors multiple times.
-- Prevents Impostor Syndrom because one faces failure and success multiple
-  tymes.
-- Creates a strong reinforcement towards similar problems in the future. One can
-  recall how a problem was solved much faster.
+- Domain Expertise: The experimental approach allows learners to explore
+  multiple paths, creating domain-specific expertise in the process.
+- Hands-On Learning: Learners consolidate their knowledge through hands-on
+  experience, gaining practical insights into problem-solving.
+- Avoiding Dunning-Kruger Effect: By facing errors and challenges multiple
+  times, learners avoid the Dunning-Kruger effect and develop a more realistic
+  assessment of their skills.
+- Overcoming Impostor Syndrome: Encountering both failures and successes
+  reinforces learners' confidence, preventing impostor syndrome.
+- Reinforcement and Faster Recall: This approach strengthens learners'
+  understanding of solutions for similar problems. They can recall how certain
+  problems were solved more efficiently in the future.
 
 ### Cons
 
-- It may take an incredible amount of time. Trying different things out.
-- The knowledge acquired may be too domain specific or unapplicable to other
-  areas.
-- The knowledge acquired could be highly fragmented. The pieces may come
-  together for this particular solution but understanding their use in other
-  domains may not be clear.
-- Creates a strong bias towards past solutions. Since many hours were spent
-  trying to solve a particular problem, one may prematurely discard options that
-  were dismissed to solve the initial problem but that could work in other
-  problems.
+- Time-Consuming: The experimental approach can be time-consuming, as learners
+  try out different approaches and solutions.
+- Domain-Specific Knowledge: The knowledge acquired through experimentation may
+  be highly domain-specific and not easily applicable to other areas.
+- Fragmented Knowledge: Learners may end up with fragmented knowledge,
+  understanding how pieces fit together for specific solutions but struggling to
+  apply them in different contexts.
+- Bias Towards Past Solutions: Having invested many hours in trying to solve a
+  particular problem, learners might prematurely dismiss options that were
+  previously discarded, limiting their exploration of alternative solutions.
 
 ### Example
 
-One Youtube channel that usually goes this route is the [Stuff Made
-Here](https://www.youtube.com/@StuffMadeHere), the problem is new, previous
-solutions are suboptimal, so many attemps are done in order to gain experience
-and understand how to approach the problem. This channel is particularly useful
-because it combines both software and hardware. 
+One example of the experimental learning approach can be found in the YouTube
+channel ["Stuff Made Here"](https://www.youtube.com/@StuffMadeHere){: target="_blank"} .This channel
+tackles novel problems where previous solutions are suboptimal, and the creator
+explores multiple attempts to gain experience and refine the approach. This
+channel effectively combines software and hardware aspects, making it a valuable
+resource for hands-on learning.
 
-Another example is Hackathons, which use this approach heavily.
+Another scenario where the experimental approach is commonly used is in
+hackathons. Participants often explore different solutions and experiment with
+various technologies to find the most suitable and innovative solutions within a
+short timeframe.
 
 Proponents would say "You just need to sit down and focus on it until it works".
 
@@ -308,77 +346,102 @@ Detractor would say one could be "A one-trick pony".
 
 ## Thinking Style
 
-People process information differently, and this affects the way in which they
-learn and prefer information to be presented.
+Understanding the thinking style of learners is crucial in presenting
+information in a way that resonates with them and enhances their learning
+experience. People can be categorized into two main thinking styles:
 
-People who prefer to break down complex information into details, smaller
-subgroups, are known as analytic thinkers. Conversely, those who find it easier
-to see the grand scheme at once and consider the information as a whole, are
-called holistic thinkers.
+- **Analytic Thinkers**: These individuals prefer to break down complex
+  information into smaller, more manageable details and subgroups. They excel at
+  analyzing and dissecting concepts to understand their intricacies thoroughly.
+  They often appreciate a bottom-up learning approach, where they start with
+  foundational concepts and gradually build a comprehensive understanding.
 
-A similar categorization can be done regarding information organization
-organized. Those who prefer taxonomies, that is, every concep belongs to a
-group, that group belongs to a broader group and so on, like files in a
-directory structure. Furthermore, those who thinks of concepts as independent
-ideas that are interconnected, like social relationships. The first group is
-called hierarchical thinkers and the second as networked thinkers.
+- **Holistic Thinkers**: Holistic thinkers, on the other hand, find it easier to
+  see the grand scheme of things at once. They prefer to see how various
+  concepts are interconnected and how they create a cohesive structure. For
+  holistic thinkers, a top-down learning approach, starting with an overview and
+  then delving into specifics, may be more appealing.
 
-This is relevant because the way some authors present information may resonate
-more with one style or the other, as the author itself could be leaning towards
-one type. Usually holistic thinkers will prefer a Top-Down approach, focusing on
-the big picture, whereas networked thinkers will build concepts from smaller
-pieces like the Bottom-Up approach.
+Additionally, information organization preference can be categorized into two
+styles:
 
-If you are interested in this topic, have a look at the following resources:
+- **Hierarchical Thinkers**: Hierarchical thinkers prefer taxonomies and
+  hierarchical structures to organize information. They find it natural to group
+  concepts into categories, subcategories, and broader groups, similar to
+  organizing files in a directory structure.
+- **Networked Thinkers**: Networked thinkers see concepts as independent ideas
+  interconnected through relationships, much like social networks. They prefer
+  to understand how various concepts relate to one another rather than
+  organizing them hierarchically.
+
+Authors and educators might naturally lean towards one thinking style or
+information organization. The alignment between the author's presentation style
+and the reader's thinking style can significantly impact how well the
+information is understood and absorbed.
+
+If you're interested in exploring this topic further, the resources:
 
 - [How culture made Japanese Internet design
-  "Weird"](https://www.youtube.com/watch?v=Opy-SjDU0UY)
+  "Weird"](https://www.youtube.com/watch?v=Opy-SjDU0UY){: target="_blank"} 
 - [Notion vs. Roam - core philosophies and the behaviors they
-  enable](https://win.hyperquery.ai/p/notion-vs-roam-core-philosophies)
+  enable](https://win.hyperquery.ai/p/notion-vs-roam-core-philosophies){: target="_blank"} 
 
 
 ## Learning Material
 
-Independently of the learner type and the learning approach, there is also the
-question of the learning material. Some people prefer videos, others text, other
-prefer MOOCs, others 1:1 mentoring and so on.
+There is no one-size-fits-all approach, and diversity in learning resources can
+be beneficial for learners. Different individuals may prefer various formats,
+including videos, text-based materials, MOOCs (Massive Open Online Courses), 1:1
+mentoring, interactive exercises, and more. Each format has its advantages and
+appeals to different learning styles and preferences.
 
-The [Veritasium's video on Visual
-Learners](https://www.youtube.com/watch?v=rhgwIhB58PA) could help understand why
-there is not such a thing a "visual learner", instead, the more diverse the
-approaches, the better the learning experience will be. And the best approach
-requires making the learning actively participate, gamification is one technique
-that may help teachers get to students, even for complicated concepts.
+The idea of a "visual learner" [has been
+challenged](https://www.youtube.com/watch?v=rhgwIhB58PA){: target="_blank"} , as the most effective
+learning experiences often involve a combination of various approaches. The more
+diverse the learning methods, the better learners can engage with the material
+and enhance their understanding.
 
-There are some remarks worth noting about learning materials: attention spans,
-noise to signal ratio and recommendations.
+Active participation is a crucial aspect of effective learning. Engaging
+learners and making them actively participate in the learning process can
+significantly improve knowledge retention and understanding. Gamification, a
+technique that uses game elements and mechanics in a non-gaming context, is one
+approach that teachers and educators can use to make learning more interactive,
+enjoyable, and effective, especially when dealing with complex concepts.
 
 ### Attention Spans
 
-Nowadays, attention spans are decresing, hence the rise of short-text and
-short-videos in modern social networking sites. However, it is extremely
-difficult to present information in such a brief format without either making
-great oversimplifications or assuming a non-trivial amount of prior knowledge.
+In today's fast-paced digital age, attention spans have been decreasing, and
+there is a growing demand for short and easily digestible content, especially on
+social networking sites. However, presenting complex information in such a brief
+format can be challenging, as it may require oversimplifications or assume a
+significant amount of prior knowledge.
 
-That is why most [tutorials at
-PyCon](https://us.pycon.org/2023/schedule/tutorials/) last of more than 3hs,
-they are hands on, not something one can learn in 30 seconds or less.
+[Python tutorials at events like
+PyCo](https://us.pycon.org/2023/schedule/tutorials/){: target="_blank"}  often last for more than 3
+hours because they aim to provide hands-on and in-depth learning experiences.
+Learning programming concepts and skills requires time and practice, and it
+cannot be condensed into quick soundbites or short videos. Programming is a
+skill that needs to be nurtured and honed through active engagement and
+practical application.
+
 
 ### Noise to Signal Ratio
 
-This concept refers to the amount of noise a signal has, in the topic it refers
-to "good resources to mediocre resources ratio". Information online has been
-growing exponentially and now it consumes a significant amount of time to
-identify truly useful resources.
+With the vast amount of information available on the internet, distinguishing
+between valuable and mediocre resources can be challenging, especially for
+complete beginners. This concept essentially refers to the ratio between
+high-quality, valuable resources (the signal) and less useful or irrelevant
+information (the noise).
 
-For complete begginers, it is advisable to avoid social media posts and even to
-some extend personal blogs, it is hard to identify correctness and assessing how
-useful something is. This requires a skill a begineer does not yet have.
+For complete beginners, it's essential to exercise caution and be selective
+about the sources they rely on for learning. Beginners may lack the experience
+and knowledge to distinguish credible and accurate resources from those
+containing errors or outdated information.
 
-Whenever possible try to use reviewed sources, if reviews are not available, try
-a proxy:
+When reviews are not available, learners can use proxy indicators to gauge a
+resource's value:
 
-- How many people reviewed it possitively? (e.g. at Coursera/Udemy/Pluralsight)
+- How many people reviewed it positively? (e.g. at Coursera/Udemy/Pluralsight)
 - How many people watch it? (e.g. on Youtube)
 - How many people like it? (e.g. on Medium)
 - Where was it published? (e.g. at a PyCon)
@@ -386,458 +449,522 @@ a proxy:
 
 ### Recommendations
 
-Be wary of recommendations though, as it is particularly tricky due to the
-[expert blindness](#MISSING). Many resources show "How I would learn X if I had
-to start over" and even though they are legit in their intention, they are
-inevitably biased, they already know what they did not know at the start, and
-that conditions themselves it favoring one approach over other because they
-cannot unlearn what they learnt.
+Be wary of recommendations, as it is particularly tricky due to [expert
+blindness](https://www.youtube.com/watch?v=yCfMIZupyfE){: target="_blank"} . Expert blindness can
+influence how experienced individuals perceive and recommend certain materials
+or approaches. What works well for them at their current level of expertise
+might not be the most suitable choice for beginners who lack that prior
+knowledge.
 
-To illustrate, an experienced programmer may recommend to start with a fully
-fledge IDE because they are extremely helpful. However, that's because they
-already know how to use it. If that tool was presented to them as extreme
-beginners, they could have been overwhelmed by the number of options and menus,
-thus hindering the learning process.
+For example, recommending a fully-fledged IDE to a beginner might overwhelm them
+with its complexity and hinder their learning process. While it might be an
+invaluable tool for an experienced programmer, it might not be the best starting
+point for someone just beginning their programming journey.
 
-I still struggle to recommend resources to other people because "what I find
-useful" is only useful due to the *prior knowledge* I already have, and it is
-nearly impossible to estimate how useful it would have been have I not had that
-knowledge in the first place.
+Assessing which learning material, roadmap, or approach to use can be
+subjective, and what works for one person might not work as effectively for
+another. Learners should take experts' advice with a grain of salt.
 
-The bottom line is that assessing which material, roadmap or approach to use may
-be more subjective than one initially thinks and one should not overestimate
-"experts' advice". They give it for a reason, of course, but take it with a
-grain of salt. Apply the same to this post.
+Learning Git is a classic example of the challenges with recommendations. Git is
+a powerful version control system, and learning resources are numerous. What
+might be a "game-changer" for one person might not be the best fit for someone
+else. Beginners often benefit from exploring multiple resources and finding the
+ones that resonate best with their learning style.
 
-One recurrent example of this problem is "Learning Git", if one asks someone who
-is proficient and knows git pretty well, it is likely that that's to their
-collective learning and experience and not just because one unique resource, one
-may ask them a recommendation to learn but it is often the case that that single
-resource will not be enough.
-
-Some times, people have "Aha!" moments with one particular resource, and they
-may deem that single resource as the "key to understand" the topic. The truth is
-that maybe that single resource may be the worst thing one can give to a
-beginner, however for that person it was illuminating. It is normal to have
-those moments, but it usually differs from person to person due to their
-existing knowledge
+"Aha!" moments can be transformative, but they can differ for each individual
+due to their unique backgrounds and existing knowledge. Some learners might have
+breakthroughs with a specific resource, while others might find that same
+resource less helpful.
 
 ## Self Identification
 
-One might identify onself with one or more types of learners. It is common to
-identify with different types as time goes by. No one is right or wrong, but
-knowing which "state" one sits in helps identify if a particular learning
-resource will be helpful.
+Understanding one's self-identification as a learner is crucial as it can guide
+the choice of learning approaches and resources that best suit individual needs.
+It's common for individuals to identify with one or more types of learners, and
+these identifications may change over time as one gains more experience and
+knowledge.
 
-For example, "Tinkerers" would most likely prefer the "Experimental" approach,
-Theorists are usually biased towards the "Bottom-Up" and "Other Field
-Professional" towards the "Top-Down". There are definitely other factors at play
-so "Professional Developers" and "Career Switchers" may lean towards any of the
-approaches.
+For example, those who identify as "Tinkerers" may naturally gravitate towards
+the "Experimental" approach, enjoying hands-on exploration and experimentation.
+"Theorists" may lean towards the "Bottom-Up" approach, delving into the
+theoretical aspects and code analysis. "Other Field Professionals" might prefer
+the "Top-Down" approach, seeking to apply Python to their specific domains.
+"Professional Developers" and "Career Switchers" might find benefit in various
+approaches, depending on their specific interests and goals.
 
-This post is oriented to a combination of the "Theorist" and the "Professional
-Developer". It is not the typical "Learn Python in X days/months" that a "Career
-Switcher" may want nor a "How to automate things with Python" that a "Tinkerer"
-might be interested in. Although, depending on your interests, you may find
-benefit if you are an "Other Field Professional".
+This post is primarily oriented toward a combination of the "Theorist" and the
+"Professional Developer" learner types. It is not a quick "Learn Python in X
+days/months" guide for "Career Switchers," nor a "How to automate things with
+Python" tutorial for "Tinkerers." However, depending on te learner's interests
+and background, those identifying as an "Other Field Professional" may still
+find valuable insights and benefits in this guide.
 
 ### Working in a Team
 
-If studying or working in team, best returns could be yielded if there are
-people with different profiles. Assuming all are equally competent, having one
-analytical and one holistic thinker may enrich the experience more than if all
-were one type.
+Working in a team can yield the best results when there is a diverse mix of
+profiles among team members. Assuming equal competence, having a combination of
+analytical and holistic thinkers can enrich the team's experience more than if
+everyone had the same thinking style.
 
-Generally the higher one is in the hierarchy, the more holistic one needs to
-become, first one thinks of a particular problem, then how that problem
-contributes to a feature, then how that features contributes to a product, then
-how that product contributes to a portfolio and then how the portfolio
-contributes to a strategy and then how the strategy contributes to value and
-profit. C-Suite usually works at the strategy level, they may not even know
-exactly which are the next feature to be released as that is abstracted away.
+As one climbs higher in the organizational hierarchy, the need for a more
+holistic approach becomes apparent. Higher-level positions require considering
+problems in the context of features, products, portfolios, strategies, and
+overall value and profit. C-Suite executives often work at the strategy level,
+where specific feature details may be abstracted away.
 
-This is the nature of an organization as it grows, and it also explains to some
-extend the difference between the Individual Contributor (IC) and Manager.
-Individual Contributors are usually analytic thinkers, they can handle great
-complexities but they prefer to be single focus, whereas managers are usually
-people-centric, they are holistic in their approach and keep the big picture in
-mind rather than the details. Some people can do the migration from one to
-another, but not everyone, there are plently of stories online about people
-wanting to transition from IC to Manager and then regretting it.
+As organizations grow, this hierarchical nature becomes more pronounced. This
+also explains the distinction between Individual Contributors (IC) and Managers.
+Individual Contributors typically possess analytical thinking skills, capable of
+handling complex tasks with a single-minded focus. In contrast, Managers tend to
+be people-centric and adopt a holistic approach, keeping the big picture in mind
+while managing details.
 
-This should help shape the career outlook the learner wants for themselves.
+Transitioning from an IC to a Manager role is not always a seamless process, and
+not everyone may find it suitable for them. Some individuals might prefer to
+remain in IC roles, as they excel in handling complexities and prefer focused
+tasks. On the other hand, those who embrace a more holistic mindset and enjoy
+managing teams and projects may thrive in managerial positions.
+
+Understanding these dynamics can help shape the career outlook for learners. By
+recognizing their strengths and preferences, learners can make informed
+decisions about the type of role and career path they want to pursue.
 
 ## The Roadmap
 
-The remaining of the article will explore a subjective approach to learning from
-scratch until reaching independence. The idea is to divide the learning process
-into different stages and give specific recommendations to each stage. Before
-continuing, remember that ["All models are wrong, but some are
-useful"](https://www.wikiwand.com/en/All_models_are_wrong)
+The remainder of the article will explore an approach to learning from scratch
+through different levels of competence. The idea is to divide the learning
+process into different stages and give specific recommendations for each stage.
+Before continuing, remember that ["All models are wrong, but some are
+useful"](https://www.wikiwand.com/en/All_models_are_wrong){: target="_blank"} 
 
 ## Knowledge vs Competence
 
-There is a key distintion between offer and demand when learning programming,
-learning material teaches "Knowledge" but learners want to become "Competent".
-Knowledge refers to information and facts about a particular topic whereas
-competency refers to the hability to apply that knowledge effectively in a
-real-world situation. 
+The distinction between knowledge and competence is crucial when it comes to
+learning programming. Learning materials typically focus on imparting knowledge,
+which comprises information and facts about a specific topic. However, learners,
+employers, and everyone involved ultimately seek competence, which refers to the
+ability to apply that knowledge effectively in real-world situations.
 
-Learners want compentency, employeers want competency, everyone wants
-competency, but there is a problem. There are limited tools to test competency,
-but plenty to test knowledge. This is the reason why many interview processes
-are flawed. In an time-boxed interview, only so many things can be assessed.
-That is why proxies such as quizzes, code challenges or design questions are
-used. Another proxy is the evaluation of soft-skills which are a necessary by
-product of competence in some roles, e.g. a skilled software architect must be
-able to articulate how to design a complex system effectively or to estimate the
-resources needed to achieve that in a given time. To read more about this topic,
-have a look at [Fagner Brack's
-article](https://fagnerbrack.com/the-fate-metrics-for-hiring-98724fb0416).
+A challenge arises when evaluating competency, as there are limited tools
+available for its assessment compared to the abundance of tools to test
+knowledge. Job interviews, for instance, are often time-boxed, limiting the
+depth of competency assessment. As a result, proxies such as quizzes, code
+challenges, or design questions are commonly used. Evaluating soft skills is
+also a valuable proxy, as they are essential for competence in certain roles,
+such as effective communication for a skilled software architect. To read more
+about this topic, have a look at [Fagner Brack's
+article](https://fagnerbrack.com/the-fate-metrics-for-hiring-98724fb0416){: target="_blank"} .
 
-The other side of the coin is that passing a lot of knowledge tests does not
-imply competency. One may think that because one passes a test or an exam that
-automatically implies competency, that is wrong and misleading. There is a
-tradeoff when evaluating someone, competency evaluation requires time and it
-involves analysing the individual's strengths and weaknesses in a real-world
-situation, that is something that unfortunately does not scale. 
+Passing knowledge tests, such as exams, does not automatically imply competency.
+Competency evaluation is a more time-consuming process that involves analyzing
+an individual's strengths and weaknesses in practical situations. Due to its
+complexity, it does not scale well for large groups of learners. As a result,
+most teaching processes involving multiple learners primarily assess knowledge,
+with some individuals developing competency to varying degrees.
 
-The inevitable consequence is that any teaching process that involves more than
-a single learner is testing knowledge and not competency. That is, any course,
-class or bootcamp will only provide knowledge assessment, some of the learners
-may develop competency, but not necessarily all, hence job offers are given to
-the top-performers, which are the most likely indivuals who had both knowledge
-and competence. One exception to this rule is mentorships, they are so valuable
-because they test competency rather than knowledge, that is because the full
-attention of the mentor is on a single learner at a time.
+Mentorships stand out as an exception, as they focus on testing competency
+rather than knowledge. A mentor's full attention is on a single learner,
+allowing for a deeper assessment of their real-world problem-solving skills.
 
-There are some better proxies for competency that could help landing a job:
-online portfolios. They swap the time-consuming part of the competency
-assessment process from the interview to prior the interview. It is an
-opportunities for learners to prepare projects that would be very difficult to
-built without the expected competency. This is a proxy and many other factors
-are at play as well, but it is a definitely better proxy than a "Certificate of
-Completion of X", regardless of how many hours X took. One exception to this are
-official certifications, which are carefully design by a company to ensure
-professionals are competent in a specific set of tools, e.g. Microsoft, AWS,
-Cisco, etc.
+For those seeking job opportunities, online portfolios can be a better proxy for
+demonstrating competency. Portfolios showcase projects that require the expected
+level of competence, and they offer a chance for learners to prepare and present
+their abilities before interviews. While this is not a foolproof method, it
+provides a more tangible representation of a learner's potential compared to
+mere completion certificates, regardless of the hours invested in a course. One
+exception to this is official certifications, which are carefully designed by a
+company to ensure professionals are competent in a specific set of tools, e.g.
+Microsoft, AWS, Cisco, etc.
 
-For complete beginners, knowledge and competency are obtained somewhat
-concurrently, but once the competency is present, it can be transfer to other
-domains with relative ease. That is why learning a second programming language
-is much easier than the first one, regardless of which the first one was,
-because the first time two things were learnt: (1) the particular syntax of the
-programming language and (2) problem solving with programming. The former is
-knowledge, the latter is a competency. One exception is when assumtions no
-longer holds, for instance, Haskell has some unique features that require
-special competencies that may not be easily obtainable in other languages. 
+For complete beginners, knowledge, and competency are often acquired
+concurrently. However, once competency is established, it can be transferred to
+other domains with relative ease. Learning a second programming language, for
+instance, becomes more accessible as learners have already grasped general
+problem-solving with programming, and they only need to adapt to the specific
+syntax of the new language. One exception is when assumptions no longer hold,
+for instance, Haskell (or any other pure functional programming language) has
+some unique features that require special competencies that may not be easily
+obtainable in other languages.
 
-The remaining of this article will focus on how to achieve competence, for that,
+This roadmap focuses on how to achieve different levels of competence, for that,
 consider the [Four Stages of
-Competence](https://www.wikiwand.com/en/Four%20stages%20of%20competence) plus
+Competence](https://www.wikiwand.com/en/Four%20stages%20of%20competence){: target="_blank"}  plus
 some personal contributions:
 
-1. **Unconscious Incompetence**: one is unaware of programming and does
-   notrealize that it is a skill they can learn.
-1. **Conscious Incompetence**: one becomes aware of programming, but strugglesto
-   write code and recognizes their lack of proficiency.
-1. **Conscious Competence**: one gains programming skills through practice,
-   butstill needs to concentrate and think deliberately while coding.
-1. **Unconscious Competence**: programming becomes second nature, and one
-   canwrite code effortlessly, with deep knowledge and skill.
-1. **Reflective Competence**: they identify their weaknesses and always try to
-   go outside of their comfort zone.
-1. **Replicative Competence**: they have a multiplicative effect on others
-   around them, they help other grow their level of competence exponentially.
+1. Unconscious Incompetence: one is unaware of programming and does not realize
+   that it is a learnable skill. They might not even recognize the significance
+   of programming in today's world.
+2. Conscious Incompetence: individuals become aware of programming and its
+   importance. However, they struggle to write code and acknowledge their lack
+   of proficiency. They are conscious of their limitations and the need to
+   improve their skills.
+3. Conscious Competence: they can write code, but it requires concentration and
+   deliberate thinking. They are competent programmers, but the process still
+   demands effort and focus.
+4. Unconscious Competence: programming becomes second nature to learners. They
+   can write code effortlessly, with deep knowledge and skill. Their proficiency
+   allows them to navigate complex problems seamlessly.
+
+Additional Contributions:
+
+5. Reflective Competence: Learners at this stage continually evaluate their
+   skills and actively seek to identify their weaknesses. They are self-aware
+   and strive to go beyond their comfort zone, taking on challenging projects
+   and seeking opportunities for growth and improvement.
+6. Replicative Competence: Individuals who have achieved replicative competence
+   have a profound impact on those around them. They become mentors and role
+   models, helping others grow their level of competence exponentially. Their
+   expertise and support empower others to excel in their learning journeys.
 
 ## Unconscious Incompetence - Take Off
 
-This is a stage everyone was in at some point, it means "I don't know how much I
-don't know". People at this stage cannot even articulate how or what to learn
-next.
+This stage is a universal starting point for every learner, where one realizes,
+"I don't know how much I don't know." At this juncture, learners cannot even
+articulate what or how to learn next, and it can be a critical phase in the
+learning process. The risk of feeling overwhelmed, frustrated, and disappointed
+is high, potentially leading to abandoning the learning journey altogether.
 
-This is potentially the most critial point in the learning process as a bad
-start could cause the learner abandon the whole study. It is also when one is
-most susceptible to frustration and disappointment.
+To navigate this crucial stage successfully, I strongly recommend adopting a
+Bottom-Up approach. Dedicate around 100 hours to immerse oneself in pure Python
+without involving third party libraries, frameworks, or tools other than the
+language itself.
 
-I strongly recommend starting with a Bottom-Up approach, spend [100 hours or
-so](#MISSING) and then decide if you want to persue learning or switch gears.
-Focus on pure Python only, do not include any libraries, frameworks or tools
-other than the plain language. 
+Numerous online resources are available to assist individuals in commencing
+their coding endeavors, providing a range of options from which to choose the
+most comfortable platform. Utilizing fast-feedback online environments is
+recommended, as they allow one to experiment with code and observe errors
+without encountering the intricacies of installation and setup. Avoiding such
+initial technical challenges can prevent premature disappointment. 
 
-There are many resources online for this and as already described, choose the
-one you are most comfortable with. My personal recommendation is some
-fast-feedback online environment where you can try things and see errors
-**without installing** anything. Instalation and setup are sometimes
-problematic, and better avoided at this point to prevent premature
-disappointment, use an online environment whenever possible.
-
-For Python, the following are good free online environments (not sponsored):
+Here are some good free online environments for learning Python (not sponsored):
 
 Single File:
 
-- [Python Tutor](https://pythontutor.com/python-debugger.html)
-- [TutorialsPoint](https://www.tutorialspoint.com/execute_python3_online.php)
+- [Python Tutor](https://pythontutor.com/python-debugger.html){: target="_blank"} 
+- [TutorialsPoint](https://www.tutorialspoint.com/execute_python3_online.php){: target="_blank"} 
 - [W3
-  Schools](https://www.w3schools.com/python/trypython.asp?filename=demo_compiler)
+  Schools](https://www.w3schools.com/python/trypython.asp?filename=demo_compiler){: target="_blank"} 
 
 Multi File:
 
-- [Replit](https://replit.com/languages/python3)
-- [Online Python](https://www.online-python.com/)
-- [Programiz](https://www.programiz.com/python-programming/online-compiler/)
+- [Replit](https://replit.com/languages/python3){: target="_blank"} 
+- [Online Python](https://www.online-python.com/){: target="_blank"} 
+- [Programiz](https://www.programiz.com/python-programming/online-compiler/){: target="_blank"} 
 
-**Important note**: restrain yourself from using help tools such as forums,
-chatbots or other guides, do not focus on solving exercises, focus on learning
-what things are, how they work and why they do what they do. Using something
-like an AI Chat is like trying to learn multiplication with the aid of a
-calculator, it hinders the true learning experience. Leave those tools for a
-later stage.
+**Important note**: Refrain from relying on help tools such as forums, chatbots,
+or other guides during this stage. Instead, focus on understanding the
+fundamentals of Python - what things are, how they work, and why they behave as
+they do. Using AI Chat or similar aids at this point can be likened to learning
+multiplication with a calculator; it hinders the learning experience. Save these
+tools for later when a more solid foundation has been laid out.
 
-This stage could be colloquially called "Take Off", leave the total inexperience
-ground and graduate from being totally unaware.
+This stage could be colloquially called "Take Off," as the learner leaves the
+ground of total inexperience and begin to graduate from being completely unaware
+to having a growing awareness of the Python language. Embrace this initial
+learning phase with determination and patience, knowing it will lay the
+foundation for future programming prowess.
 
 ## Conscious Incompetence - Consolidation
 
-A couple dozens hours has been already spent learning or maybe there is existing
-background that brought the learner to this stage. The important part is that
-now one can say "I knows what I don't know". It may seem like a something
-impossible to achieve and to some extend it is true but, at this stage one has a
-clear understanding on what's ahead.
+Having spent a significant number of hours learning or possessing a background
+in programming, learners at this stage can now say, "I know what I don't know."
+It may still seem like a daunting task to achieve complete understanding, but
+there is a clear awareness of what lies ahead in the learning journey.
 
-This could be because one knows programming already, but maybe not Python, or
-one has been playing with Python for a long time, or maybe because there is
-expertise in other fields that served as a good proxy to estimate the upcomming
-complexity. Regardless of the source, there is significant improvement from the
-last stage.
+This awareness could be a result of existing programming knowledge in other
+languages, prior experience with Python, or expertise in other fields that serve
+as a good proxy to estimate the upcoming complexity. Regardless of the source,
+there has been significant improvement from the previous stage.
 
-At this point, I suggest continuing with the Bottom-Up approach, this time with
-more complex topics such as popular Python libraries, frameworks or patterns but
-always with well known sources, avoid experimental or hobbist projects, look for
-healthy and active communities. At the same time, start watching some Top-Down
-material using those resources, but always understanding how pieces work
-together.
+At this point, I recommend continuing with the Bottom-Up approach, but now
+exploring more complex topics, such as popular Python libraries, frameworks, or
+design patterns. Focus on well-known and reputable sources, avoiding
+experimental or hobbyist projects. Additionally, start engaging with some
+Top-Down material that integrates the use of these resources, understanding how
+various pieces work together.
 
-Now the learner should have a proper installation of Python in their local PC,
-they already know the language, it is okay to deal with some problems while
-installing, but they should learn how to install Python from scratch by now. I
-would know bother with virtual environments or dependency locking just yet,
-leave that to the next stage.
+By now, the learner should have a proper Python installation on their local PC,
+and dealing with installation challenges is acceptable, as long as they have
+learned how to install Python from scratch. However, there is no need to delve
+into virtual environments or dependency locking just yet; that can be left for
+the next stage.
 
-Consider a back-end developer as an example, these are some of resources one may
-look for:
+For instance, if the learner aims to become a back-end developer, they could
+explore the following resources:
 
 - Learn how APIs work (Bottom-Up)
 - Learn how Flask work (Bottom-Up)
 - Learn how to structure a Flask app (Bottom-Up)
 - Develop an ToDo list with Flask (Top-Down)
 
-Keep concentration on learning, not building. Familiarize yourself with the
-tools until you gain some intuition on how to do the things you want to do. This
-is a good moment to **slowly** incorporate tools like AI Chats.
+The focus should remain on learning rather than building fully functional
+projects at this stage. Familiarize with the tools and gain intuition on how to
+accomplish the desired tasks. This is also a suitable time to start slowly
+incorporating tools like AI Chats to aid in the learning process.
 
-This stage may take a couple of months, it involves try and error and a lot of
-back and forth, but since the basics are well understood, that should not be a
-problem. This is why I would refer to this stage as "Consolidation"
+The Consolidation stage may span a couple of months, involving trial and error
+and iterative learning, but since the basics are well understood, navigating
+through challenges should not be a problem. This stage is aptly named
+"Consolidation" as learners solidify their understanding and expand their
+programming horizons.
 
 ## Conscious Competence - Portfolio
 
-At this point, one understands how the tools work with a comfortable degree of
-proficiency. However, most of the time was spent learning, now is the time to
-build. Bottom-Up materials would start to feel repetitive, teaching the same
-content.
+One has reached a stage where one understands how the tools work with a
+comfortable level of proficiency. The majority of the time was spent learning,
+and now it is time to put that knowledge into practice. Bottom-Up materials may
+start to feel repetitive, as they cover familiar content.
 
-You will know you are in this stage where you are spending more time reading
-documentation and forums rather than beginners tutorials. You reached
-"Intermediate Level" but you lack experience. You have quite a bit of knowledge,
-but maybe not competence.
+In this stage, one finds oneself spending more time reading documentation,
+exploring forums, and seeking answers to specific problems rather than following
+beginners' tutorials. One has reached the "Intermediate Level," where one
+possesses a significant amount of knowledge but may still be lacking some
+hands-on experience to fully demonstrate one's competence.
 
-Focus now on "Top-Down" resources, create a porfolio of projects, build things
-you understand and can explain to others. Publish your progress in social media
-or on your own blog (or build one as part of the portfolio).
+At this point, it is crucial to shift the focus to "Top-Down" resources. Start
+creating a portfolio of projects, building things that one understands and can
+confidently explain to others. Share progress on social media or through a blog,
+or even consider building a blog as part of a portfolio.
 
-It is fine if it is still hard, or if you feel you are blindly following
-tutorials online, you will still need that. You have to be exposed to many
-different projects to start gaining intuition about how things are done. Do not
-try to do things from scratch yet. Now would be a good moment to incorporate
-virtual environments and dependency locking tools like pipenv, poetry or
-similar. It would be important to learn git and publish those projects in Github
-as public repositories.
+Some tasks may still be challenging, and the learner might rely on online
+tutorials to guide them. Exposure to a variety of projects will help one gain
+intuition about how things are done and improve one's problem-solving skills.
+However, try to avoid starting everything from scratch. Incorporate virtual
+environments and dependency-locking tools like pipenv, poetry, or similar, to
+better manage one's projects. This stage is also an excellent opportunity to
+learn Git and publish projects as public repositories on GitHub.
 
-Most of the building happens at this stage, so this is the "Portfolio" stage. It
-is okay to try some experimental frameworks but the bulk of the building you be
-done should be in well stablished frameworks and tools.
+Most of the practical building happens at this stage, which is why it is known
+as the "Portfolio" stage. While it is fine to experiment with some new
+frameworks, the bulk of the building should be focused on well-established
+frameworks and tools. Building a strong portfolio during this stage will not
+only enhance one's competence but also provide valuable material to showcase
+skills to potential employers or clients.
 
 ## Unconscious Competence - Independence
 
-You have built so many projects that you know the steps by heart, it feels
-second nature and you do not have doubts about how things work the way they do.
+At this stage, the learner has reached a level of competence where building
+projects and navigating the programming world feel like second nature. The
+individual can confidently and effortlessly build projects, and their
+understanding of how things work is deep-rooted.
 
-However, there is caveat, keeping onself at this level of competence requires
-uninterrupted practice, knowledge may last longer but competency rusts over
-time. This stage is also a risky position as it can cause stagnation, either
-willingly or unwillingly. Once one masters something, a create a comfort zone
-around is created and all the effort put in may become friction to move beyond.
+However, there is a caveat to this stage. Maintaining this level of competence
+requires continuous practice and engagement. While knowledge may stay with
+individuals longer, competency can rust over time if not consistently exercised.
+This stage can be risky, as it might lead to stagnation, either intentionally or
+unintentionally. When becoming a master at something, a comfort zone naturally
+forms around it, and the effort invested in reaching this level can become a
+barrier to moving beyond it.
 
-You can consider "Independent", you are most likely not a junior
-any more but maybe your comfort zone is quite limited, try to expand it little
-by little to include more topics. Look for a mentor that knows much more than
-you to give you advice, do not expect other people to invest time without
-compensation.
+At this stage, learners can consider themselves "Independent." They are likely
+not beginners anymore, but it is essential to avoid limiting oneself to the
+comfort zone. Gradually expanding horizons to include more topics and challenges
+is recommended. Seeking mentors with extensive knowledge and experience to
+provide guidance is beneficial. However, it is crucial to keep in mind that
+expecting others to invest time without compensation may not be realistic.
+Learners should be proactive in their learning journey.
 
-This is a good moment to continue Top-Down and start incorporating Experimental
-learning. Nevertheless, this is the first "stable" stage, where one can sit back
-and just keep the status quo, depending on your context you may never be forced
-to move.
+This is an excellent time to continue with the Top-Down approach and start
+incorporating Experimental learning. Embracing new challenges and exploring
+unfamiliar territories is essential. Staying curious and open to learning new
+things is advised.
 
-A perfect example of this is experts in an old, unpopular yet still used
-language like COBOL, they are competent and independent and may never leave
-COBOL for as long as it is still use. But this situation is also fragile, the
-more one stays the same, the harder it will be to move to something different.
+Nonetheless, this stage represents the first "stable" stage in the learning
+journey. Individuals might feel content and comfortable with their current
+skills and knowledge, and that's okay. However, remembering that staying in the
+comfort zone for too long can make it difficult to make significant moves in the
+future is important. Maintaining a balance between expertise and continuous
+growth is essential. An example of someone at this stage might be an expert in
+an older, less popular language like COBOL. They are competent and independent
+in their field and may not feel the need to switch to other technologies as long
+as COBOL is still relevant. But this situation is fragile, as the longer one
+stays in the same niche, the harder it becomes to transition to something
+different.
 
-Without continuous and conscious action, one's unconscious competence could fade
-into unconscious incompetence, like a developer specializing in Flash now
-realizing Flash is not used anywhere and migrating to alternative technologies
-is not trivial.
-
-Remember: Expertise is not a free ticket to rest on one's laurels.
+Always remembering that expertise is not a free ticket to rest on one's laurels
+is crucial. Continuing to push oneself to learn and grow, and being open to
+embracing new challenges and opportunities is necessary. Continuous and
+conscious action is necessary to prevent unconscious competence from fading into
+unconscious incompetence.
 
 ## Reflective Competence - Research and Development
 
-The original model of four stages of competences does not include a fifth stage
-but some authors proposed one called "Reflective Competence". This stage is when
-individuals not only possess a skill to the point where they can perform it
-effortlessly and automatically but also have the ability to reflect on their own
-performance and continuously improve.
 
-At this stage, one is aware and understands their own thought process, i.e.
-metacognition. They developed a metacompetency: proactiveness. The hability to
-self-assess oneself, take initiative, anticipate future needs, adapt in advance
-and actively seek feedback. This stage is the highest level of competency that
-one can achieve individually.
+The original model of four stages of competencies does not include a fifth
+stage, but some authors have proposed one called "Reflective Competence." At
+this stage, individuals not only possess a skill to the point where they can
+perform it effortlessly and automatically but also can reflect on their
+performance and continuously improve. 
 
-In the technology world, change is always constant and to avoid getting
-outdated, I suggest always pushing yourself outside of your comfort zone but
-[not too agressively](https://mcfunley.com/choose-boring-technology). 
+In this stage, one becomes aware and understands their thought process, a
+concept known as metacognition. This stage includes the meta-competency of
+proactiveness, where individuals can self-assess, take initiative, anticipate
+future needs, adapt in advance, and actively seek feedback. Reflective
+Competence represents the highest level of individual competency.
 
-Learn new frameworks, try new tools, new methodologies, mentor someone, start
-side projects, get involved with the community, contribute to open source
-projects. This stage is "Research and Development" and it is time to go
-"Experimentation" mode.
+In the technology world, where change is constant, it is crucial to stay
+proactive and avoid becoming outdated. To do so, I suggest continuously pushing
+oneself outside of the comfort zone, but [not too
+aggressively](https://mcfunley.com/choose-boring-technology){: target="_blank"}. Engage in learning
+new frameworks, trying new tools and methodologies, mentoring others, starting
+side projects, getting involved in the community, and contributing to
+open-source projects. This stage is known as "Research and Development," and
+it's a time to enter "Experimentation" mode.
 
-Some examples:
+Examples of activities during this stage include:
 
-- You master relational databases, try learning ORMs or NoSQL databases
-- You master Keras, try learning FastAI or Bayesian Frameworks
-- You master Pytest, try learning Hyphotesis
-- You master Flask, try learning FastAPI
-- You master Type Hints, try learning Pydantic
-- You master your field's favourite library, try fixing some issues or develop
-  new features
+- If one has mastered relational databases, one can try learning ORMs or NoSQL
+  databases.
+- If one has mastered Keras, one can explore learning FastAI or Bayesian
+  Frameworks.
+- If one has mastered Pytest, one can delve into learning Hypothesis.
+- If one has mastered Flask, one can consider learning FastAPI.
+- If one has mastered Type Hints, one can try learning Pydantic.
+- If one has mastered their field's favorite library, one can try fixing some
+  issues or developing new features.
 
-People in this group can act with just some small pieces of information, an idea
-may be enough to spark the whole process and they can keep it burning. The
-industry usually call these individuals different names "Leaders", "Seniors",
-"Tech Leads", "Mentors/Coach" and so on.
+Individuals in this stage can act with just small pieces of information; a
+simple idea may be enough to spark the whole process, and they can keep the
+momentum going. In the industry, these individuals are often referred to by
+various names such as "Leaders," "Seniors," "Tech Leads," or "Mentors/Coaches,"
+among others. They are valued for their extensive knowledge and their ability to
+guide and mentor others.
 
 ## Replicative Competence - Exponential Growth
 
-This stage is not formal and it is my personal contribution. Once an individual
-reaches Reflective Competence, there is only one way to continue growing:
-horizontally. This stage assumes one does not operate in a silo and has people
+The stage of Replicative Competence is not formal and is a personal
+contribution. Once an individual reaches Reflective Competence, there is only
+one way to continue growing: horizontally. This stage assumes that one does not
+operate in isolation and has people around them.
+
+Individuals at this stage not only continue to grow themselves but also foster
+an environment for efficient, engaging, and motivating growth for everyone
 around them.
 
-People at this stage not only can perpetually grow themselves but also foster an
-environment for efficient, engaging and motivating grow for everyone around
-them. 
+This involves several competencies that go beyond the technical side and may not
+be something desired by everyone, as previously mentioned, not everyone wants to
+leave the IC role. These individuals are characterized by being people who
+**C.A.R.E.S**:
 
-This involves several competencies that exceeds the technical side and may not
-be something desirable for everyone, as previously mentioned, not everyone wants
-to leave the IC role. These individuals are people who C.A.R.E.S
+- C - Competence in the Domain: They are experts in the specific domain or skill
+  they aim to multiply in others.
+- A - Adaptive Communication: They have effective and adaptable communication
+  skills, ensuring clear and relatable knowledge transfer.
+- R - Relational Empathy: They build strong relationships and connect with
+  others' needs and emotions.
+- E - Encouraging Patience: They cultivate patience and persistence to support
+  and guide individuals through their learning journey, even during challenging
+  moments.
+- S - Supportive Coaching: They provide constructive feedback, coaching, and
+  mentorship, fostering growth and critical thinking in others.
 
-C - Competence in the Domain: They are experts in the specific domain or skill
-they aim to multiply in others.
+By having an individual at this level on a team, they make it possible for other
+team members to grow at a rate that may not have been achievable otherwise. They
+enable others and, by doing so, produce "Exponential Growth" within the team.
 
-A - Adaptive Communication: They have effective and adaptable communication
-skills, ensuring clear and relatable knowledge transfer.
-
-R - Relational Empathy: They build strong relationships and connect with others'
-needs and emotions.
-
-E - Encouraging Patience: They cultivate patience and persistence to support and
-guide individuals through their learning journey, even during challenging
-moments.
-
-S - Supportive Coaching: They provide constructive feedback, coaching, and
-mentorship, fostering growth and critical thinking in others.
-
-By having a single individual at this level on a team, they make it possible for
-the other team members to grow at a rate which would not have been possible
-otherwise. They enable others and by doing so produce "Exponential Growth".
-
-These is the stage any person aspiring for a leadership possition should aim,
-people at this level are influential, they lead by example and they create a
-subculture in an organization. They are sought and they actively look for
-opportunities, not just for them, but for people around them. They are a never
-ending fountain of knowledge and experience.
+This is the stage that any person aspiring for a leadership position should aim
+for. People at this level are influential, they lead by example, and they create
+a subculture within an organization. They are sought after, and they actively
+seek opportunities, not just for themselves, but for the people around them.
+They are a never-ending fountain of knowledge and experience, driving continuous
+improvement and development in those they interact with.
 
 ## Self-Assessment and Criticism
 
-It would be ironical that the whole article talks about self-assessing oneself
-without providing an example of such excercise. The roamap for the different
-levels of competence presented is incomplete and protays an image of reality
-that is quite different from what actually happens.
-
-There are two main criticism of these approach, but I encourage the reader to
-also provide their feedback and we can expand this section further:
-
-- Beginners do not care about X, Y, Z level of competence, they just want to
-  gain the skill and that is it.
-- This is utopian and unrealistic and there are many external factors not
-  considered in this article.
+Self-assessment is indeed a crucial aspect of the learning process, and it's
+important to acknowledge that the roadmap presented in the article may not fully
+capture the diverse experiences and perspectives of all learners. While the
+article provides a structured approach, it's essential to recognize that
+learning is a personal journey, and each individual may have unique preferences,
+goals, and constraints.
 
 ## Begineers do not Care
 
-The fact that beginners may or may not care is subjective. However, I
-anticipated at the beginning, this is a process every learner should own. Going
-for pre-backed solutions is not owning the process.
+The approach presented in the article is indeed geared towards learners who are
+willing to invest time and effort in their learning journey and are looking for
+a structured and goal-oriented plan.
 
-The content presented was thought for programming and Python, but most of it is
-applicable to any field. That being said, there is indeed one assumption, this
-content is for people who want a plan and not just a quick-fix solution or just
-the inmediate next step. It is for people who sit down and thinks in advance and
-want to have a goal long term, something they could aim, even if it is far away.
+The content's focus on programming and Python is meant to provide concrete
+examples and guidance for learners in the technology field, but the underlying
+principles and concepts can be adapted to various domains of learning.
+Emphasizing that the content is intended for individuals who want a long-term
+plan and are committed to their learning journey is crucial. This approach aims
+to empower learners to take ownership of their learning, be proactive, and set
+realistic goals for continuous improvement.
 
-I recognize the value deliver by this content is not a short-term gain, it
-focuses on long-term processes and thus has a long-term return. It is meant to
-be something one slowly internalizes and incorporates into their own learning
-process.
+Indeed, the value delivered by this content lies in the long-term return and the
+gradual internalization of the learning process. By adopting this approach and
+incorporating it into their learning style, learners can develop a deeper
+understanding and competence in their chosen field, leading to more meaningful
+and sustainable growth.
+
+Ultimately, the approach provided in the article serves as a guide and a
+framework, but it is up to each learner to personalize and adapt it according to
+their needs, preferences, and learning pace. The willingness to take ownership
+and actively engage in the learning process will greatly influence the overall
+success and fulfillment of the journey.
 
 ## This is Utopian and Unrealistic
 
-People may argue that this is written as if the only thing one does is learning,
-there is work, family, travel, and any other number of things a person does in
-life. There are also negative things than impedes progress such as toxic
-cultures, economic instability, family problems, etc.
+Work, family, travel, personal obligations, and various external factors can
+often create time constraints and obstacles that make it difficult to follow a
+structured learning plan consistently.
 
-All of the previous is true, and it is a fair point, the approach is flawed as
-any other guide one may find online. It is impossible to tackle the problem for
-all possible angles, but, if we have a goal, albeit it idealistic, we can make
-adjustments to our own situation to cope with the challenges and adapt, in the
-end, that is a competence worth having.
+No guide can indeed address all possible angles and individual circumstances,
+and the approach presented in the article may not be feasible for everyone in
+every situation. Life is unpredictable, and there will always be unforeseen
+challenges and disruptions that can hinder progress.
 
-The real world is not only rush, it is chaotic, but having in mind some order
-about what loose next steps are, could help us weather the storm.
+However, the value of having a long-term goal and a structured learning approach
+lies in the adaptability and resilience it fosters in learners. While it may be
+challenging to dedicate extensive time solely to learning, even small steps
+taken consistently can lead to significant progress over time. It is about
+recognizing that progress may be gradual, and it is okay to make adjustments to
+fit learning into one's existing lifestyle and responsibilities.
+
+Flexibility and adaptability are essential qualities to develop, and having a
+loose plan or roadmap can help individuals stay focused and motivated amid the
+chaos of life. It provides a sense of direction and purpose, even if the pace of
+learning is slower than originally intended.
+
+Moreover, acknowledging the existence of obstacles and challenges can help
+learners be kinder to themselves and avoid unnecessary pressure or guilt when
+they face setbacks. It is essential to remember that progress is not always
+linear, and it is okay to take breaks, reassess goals, and adapt the learning
+approach as needed.
+
+In the end, the ability to cope with the challenges of the real world and
+maintain a commitment to learning is a valuable competency worth cultivating.
+Embracing the journey as an ongoing process of growth and self-improvement can
+lead to a more fulfilling and meaningful learning experience.
 
 ## Closing Thoughts
 
-There are no perfect resources, everyone learns at different rates and with
-different approaches. Beware of your know strenghts and weaknesses when learning
-and create a roadmap that is compatible and comfortable to your style.
+In conclusion, learning is a deeply personal and individualized journey. There
+is no one-size-fits-all approach, and it is crucial to be aware of your
+strengths, weaknesses, and learning style. Building a roadmap that aligns with
+your preferences and comfort levels can lead to a more effective and enjoyable
+learning experience.
 
-Do not trust too much what you see online (including this article), but also
-avoid going on your own adventure unless you know what you are doing. Always
-question yourself and look for feedback from people more experience than you.
+While there are abundant learning resources available online, it is essential to
+approach them with a critical mindset. Not all information is reliable, and not
+all approaches will work for everyone. Seeking feedback from experienced
+individuals and questioning your assumptions can help you refine your learning
+path and avoid falling into confirmation bias.
 
-Exposed yourself to things that contradicts your beliefs on a regular basis,
-otherwise you may experience confirmation bias.
+Moreover, it is crucial to strike a balance between seeking guidance and
+exploring on your own. Relying solely on pre-packaged solutions may limit your
+growth, but venturing into uncharted territory without any guidance may lead to
+frustration and discouragement. Embrace a mix of structured learning and
+experimentation to foster a well-rounded and adaptable skill set.
+
+Lastly, be open to challenging your beliefs and exploring different
+perspectives. Exposing yourself to diverse ideas and viewpoints can help you
+grow intellectually and creatively. Embrace a growth mindset, be receptive to
+feedback, and never stop seeking opportunities for learning and improvement.
+
+In the end, the journey of learning is an ongoing and enriching process. Embrace
+the challenges, celebrate your progress, and keep pushing yourself to reach new
+levels of competence. Remember that the path to mastery is not always smooth,
+but it is the continuous pursuit of knowledge and self-improvement that leads to
+true expertise.
