@@ -270,8 +270,9 @@ into the specifics.
 
 ### Cons
 
-- **[Dunning-Krugger Effect](https://www.youtube.com/watch?v=kcfRe15I47I){:
-  target="_blank"}**: Learners may be susceptible to overestimating their
+- **[Dunning-Krugger 
+  Effect](https://www.youtube.com/watch?v=kcfRe15I47I){: target="_blank"}**: 
+  Learners may be susceptible to overestimating their
   competence, believing they understand more than they do, leading to a false
   sense of mastery.
 - **Difficulty in Troubleshooting**: When faced with errors or issues, learners
