@@ -64,20 +64,21 @@ Some key ideas should be taken into consideration while reading:
 The sections in this article are thoughtfully structured as follows:
 
 
-- Learner Profiles: This section provides background information about the
+- **Learner Profiles**: This section provides background information about the
   learners, including their previous experiences and personal goals related to
   programming.
-- Learning Approaches: Here, the post explores how the content is structured and
-  organized, potentially outlining different learning paths or methodologies.
-- Thinking Style: This section delves into how learners process information and
-  generate insights, which can impact their learning experience.
-- Learning Material: Considerations for selecting appropriate learning
+- **Learning Approaches**: Here, the post explores how the content is structured
+  and organized, potentially outlining different learning paths or
+  methodologies.
+- **Thinking Style**: This section delves into how learners process information
+  and generate insights, which can impact their learning experience.
+- **Learning Material**: Considerations for selecting appropriate learning
   materials. The quality and relevance of the resources chosen can significantly
   impact the learning journey.
-- Roadmap: This roadmap serves as a clear path to follow, highlighting stages
-  for learners to progress steadily in their programming competence.
-- Closing Thoughts:  It wraps up the guide, giving learners a sense of direction
-  and motivation to continue their learning journey.
+- **Roadmap**: This roadmap serves as a clear path to follow, highlighting
+  stages for learners to progress steadily in their programming competence.
+- **Closing Thoughts**:  It wraps up the guide, giving learners a sense of
+  direction and motivation to continue their learning journey.
 
 **SPOILER ALERT**: It's essential to note that this guide isn't a quick and
 superficial "Learn X in Y minutes" type of resource. There are no TL;DR,
@@ -207,30 +208,31 @@ solid foundation before tackling more advanced topics.
 
 ### Pros
 
-- Solid Foundation: Learners gain a reliable and solid foundation in
+- **Solid Foundation**: Learners gain a reliable and solid foundation in
   programming. By understanding the smaller building blocks, they can construct
   more significant and complex solutions.
-- Easy-to-Digest: Focusing on manageable and easy-to-understand bits ensures
+- **Easy-to-Digest**: Focusing on manageable and easy-to-understand bits ensures
   learners grasp the fundamentals thoroughly, preventing information overload.
-- Progressive Learning: New knowledge is built upon previously taught material,
-  creating a sense of continuity and progression in the learning journey.
+- **Progressive Learning**: New knowledge is built upon previously taught
+  material, creating a sense of continuity and progression in the learning
+  journey.
 
 ### Cons
 
-- Time to Tangible Results: The emphasis on learning basics and building blocks
-  may delay seeing tangible results or practical applications, leading to
+- **Time to Tangible Results**: The emphasis on learning basics and building
+  blocks may delay seeing tangible results or practical applications, leading to
   frustration or an unproductive sensation.
-- Impostor Syndrome: Learners may develop [impostor
-  syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome){: target="_blank"} , feeling that they
-  only know the building blocks and haven't built anything substantial,
-  underestimating their capabilities.
-- Fragmented Knowledge: The focus on independent parts can hinder learners from
-  seeing the big picture and understanding how different concepts relate.
-- Start from Scratch: This approach often involves starting from scratch, which
-  may not align with real-world scenarios where learners might work with
+- **Impostor Syndrome**: Learners may develop [impostor
+  syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome){: target="_blank"}
+  , feeling that they only know the building blocks and haven't built anything
+  substantial, underestimating their capabilities.
+- **Fragmented Knowledge**: The focus on independent parts can hinder learners
+  from seeing the big picture and understanding how different concepts relate.
+- **Start from Scratch**: This approach often involves starting from scratch,
+  which may not align with real-world scenarios where learners might work with
   existing codebases.
-- Long-Term Retention: As learners progress through individual components, their
-  knowledge can become fragmented and hinder long-term retention if not
+- **Long-Term Retention**: As learners progress through individual components,
+  their knowledge can become fragmented and hinder long-term retention if not
   periodically reviewed.
 
 ### Example
@@ -254,32 +256,33 @@ into the specifics.
 
 ### Pros
 
-- Avoiding Excessive Frustration: it helps avoid excessive frustration as
+- **Avoiding Excessive Frustration**: it helps avoid excessive frustration as
   learners start with a known solution, reducing trivial errors like syntax
   mistakes or wrong operators.
-- Fast Working Solution: Learners can achieve a functional result relatively
+- **Fast Working Solution**: Learners can achieve a functional result relatively
   quickly, gaining a sense of accomplishment early on.
-- Project-Based Approach: The top-down approach naturally adopts a project-based
-  learning style, resonating well with many learners who prefer practical,
-  hands-on experiences.
-- Database of Examples: By starting with working solutions, learners build a
+- **Project-Based Approach**: The top-down approach naturally adopts a
+  project-based learning style, resonating well with many learners who prefer
+  practical, hands-on experiences.
+- **Database of Examples**: By starting with working solutions, learners build a
   database of examples that can be leveraged in future projects, reducing the
   need for extensive long-term recall.
 
 ### Cons
 
-- [Dunning-Krugger Effect](https://www.youtube.com/watch?v=kcfRe15I47I){: target="_blank"} :
-  Learners may be susceptible to overestimating their competence, believing they
-  understand more than they do, leading to a false sense of mastery.
-- Difficulty in Troubleshooting: When faced with errors or issues, learners may
-  struggle to troubleshoot effectively, lacking the foundational knowledge to
-  explore the reasons behind them.
-- Starting from Scratch: Learners might experience challenges when starting a
-  project from scratch, as they have accustomed to pre-filled boilerplate code
+- **[Dunning-Krugger Effect](https://www.youtube.com/watch?v=kcfRe15I47I){: target="_blank"}**
+  : Learners may be susceptible to overestimating their
+  competence, believing they understand more than they do, leading to a false
+  sense of mastery.
+- **Difficulty in Troubleshooting**: When faced with errors or issues, learners
+  may struggle to troubleshoot effectively, lacking the foundational knowledge
+  to explore the reasons behind them.
+- **Starting from Scratch**: Learners might experience challenges when starting
+  a project from scratch, as they have accustomed to pre-filled boilerplate code
   during the initial phase.
-- Oversimplification of Concepts: In some cases, concepts may be oversimplified,
-  hiding their true complexities. When learners deviate too much, they may
-  encounter daunting intricacies.
+- **Oversimplification of Concepts**: In some cases, concepts may be
+  oversimplified, hiding their true complexities. When learners deviate too
+  much, they may encounter daunting intricacies.
 
 ### Example
 
@@ -302,29 +305,29 @@ blocks interact.
 
 ### Pros
 
-- Domain Expertise: The experimental approach allows learners to explore
+- **Domain Expertise**: The experimental approach allows learners to explore
   multiple paths, creating domain-specific expertise in the process.
-- Hands-On Learning: Learners consolidate their knowledge through hands-on
+- **Hands-On Learning: Learners consolidate their knowledge through hands-on
   experience, gaining practical insights into problem-solving.
-- Avoiding Dunning-Kruger Effect: By facing errors and challenges multiple
+- **Avoiding Dunning-Kruger Effect**: By facing errors and challenges multiple
   times, learners avoid the Dunning-Kruger effect and develop a more realistic
   assessment of their skills.
-- Overcoming Impostor Syndrome: Encountering both failures and successes
+- **Overcoming Impostor Syndrome**: Encountering both failures and successes
   reinforces learners' confidence, preventing impostor syndrome.
-- Reinforcement and Faster Recall: This approach strengthens learners'
+- **Reinforcement and Faster Recall**: This approach strengthens learners'
   understanding of solutions for similar problems. They can recall how certain
   problems were solved more efficiently in the future.
 
 ### Cons
 
-- Time-Consuming: The experimental approach can be time-consuming, as learners
+- **Time-Consuming**: The experimental approach can be time-consuming, as learners
   try out different approaches and solutions.
-- Domain-Specific Knowledge: The knowledge acquired through experimentation may
+- **Domain-Specific Knowledge**: The knowledge acquired through experimentation may
   be highly domain-specific and not easily applicable to other areas.
-- Fragmented Knowledge: Learners may end up with fragmented knowledge,
+- **Fragmented Knowledge**: Learners may end up with fragmented knowledge,
   understanding how pieces fit together for specific solutions but struggling to
   apply them in different contexts.
-- Bias Towards Past Solutions: Having invested many hours in trying to solve a
+- **Bias Towards Past Solutions**: Having invested many hours in trying to solve a
   particular problem, learners might prematurely dismiss options that were
   previously discarded, limiting their exploration of alternative solutions.
 
@@ -848,16 +851,16 @@ be something desired by everyone, as previously mentioned, not everyone wants to
 leave the IC role. These individuals are characterized by being people who
 **C.A.R.E.S**:
 
-- C - Competence in the Domain: They are experts in the specific domain or skill
+- **C - Competence in the Domain**: They are experts in the specific domain or skill
   they aim to multiply in others.
-- A - Adaptive Communication: They have effective and adaptable communication
+- **A - Adaptive Communication**: They have effective and adaptable communication
   skills, ensuring clear and relatable knowledge transfer.
-- R - Relational Empathy: They build strong relationships and connect with
+- **R - Relational Empathy**: They build strong relationships and connect with
   others' needs and emotions.
-- E - Encouraging Patience: They cultivate patience and persistence to support
+- **E - Encouraging Patience**: They cultivate patience and persistence to support
   and guide individuals through their learning journey, even during challenging
   moments.
-- S - Supportive Coaching: They provide constructive feedback, coaching, and
+- **S - Supportive Coaching**: They provide constructive feedback, coaching, and
   mentorship, fostering growth and critical thinking in others.
 
 By having an individual at this level on a team, they make it possible for other
