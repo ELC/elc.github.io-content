@@ -1,12 +1,11 @@
 Title: ANGEL - An Oppinionated Guide on how to Learn Programming (focusing on Python) 
-Date: 2023-07-22
+Date: 2023-07-30
 Category: Programming
 Tags: Python, learning
 Slug: angel
 Authors: Ezequiel Leonardo Castaño
 Lang: en
 Headerimage: https://elc.github.io/blog/images/angel-guide/angel-guide-headerimage.png
-Status: draft
 
 [![Article Header Image]({static}images/angel-guide/angel-guide-headerimage-thumbnail.png){: .b-lazy width=1280 data-src=/blog/images/angel-guide/angel-guide-headerimage.png }](/blog/images/angel-guide/angel-guide-headerimage.png)
 
@@ -15,7 +14,7 @@ Status: draft
 Courses and pieces of training claiming to deliver rapid results have become
 increasingly popular these days. Nonetheless, amidst the abundance of online
 resources, it can be challenging to distinguish valuable ones from the noise.
-Enter ANGEL, which stands for "ANGEL's Not a Guide to Effortlessly Learning."
+Enter **ANGEL**, which stands for "ANGEL's Not a Guide to Effortlessly Learning."
 This guide presents readers with a practical approach to the programming
 learning experience. While the examples will be specific to Python, the reader
 can apply the core content to any programming language or framework.
@@ -48,7 +47,7 @@ Some key ideas should be taken into consideration while reading:
   discovering how they learn best, being actively involved and interested in
   shaping their learning process to make it more effective and enjoyable.
 - **Overshooting and Undershooting**:  drawing from control theory, in practical
-  terms, it means that Being too strict or too lax in one's approach can hinder
+  terms, it means that being too strict or too lax in one's approach can hinder
   progress. While understanding the advantages and disadvantages of different
   method is vital, excessively deviating from a structured approach may lead to
   confusion and challenges. The learner should be open to exploring new things
@@ -308,7 +307,7 @@ blocks interact.
 
 - **Domain Expertise**: The experimental approach allows learners to explore
   multiple paths, creating domain-specific expertise in the process.
-- **Hands-On Learning: Learners consolidate their knowledge through hands-on
+- **Hands-On Learning**: Learners consolidate their knowledge through hands-on
   experience, gaining practical insights into problem-solving.
 - **Avoiding Dunning-Kruger Effect**: By facing errors and challenges multiple
   times, learners avoid the Dunning-Kruger effect and develop a more realistic
