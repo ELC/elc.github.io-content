@@ -1,4 +1,4 @@
-Title: TIL - Type Safe Pipes and the Compose Function
+Title: Type Safe Pipelines and the Compose Function
 Date: 2023-09-23
 Category: Programming 
 Tags: Python, Type
@@ -13,6 +13,8 @@ Different ways to type compose and pipe functionality using several Python
 Features.
 
 <!-- PELICAN_END_SUMMARY -->
+
+## Why Types matter
 
 ## Function Composition
 
@@ -49,6 +51,14 @@ returns a new functions that performs `g` and then `f`. In Python a generic
 implementation looks like this:
 
 [![Alt Text]({static}images/til-typed-pipes/compose-thumbnail.png){: .b-lazy width=1724 data-src=/blog/images/til-typed-pipes/compose.png }](/blog/images/til-typed-pipes/compose.png){: .gallery }
+
+
+```python
+def compose(f, g):
+    def inner(*args, **kwargs):
+        return g(f(*args, **kwargs))
+    return inner
+```
 
 For this to work, it is necessary that the output of `f` matches the input of
 `g`, or otherwise the execution may fail. To enforced this relationship a typed
