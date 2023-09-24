@@ -79,7 +79,7 @@ One example of using this compose implementation is the following:
 When using the typed version, both MyPy and Pyright can infer the resulting type:
 
 PyRight (through Pylance)
-[![Alt Text]({static}images/til-typed-pipes/compose_pylance-thumbnail.png){: .b-lazy width=870 data-src=/blog/images/til-typed-pipes/compose_pylance.png }](/blog/images/til-typed-pipes/compose_pylance.png){: .gallery }
+[![Alt Text]({static}images/til-typed-pipes/compose_pylance-thumbnail.png){: .b-lazy .narrow width=870 data-src=/blog/images/til-typed-pipes/compose_pylance.png }](/blog/images/til-typed-pipes/compose_pylance.png){: .gallery }
 
 MyPy
 [![Alt Text]({static}images/til-typed-pipes/compose_mypy-thumbnail.png){: .b-lazy width=1070 data-src=/blog/images/til-typed-pipes/compose_mypy.png }](/blog/images/til-typed-pipes/compose_mypy.png){: .gallery }
@@ -96,13 +96,38 @@ of `convert_to_string`.
 [![Alt Text]({static}images/til-typed-pipes/compose_error-thumbnail.png){: .b-lazy width=1724 data-src=/blog/images/til-typed-pipes/compose_error.png }](/blog/images/til-typed-pipes/compose_error.png){: .gallery }
 
 PyRight (through Pylance)
-[![Alt Text]({static}images/til-typed-pipes/compose_pylance_error-thumbnail.png){: .b-lazy width=771 data-src=/blog/images/til-typed-pipes/compose_pylance_error.png }](/blog/images/til-typed-pipes/compose_pylance_error.png){: .gallery }
+[![Alt Text]({static}images/til-typed-pipes/compose_pylance_error-thumbnail.png){: .b-lazy .narrow width=771 data-src=/blog/images/til-typed-pipes/compose_pylance_error.png }](/blog/images/til-typed-pipes/compose_pylance_error.png){: .gallery }
 
 MyPy
-[![Alt Text]({static}images/til-typed-pipes/compose_mypy_error-thumbnail.png){: .b-lazy width=926 data-src=/blog/images/til-typed-pipes/compose_mypy_error.png }](/blog/images/til-typed-pipes/compose_mypy_error.png){: .gallery }
+[![Alt Text]({static}images/til-typed-pipes/compose_mypy_error-thumbnail.png){: .b-lazy .narrow width=926 data-src=/blog/images/til-typed-pipes/compose_mypy_error.png }](/blog/images/til-typed-pipes/compose_mypy_error.png){: .gallery }
 
 The error from MyPy may not be descriptive enough but at least points into the
 right direction. Pyright is able to identify the exact cause of the the problem:
 `add_one` takes an `int` but it is receiving a `str` as the output of
 `convert_to_string`.
 
+
+
+
+```python
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Callable, Generic, TypeVar
+
+T = TypeVar("T")
+U = TypeVar("U")
+
+
+@dataclass
+class PipeEagerSameType(Generic[T]):
+    x: T
+
+    def then(self, f: Callable[[T], T]) -> PipeEagerSameType[T]:
+        self.x = f(self.x)
+        return self
+
+    def __call__(self) -> T:
+        return self.x
+
+```
