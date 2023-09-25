@@ -66,6 +66,19 @@ version of composed can be written as follows:
 
 [![Alt Text]({static}images/til-typed-pipes/compose_typed-thumbnail.png){: .b-lazy width=1724 data-src=/blog/images/til-typed-pipes/compose_typed.png }](/blog/images/til-typed-pipes/compose_typed.png){: .gallery }
 
+```python
+from typing import Callable, ParamSpec, TypeVar
+
+T = TypeVar("T")
+U = TypeVar("U")
+P = ParamSpec("P")
+
+def compose(f: Callable[P, T], g: Callable[[T], U]) -> Callable[P, U]:
+    def inner(*args: P.args, **kwargs: P.kwargs) -> U:
+        return g(f(*args, **kwargs))
+    return inner
+```
+
 This implementation uses Python 3.10's `ParamSpec`, which allows to type `*args`
 and `**kwargs`.
 
@@ -75,6 +88,16 @@ functions and if the types are not enforced, unexpected behaviour could arise.
 One example of using this compose implementation is the following:
 
 [![Alt Text]({static}images/til-typed-pipes/compose_example-thumbnail.png){: .b-lazy width=1724 data-src=/blog/images/til-typed-pipes/compose_example.png }](/blog/images/til-typed-pipes/compose_example.png){: .gallery }
+
+```python
+def add_one(x: int) -> int:
+    return x + 1
+
+def convert_to_string(x: int) -> str:
+    return str(x)
+
+composed_functions = compose(add_one, convert_to_string)
+```
 
 When using the typed version, both MyPy and Pyright can infer the resulting type:
 
@@ -94,6 +117,10 @@ flag types imcompatibility. Take for example trying to `add_one` to the result
 of `convert_to_string`.
 
 [![Alt Text]({static}images/til-typed-pipes/compose_error-thumbnail.png){: .b-lazy width=1724 data-src=/blog/images/til-typed-pipes/compose_error.png }](/blog/images/til-typed-pipes/compose_error.png){: .gallery }
+
+```python
+composed_incorrect = compose(convert_to_string, add_one)
+```
 
 PyRight (through Pylance)
 [![Alt Text]({static}images/til-typed-pipes/compose_pylance_error-thumbnail.png){: .b-lazy .narrow width=771 data-src=/blog/images/til-typed-pipes/compose_pylance_error.png }](/blog/images/til-typed-pipes/compose_pylance_error.png){: .gallery }
